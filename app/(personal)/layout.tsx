@@ -3,7 +3,6 @@ import 'styles/index.css'
 import { Footer } from 'components/global/Footer'
 import { Navbar } from 'components/global/Navbar'
 import { PreviewBanner } from 'components/preview/PreviewBanner'
-import IntroTemplate from 'intro-template'
 import { token } from 'lib/sanity.fetch'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
@@ -21,18 +20,17 @@ export default async function IndexRoute({
   const isDraftMode = draftMode().isEnabled
 
   const layout = (
-    <div className="flex min-h-screen flex-col bg-white text-black">
+    <div className="flex flex-col min-h-screen text-black bg-white">
       {isDraftMode && <PreviewBanner />}
       <Suspense>
         <Navbar />
       </Suspense>
-      <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32">
+      <div className="flex-grow px-4 mt-20 md:px-16 lg:px-32">
         <Suspense>{children}</Suspense>
       </div>
       <Suspense>
         <Footer />
       </Suspense>
-      <IntroTemplate />
     </div>
   )
 
