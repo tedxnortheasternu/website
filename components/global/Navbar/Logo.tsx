@@ -3,6 +3,7 @@ import { resolveHref } from 'lib/sanity.links';
 import Image from 'next/image';
 import Link from "next/link";
 import { useEffect, useState } from "react";
+
 import tedx from "../../images/tedxnortheasternu.png";
 
 
