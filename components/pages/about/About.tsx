@@ -1,8 +1,8 @@
-import {useEffect, useState} from 'react';
-import person from "../../images/kaamil_thobani.jpg"
-import Image from 'next/image';
-import tedx from "../../images/tedxnortheasternu.png"
 import NavBar from 'components/global/Navbar/NavbarLayout';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import person from "../../images/kaamil_thobani.jpg";
+import tedx from "../../images/tedxnortheasternu.png";
 
 
 export default function AboutPage() {
@@ -34,7 +34,7 @@ export default function AboutPage() {
         <div className="w-1/2 p-4">
           {/* Big Quote */}
           <blockquote className="text-2xl italic">
-            "Our mission is to provide exceptional services and products to our clients."
+            Our mission is to provide exceptional services and products to our clients.
           </blockquote>
         </div>
         <div className="w-1/2 p-4">

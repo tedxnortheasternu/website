@@ -2,10 +2,9 @@
 import Link from 'next/link';
 //import Image from 'next/image';
 import { resolveHref } from 'lib/sanity.links';
-import tedxImage from '../../images/tedxnortheasternu.png'
-import Logo from "./Logo"
+import tedxImage from '../../images/tedxnortheasternu.png';
+import Logo from "./Logo";
 
-//import LogoImage from '/path-to-your-logo-image.png';
 const NavBar: React.FC = () => {
   return (
     <nav className="bg-white p-4 top-0, left-0, right-0, z-10 w-full fixed">
@@ -27,7 +26,7 @@ const NavBar: React.FC = () => {
         <div className="flex items-center space-x-4"> {/* Right-hand links */}
       <Link href={resolveHref('project', 'tedx')}>
         <div className="block py-2 pl-3 pr-4 text-red-500 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-2 md:dark:hover:bg-transparent">
-          We're Recruiting!
+          We are Recruiting!
         </div>
       </Link>
       <Link href={resolveHref('project', 'tedx')}>
