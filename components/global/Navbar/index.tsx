@@ -16,7 +16,7 @@ export async function Navbar() {
       initialData={data}
       as={NavbarPreview}
     >
-      <NavbarLayout data={data} />
+      <NavbarLayout/>
     </LiveQuery>
   )
 }
