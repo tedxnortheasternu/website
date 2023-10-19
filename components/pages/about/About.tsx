@@ -1,6 +1,7 @@
 import NavBar from 'components/global/Navbar/NavbarLayout';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+
 import person from "../../images/kaamil_thobani.jpg";
 import tedx from "../../images/tedxnortheasternu.png";
 
@@ -11,30 +12,34 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col h-screen">
       {/* Top Section */}
-      <div className="flex-1 flex p-4">
+      <div className="flex flex-1 p-4">
         <div className="w-1/2">
           {/* Image */}
           <Image
-                src={tedx}
-                alt="Logo"
-                width={width < 1024 ? "150" : "250"}                   
-                height={width < 1024 ? "45" : "74"}
-                className="h-64 w-full object-cover" 
-            />
+            src={tedx}
+            alt="Logo"
+            width={width < 1024 ? '150' : '250'}
+            height={width < 1024 ? '45' : '74'}
+            className="object-cover w-full h-64"
+          />
         </div>
         <div className="w-1/2 p-4">
           {/* Text Section */}
           <h1 className="text-2xl font-bold">Welcome to Our Company</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac posuere urna.</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ac
+            posuere urna.
+          </p>
         </div>
       </div>
 
       {/* Middle Section */}
-      <div className="flex-1 flex p-4">
+      <div className="flex flex-1 p-4">
         <div className="w-1/2 p-4">
           {/* Big Quote */}
           <blockquote className="text-2xl italic">
-            Our mission is to provide exceptional services and products to our clients.
+            Our mission is to provide exceptional services and products to our
+            clients.
           </blockquote>
         </div>
         <div className="w-1/2 p-4">
@@ -45,7 +50,7 @@ export default function AboutPage() {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex-1 flex p-4">
+      <div className="flex flex-1 p-4">
         <div className="w-1/2 p-4">
           {/* Text Section */}
           <h2 className="text-xl font-semibold">Our Team</h2>
@@ -55,31 +60,31 @@ export default function AboutPage() {
           {/* Executive Team */}
           <div className="flex flex-col space-y-2">
             <div>
-             <Image
+              <Image
                 src={person}
                 alt="Logo"
-                width={width < 1024 ? "150" : "250"}                   
-                height={width < 1024 ? "45" : "74"}
-                className="h-24 w-24 object-cover rounded-full"
-                />
+                width={width < 1024 ? '150' : '250'}
+                height={width < 1024 ? '45' : '74'}
+                className="object-cover w-24 h-24 rounded-full"
+              />
               <p className="font-semibold">John Doe</p>
               <p className="text-sm">CEO</p>
             </div>
             <div>
-            <Image
+              <Image
                 src={person}
                 alt="Logo"
-                width={width < 1024 ? "150" : "250"}                   
-                height={width < 1024 ? "45" : "74"}
-                className="h-24 w-24 object-cover rounded-full"
-             />
+                width={width < 1024 ? '150' : '250'}
+                height={width < 1024 ? '45' : '74'}
+                className="object-cover w-24 h-24 rounded-full"
+              />
               <p className="font-semibold">Jane Smith</p>
               <p className="text-sm">COO</p>
             </div>
-            {/* Add more executives as needed */ }
+            {/* Add more executives as needed */}
           </div>
         </div>
       </div>
     </div>
- );
+  )
 };
