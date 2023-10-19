@@ -1,35 +1,64 @@
-import { resolveHref } from 'lib/sanity.links'
-import Link from 'next/link'
-import type { MenuItem, SettingsPayload } from 'types'
 
-interface NavbarProps {
-  data: SettingsPayload
-}
-export default function Navbar(props: NavbarProps) {
-  const { data } = props
-  const menuItems = data?.menuItems || ([] as MenuItem[])
+import Link from 'next/link';
+//import Image from 'next/image';
+import { resolveHref } from 'lib/sanity.links';
+import tedxImage from '../../images/tedxnortheasternu.png'
+import Logo from "./Logo"
+
+//import LogoImage from '/path-to-your-logo-image.png';
+const NavBar: React.FC = () => {
   return (
-    <div className="sticky top-0 z-10 flex flex-wrap items-center gap-x-5 bg-white/80 px-4 py-4 backdrop-blur md:px-16 md:py-5 lg:px-32">
-      {menuItems &&
-        menuItems.map((menuItem, key) => {
-          const href = resolveHref(menuItem?._type, menuItem?.slug)
-          if (!href) {
-            return null
-          }
-          return (
-            <Link
-              key={key}
-              className={`text-lg hover:text-black md:text-xl ${
-                menuItem?._type === 'home'
-                  ? 'font-extrabold text-black'
-                  : 'text-gray-600'
-              }`}
-              href={href}
-            >
-              {menuItem.title}
-            </Link>
-          )
-        })}
+    <nav className="bg-white p-4 top-0, left-0, right-0, z-10 w-full fixed">
+    <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-0 ">
+    <div className="flex items-center space-x-4"> {/* Left-hand links */}
+      <Link href={resolveHref('home')}>
+        <Logo />
+      </Link>
+      <Link href={resolveHref('home')}>
+        <div className="text-black hover:underline">About</div>
+      </Link>
+      <Link href={resolveHref('project', 'tedx')}>
+        <div className="text-black hover:underline">Past Events</div>
+      </Link>
+      <Link href={resolveHref('project', 'tedx')}>
+        <div className="text-black hover:underline">Contact</div>
+      </Link>
     </div>
-  )
-}
+        <div className="flex items-center space-x-4"> {/* Right-hand links */}
+      <Link href={resolveHref('project', 'tedx')}>
+        <div className="block py-2 pl-3 pr-4 text-red-500 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-2 md:dark:hover:bg-transparent">
+          We're Recruiting!
+        </div>
+      </Link>
+      <Link href={resolveHref('project', 'tedx')}>
+        <div className="block py-6 pl-6 pr-6 rounded-full bg-red-500 text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-red-700 md:p-2 dark:text-white md:dark:hover:text-red-500 md:dark:hover:bg-transparent hover:underline">
+          Nominate Speaker
+        </div>
+      </Link>
+    </div>
+    </div>
+  </nav>
+  );
+};
+
+export default NavBar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
