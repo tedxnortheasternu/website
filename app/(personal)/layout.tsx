@@ -22,9 +22,7 @@ export default async function IndexRoute({
   const layout = (
     <div className="flex flex-col min-h-screen text-black bg-white">
       {isDraftMode && <PreviewBanner />}
-      <Suspense>
-        <Navbar />
-      </Suspense>
+      <Navbar />
       <div className="flex-grow px-4 mt-20 md:px-8 lg:px-0">
         <Suspense>{children}</Suspense>
       </div>
