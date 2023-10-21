@@ -7,10 +7,9 @@ import Logo from './Logo'
 
 const NavBar: React.FC = () => {
   return (
-    <nav className="bg-white p-4 top-0, left-0, right-0, z-10 w-full fixed">
+    <nav className="fixed top-0 left-0 right-0 z-10 w-full p-4 bg-white">
       <div className="flex flex-wrap items-center justify-between max-w-screen-xl p-0 mx-auto ">
         <div className="flex items-center space-x-4">
-          {' '}
           {/* Left-hand links */}
           <Link href={resolveHref('home')}>
             <Logo />
@@ -26,15 +25,14 @@ const NavBar: React.FC = () => {
           </Link>
         </div>
         <div className="flex items-center space-x-4">
-          {' '}
           {/* Right-hand links */}
           <Link href={resolveHref('project', 'tedx')}>
-            <div className="block px-4 py-1 text-red-500 hover:bg-transparent hover:text-red-700 hover:underline">
+            <div className="block px-4 py-1 text-red-800 hover:bg-transparent hover:text-red-700 hover:underline">
               We are Recruiting!
             </div>
           </Link>
           <Link href={resolveHref('project', 'tedx')}>
-            <div className="block px-4 py-1 text-white bg-red-500 rounded-full hover:bg-transparent hover:text-red-700 dark:text-white hover:underline">
+            <div className="block px-4 py-1 text-white bg-red-800 rounded-full hover:bg-transparent hover:text-red-700 dark:text-white hover:underline">
               Nominate Speaker
             </div>
           </Link>

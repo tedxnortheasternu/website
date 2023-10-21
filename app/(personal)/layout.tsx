@@ -20,12 +20,12 @@ export default async function IndexRoute({
   const isDraftMode = draftMode().isEnabled
 
   const layout = (
-    <div className="flex flex-col max-h-screen text-black bg-white">
+    <div className="flex flex-col min-h-screen text-black bg-white">
       {isDraftMode && <PreviewBanner />}
       <Suspense>
         <Navbar />
       </Suspense>
-      <div className="flex-grow px-4 mt-20 md:px-16 lg:px-32">
+      <div className="flex-grow px-4 mt-20 md:px-8 lg:px-0">
         <Suspense>{children}</Suspense>
       </div>
       <Suspense>
