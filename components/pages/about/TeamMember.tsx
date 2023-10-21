@@ -15,7 +15,7 @@ export default function TeamMember({
       <Image
         src={imageSrc}
         alt="Logo"
-        className="object-cover mb-3 rounded-md shadow-sm h-36 w-36"
+        className="object-cover mb-3 rounded h-36 w-36"
       />
       <h3 className="mb-1 text-lg font-semibold leading-tight">{name}</h3>
       <p className="text-sm leading-snug text-gray-800">{title}</p>

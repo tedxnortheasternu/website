@@ -17,7 +17,7 @@ export default function NavbarLayout() {
       <header className="z-50 flex flex-wrap w-full py-4 text-sm bg-white lg:justify-start lg:flex-nowrap">
         <nav className="w-full max-w-screen-xl px-4 mx-auto lg:flex lg:items-center lg:justify-between lg:gap-4">
           <div className="flex items-center justify-between lg:gap-4">
-            <Link href="/" className="block">
+            <Link href="/">
               <Image
                 src={tedx}
                 alt="TEDxNortheasternU Logo"
@@ -60,7 +60,7 @@ export default function NavbarLayout() {
 
           <div
             className={cn(
-              'mt-2 shadow-md lg:mt-0 rounded-lg border border-slate-200 p-4 lg:p-0 flex flex-col lg:flex-row lg:justify-between overflow-hidden transition-all duration-300 basis-full grow lg:border-transparent lg:shadow-none lg:gap-4',
+              'mt-2 shadow-md lg:mt-0 rounded-lg border border-slate-200 p-4 lg:p-0 flex flex-col lg:flex-row lg:justify-between overflow-hidden transition-all duration-300 basis-full grow lg:border-transparent lg:shadow-none lg:gap-4 lg:flex',
               open ? '' : 'hidden',
             )}
           >

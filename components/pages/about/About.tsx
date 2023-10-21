@@ -1,4 +1,6 @@
+import { ArrowRightIcon } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 
 import aboutPage from '../../images/aboutPage.jpg'
 import copres from '../../images/Co-Pres.jpg'
@@ -13,31 +15,35 @@ export default function AboutPage() {
   return (
     <main>
       {/* Top Section */}
-      <section className="flex flex-1">
-        <div className="w-1/2">
+      <section className="grid items-center max-w-screen-xl gap-6 mx-auto md:grid-cols-2">
+        <div className="w-full">
           {/* Image */}
           <Image src={aboutPage} alt="speaker" className="object-left w-full" />
         </div>
-        <div className="w-1/2 p-4 pl-6">
+        <div>
           {/* Text Section */}
-          <h1 className="text-2xl font-bold">
+          <h1 className="mb-2 text-3xl font-bold text-balance">
             Innovative ideas. Groundbreaking research. Breakthrough
-            technologies.{' '}
+            technologies.
           </h1>
           <p>
-            We're a student-run organization that brings together the global
+            {"We're"} a student-run organization that brings together the global
             Northeastern community. Our events feature local speakers who are
             leaders in their fields. We aim to inspire and educate while
             fostering a sense of community and collaboration.
           </p>
-          <button className="block px-4 py-1 text-white bg-red-700 rounded-full hover:bg-transparent hover:text-red-700 dark:text-white hover:underline">
-            Join Our Mailing List →
-          </button>
+
+          <Link
+            href="https://mailchi.mp/39a289393abb/tedxnu-mailing-list"
+            className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-sm font-bold text-white transition-colors bg-red-700 rounded-full hover:bg-red-800"
+          >
+            Join Our Mailing List <ArrowRightIcon size={16} />
+          </Link>
         </div>
       </section>
 
       {/* Middle Section */}
-      <div className="grid max-w-screen-xl gap-6 px-6 py-20 md:grid-cols-2">
+      <div className="grid max-w-screen-xl gap-6 py-4 mx-auto md:px-6 md:py-20 md:grid-cols-2">
         <div>
           {/* Title */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
@@ -68,7 +74,7 @@ export default function AboutPage() {
       </div>
 
       {/* Bottom Section */}
-      <div className="grid max-w-screen-xl gap-6 md:grid-cols-2 md:px-6 md:py-20">
+      <div className="grid max-w-screen-xl gap-6 py-4 mx-auto md:grid-cols-2 md:px-6 md:py-20">
         <div>
           {/* Text Section */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
