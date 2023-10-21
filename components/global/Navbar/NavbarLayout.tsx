@@ -27,12 +27,12 @@ const NavBar: React.FC = () => {
         <div className="flex items-center space-x-4">
           {/* Right-hand links */}
           <Link href={resolveHref('project', 'tedx')}>
-            <div className="block px-4 py-1 text-red-800 hover:bg-transparent hover:text-red-700 hover:underline">
+            <div className="block px-4 py-1 text-red-700 hover:bg-transparent hover:text-red-500 hover:underline">
               We are Recruiting!
             </div>
           </Link>
           <Link href={resolveHref('project', 'tedx')}>
-            <div className="block px-4 py-1 text-white bg-red-800 rounded-full hover:bg-transparent hover:text-red-700 dark:text-white hover:underline">
+            <div className="block px-4 py-1 text-white bg-red-700 rounded-full hover:bg-transparent hover:text-red-500 dark:text-white hover:underline">
               Nominate Speaker
             </div>
           </Link>

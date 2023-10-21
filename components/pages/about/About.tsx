@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 'use client'
 import NavBar from 'components/global/Navbar/NavbarLayout'
 import Image from 'next/image'
@@ -37,12 +38,12 @@ export default function AboutPage() {
             technologies.{' '}
           </h1>
           <p>
-            We are a student-run organization that brings together the global
+            We're a student-run organization that brings together the global
             Northeastern community. Our events feature local speakers who are
             leaders in their fields. We aim to inspire and educate while
             fostering a sense of community and collaboration.
           </p>
-          <button className="block px-4 py-1 text-white bg-red-800 rounded-full hover:bg-transparent hover:text-red-700 dark:text-white hover:underline">
+          <button className="block px-4 py-1 text-white bg-red-700 rounded-full hover:bg-transparent hover:text-red-700 dark:text-white hover:underline">
             Join Our Mailing List →
           </button>
         </div>
