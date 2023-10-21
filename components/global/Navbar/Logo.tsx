@@ -1,61 +1,61 @@
-"use client";
-import { resolveHref } from 'lib/sanity.links';
-import Image from 'next/image';
-import Link from "next/link";
-import { useEffect, useState } from "react";
+'use client'
+import { resolveHref } from 'lib/sanity.links'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
-import tedx from "../../images/tedxnortheasternu.png";
-
-
+import tedx from '../../images/tedxnortheasternu.png'
 
 const Logo = () => {
   //update the size of the logo when the size of the screen changes
-  const [width, setWidth] = useState(0);
+  const [width, setWidth] = useState(0)
 
   const updateWidth = () => {
-    const newWidth = window.innerWidth;
-    setWidth(newWidth);
-  };
+    const newWidth = window.innerWidth
+    setWidth(newWidth)
+  }
 
   useEffect(() => {
-    window.addEventListener("resize", updateWidth);
-    updateWidth();
-  }, []);
+    window.addEventListener('resize', updateWidth)
+    updateWidth()
+  }, [])
 
   // change between the logo and the button when the user scrolls
-  const [showButton, setShowButton] = useState(false);
+  const [showButton, setShowButton] = useState(false)
 
   const changeNavButton = () => {
     if (window.scrollY >= 400 && window.innerWidth < 768) {
-      setShowButton(true);
+      setShowButton(true)
     } else {
-      setShowButton(false);
+      setShowButton(false)
     }
-  };
+  }
 
   useEffect(() => {
-    window.addEventListener("scroll", changeNavButton);
-  }, []);
+    window.addEventListener('scroll', changeNavButton)
+  }, [])
 
   return (
     <>
-      <Link href={resolveHref('home')} style={{ display: showButton ? "none" : "block" }}>
+      <Link
+        href={resolveHref('home')}
+        style={{ display: showButton ? 'none' : 'block' }}
+      >
         <Image
           src={tedx}
           alt="Logo"
-          width={width < 1024 ? "150" : "250"}
-          height={width < 1024 ? "45" : "74"}
+          width={width < 1024 ? '150' : '250'}
+          height={width < 1024 ? '45' : '74'}
           className="relative"
         />
       </Link>
       <div
         style={{
-          display: showButton ? "block" : "none",
+          display: showButton ? 'block' : 'none',
         }}
-      >
-      </div>
+      ></div>
     </>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo

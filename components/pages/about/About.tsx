@@ -1,18 +1,16 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client'
-import NavBar from 'components/global/Navbar/NavbarLayout'
+
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import aboutPage from '../../images/aboutPage.jpg'
 import copres from '../../images/Co-Pres.jpg'
 import copres2 from '../../images/Co-Pres2.png'
 import commengang from '../../images/CommEnga.jpeg'
 import fundraising from '../../images/Fundraising.jpg'
-import person from '../../images/kaamil_thobani.jpg'
 import operations from '../../images/Operations.jpg'
 import speakerdev from '../../images/Speakerdev.png'
-import speakerTalk from '../../images/speakers.jpg'
 
 export default function AboutPage() {
   const [width, setWidth] = useState(0)

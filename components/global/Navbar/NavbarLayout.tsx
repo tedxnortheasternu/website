@@ -1,8 +1,6 @@
-//import Image from 'next/image';
 import { resolveHref } from 'lib/sanity.links'
 import Link from 'next/link'
 
-import tedxImage from '../../images/tedxnortheasternu.png'
 import Logo from './Logo'
 
 const NavBar: React.FC = () => {
