@@ -1,8 +1,4 @@
-/* eslint-disable react/no-unescaped-entities */
-'use client'
-
 import Image from 'next/image'
-import { useState } from 'react'
 
 import aboutPage from '../../images/aboutPage.jpg'
 import copres from '../../images/Co-Pres.jpg'
@@ -11,23 +7,16 @@ import commengang from '../../images/CommEnga.jpeg'
 import fundraising from '../../images/Fundraising.jpg'
 import operations from '../../images/Operations.jpg'
 import speakerdev from '../../images/Speakerdev.png'
+import TeamMember from './TeamMember'
 
 export default function AboutPage() {
-  const [width, setWidth] = useState(0)
-
   return (
-    <div className="flex flex-col">
+    <main>
       {/* Top Section */}
-      <div className="flex flex-1">
+      <section className="flex flex-1">
         <div className="w-1/2">
           {/* Image */}
-          <Image
-            src={aboutPage}
-            alt="speaker"
-            width={width < 1024 ? '600' : '700'}
-            height={width < 1024 ? '600' : '700'}
-            className="object-left w-full "
-          />
+          <Image src={aboutPage} alt="speaker" className="object-left w-full" />
         </div>
         <div className="w-1/2 p-4 pl-6">
           {/* Text Section */}
@@ -45,17 +34,18 @@ export default function AboutPage() {
             Join Our Mailing List →
           </button>
         </div>
-      </div>
+      </section>
 
       {/* Middle Section */}
-      <div className="flex flex-1 p-4 py-28">
-        <div className="w-1/2 p-4">
-          {/* Big Quote */}
-          <blockquote className="text-2xl font-bold">
-            “Ideas worth spreading”— A grassroots initiative
-          </blockquote>
+      <div className="flex flex-row max-w-screen-xl gap-6 px-6 py-28">
+        <div className="w-1/2">
+          {/* Title */}
+          <h2 className="text-4xl font-bold leading-tight text-balance">
+            “Ideas worth spreading”&mdash;A grassroots initiative
+          </h2>
         </div>
-        <div className="w-1/2 p-4">
+
+        <div className="w-1/2">
           {/* Text Section */}
           <h5>
             TEDx is a grassroots initiative, created in the spirit of TED’s
@@ -78,158 +68,66 @@ export default function AboutPage() {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-1 p-4">
-        <div className="w-1/2 p-4">
+      <div className="flex flex-row max-w-screen-xl gap-6 px-6 py-28">
+        <div className="w-1/2">
           {/* Text Section */}
-          <h2 className="text-2xl font-semibold">
+          <h2 className="text-4xl font-bold leading-tight text-balance">
             Our Executive Leadership Team
           </h2>
-          <div className="flex flex-wrap space-y-2">
-            <div className="w-full sm:w-1/5">
-              <div className="flex flex-col py-4 space-y-2">
-                <div>
-                  <h3 className="py-2 text-l">CAMPUSES</h3>
-                  <p className="font-bold">2</p>
-                </div>
-              </div>
+
+          <div className="flex flex-row gap-6 mt-4">
+            <div className="flex flex-col">
+              <h3 className="text-sm uppercase">Campuses</h3>
+              <p className="text-2xl font-bold">2</p>
             </div>
-            <div className="w-full sm:w-1/5">
-              <div className="flex flex-col py-4 space-y-2">
-                <div>
-                  <h3 className="text-l">MEMBERS</h3>
-                  <p className="font-bold">48</p>
-                </div>
-              </div>
+            <div className="flex flex-col">
+              <h3 className="text-sm uppercase">Members</h3>
+              <p className="text-2xl font-bold">48</p>
             </div>
-            <div className="w-full sm:w-1/5">
-              <div className="flex flex-col py-4 space-y-2">
-                <div>
-                  <h3 className="text-l">TEAMS</h3>
-                  <p className="font-bold">6</p>
-                </div>
-              </div>
+            <div className="flex flex-col">
+              <h3 className="text-sm uppercase">Teams</h3>
+              <p className="text-2xl font-bold">6</p>
             </div>
           </div>
         </div>
-        <div className="w-1/2 p-4">
+
+        <div className="w-1/2">
           {/* Executive Team */}
-          <div className="flex flex-wrap space-y-2">
-            {/* First row of executives */}
-            <div className="w-full sm:w-1/4">
-              <div className="flex flex-col space-y-2">
-                <div className="py-2">
-                  <Image
-                    src={copres}
-                    alt="Logo"
-                    width={width < 1024 ? '150' : '250'}
-                    height={width < 1024 ? '45' : '74'}
-                    className="object-cover w-36 h-36 "
-                  />
-                  <h4 className="font-semibold font-m py-0.5">Jay Sella</h4>
-                  <h5 className="text-sm">Co-President</h5>
-                </div>
-              </div>
-            </div>
-
-            <div className="w-full sm:w-1/4">
-              <div className="flex flex-col space-y-2">
-                <div>
-                  <Image
-                    src={copres2}
-                    alt="Logo"
-                    width={width < 1024 ? '150' : '250'}
-                    height={width < 1024 ? '45' : '74'}
-                    className="object-cover w-36 h-36"
-                  />
-                  <h4 className="font-semibold font-m py-0.5">
-                    Camilla Gallardo
-                  </h4>
-                  <h5 className="text-sm">Co-President</h5>
-                </div>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/4">
-              <div className="flex flex-col space-y-2">
-                <div>
-                  <Image
-                    src={commengang}
-                    alt="Logo"
-                    width={width < 1024 ? '150' : '250'}
-                    height={width < 1024 ? '45' : '74'}
-                    className="object-cover h-36 w-36"
-                  />
-                  <h4 className="font-semibold font-m py-0.5">
-                    Valentina Ribeiro
-                  </h4>
-                  <h5 className="text-sm">Community Engagement</h5>
-                </div>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/4">
-              <div className="flex flex-col space-y-2">
-                <div>
-                  <Image
-                    src={speakerdev}
-                    alt="Logo"
-                    width={width < 1024 ? '150' : '250'}
-                    height={width < 1024 ? '45' : '74'}
-                    className="object-cover h-36 w-36"
-                  />
-                  <h4 className="font-semibold font-m py-0.5">Ellee Tomaru</h4>
-                  <h5 className="text-sm">Speaker Development</h5>
-                </div>
-              </div>
-            </div>
-
-            {/* Second row of executives */}
-            <div className="w-full sm:w-1/4">
-              <div className="flex flex-col space-y-2">
-                <div>
-                  <Image
-                    src={speakerdev}
-                    alt="Logo"
-                    width={width < 1024 ? '150' : '250'}
-                    height={width < 1024 ? '45' : '74'}
-                    className="object-cover h-36 w-36"
-                  />
-                  <h4 className="font-semibold font-m py-0.5">Ellee Tomaru</h4>
-                  <h5 className="text-sm">Speaker Development</h5>
-                </div>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/4">
-              <div className="flex flex-col space-y-2">
-                <div>
-                  <Image
-                    src={operations}
-                    alt="Logo"
-                    width={width < 1024 ? '150' : '250'}
-                    height={width < 1024 ? '45' : '74'}
-                    className="object-cover h-36 w-36"
-                  />
-                  <h4 className="font-semibold font-m py-0.5">Allison Evin</h4>
-                  <h5 className="text-sm">Operations</h5>
-                </div>
-              </div>
-            </div>
-            <div className="w-full sm:w-1/4">
-              <div className="flex flex-col space-y-2">
-                <div>
-                  <Image
-                    src={fundraising}
-                    alt="Logo"
-                    width={width < 1024 ? '150' : '250'}
-                    height={width < 1024 ? '45' : '74'}
-                    className="object-cover h-36 w-36"
-                  />
-                  <h4 className="font-semibold font-m py-0.5">Sophie Lin</h4>
-                  <h5 className="text-sm">Fundraising</h5>
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-wrap gap-4">
+            {/* First row of executives */}{' '}
+            <TeamMember
+              imageSrc={copres}
+              name="Jay Sella"
+              title="Co-President"
+            />
+            <TeamMember
+              imageSrc={copres2}
+              name="Camilla Gallardo"
+              title="Co-President"
+            />
+            <TeamMember
+              imageSrc={commengang}
+              name="Valentina Ribeiro"
+              title="Community Engagement"
+            />
+            <TeamMember
+              imageSrc={speakerdev}
+              name="Ellee Tomaru"
+              title="Speaker Development"
+            />
+            <TeamMember
+              imageSrc={operations}
+              name="Allison Evin"
+              title="Operations"
+            />
+            <TeamMember
+              imageSrc={fundraising}
+              name="Sophie Lin"
+              title="Fundraising"
+            />
           </div>
         </div>
       </div>
-    </div>
+    </main>
   )
 }
