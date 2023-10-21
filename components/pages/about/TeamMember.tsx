@@ -11,14 +11,14 @@ export default function TeamMember({
   title: string
 }) {
   return (
-    <div>
+    <div className="w-36">
       <Image
         src={imageSrc}
         alt="Logo"
-        className="object-cover mb-2 h-36 w-36"
+        className="object-cover mb-3 rounded-md shadow-sm h-36 w-36"
       />
-      <h3 className="text-lg font-semibold">{name}</h3>
-      <span className="text-sm text-slate-800">{title}</span>
+      <h3 className="mb-1 text-lg font-semibold leading-tight">{name}</h3>
+      <p className="text-sm leading-snug text-gray-800">{title}</p>
     </div>
   )
 }

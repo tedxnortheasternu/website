@@ -37,15 +37,15 @@ export default function AboutPage() {
       </section>
 
       {/* Middle Section */}
-      <div className="flex flex-row max-w-screen-xl gap-6 px-6 py-28">
-        <div className="w-1/2">
+      <div className="grid max-w-screen-xl gap-6 px-6 py-20 md:grid-cols-2">
+        <div>
           {/* Title */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
             “Ideas worth spreading”&mdash;A grassroots initiative
           </h2>
         </div>
 
-        <div className="w-1/2">
+        <div>
           {/* Text Section */}
           <h5>
             TEDx is a grassroots initiative, created in the spirit of TED’s
@@ -68,8 +68,8 @@ export default function AboutPage() {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-row max-w-screen-xl gap-6 px-6 py-28">
-        <div className="w-1/2">
+      <div className="grid max-w-screen-xl gap-6 md:grid-cols-2 md:px-6 md:py-20">
+        <div>
           {/* Text Section */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
             Our Executive Leadership Team
@@ -91,7 +91,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="w-1/2">
+        <div>
           {/* Executive Team */}
           <div className="flex flex-wrap gap-4">
             {/* First row of executives */}{' '}
