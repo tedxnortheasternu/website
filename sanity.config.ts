@@ -13,6 +13,9 @@ import Iframe, {
   IframeOptions,
 } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
+import campus from 'schemas/documents/campus'
+import event from 'schemas/documents/event'
+import eventCategory from 'schemas/documents/eventCategory'
 import page from 'schemas/documents/page'
 import project from 'schemas/documents/project'
 import duration from 'schemas/objects/duration'
@@ -64,6 +67,9 @@ export default defineConfig({
       duration,
       page,
       project,
+      event,
+      campus,
+      eventCategory,
       // Objects
       milestone,
       timeline,
