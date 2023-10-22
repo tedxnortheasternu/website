@@ -11,7 +11,7 @@ export default defineType({
       type: 'string',
       name: 'name',
       title: 'Name',
-      description: 'eg: Jay Sella',
+      description: 'First and Last, eg: Jay Sella',
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -19,12 +19,10 @@ export default defineType({
       to: [{ type: 'teams' }],
       name: 'team',
       title: 'Team',
-      description: 'eg: Marketing',
       validation: (rule) => rule.required(),
     }),
     defineField({
       name: 'campus',
-      description: 'eg: Boston',
       title: 'Campus',
       type: 'reference',
       to: [{ type: 'campus' }],
@@ -46,14 +44,14 @@ export default defineType({
     defineField({
       name: 'hometown',
       title: 'Hometown',
-      description: 'eg: Milwaukee',
+      description: 'City and State or City and Country, eg: Dallas, TX',
       type: 'string',
     }),
     defineField({
-      name: 'goTOflavor',
-      title: 'Go to ice cream flavor',
+      name: 'goToIceCream',
+      title: 'Go-to Ice Cream Flavor',
       type: 'string',
-      description: 'eg: Choclate Chunk',
+      description: 'eg: Chocolate Chunk',
     }),
   ],
 })
