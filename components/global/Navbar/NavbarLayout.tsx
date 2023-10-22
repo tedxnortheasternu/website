@@ -1,35 +1,80 @@
-import { resolveHref } from 'lib/sanity.links'
-import Link from 'next/link'
-import type { MenuItem, SettingsPayload } from 'types'
+'use client'
 
-interface NavbarProps {
-  data: SettingsPayload
-}
-export default function Navbar(props: NavbarProps) {
-  const { data } = props
-  const menuItems = data?.menuItems || ([] as MenuItem[])
+import { cn } from 'lib/utils'
+import { ArrowRightIcon, MenuIcon, XIcon } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+
+import tedx from '../../images/tedxnortheasternu.png'
+import NavLink from './NavLink'
+
+export default function NavbarLayout() {
+  const [open, setOpen] = useState(false)
+
   return (
-    <div className="sticky top-0 z-10 flex flex-wrap items-center gap-x-5 bg-white/80 px-4 py-4 backdrop-blur md:px-16 md:py-5 lg:px-32">
-      {menuItems &&
-        menuItems.map((menuItem, key) => {
-          const href = resolveHref(menuItem?._type, menuItem?.slug)
-          if (!href) {
-            return null
-          }
-          return (
-            <Link
-              key={key}
-              className={`text-lg hover:text-black md:text-xl ${
-                menuItem?._type === 'home'
-                  ? 'font-extrabold text-black'
-                  : 'text-gray-600'
-              }`}
-              href={href}
-            >
-              {menuItem.title}
+    <>
+      <header className="z-50 w-full py-4 text-sm bg-white">
+        <nav className="w-full max-w-screen-xl px-4 mx-auto lg:flex lg:items-center lg:justify-between lg:gap-4">
+          <div className="flex items-center justify-between lg:gap-4">
+            <Link href="/">
+              <Image
+                src={tedx}
+                alt="TEDxNortheasternU Logo"
+                className="h-auto max-w-full -ml-3.5 w-80"
+              />
             </Link>
-          )
-        })}
-    </div>
+
+            <div className="lg:hidden">
+              <button
+                type="button"
+                className="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium text-gray-700 align-middle transition-all bg-white border rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600"
+                aria-controls="navbar-alignment"
+                aria-label="Toggle navigation"
+                onClick={() => setOpen(!open)}
+              >
+                <MenuIcon
+                  size={16}
+                  className={cn('w-4 h-4', open ? 'hidden' : 'block')}
+                />
+                <XIcon
+                  size={16}
+                  className={cn('w-4 h-4', open ? 'block' : 'hidden')}
+                />
+              </button>
+            </div>
+          </div>
+
+          <div
+            className={cn(
+              'mt-2 shadow-md lg:mt-0 rounded-lg border border-slate-200 p-4 lg:p-0 flex flex-col lg:flex-row lg:justify-between overflow-hidden transition-all duration-300 basis-full grow lg:border-transparent lg:shadow-none lg:gap-4 lg:flex',
+              open ? '' : 'hidden',
+            )}
+          >
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-5">
+              <NavLink href="/about">About</NavLink>
+              <NavLink href="/past-events">Past Events</NavLink>
+              <NavLink href="/contact">Contact</NavLink>
+            </div>
+
+            <hr
+              className={cn(
+                'h-px my-4 bg-gray-200 border-0 dark:bg-gray-700 lg:hidden',
+              )}
+            />
+
+            <div className="flex items-center space-x-4">
+              <NavLink href="/positions">{"We're Recruiting!"}</NavLink>
+              <Link
+                href="https://airtable.com/appD8TuOcD3E8n7BG/shr8Dc6qKWXq7Ns5T"
+                className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"
+              >
+                Nominate a Speaker <ArrowRightIcon size={16} />
+              </Link>
+            </div>
+          </div>
+        </nav>
+      </header>
+    </>
   )
 }
