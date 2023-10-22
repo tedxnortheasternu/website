@@ -1,13 +1,11 @@
-import { DocumentIcon, ImageIcon } from '@sanity/icons'
-import { title } from 'lib/demo.data';
-import { defineArrayMember, defineField, defineType } from 'sanity'
-
+import { UsersIcon } from 'lucide-react'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   type: 'document',
   name: 'teams',
   title: 'Teams',
-  icon: DocumentIcon,
+  icon: UsersIcon,
   fields: [
     defineField({
       type: 'string',
@@ -17,10 +15,10 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-     name: 'slug',
-     type: 'slug',
-     title: 'Slug',
-     description: 'Generated from name',
+      name: 'slug',
+      type: 'slug',
+      title: 'Slug',
+      description: 'Generated from name',
       validation: (rule) => rule.required(),
       options: {
         source: 'name', // Specify that the slug is generated from the 'name' field
@@ -29,12 +27,10 @@ export default defineType({
     }),
     defineField({
       name: 'description',
-      description:
-        'description of the team',
+      description: 'description of the team',
       title: 'Description',
       type: 'string',
       validation: (rule) => rule.max(155).required(),
     }),
   ],
-
 })

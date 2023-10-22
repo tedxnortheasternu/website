@@ -1,13 +1,11 @@
-import { DocumentIcon, ImageIcon } from '@sanity/icons'
-import { title } from 'lib/demo.data';
-import { defineArrayMember, defineField, defineType } from 'sanity'
-
+import { CompassIcon } from 'lucide-react'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   type: 'document',
   name: 'campus',
   title: 'Campus',
-  icon: DocumentIcon,
+  icon: CompassIcon,
   fields: [
     defineField({
       type: 'string',

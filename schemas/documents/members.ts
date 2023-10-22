@@ -1,11 +1,11 @@
-import { DocumentIcon, ImageIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { UserIcon } from 'lucide-react'
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   type: 'document',
   name: 'members',
   title: 'Members',
-  icon: DocumentIcon,
+  icon: UserIcon,
   fields: [
     defineField({
       type: 'string',
@@ -24,8 +24,7 @@ export default defineType({
     }),
     defineField({
       name: 'campus',
-      description:
-        'eg: Boston',
+      description: 'eg: Boston',
       title: 'Campus',
       type: 'reference',
       to: [{ type: 'campus' }],
@@ -35,15 +34,14 @@ export default defineType({
       name: 'image',
       title: 'Image',
       type: 'image',
-      
+
       validation: (rule) => rule.required(),
     }),
     defineField({
       type: 'string',
       name: 'major',
       title: 'Major',
-      description:
-        "eg: Computer Science",
+      description: 'eg: Computer Science',
     }),
     defineField({
       name: 'hometown',
