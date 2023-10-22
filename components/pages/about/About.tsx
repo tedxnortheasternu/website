@@ -3,10 +3,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import aboutPage from '../../images/aboutPage.jpg'
+import advisor from '../../images/Advisor.png'
 import copres from '../../images/Co-Pres.jpg'
 import copres2 from '../../images/Co-Pres2.png'
 import commengang from '../../images/CommEnga.jpeg'
+import facAdvisorBos from '../../images/FacAdvisorBos.jpg'
+import facAdvisorOak from '../../images/FacAdvisorOak.jpg'
 import fundraising from '../../images/Fundraising.jpg'
+import markNdesign from '../../images/marketingAndDesign.jpeg'
 import operations from '../../images/Operations.jpg'
 import speakerdev from '../../images/Speakerdev.png'
 import TeamMember from './TeamMember'
@@ -102,6 +106,21 @@ export default function AboutPage() {
           <div className="flex flex-wrap gap-4">
             {/* First row of executives */}{' '}
             <TeamMember
+              imageSrc={advisor}
+              name="Darin Martin"
+              title="Organizer + Program Advisor"
+            />
+            <TeamMember
+              imageSrc={facAdvisorBos}
+              name="Darin Detwiler"
+              title="Faculty Advisor, Boston"
+            />
+            <TeamMember
+              imageSrc={facAdvisorOak}
+              name="Christie Chung"
+              title="Faculty Advisor, Oakland"
+            />
+            <TeamMember
               imageSrc={copres}
               name="Jay Sella"
               title="Co-President"
@@ -115,6 +134,11 @@ export default function AboutPage() {
               imageSrc={commengang}
               name="Valentina Ribeiro"
               title="Community Engagement"
+            />
+            <TeamMember
+              imageSrc={markNdesign}
+              name="Olivia Watson"
+              title="Marketing and Design"
             />
             <TeamMember
               imageSrc={speakerdev}
