@@ -57,7 +57,7 @@ export default function AboutPage() {
 
         <div>
           {/* Text Section */}
-          <h5>
+          <p>
             TEDx is a grassroots initiative, created in the spirit of TED’s
             overall mission to research and discover “ideas worth spreading.”
             TEDx brings the spirit of TED to local communities around the globe
@@ -65,15 +65,15 @@ export default function AboutPage() {
             individuals who seek to uncover new ideas and to share the latest
             research in their local areas that spark conversations in their
             communities.
-          </h5>
-          <h5 className="py-5">
+          </p>
+          <p className="py-5">
             TEDx events include live speakers and recorded TED Talks, and are
             organized independently under a free license granted by TED. These
             events are not controlled by TED, but event organizers agree to
             abide by our format, and are offered guidelines for curation,
             speaker coaching, event organizing and more. They learn from us and
             from each other. More than 3,000 events are now held annually.
-          </h5>
+          </p>
         </div>
       </div>
 
@@ -87,16 +87,16 @@ export default function AboutPage() {
 
           <div className="flex flex-row gap-6 mt-4">
             <div className="flex flex-col">
-              <h3 className="text-sm uppercase">Campuses</h3>
-              <p className="text-2xl font-bold">2</p>
-            </div>
-            <div className="flex flex-col">
               <h3 className="text-sm uppercase">Members</h3>
               <p className="text-2xl font-bold">48</p>
             </div>
             <div className="flex flex-col">
               <h3 className="text-sm uppercase">Teams</h3>
               <p className="text-2xl font-bold">6</p>
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-sm uppercase">Campuses</h3>
+              <p className="text-2xl font-bold">2</p>
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
             <TeamMember
               imageSrc={markNdesign}
               name="Olivia Watson"
-              title="Marketing and Design"
+              title="Marketing"
             />
             <TeamMember
               imageSrc={speakerdev}
