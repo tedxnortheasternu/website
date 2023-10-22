@@ -17,14 +17,15 @@ import TeamMember from './TeamMember'
 
 export default function AboutPage() {
   return (
-    <main>
+    <>
       {/* Top Section */}
-      <section className="grid items-center max-w-screen-xl gap-6 mx-auto md:grid-cols-2">
-        <div className="w-full">
-          {/* Image */}
-          <Image src={aboutPage} alt="speaker" className="object-left w-full" />
-        </div>
-        <div>
+      <section className="grid items-center max-w-screen-xl gap-5 mx-auto lg:gap-7 md:grid-cols-2 lg:px-4">
+        <Image
+          src={aboutPage}
+          alt="speaker"
+          className="object-cover w-full h-full"
+        />
+        <div className="px-4 md:pl-0 lg:px-0">
           {/* Text Section */}
           <h1 className="mb-2 text-3xl font-bold text-balance">
             Innovative ideas. Groundbreaking research. Breakthrough
@@ -39,7 +40,7 @@ export default function AboutPage() {
 
           <Link
             href="https://mailchi.mp/39a289393abb/tedxnu-mailing-list"
-            className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-sm font-bold text-white transition-colors bg-red-700 rounded-full hover:bg-red-800"
+            className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-sm font-bold text-white transition-colors bg-red-600 rounded-full hover:bg-red-700"
           >
             Join Our Mailing List <ArrowRightIcon size={16} />
           </Link>
@@ -47,7 +48,7 @@ export default function AboutPage() {
       </section>
 
       {/* Middle Section */}
-      <div className="grid max-w-screen-xl gap-6 py-4 mx-auto md:px-6 md:py-20 md:grid-cols-2">
+      <div className="grid max-w-screen-xl gap-5 px-4 pt-24 pb-6 mx-auto lg:gap-7 md:py-20 md:grid-cols-2 lg:px-6">
         <div>
           {/* Title */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
@@ -66,7 +67,7 @@ export default function AboutPage() {
             research in their local areas that spark conversations in their
             communities.
           </p>
-          <p className="py-5">
+          <p className="mt-5">
             TEDx events include live speakers and recorded TED Talks, and are
             organized independently under a free license granted by TED. These
             events are not controlled by TED, but event organizers agree to
@@ -78,11 +79,11 @@ export default function AboutPage() {
       </div>
 
       {/* Bottom Section */}
-      <div className="grid max-w-screen-xl gap-6 py-4 mx-auto md:grid-cols-2 md:px-6 md:py-20">
+      <div className="grid max-w-screen-xl gap-5 px-4 py-6 mx-auto lg:gap-7 md:py-20 md:grid-cols-2 lg:px-6">
         <div>
           {/* Text Section */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
-            Our Executive Leadership Team
+            Multi-disciplinary leaders, from coast to coast
           </h2>
 
           <div className="flex flex-row gap-6 mt-4">
@@ -136,14 +137,14 @@ export default function AboutPage() {
               title="Community Engagement"
             />
             <TeamMember
+              imageSrc={fundraising}
+              name="Sophie Lin"
+              title="Fundraising"
+            />
+            <TeamMember
               imageSrc={marketing}
               name="Olivia Watson"
               title="Marketing"
-            />
-            <TeamMember
-              imageSrc={speakerdev}
-              name="Ellee Tomaru"
-              title="Speaker Development"
             />
             <TeamMember
               imageSrc={operations}
@@ -151,13 +152,13 @@ export default function AboutPage() {
               title="Operations"
             />
             <TeamMember
-              imageSrc={fundraising}
-              name="Sophie Lin"
-              title="Fundraising"
+              imageSrc={speakerdev}
+              name="Ellee Tomaru"
+              title="Speaker Development"
             />
           </div>
         </div>
       </div>
-    </main>
+    </>
   )
 }

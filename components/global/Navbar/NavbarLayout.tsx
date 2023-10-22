@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from 'lib/utils'
-import { ArrowRightIcon } from 'lucide-react'
+import { ArrowRightIcon, MenuIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -14,7 +14,7 @@ export default function NavbarLayout() {
 
   return (
     <>
-      <header className="z-50 flex flex-wrap w-full py-4 text-sm bg-white lg:justify-start lg:flex-nowrap">
+      <header className="z-50 w-full py-4 text-sm bg-white">
         <nav className="w-full max-w-screen-xl px-4 mx-auto lg:flex lg:items-center lg:justify-between lg:gap-4">
           <div className="flex items-center justify-between lg:gap-4">
             <Link href="/">
@@ -33,27 +33,14 @@ export default function NavbarLayout() {
                 aria-label="Toggle navigation"
                 onClick={() => setOpen(!open)}
               >
-                <svg
+                <MenuIcon
+                  size={16}
                   className={cn('w-4 h-4', open ? 'hidden' : 'block')}
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-                  />
-                </svg>
-                <svg
+                />
+                <XIcon
+                  size={16}
                   className={cn('w-4 h-4', open ? 'block' : 'hidden')}
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                </svg>
+                />
               </button>
             </div>
           </div>
@@ -80,7 +67,7 @@ export default function NavbarLayout() {
               <NavLink href="/positions">{"We're Recruiting!"}</NavLink>
               <Link
                 href="https://airtable.com/appD8TuOcD3E8n7BG/shr8Dc6qKWXq7Ns5T"
-                className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors bg-red-700 rounded-full w-max hover:bg-red-800"
+                className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"
               >
                 Nominate a Speaker <ArrowRightIcon size={16} />
               </Link>

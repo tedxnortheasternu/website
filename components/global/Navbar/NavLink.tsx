@@ -25,8 +25,8 @@ export default function NavLink({
       className={cn(
         'font-medium hover:underline whitespace-nowrap',
         active
-          ? 'text-red-700 hover:text-red-800'
-          : 'text-gray-700 hover:text-gray-800',
+          ? 'text-red-600 hover:text-red-700'
+          : 'text-gray-600 hover:text-gray-700',
       )}
       href={href}
     >
