@@ -27,7 +27,7 @@ export default defineType({
     }),
     defineField({
       name: 'description',
-      description: 'description of the team',
+      description: 'Description of the team',
       title: 'Description',
       type: 'string',
       validation: (rule) => rule.max(155).required(),

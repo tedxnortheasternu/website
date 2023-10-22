@@ -14,10 +14,10 @@ import Iframe, {
 } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
 import campus from 'schemas/documents/campus'
-import members from 'schemas/documents/members'
+import members from 'schemas/documents/member'
 import page from 'schemas/documents/page'
 import project from 'schemas/documents/project'
-import teams from 'schemas/documents/teams'
+import teams from 'schemas/documents/team'
 import duration from 'schemas/objects/duration'
 import milestone from 'schemas/objects/milestone'
 import timeline from 'schemas/objects/timeline'
@@ -32,13 +32,11 @@ export const PREVIEWABLE_DOCUMENT_TYPES = [
   home.name,
   page.name,
   project.name,
-  teams.name,
 ] satisfies string[]
 
 export const PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS = [
   page.name,
   project.name,
-  teams.name,
 ] satisfies typeof PREVIEWABLE_DOCUMENT_TYPES
 
 // Used to generate URLs for drafts and live previews
