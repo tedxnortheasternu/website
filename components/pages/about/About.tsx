@@ -10,7 +10,7 @@ import commengang from '../../images/CommEnga.jpeg'
 import facAdvisorBos from '../../images/FacAdvisorBos.jpg'
 import facAdvisorOak from '../../images/FacAdvisorOak.jpg'
 import fundraising from '../../images/Fundraising.jpg'
-import markNdesign from '../../images/marketingAndDesign.jpeg'
+import marketing from '../../images/Marketing.jpeg'
 import operations from '../../images/Operations.jpg'
 import speakerdev from '../../images/Speakerdev.png'
 import TeamMember from './TeamMember'
@@ -136,7 +136,7 @@ export default function AboutPage() {
               title="Community Engagement"
             />
             <TeamMember
-              imageSrc={markNdesign}
+              imageSrc={marketing}
               name="Olivia Watson"
               title="Marketing"
             />
