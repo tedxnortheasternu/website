@@ -32,7 +32,6 @@ export default defineType({
       name: 'image',
       title: 'Image',
       type: 'image',
-
       validation: (rule) => rule.required(),
     }),
     defineField({
