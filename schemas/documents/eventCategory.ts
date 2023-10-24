@@ -1,5 +1,3 @@
-// schemas/eventCategory.ts
-
 import { defineType } from 'sanity';
 
 export default defineType({

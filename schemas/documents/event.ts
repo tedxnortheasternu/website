@@ -1,21 +1,32 @@
-import { DocumentIcon, ImageIcon } from '@sanity/icons'
-import { defineArrayMember, defineField, defineType } from 'sanity'
+import { CalendarDays } from 'lucide-react';
+import { defineField, defineType } from 'sanity'
 
 export default defineType({
   name: 'event',
   title: 'Event',
   type: 'document',
-  icon: DocumentIcon,
+  icon: CalendarDays,
   fields: [
     defineField({
       type:'string',
       name: 'name',
       title: 'Name',
-      description: 'e.g., Speak, See, Succeed: Script + Visuals',
+      description: 'eg: Speak, See, Succeed: Script + Visuals',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      type: 'string',
+      type: 'slug',
+      name: 'slug',
+      title: 'Slug',
+      description: 'Generated ID for the event',
+      validation: (rule) => rule.required(),
+      options: {
+        source: new Date().getFullYear()+'/name', // Specify that the slug is generated from the 'name' field
+        maxLength: 200, // Adjust the max length as needed
+      },
+    }),
+    defineField({
+      type: 'text',
       name: 'briefDescription',
       title: 'Brief Description',
       description: 'A short description of the event',
@@ -25,17 +36,6 @@ export default defineType({
       name: 'coverGraphic',
       title: 'Cover Graphic',
       description: 'Upload a cover image for the event',
-    }),
-    defineField({
-      type: 'slug',
-      name: 'slug',
-      title: 'Slug',
-      description: 'Generated ID for the event',
-      validation: (rule) => rule.required(),
-      options: {
-        source: 'name', // Specify that the slug is generated from the 'name' field
-        maxLength: 200, // Adjust the max length as needed
-      },
     }),
     defineField({
       type: 'reference',
