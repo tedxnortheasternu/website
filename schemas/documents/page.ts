@@ -23,11 +23,11 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      type: 'array',
       name: 'overview',
+      title: 'Overview',
       description:
         'Used both for the <meta> description tag for SEO, and the personal website subheader.',
-      title: 'Overview',
-      type: 'array',
       of: [
         // Paragraphs
         defineArrayMember({
@@ -64,13 +64,13 @@ export default defineType({
           marks: {
             annotations: [
               {
-                name: 'link',
                 type: 'object',
+                name: 'link',
                 title: 'Link',
                 fields: [
                   {
-                    name: 'href',
                     type: 'url',
+                    name: 'href',
                     title: 'Url',
                   },
                 ],
@@ -81,14 +81,14 @@ export default defineType({
         }),
         // Custom blocks
         defineArrayMember({
-          name: 'timeline',
           type: 'timeline',
+          name: 'timeline',
         }),
         defineField({
           type: 'image',
-          icon: ImageIcon,
           name: 'image',
           title: 'Image',
+          icon: ImageIcon,
           options: {
             hotspot: true,
           },
@@ -100,13 +100,13 @@ export default defineType({
           },
           fields: [
             defineField({
-              title: 'Caption',
               name: 'caption',
               type: 'string',
+              title: 'Caption',
             }),
             defineField({
-              name: 'alt',
               type: 'string',
+              name: 'alt',
               title: 'Alt text',
               description:
                 'Alternative text for screenreaders. Falls back on caption if not set',
