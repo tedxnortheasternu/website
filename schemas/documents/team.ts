@@ -15,8 +15,8 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'slug',
       type: 'slug',
+      name: 'slug',
       title: 'Slug',
       description: 'Generated from name',
       validation: (rule) => rule.required(),
@@ -26,10 +26,10 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'description',
-      description: 'Description of the team',
-      title: 'Description',
       type: 'string',
+      name: 'description',
+      title: 'Description',
+      description: 'Description of the team',
       validation: (rule) => rule.max(155).required(),
     }),
   ],

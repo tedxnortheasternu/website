@@ -16,22 +16,22 @@ export default defineType({
     }),
     defineField({
       type: 'reference',
-      to: [{ type: 'teams' }],
       name: 'team',
       title: 'Team',
+      to: [{ type: 'teams' }],
       validation: (rule) => rule.required(),
     }),
     defineField({
+      type: 'reference',
       name: 'campus',
       title: 'Campus',
-      type: 'reference',
       to: [{ type: 'campus' }],
       validation: (rule) => rule.required(),
     }),
     defineField({
+      type: 'image',
       name: 'image',
       title: 'Image',
-      type: 'image',
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -41,15 +41,15 @@ export default defineType({
       description: 'eg: Computer Science',
     }),
     defineField({
+      type: 'string',
       name: 'hometown',
       title: 'Hometown',
       description: 'City and State or City and Country, eg: Dallas, TX',
-      type: 'string',
     }),
     defineField({
+      type: 'string',
       name: 'goToIceCream',
       title: 'Go-to Ice Cream Flavor',
-      type: 'string',
       description: 'eg: Chocolate Chunk',
     }),
   ],
