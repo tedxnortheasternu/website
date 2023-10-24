@@ -1,6 +1,8 @@
 import { CalendarDays } from 'lucide-react';
 import { defineField, defineType } from 'sanity'
 
+const year = new Date().getFullYear().toString() + "/";
+
 export default defineType({
   name: 'event',
   title: 'Event',
@@ -21,7 +23,13 @@ export default defineType({
       description: 'Generated ID for the event',
       validation: (rule) => rule.required(),
       options: {
-        source: new Date().getFullYear()+'/name', // Specify that the slug is generated from the 'name' field
+        source: 'name',
+        slugify: source => source
+                                .toLowerCase()
+                                .replace(/\s+/g, '-')
+                                .replace (/^/,year)
+                                .slice(0, 200), // Specify that the slug is generated from the 'name' field
+        //slugify: source => year.toString()+source,
         maxLength: 200, // Adjust the max length as needed
       },
     }),
