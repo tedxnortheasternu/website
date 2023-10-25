@@ -2,24 +2,25 @@ import { DocumentIcon, ImageIcon } from '@sanity/icons'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export default defineType({
+  type: 'document',
   name: 'project',
   title: 'Project',
-  type: 'document',
   icon: DocumentIcon,
   // Uncomment below to have edits publish automatically as you type
   // liveEdit: true,
   fields: [
     defineField({
-      name: 'title',
-      description: 'This field is the title of your project.',
-      title: 'Title',
       type: 'string',
+      name: 'title',
+      title: 'Title',
+      description: 'This field is the title of your project.',
       validation: (rule) => rule.required(),
     }),
     defineField({
+      type: 'slug',
       name: 'slug',
       title: 'Slug',
-      type: 'slug',
+      description: 'Unique slug to be inputted',
       options: {
         source: 'title',
         maxLength: 96,
@@ -28,11 +29,11 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      type: 'array',
       name: 'overview',
+      title: 'Overview',
       description:
         'Used both for the <meta> description tag for SEO, and project subheader.',
-      title: 'Overview',
-      type: 'array',
       of: [
         // Paragraphs
         defineArrayMember({
@@ -57,57 +58,57 @@ export default defineType({
       validation: (rule) => rule.max(155).required(),
     }),
     defineField({
+      type: 'image',
       name: 'coverImage',
       title: 'Cover Image',
       description:
         'This image will be used as the cover image for the project. If you choose to add it to the show case projects, this is the image displayed in the list within the homepage.',
-      type: 'image',
       options: {
         hotspot: true,
       },
       validation: (rule) => rule.required(),
     }),
     defineField({
+      type: 'duration',
       name: 'duration',
       title: 'Duration',
-      type: 'duration',
     }),
     defineField({
+      type: 'string',
       name: 'client',
       title: 'Client',
-      type: 'string',
     }),
     defineField({
+      type: 'url',
       name: 'site',
       title: 'Site',
-      type: 'url',
     }),
     defineField({
+      type: 'array',
       name: 'tags',
       title: 'Tags',
-      type: 'array',
       of: [{ type: 'string' }],
       options: {
         layout: 'tags',
       },
     }),
     defineField({
+      type: 'array',
       name: 'description',
       title: 'Project Description',
-      type: 'array',
       of: [
         defineArrayMember({
           type: 'block',
           marks: {
             annotations: [
               {
-                name: 'link',
                 type: 'object',
+                name: 'link',
                 title: 'Link',
                 fields: [
                   {
-                    name: 'href',
                     type: 'url',
+                    name: 'href',
                     title: 'Url',
                   },
                 ],
@@ -118,14 +119,14 @@ export default defineType({
         }),
         // Custom blocks
         defineArrayMember({
-          name: 'timeline',
           type: 'timeline',
+          name: 'timeline',
         }),
         defineField({
           type: 'image',
-          icon: ImageIcon,
           name: 'image',
           title: 'Image',
+          icon: ImageIcon,
           options: {
             hotspot: true,
           },
@@ -137,13 +138,13 @@ export default defineType({
           },
           fields: [
             defineField({
-              title: 'Caption',
-              name: 'caption',
               type: 'string',
+              name: 'caption',
+              title: 'Caption',
             }),
             defineField({
-              name: 'alt',
               type: 'string',
+              name: 'alt',
               title: 'Alt text',
               description:
                 'Alternative text for screenreaders. Falls back on caption if not set',

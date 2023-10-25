@@ -16,8 +16,10 @@ import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
 import campus from 'schemas/documents/campus'
 import event from 'schemas/documents/event'
 import eventCategory from 'schemas/documents/eventCategory'
+import member from 'schemas/documents/member'
 import page from 'schemas/documents/page'
 import project from 'schemas/documents/project'
+import team from 'schemas/documents/team'
 import duration from 'schemas/objects/duration'
 import milestone from 'schemas/objects/milestone'
 import timeline from 'schemas/objects/timeline'
@@ -67,9 +69,14 @@ export default defineConfig({
       duration,
       page,
       project,
+      event_schema
       event,
       campus,
       eventCategory,
+      member,
+      team,
+      campus,
+
       // Objects
       milestone,
       timeline,
