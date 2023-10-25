@@ -28,6 +28,8 @@ export default defineType({
                                 .toLowerCase()
                                 .replace(/\s+/g, '-')
                                 .replace (/^/,year)
+                                .replaceAll(',', '')
+                                .replaceAll(':','')
                                 .slice(0, 200), // Specify that the slug is generated from the 'name' field
         //slugify: source => year.toString()+source,
         maxLength: 200, // Adjust the max length as needed
