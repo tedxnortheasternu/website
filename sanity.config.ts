@@ -69,7 +69,6 @@ export default defineConfig({
       duration,
       page,
       project,
-      event_schema
       event,
       campus,
       eventCategory,
