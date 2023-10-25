@@ -13,6 +13,7 @@ export default defineType({
       title: 'Name',
       description: 'eg: Boston',
       validation: (rule) => rule.required(),
-    })
-  ]
+    }),
+  ],
 })
+
