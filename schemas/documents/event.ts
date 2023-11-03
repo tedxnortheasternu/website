@@ -56,7 +56,7 @@ export default defineType({
     }),
     defineField({
       type: 'reference',
-      name: 'campus',
+      name: 'campuses',
       title: 'Campus',
       to: [{ type: 'campus' }], // Reference the 'Campus' schema
       description: 'Event Campus (create new campuses in Sanity)',

@@ -74,7 +74,6 @@ export default defineConfig({
       eventCategory,
       member,
       team,
-      campus,
 
       // Objects
       milestone,
