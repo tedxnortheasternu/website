@@ -23,8 +23,8 @@ export default defineType({
     }),
     defineField({
       type: 'reference',
-      name: 'campus',
-      title: 'Campus',
+      name: 'campuses',
+      title: 'Campuses',
       to: [{ type: 'campus' }],
       validation: (rule) => rule.required(),
     }),
