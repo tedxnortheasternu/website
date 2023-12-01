@@ -10,9 +10,11 @@ import {
   projectBySlugQuery,
   projectPaths,
   settingsQuery,
+  upcomingEventsQuery,
 } from 'lib/sanity.queries'
 import { draftMode } from 'next/headers'
 import type {
+  EventsPagePayload,
   HomePagePayload,
   PagePayload,
   ProjectPayload,
@@ -92,10 +94,19 @@ export function getHomePage() {
   })
 }
 
+
+
 export function getHomePageTitle() {
   return sanityFetch<string | null>({
     query: homePageTitleQuery,
     tags: ['home'],
+  })
+}
+
+export function getUpcomingEvents() {
+  return sanityFetch<EventsPagePayload | null>({
+    query: upcomingEventsQuery,
+    tags: ['events'],
   })
 }
 

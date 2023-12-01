@@ -36,6 +36,13 @@ export interface HomePagePayload {
   title?: string
 }
 
+export interface EventsPagePayload {
+  footer?: PortableTextBlock[]
+  overview?: PortableTextBlock[]
+  upcomingEvents?: UpcomingEvents[]
+  title?: string
+}
+
 export interface PagePayload {
   body?: PortableTextBlock[]
   name?: string
@@ -63,4 +70,11 @@ export interface SettingsPayload {
   footer?: PortableTextBlock[]
   menuItems?: MenuItem[]
   ogImage?: Image
+}
+
+export interface UpcomingEvents {
+  date?: string
+  description?: string
+  location?: string
+  title?: string
 }

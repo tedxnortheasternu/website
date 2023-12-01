@@ -16,6 +16,19 @@ export const homePageQuery = groq`
   }
 `
 
+export const upcomingEventsQuery = groq`
+  *[_type == "events"][0]{
+    _id,
+    overview,
+    upcomingEvents[]->{
+      description,
+      duration,
+      title,
+    },
+    title,
+  }
+`
+
 export const homePageTitleQuery = groq`
   *[_type == "home"][0].title
 `
