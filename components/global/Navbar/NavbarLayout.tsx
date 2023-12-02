@@ -55,6 +55,11 @@ export default function NavbarLayout() {
               <NavLink href="/about">About</NavLink>
               <NavLink href="/events">Events</NavLink>
               <NavLink href="/contact">Contact</NavLink>
+              {process.env.NODE_ENV === 'development' ? (
+                <NavLink target="_blank" href="/studio">
+                  [DEV] Studio
+                </NavLink>
+              ) : null}
             </div>
 
             <hr

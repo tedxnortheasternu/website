@@ -4,14 +4,16 @@ import { cn } from 'lib/utils'
 import { Url } from 'next/dist/shared/lib/router/router'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ReactNode } from 'react'
+import { HTMLAttributeAnchorTarget, ReactNode } from 'react'
 
 export default function NavLink({
   href,
+  target,
   active,
   children,
 }: {
   href: Url
+  target?: HTMLAttributeAnchorTarget
   active?: boolean
   children: ReactNode
 }) {
@@ -22,6 +24,7 @@ export default function NavLink({
 
   return (
     <Link
+      target={target}
       className={cn(
         'font-medium hover:underline whitespace-nowrap',
         active
