@@ -9,7 +9,6 @@ import {
   homePageTitleQuery,
   pagePaths,
   pagesBySlugQuery,
-  projectPaths,
   settingsQuery,
   upcomingEventsQuery,
 } from 'lib/sanity.queries'
@@ -119,13 +118,6 @@ export function getEventsPaths() {
 export function getPagesPaths() {
   return client.fetch<string[]>(
     pagePaths,
-    {},
-    { token, perspective: 'published' },
-  )
-}
-export function getProjectsPaths() {
-  return client.fetch<string[]>(
-    projectPaths,
     {},
     { token, perspective: 'published' },
   )
