@@ -4,11 +4,11 @@ import { UpcomingEventPayload } from 'types'
 
 import { EventsListItem } from './EventsListItem'
 
-export function EventsPage({
-  data = [],
-}: {
+export interface EventsPageProps {
   data: UpcomingEventPayload[] | null
-}) {
+}
+
+export function EventsPage({ data = [] }: EventsPageProps) {
   return (
     <div className="space-y-20">
       {/* Header */}

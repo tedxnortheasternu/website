@@ -29,7 +29,7 @@ export default async function IndexRoute() {
       <div className="text-center">
         You don&rsquo;t have a homepage document yet,{' '}
         <Link
-          href="/studio/desk/home%7C%2Cview%3Dpreview"
+          href="/studio/structure/home%7C%2Cview%3Dpreview"
           className="underline"
         >
           create one now

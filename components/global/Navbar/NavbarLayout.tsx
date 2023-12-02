@@ -53,7 +53,7 @@ export default function NavbarLayout() {
           >
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-5">
               <NavLink href="/about">About</NavLink>
-              <NavLink href="/past-events">Past Events</NavLink>
+              <NavLink href="/events">Events</NavLink>
               <NavLink href="/contact">Contact</NavLink>
             </div>
 
