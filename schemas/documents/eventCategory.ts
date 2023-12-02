@@ -1,9 +1,11 @@
-import { defineType } from 'sanity';
+import { Tag } from 'lucide-react'
+import { defineType } from 'sanity'
 
 export default defineType({
   name: 'eventCategory',
   title: 'Event Category',
   type: 'document',
+  icon: Tag,
   fields: [
     {
       name: 'name',
@@ -20,4 +22,3 @@ export default defineType({
     },
   ],
 })
-

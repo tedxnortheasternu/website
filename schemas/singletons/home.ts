@@ -1,4 +1,4 @@
-import { HomeIcon } from '@sanity/icons'
+import { HomeIcon } from 'lucide-react'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export default defineType({
@@ -57,19 +57,6 @@ export default defineType({
         }),
       ],
       validation: (rule) => rule.max(155).required(),
-    }),
-    defineField({
-      name: 'showcaseProjects',
-      title: 'Showcase projects',
-      description:
-        'These are the projects that will appear first on your landing page.',
-      type: 'array',
-      of: [
-        defineArrayMember({
-          type: 'reference',
-          to: [{ type: 'project' }],
-        }),
-      ],
     }),
   ],
   preview: {
