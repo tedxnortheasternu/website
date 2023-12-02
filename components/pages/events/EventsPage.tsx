@@ -20,12 +20,10 @@ export function EventsPage({ data = [] }: EventsPageProps) {
 
       {/* Events List */}
       {data && data.length > 0 ? (
-        <div className="mx-auto max-w-[100rem] rounded-md border">
+        <div className="max-w-3xl mx-auto rounded-md">
           {data.map((event, key) => {
             const href = resolveHref('event', event.slug)
-            if (!href) {
-              return null
-            }
+            if (!href) return null
             return (
               <Link key={key} href={href}>
                 <EventsListItem event={event} odd={key % 2} />
@@ -35,7 +33,7 @@ export function EventsPage({ data = [] }: EventsPageProps) {
         </div>
       ) : (
         // TODO: improve styling
-        <p>No events.</p>
+        <div className="text-center">No events.</div>
       )}
     </div>
   )

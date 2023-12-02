@@ -29,7 +29,7 @@ export default function NavLink({
         'font-medium hover:underline whitespace-nowrap',
         active
           ? 'text-red-600 hover:text-red-700'
-          : 'text-gray-600 hover:text-gray-700',
+          : 'text-slate-600 hover:text-slate-700',
       )}
       href={href}
     >

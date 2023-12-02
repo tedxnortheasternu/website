@@ -44,6 +44,9 @@ dependencies:
   date-fns:
     specifier: 3.0.0-alpha.2
     version: 3.0.0-alpha.2
+  dayjs:
+    specifier: ^1.11.10
+    version: 1.11.10
   intl-segmenter-polyfill:
     specifier: 0.4.4
     version: 0.4.4
@@ -2749,6 +2752,10 @@ packages:
 
   /date-now@1.0.1:
     resolution: {integrity: sha512-yiizelQCqYLUEVT4zqYihOW6Ird7Qyc6fD3Pv5xGxk4+Jz0rsB1dMN2KyNV6jgOHYh5K+sPGCSOknQN4Upa3pg==}
+    dev: false
+
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: false
 
   /debounce@1.0.0:

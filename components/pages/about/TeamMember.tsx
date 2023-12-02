@@ -18,7 +18,7 @@ export default function TeamMember({
         className="object-cover w-40 h-40 mb-3 rounded"
       />
       <h3 className="mb-1 text-lg font-semibold leading-tight">{name}</h3>
-      <p className="text-sm leading-snug text-gray-800">{title}</p>
+      <p className="text-sm leading-snug text-slate-800">{title}</p>
     </div>
   )
 }

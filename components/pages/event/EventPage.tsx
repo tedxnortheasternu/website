@@ -42,7 +42,7 @@ export function EventPage({ data }: EventPageProps) {
         </div>
 
         {/* Description */}
-        <p className="max-w-3xl font-serif text-xl text-gray-600">
+        <p className="max-w-3xl font-serif text-xl text-slate-600">
           {briefDescription}
         </p>
       </div>

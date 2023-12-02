@@ -1,5 +1,5 @@
-import { CustomPortableText } from 'components/shared/CustomPortableText'
-import ImageBox from 'components/shared/ImageBox'
+import dayjs from 'dayjs'
+import { CalendarIcon, ClockIcon, MapPinIcon } from 'lucide-react'
 import type { UpcomingEventPayload } from 'types'
 
 interface EventProps {
@@ -12,37 +12,51 @@ export function EventsListItem(props: EventProps) {
 
   return (
     <div
-      className={`flex flex-col gap-x-5 p-2 transition hover:bg-gray-50/50 xl:flex-row ${
-        odd && 'border-b border-t xl:flex-row-reverse'
+      className={`flex flex-col p-4 transition hover:bg-slate-50 xl:flex-row ${
+        odd && 'border-t border-slate-100 xl:flex-row-reverse'
       }`}
     >
-      <div className="w-full xl:w-9/12"></div>
-      <div className="flex xl:w-1/4">
-        <TextBox event={event} />
-      </div>
-    </div>
-  )
-}
-
-function TextBox({ event }: { event: UpcomingEventPayload }) {
-  return (
-    <div className="relative flex flex-col justify-between w-full p-3 mt-2 xl:mt-0">
-      <div>
-        {/* Title */}
-        <div className="mb-2 text-xl font-extrabold tracking-tight md:text-2xl">
-          {event.name}
-        </div>
-        {/* Overview  */}
-        {event.briefDescription ? (
-          <div className="font-serif text-gray-500">
-            {event.briefDescription}
-            {/* <CustomPortableText value={event.briefDescription} /> */}
+      <div className="grid justify-between w-full gap-8 p-3 md:grid-cols-2">
+        <div className="">
+          {/* Tags */}
+          <div className="mb-2 text-xs font-bold uppercase">
+            Event &middot;{' '}
+            {event.category ? (
+              <span className="bg-red-600 rounded-full px-2 py-0.5 text-white">
+                {event.category.name}
+              </span>
+            ) : null}
           </div>
-        ) : null}
-      </div>
-      {/* Tags */}
-      <div className="flex flex-row mt-4 gap-x-2">
-        {event.category ? event.category.name : null}
+
+          {/* Title */}
+          <h3 className="mb-4 text-2xl font-extrabold tracking-tight md:text-3xl">
+            {event.name}
+          </h3>
+
+          {/* Date/Time/Location */}
+          <div className="grid grid-cols-2 gap-2">
+            <div className="flex flex-col gap-2 px-4 pt-4 pb-3 rounded-md bg-slate-100">
+              <CalendarIcon />
+              {dayjs(event.startDateTime).format('MMM. D, YYYY')}
+            </div>
+            <div className="flex flex-col gap-2 px-4 pt-4 pb-3 rounded-md bg-slate-100">
+              <ClockIcon />
+              {dayjs(event.startDateTime).format('h:mma')} -{' '}
+              {dayjs(event.endDateTime).format('h:mma')}
+            </div>
+            <div className="flex flex-col col-span-2 gap-2 px-4 pt-4 pb-3 rounded-md bg-slate-100">
+              <MapPinIcon />
+              {event.location}
+            </div>
+          </div>
+        </div>
+
+        <div className="">
+          {/* Overview  */}
+          {event.briefDescription ? (
+            <p className="">{event.briefDescription}</p>
+          ) : null}
+        </div>
       </div>
     </div>
   )

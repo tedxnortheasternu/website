@@ -74,7 +74,7 @@ export interface UpcomingEventPayload {
   coverGraphic?: Image
   category?: EventCategory
   campuses: Campus[]
-  startDateTime: Date
-  endDateTime: Date
+  startDateTime: string
+  endDateTime: string
   location: string
 }

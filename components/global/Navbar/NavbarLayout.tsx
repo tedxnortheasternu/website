@@ -28,7 +28,7 @@ export default function NavbarLayout() {
             <div className="lg:hidden">
               <button
                 type="button"
-                className="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium text-gray-700 align-middle transition-all bg-white border rounded-lg shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600"
+                className="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium text-slate-700 align-middle transition-all bg-white border rounded-lg shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600"
                 aria-controls="navbar-alignment"
                 aria-label="Toggle navigation"
                 onClick={() => setOpen(!open)}
@@ -64,7 +64,7 @@ export default function NavbarLayout() {
 
             <hr
               className={cn(
-                'h-px my-4 bg-gray-200 border-0 dark:bg-gray-700 lg:hidden',
+                'h-px my-4 bg-slate-200 border-0 dark:bg-slate-700 lg:hidden',
               )}
             />
 

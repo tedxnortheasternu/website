@@ -44,7 +44,7 @@ export function CustomPortableText({
               classesWrapper="relative aspect-[16/9]"
             />
             {value?.caption && (
-              <div className="font-sans text-sm text-gray-600">
+              <div className="font-sans text-sm text-slate-600">
                 {value.caption}
               </div>
             )}

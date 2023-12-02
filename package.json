@@ -27,6 +27,7 @@
     "clsx": "^2.0.0",
     "create-next-app": "^14.0.3",
     "date-fns": "3.0.0-alpha.2",
+    "dayjs": "^1.11.10",
     "intl-segmenter-polyfill": "0.4.4",
     "lucide-react": "^0.294.0",
     "next": "^14.0.3",
