@@ -1,4 +1,4 @@
-# A Next.js Personal Website with a Native Authoring Experience<!-- omit in toc -->
+# TEDxNortheasternU Website<!-- omit in toc -->
 
 This starter is a statically generated personal website that uses [Next.js][nextjs] for the frontend and [Sanity][sanity-homepage] to handle its content. It comes with a native Sanity Studio that offers features like real-time collaboration, instant side-by-side content previews, and intuitive editing.
 
@@ -7,10 +7,6 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
 > **Note**
 >
 > This repo uses the `app-router`.
->
-> For a `pages-router` alternative, use [template-nextjs-personal-website][personal-website-pages].
-
-[![Deploy with Vercel](https://vercel.com/button)][vercel-deploy]
 
 ## Features
 
@@ -63,8 +59,6 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
 ### Step 1. Set up the environment
 
 Use the Deploy Button below. It will let you deploy the starter using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-sanity-example) as well as connect it to your Sanity Content Lake using [the Sanity Vercel Integration][integration].
-
-[![Deploy with Vercel](https://vercel.com/button)][vercel-deploy]
 
 ### Step 2. Set up the project locally
 
