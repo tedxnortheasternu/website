@@ -7,7 +7,6 @@ export default defineType({
   title: 'Sponsor',
   icon: UserIcon,
   fields: [
-
     defineField({
       type: 'string',
       name: 'name',
@@ -20,7 +19,6 @@ export default defineType({
       type: 'image',
       name: 'logo',
       title: 'Logo',
-      validation: (rule) => rule.required(),
     }),
 
     defineField({
