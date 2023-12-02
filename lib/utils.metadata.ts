@@ -27,7 +27,6 @@ export function defineMetadata({
 
   return {
     title: metaTitle || demo.title,
-    themeColor: '#000',
     description,
     openGraph: imageUrl
       ? {
@@ -35,6 +34,10 @@ export function defineMetadata({
         }
       : undefined,
   } satisfies Metadata
+}
+
+export const viewport = {
+  themeColor: '#000',
 }
 
 /*
