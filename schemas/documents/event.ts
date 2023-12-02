@@ -28,11 +28,13 @@ export default defineType({
           source
             .toLowerCase()
             .replace(/\s+/g, '-')
+            .replace(/\+/g, '')
+            .replace(/\-+/g, '-')
             .replace(/^/, year)
             .replaceAll(',', '')
             .replaceAll(':', '')
-            .slice(0, 200), // Specify that the slug is generated from the 'name' field
-        maxLength: 200, // Adjust the max length as needed
+            .slice(0, 200),
+        maxLength: 200,
       },
     }),
     defineField({

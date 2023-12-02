@@ -77,10 +77,10 @@ export interface EventCategory {
   name: string
 }
 
-export interface UpcomingEvent {
+export interface UpcomingEventPayload {
   name: string
   slug: string
-  briefDescription?: PortableTextBlock[]
+  briefDescription?: string
   coverGraphic?: Image
   category?: EventCategory
   campuses: Campus[]

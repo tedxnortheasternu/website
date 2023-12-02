@@ -1,13 +1,13 @@
 import { resolveHref } from 'lib/sanity.links'
 import Link from 'next/link'
-import { UpcomingEvent } from 'types'
+import { UpcomingEventPayload } from 'types'
 
 import { EventsListItem } from './EventsListItem'
 
-export function EventPage({
-  upcomingEvents = [],
+export function EventsPage({
+  data = [],
 }: {
-  upcomingEvents: UpcomingEvent[]
+  data: UpcomingEventPayload[] | null
 }) {
   return (
     <div className="space-y-20">
@@ -19,9 +19,9 @@ export function EventPage({
       </div>
 
       {/* Events List */}
-      {upcomingEvents && upcomingEvents.length > 0 ? (
+      {data && data.length > 0 ? (
         <div className="mx-auto max-w-[100rem] rounded-md border">
-          {upcomingEvents.map((event, key) => {
+          {data.map((event, key) => {
             const href = resolveHref('event', event.slug)
             if (!href) {
               return null
@@ -41,4 +41,4 @@ export function EventPage({
   )
 }
 
-export default EventPage
+export default EventsPage

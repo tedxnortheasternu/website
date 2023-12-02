@@ -31,6 +31,25 @@ export const upcomingEventsQuery = groq`
   }
 `
 
+export const eventPaths = groq`
+  *[_type == "event" && slug.current != null].slug.current
+`
+
+export const eventBySlugQuery = groq`
+  *[_type == "event" && slug.current == $slug][0] {
+    name,
+    "slug": slug.current,
+    briefDescription,
+    coverGraphic,
+    startDateTime,
+    location,
+    category-> {
+      _id,
+      name,
+    }
+  }
+`
+
 export const homePageTitleQuery = groq`
   *[_type == "home"][0].title
 `

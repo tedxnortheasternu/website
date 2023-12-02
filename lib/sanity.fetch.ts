@@ -3,6 +3,8 @@ import 'server-only'
 import type { QueryParams } from '@sanity/client'
 import { client } from 'lib/sanity.client'
 import {
+  eventBySlugQuery,
+  eventPaths,
   homePageQuery,
   homePageTitleQuery,
   pagePaths,
@@ -14,11 +16,11 @@ import {
 } from 'lib/sanity.queries'
 import { draftMode } from 'next/headers'
 import type {
-  EventsPagePayload,
   HomePagePayload,
   PagePayload,
   ProjectPayload,
   SettingsPayload,
+  UpcomingEventPayload,
 } from 'types'
 
 import { revalidateSecret } from './sanity.api'
@@ -67,7 +69,7 @@ export async function sanityFetch<QueryResponse>({
 export function getSettings() {
   return sanityFetch<SettingsPayload>({
     query: settingsQuery,
-    tags: ['settings', 'home', 'page', 'project'],
+    tags: ['settings', 'home', 'page', 'project', 'event'],
   })
 }
 
@@ -94,8 +96,6 @@ export function getHomePage() {
   })
 }
 
-
-
 export function getHomePageTitle() {
   return sanityFetch<string | null>({
     query: homePageTitleQuery,
@@ -104,10 +104,26 @@ export function getHomePageTitle() {
 }
 
 export function getUpcomingEvents() {
-  return sanityFetch<EventsPagePayload | null>({
+  return sanityFetch<UpcomingEventPayload[] | null>({
     query: upcomingEventsQuery,
     tags: ['events'],
   })
+}
+
+export function getEventBySlug(slug: string) {
+  return sanityFetch<UpcomingEventPayload | null>({
+    query: eventBySlugQuery,
+    params: { slug },
+    tags: [`event:${slug}`],
+  })
+}
+
+export function getEventsPaths() {
+  return client.fetch<string[]>(
+    eventPaths,
+    {},
+    { token, perspective: 'published' },
+  )
 }
 
 export function getPagesPaths() {

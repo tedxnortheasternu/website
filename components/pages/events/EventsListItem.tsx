@@ -1,9 +1,9 @@
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 import ImageBox from 'components/shared/ImageBox'
-import type { UpcomingEvent } from 'types'
+import type { UpcomingEventPayload } from 'types'
 
 interface EventProps {
-  event: UpcomingEvent
+  event: UpcomingEventPayload
   odd: number
 }
 
@@ -24,7 +24,7 @@ export function EventsListItem(props: EventProps) {
   )
 }
 
-function TextBox({ event }: { event: UpcomingEvent }) {
+function TextBox({ event }: { event: UpcomingEventPayload }) {
   return (
     <div className="relative flex flex-col justify-between w-full p-3 mt-2 xl:mt-0">
       <div>
@@ -35,7 +35,8 @@ function TextBox({ event }: { event: UpcomingEvent }) {
         {/* Overview  */}
         {event.briefDescription ? (
           <div className="font-serif text-gray-500">
-            <CustomPortableText value={event.briefDescription} />
+            {event.briefDescription}
+            {/* <CustomPortableText value={event.briefDescription} /> */}
           </div>
         ) : null}
       </div>
