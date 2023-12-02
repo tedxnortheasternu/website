@@ -10,7 +10,7 @@ export default defineType({
   icon: CalendarDays,
   fields: [
     defineField({
-      type:'string',
+      type: 'string',
       name: 'name',
       title: 'Name',
       description: 'eg: Speak, See, Succeed: Script + Visuals',
@@ -24,14 +24,14 @@ export default defineType({
       validation: (rule) => rule.required(),
       options: {
         source: 'name',
-        slugify: source => source
-                                .toLowerCase()
-                                .replace(/\s+/g, '-')
-                                .replace (/^/,year)
-                                .replaceAll(',', '')
-                                .replaceAll(':','')
-                                .slice(0, 200), // Specify that the slug is generated from the 'name' field
-        //slugify: source => year.toString()+source,
+        slugify: (source) =>
+          source
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/^/, year)
+            .replaceAll(',', '')
+            .replaceAll(':', '')
+            .slice(0, 200), // Specify that the slug is generated from the 'name' field
         maxLength: 200, // Adjust the max length as needed
       },
     }),
@@ -57,7 +57,7 @@ export default defineType({
     defineField({
       type: 'reference',
       name: 'campuses',
-      title: 'Campus',
+      title: 'Campuses',
       to: [{ type: 'campus' }], // Reference the 'Campus' schema
       description: 'Event Campus (create new campuses in Sanity)',
       validation: (rule) => rule.required(),
@@ -84,4 +84,4 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
   ],
-});
+})

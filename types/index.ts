@@ -36,13 +36,6 @@ export interface HomePagePayload {
   title?: string
 }
 
-export interface EventsPagePayload {
-  footer?: PortableTextBlock[]
-  overview?: PortableTextBlock[]
-  upcomingEvents?: UpcomingEvents[]
-  title?: string
-}
-
 export interface PagePayload {
   body?: PortableTextBlock[]
   name?: string
@@ -51,6 +44,7 @@ export interface PagePayload {
   slug?: string
 }
 
+// -- OLD --
 export interface ProjectPayload {
   client?: string
   coverImage?: Image
@@ -71,10 +65,26 @@ export interface SettingsPayload {
   menuItems?: MenuItem[]
   ogImage?: Image
 }
+// -- END OLD --
 
-export interface UpcomingEvents {
-  date?: string
-  description?: string
-  location?: string
-  title?: string
+// TODO: finish
+export interface Campus {
+  name: string
+}
+
+// TODO: finish
+export interface EventCategory {
+  name: string
+}
+
+export interface UpcomingEvent {
+  name: string
+  slug: string
+  briefDescription?: PortableTextBlock[]
+  coverGraphic?: Image
+  category?: EventCategory
+  campuses: Campus[]
+  startDateTime: Date
+  endDateTime: Date
+  location: string
 }

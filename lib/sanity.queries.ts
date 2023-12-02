@@ -17,15 +17,17 @@ export const homePageQuery = groq`
 `
 
 export const upcomingEventsQuery = groq`
-  *[_type == "events"][0]{
-    _id,
-    overview,
-    upcomingEvents[]->{
-      description,
-      duration,
-      title,
-    },
-    title,
+  *[_type == "event" && dateTime(endDateTime) > dateTime(now())] {
+    name,
+    "slug": slug.current,
+    briefDescription,
+    coverGraphic,
+    startDateTime,
+    location,
+    category-> {
+      _id,
+      name,
+    }
   }
 `
 

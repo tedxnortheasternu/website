@@ -4,6 +4,8 @@ export function resolveHref(documentType?: string, slug?: string): string | unde
       return '/'
     case 'page':
       return slug ? `/${slug}` : undefined
+    case 'event':
+      return slug ? `/events/${slug}` : undefined
     case 'project':
       return slug ? `/projects/${slug}` : undefined
     default:

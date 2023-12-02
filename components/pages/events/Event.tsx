@@ -1,38 +1,41 @@
-import { ProjectListItem } from 'components/pages/home/ProjectListItem'
-import { Header } from 'components/shared/Header'
 import { resolveHref } from 'lib/sanity.links'
 import Link from 'next/link'
-import type { EventsPagePayload } from 'types'
+import { UpcomingEvent } from 'types'
 
 import { EventsListItem } from './EventsListItem'
 
-export interface HomePageProps {
-  data: EventsPagePayload | null
-}
-
-export function EventPage({ data }: HomePageProps) {
-  // Default to an empty object to allow previews on non-existent documents
-  const { overview = [], upcomingEvents = [], title = '' } = data ?? {}
-
+export function EventPage({
+  upcomingEvents = [],
+}: {
+  upcomingEvents: UpcomingEvent[]
+}) {
   return (
     <div className="space-y-20">
       {/* Header */}
-      {title && <Header centered title={title} description={overview} />}
-      {/* Showcase projects */}
-      {upcomingEvents && upcomingEvents.length > 0 && (
+      <div className="w-5/6 mx-auto text-center lg:w-3/5">
+        <div className="text-3xl font-extrabold tracking-tight md:text-5xl">
+          Upcoming Events
+        </div>
+      </div>
+
+      {/* Events List */}
+      {upcomingEvents && upcomingEvents.length > 0 ? (
         <div className="mx-auto max-w-[100rem] rounded-md border">
-          {upcomingEvents.map((project, key) => {
-            const href = resolveHref(project.date, project.title)
+          {upcomingEvents.map((event, key) => {
+            const href = resolveHref('event', event.slug)
             if (!href) {
               return null
             }
             return (
               <Link key={key} href={href}>
-                <EventsListItem project={project} odd={key % 2} />
+                <EventsListItem event={event} odd={key % 2} />
               </Link>
             )
           })}
         </div>
+      ) : (
+        // TODO: improve styling
+        <p>No events.</p>
       )}
     </div>
   )

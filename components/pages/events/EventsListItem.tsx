@@ -1,15 +1,14 @@
-import type { PortableTextBlock } from '@portabletext/types'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 import ImageBox from 'components/shared/ImageBox'
-import type { UpcomingEvents } from 'types'
+import type { UpcomingEvent } from 'types'
 
-interface ProjectProps {
-  project: UpcomingEvents
+interface EventProps {
+  event: UpcomingEvent
   odd: number
 }
 
-export function EventsListItem(props: ProjectProps) {
-  const { project, odd } = props
+export function EventsListItem(props: EventProps) {
+  const { event, odd } = props
 
   return (
     <div
@@ -19,25 +18,31 @@ export function EventsListItem(props: ProjectProps) {
     >
       <div className="w-full xl:w-9/12"></div>
       <div className="flex xl:w-1/4">
-        <TextBox project={project} />
+        <TextBox event={event} />
       </div>
     </div>
   )
 }
 
-function TextBox({ project }: { project: UpcomingEvents }) {
+function TextBox({ event }: { event: UpcomingEvent }) {
   return (
-    <div className="relative mt-2 flex w-full flex-col justify-between p-3 xl:mt-0">
+    <div className="relative flex flex-col justify-between w-full p-3 mt-2 xl:mt-0">
       <div>
         {/* Title */}
         <div className="mb-2 text-xl font-extrabold tracking-tight md:text-2xl">
-          {project.title}
+          {event.name}
         </div>
         {/* Overview  */}
-        <div className="font-serif text-gray-500">{project.description}</div>
+        {event.briefDescription ? (
+          <div className="font-serif text-gray-500">
+            <CustomPortableText value={event.briefDescription} />
+          </div>
+        ) : null}
       </div>
       {/* Tags */}
-      <div className="mt-4 flex flex-row gap-x-2">{project.title}</div>
+      <div className="flex flex-row mt-4 gap-x-2">
+        {event.category ? event.category.name : null}
+      </div>
     </div>
   )
 }
