@@ -9,7 +9,6 @@ import {
   homePageTitleQuery,
   pagePaths,
   pagesBySlugQuery,
-  projectBySlugQuery,
   projectPaths,
   settingsQuery,
   upcomingEventsQuery,
@@ -18,7 +17,6 @@ import { draftMode } from 'next/headers'
 import type {
   HomePagePayload,
   PagePayload,
-  ProjectPayload,
   SettingsPayload,
   UpcomingEventPayload,
 } from 'types'
@@ -81,18 +79,10 @@ export function getPageBySlug(slug: string) {
   })
 }
 
-export function getProjectBySlug(slug: string) {
-  return sanityFetch<ProjectPayload | null>({
-    query: projectBySlugQuery,
-    params: { slug },
-    tags: [`project:${slug}`],
-  })
-}
-
 export function getHomePage() {
   return sanityFetch<HomePagePayload | null>({
     query: homePageQuery,
-    tags: ['home', 'project'],
+    tags: ['home'],
   })
 }
 

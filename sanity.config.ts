@@ -18,7 +18,6 @@ import event from 'schemas/documents/event'
 import eventCategory from 'schemas/documents/eventCategory'
 import member from 'schemas/documents/member'
 import page from 'schemas/documents/page'
-import project from 'schemas/documents/project'
 import team from 'schemas/documents/team'
 import duration from 'schemas/objects/duration'
 import milestone from 'schemas/objects/milestone'
@@ -33,12 +32,12 @@ const title =
 export const PREVIEWABLE_DOCUMENT_TYPES = [
   home.name,
   page.name,
-  project.name,
+  event.name,
 ] satisfies string[]
 
 export const PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS = [
   page.name,
-  project.name,
+  event.name,
 ] satisfies typeof PREVIEWABLE_DOCUMENT_TYPES
 
 // Used to generate URLs for drafts and live previews
@@ -65,10 +64,10 @@ export default defineConfig({
       // Singletons
       home,
       settings,
+
       // Documents
       duration,
       page,
-      project,
       event,
       campus,
       eventCategory,

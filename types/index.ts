@@ -18,21 +18,11 @@ export interface MilestoneItem {
   title?: string
 }
 
-export interface ShowcaseProject {
-  _type: string
-  coverImage?: Image
-  overview?: PortableTextBlock[]
-  slug?: string
-  tags?: string[]
-  title?: string
-}
-
 // Page payloads
 
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
-  showcaseProjects?: ShowcaseProject[]
   title?: string
 }
 
