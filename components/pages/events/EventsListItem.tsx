@@ -16,8 +16,8 @@ export function EventsListItem(props: EventProps) {
         odd && 'border-t border-slate-100 xl:flex-row-reverse'
       }`}
     >
-      <div className="grid justify-between w-full gap-8 p-3 md:grid-cols-2">
-        <div className="">
+      <div className="grid gap-8 p-3 md:grid-cols-2">
+        <div>
           {/* Tags */}
           <div className="mb-2 text-xs font-bold uppercase">
             Event &middot;{' '}
@@ -51,11 +51,9 @@ export function EventsListItem(props: EventProps) {
           </div>
         </div>
 
-        <div className="">
+        <div>
           {/* Overview  */}
-          {event.briefDescription ? (
-            <p className="">{event.briefDescription}</p>
-          ) : null}
+          {event.briefDescription ? <p>{event.briefDescription}</p> : null}
         </div>
       </div>
     </div>
