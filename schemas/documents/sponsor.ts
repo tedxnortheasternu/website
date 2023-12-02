@@ -1,11 +1,11 @@
-import { UserIcon } from 'lucide-react'
+import { HelpingHand } from 'lucide-react'
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
   type: 'document',
   name: 'sponsor',
   title: 'Sponsor',
-  icon: UserIcon,
+  icon: HelpingHand,
   fields: [
     defineField({
       type: 'string',
@@ -25,7 +25,7 @@ export default defineType({
       type: 'string',
       name: 'description',
       title: 'Brief Description',
-      description: 'Descrpition of the sponsor',
+      description: 'Description of the sponsor',
     }),
 
     defineField({

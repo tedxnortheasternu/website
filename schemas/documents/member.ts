@@ -3,8 +3,8 @@ import { defineField, defineType } from 'sanity'
 
 export default defineType({
   type: 'document',
-  name: 'members',
-  title: 'Members',
+  name: 'member',
+  title: 'Member',
   icon: UserIcon,
   fields: [
     defineField({
@@ -18,12 +18,12 @@ export default defineType({
       type: 'reference',
       name: 'team',
       title: 'Team',
-      to: [{ type: 'teams' }],
+      to: [{ type: 'team' }],
       validation: (rule) => rule.required(),
     }),
     defineField({
       type: 'reference',
-      name: 'campuses',
+      name: 'campus',
       title: 'Campuses',
       to: [{ type: 'campus' }],
       validation: (rule) => rule.required(),

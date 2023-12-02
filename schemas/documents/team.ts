@@ -3,8 +3,8 @@ import { defineField, defineType } from 'sanity'
 
 export default defineType({
   type: 'document',
-  name: 'teams',
-  title: 'Teams',
+  name: 'team',
+  title: 'Team',
   icon: UsersIcon,
   fields: [
     defineField({

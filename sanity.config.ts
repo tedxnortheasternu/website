@@ -24,6 +24,7 @@ import milestone from 'schemas/objects/milestone'
 import timeline from 'schemas/objects/timeline'
 import home from 'schemas/singletons/home'
 import settings from 'schemas/singletons/settings'
+import sponsor from 'schemas/documents/sponsor'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -66,15 +67,16 @@ export default defineConfig({
       settings,
 
       // Documents
-      duration,
       page,
       event,
-      campus,
       eventCategory,
       member,
       team,
+      sponsor,
+      campus,
 
       // Objects
+      duration,
       milestone,
       timeline,
     ],
