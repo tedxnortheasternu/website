@@ -12,15 +12,16 @@ export function EventsListItem(props: EventProps) {
 
   return (
     <div
-      className={`flex flex-col p-4 transition hover:bg-slate-50 xl:flex-row ${
-        odd && 'border-t border-slate-100 xl:flex-row-reverse'
+      className={`flex flex-col p-4 transition hover:bg-slate-50/50 xl:flex-row ${
+        odd && 'border-t border-slate-200 xl:flex-row-reverse'
       }`}
     >
       <div className="grid gap-8 p-3 md:grid-cols-2">
         <div>
           {/* Tags */}
-          <div className="mb-2 text-xs font-bold uppercase">
-            Event &middot;{' '}
+          <div className="flex flex-row items-center gap-1.5 mb-2 text-xs font-bold uppercase">
+            Event
+            <span className="text-slate-400">&middot;</span>
             {event.category ? (
               <span className="bg-red-600 rounded-full px-2 py-0.5 text-white">
                 {event.category.name}
