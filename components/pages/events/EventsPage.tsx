@@ -10,9 +10,9 @@ export interface EventsPageProps {
 
 export function EventsPage({ data = [] }: EventsPageProps) {
   return (
-    <div className="space-y-20">
+    <>
       {/* Header */}
-      <div className="w-5/6 mx-auto text-center lg:w-3/5">
+      <div className="mx-auto mb-8 text-center">
         <div className="text-3xl font-extrabold tracking-tight md:text-5xl">
           Upcoming Events
         </div>
@@ -20,7 +20,7 @@ export function EventsPage({ data = [] }: EventsPageProps) {
 
       {/* Events List */}
       {data && data.length > 0 ? (
-        <div className="max-w-3xl mx-auto rounded-md">
+        <div className="mx-auto rounded-md">
           {data.map((event, key) => {
             const href = resolveHref('event', event.slug)
             if (!href) return null
@@ -35,7 +35,7 @@ export function EventsPage({ data = [] }: EventsPageProps) {
         // TODO: improve styling
         <div className="text-center">No events.</div>
       )}
-    </div>
+    </>
   )
 }
 
