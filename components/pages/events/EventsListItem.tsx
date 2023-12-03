@@ -12,8 +12,8 @@ export function EventsListItem(props: EventProps) {
 
   return (
     <div
-      className={`flex flex-col p-4 transition hover:bg-slate-50/50 xl:flex-row ${
-        odd && 'border-t border-slate-200 xl:flex-row-reverse'
+      className={`flex flex-col p-4 transition hover:bg-slate-50/50 ${
+        odd && 'border-t border-slate-200'
       }`}
     >
       <div className="grid gap-8 p-3 md:grid-cols-2">
