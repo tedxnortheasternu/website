@@ -1,7 +1,7 @@
 import { toPlainText } from '@portabletext/react'
 import { HomePage } from 'components/pages/home/HomePage'
 import HomePagePreview from 'components/pages/home/HomePagePreview'
-import { getHomePage, getSettings } from 'lib/sanity.fetch'
+import { getHomePage, getSettings, getUpcomingEvents } from 'lib/sanity.fetch'
 import { homePageQuery } from 'lib/sanity.queries'
 import { defineMetadata } from 'lib/utils.metadata'
 import { Metadata } from 'next'
@@ -12,7 +12,11 @@ import { LiveQuery } from 'next-sanity/preview/live-query'
 export const runtime = 'edge'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const [settings, page] = await Promise.all([getSettings(), getHomePage()])
+  const [settings, page, upcomingEvents] = await Promise.all([
+    getSettings(),
+    getHomePage(),
+    getUpcomingEvents(),
+  ])
 
   return defineMetadata({
     description: page?.overview ? toPlainText(page.overview) : '',
@@ -23,6 +27,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function IndexRoute() {
   const data = await getHomePage()
+  const upcomingEvents = await getUpcomingEvents()
+
+  console.log(upcomingEvents)
 
   if (!data && !draftMode().isEnabled) {
     return (
@@ -46,7 +53,7 @@ export default async function IndexRoute() {
       initialData={data}
       as={HomePagePreview}
     >
-      <HomePage data={data} />
+      <HomePage data={data} upcomingEvents={upcomingEvents} />
     </LiveQuery>
   )
 }

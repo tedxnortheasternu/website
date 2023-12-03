@@ -18,12 +18,23 @@ export interface MilestoneItem {
   title?: string
 }
 
+// TODO: finish
+export interface Campus {
+  name: string
+}
+
+// TODO: finish
+export interface EventCategory {
+  name: string
+}
+
 // Page payloads
 
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
   title?: string
+  upcomingEvents: UpcomingEventPayload[]
 }
 
 export interface PagePayload {
@@ -34,37 +45,10 @@ export interface PagePayload {
   slug?: string
 }
 
-// -- OLD --
-export interface ProjectPayload {
-  client?: string
-  coverImage?: Image
-  description?: PortableTextBlock[]
-  duration?: {
-    start?: string
-    end?: string
-  }
-  overview?: PortableTextBlock[]
-  site?: string
-  slug: string
-  tags?: string[]
-  title?: string
-}
-
 export interface SettingsPayload {
   footer?: PortableTextBlock[]
   menuItems?: MenuItem[]
   ogImage?: Image
-}
-// -- END OLD --
-
-// TODO: finish
-export interface Campus {
-  name: string
-}
-
-// TODO: finish
-export interface EventCategory {
-  name: string
 }
 
 export interface UpcomingEventPayload {

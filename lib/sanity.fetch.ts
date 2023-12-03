@@ -81,7 +81,7 @@ export function getPageBySlug(slug: string) {
 export function getHomePage() {
   return sanityFetch<HomePagePayload | null>({
     query: homePageQuery,
-    tags: ['home'],
+    tags: ['home', 'event'],
   })
 }
 
