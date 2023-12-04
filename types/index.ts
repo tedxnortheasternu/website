@@ -1,4 +1,5 @@
 import type { PortableTextBlock } from '@portabletext/types'
+import { Url } from 'next/dist/shared/lib/router/router'
 import type { Image } from 'sanity'
 
 export interface MenuItem {
@@ -61,4 +62,11 @@ export interface UpcomingEventPayload {
   startDateTime: string
   endDateTime: string
   location: string
+}
+
+export interface SponsorPayload {
+  name: string
+  logo: Image
+  description?: string
+  websiteLink?: Url
 }

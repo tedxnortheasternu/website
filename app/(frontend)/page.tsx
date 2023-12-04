@@ -1,7 +1,12 @@
 import { toPlainText } from '@portabletext/react'
 import { HomePage } from 'components/pages/home/HomePage'
 import HomePagePreview from 'components/pages/home/HomePagePreview'
-import { getHomePage, getSettings, getUpcomingEvents } from 'lib/sanity.fetch'
+import {
+  getHomePage,
+  getSettings,
+  getUpcomingEvents,
+  getSponsor,
+} from 'lib/sanity.fetch'
 import { homePageQuery } from 'lib/sanity.queries'
 import { defineMetadata } from 'lib/utils.metadata'
 import { Metadata } from 'next'
@@ -12,10 +17,11 @@ import { LiveQuery } from 'next-sanity/preview/live-query'
 export const runtime = 'edge'
 
 export async function generateMetadata(): Promise<Metadata> {
-  const [settings, page, upcomingEvents] = await Promise.all([
+  const [settings, page, upcomingEvents, sponsors] = await Promise.all([
     getSettings(),
     getHomePage(),
     getUpcomingEvents(),
+    getSponsor(),
   ])
 
   return defineMetadata({
@@ -28,8 +34,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function IndexRoute() {
   const data = await getHomePage()
   const upcomingEvents = await getUpcomingEvents()
+  const sponsors = await getSponsor()
 
   console.log(upcomingEvents)
+  console.log(sponsors)
 
   if (!data && !draftMode().isEnabled) {
     return (
@@ -53,7 +61,11 @@ export default async function IndexRoute() {
       initialData={data}
       as={HomePagePreview}
     >
-      <HomePage data={data} upcomingEvents={upcomingEvents} />
+      <HomePage
+        data={data}
+        upcomingEvents={upcomingEvents}
+        sponsors={sponsors}
+      />
     </LiveQuery>
   )
 }

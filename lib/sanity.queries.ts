@@ -22,6 +22,15 @@ export const upcomingEventsQuery = groq`
     }
   } | order(startDateTime desc)
 `
+export const sponrshipQuery = groq`
+  *[_type == "sponsor" ] {
+    name,
+    logo,
+    description,
+    websiteLink,
+  } | order(name asc)
+`
+
 
 export const eventPaths = groq`
   *[_type == "event" && slug.current != null].slug.current

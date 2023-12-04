@@ -2,7 +2,7 @@ import { urlForImage } from 'lib/sanity.image'
 import Image from 'next/image'
 
 interface ImageBoxProps {
-  image?: { asset?: any }
+  image?: { asset?: any } | undefined
   alt?: string
   width?: number
   height?: number
@@ -15,7 +15,7 @@ export default function ImageBox({
   alt = 'Cover image',
   width = 3500,
   height = 2000,
-  size = '100vw',
+  size = 'small',
   classesWrapper,
 }: ImageBoxProps) {
   const imageUrl =
@@ -27,7 +27,7 @@ export default function ImageBox({
     >
       {imageUrl && (
         <Image
-          className="absolute h-full w-full"
+          className="absolute w-full h-full"
           alt={alt}
           width={width}
           height={height}
