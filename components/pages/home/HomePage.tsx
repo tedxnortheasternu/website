@@ -47,13 +47,11 @@ export function HomePage({ data, upcomingEvents, sponsors }: HomePageProps) {
 
       {sponsors ? (
         <section>
-          <h2 className="mb-6 text-3xl font-bold text-center">Sponsor</h2>
+          <h2 className="mb-6 text-3xl font-bold text-center">Sponsors</h2>
 
-          <div className="border rounded-md border-slate-200">
+          <div className="grid items-center border rounded-md md:grid-cols-3 border-slate-200">
             {sponsors.map((sponsor, key) => {
-              return (
-                <SponsorListItem key={key} sponsor={sponsor} odd={key % 2} />
-              )
+              return <SponsorListItem key={key} sponsor={sponsor} />
             })}
           </div>
         </section>
