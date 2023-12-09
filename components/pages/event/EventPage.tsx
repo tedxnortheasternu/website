@@ -41,7 +41,7 @@ export function EventPage({ data }: EventPageProps) {
             <ImageBox
               image={coverGraphic}
               alt={`Cover image for ${name}`}
-              classesWrapper="relative aspect-[16/9]"
+              className="relative aspect-[16/9]"
             />
           ) : null}
 
