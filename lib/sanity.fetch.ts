@@ -10,6 +10,7 @@ import {
   pagePaths,
   pagesBySlugQuery,
   settingsQuery,
+  sponrshipQuery,
   upcomingEventsQuery,
 } from 'lib/sanity.queries'
 import { draftMode } from 'next/headers'
@@ -17,8 +18,8 @@ import type {
   HomePagePayload,
   PagePayload,
   SettingsPayload,
-  UpcomingEventPayload,
-} from 'types'
+  SponsorPayload,
+  UpcomingEventPayload} from 'types'
 
 import { revalidateSecret } from './sanity.api'
 
@@ -96,6 +97,13 @@ export function getUpcomingEvents() {
   return sanityFetch<UpcomingEventPayload[] | null>({
     query: upcomingEventsQuery,
     tags: ['events'],
+  })
+}
+
+export function getSponsor() {
+  return sanityFetch<SponsorPayload[] | null>({
+    query: sponrshipQuery,
+    tags: ['home'],
   })
 }
 
