@@ -70,7 +70,7 @@ export default function NavbarLayout() {
             />
 
             <div className="flex items-center space-x-4">
-              <NavLink href="/positions">{"We're Recruiting!"}</NavLink>
+              <NavLink href="/apply">{"We're Recruiting!"}</NavLink>
               <Link
                 href="https://airtable.com/appD8TuOcD3E8n7BG/shr8Dc6qKWXq7Ns5T"
                 className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"

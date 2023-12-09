@@ -10,7 +10,7 @@ export interface EventsPageProps {
 
 export function EventsPage({ data = [] }: EventsPageProps) {
   return (
-    <>
+    <div className="max-w-screen-lg mx-auto">
       {/* Header */}
       <div className="mx-auto mb-8 text-center">
         <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl">
@@ -35,7 +35,7 @@ export function EventsPage({ data = [] }: EventsPageProps) {
         // TODO: improve styling
         <div className="text-center">No events.</div>
       )}
-    </>
+    </div>
   )
 }
 
