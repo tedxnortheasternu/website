@@ -28,7 +28,7 @@ export default function NavbarLayout() {
             <div className="lg:hidden">
               <button
                 type="button"
-                className="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium text-slate-700 align-middle transition-all bg-white border rounded-lg shadow-sm hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600"
+                className="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium align-middle transition-all bg-white border rounded-lg shadow-sm text-slate-700 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-white focus:ring-blue-600"
                 aria-controls="navbar-alignment"
                 aria-label="Toggle navigation"
                 onClick={() => setOpen(!open)}
@@ -54,10 +54,11 @@ export default function NavbarLayout() {
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-5">
               <NavLink href="/about">About</NavLink>
               <NavLink href="/events">Events</NavLink>
+              <NavLink href="/apply">Apply</NavLink>
               <NavLink href="/contact">Contact</NavLink>
               {process.env.NODE_ENV === 'development' ? (
                 <NavLink target="_blank" href="/studio">
-                  [DEV] Studio
+                  Studio
                 </NavLink>
               ) : null}
             </div>
