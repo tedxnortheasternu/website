@@ -4,8 +4,8 @@ import HomePagePreview from 'components/pages/home/HomePagePreview'
 import {
   getHomePage,
   getSettings,
-  getUpcomingEvents,
   getSponsor,
+  getUpcomingEvents,
 } from 'lib/sanity.fetch'
 import { homePageQuery } from 'lib/sanity.queries'
 import { defineMetadata } from 'lib/utils.metadata'
@@ -35,9 +35,6 @@ export default async function IndexRoute() {
   const data = await getHomePage()
   const upcomingEvents = await getUpcomingEvents()
   const sponsors = await getSponsor()
-
-  console.log(upcomingEvents)
-  console.log(sponsors)
 
   if (!data && !draftMode().isEnabled) {
     return (

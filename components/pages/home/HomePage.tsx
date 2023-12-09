@@ -2,14 +2,12 @@ import { Header } from 'components/shared/Header'
 import { SponsorListItem } from 'components/sponsor/SponsorListItem'
 import { resolveHref } from 'lib/sanity.links'
 import Link from 'next/link'
-import sponsor from 'schemas/documents/sponsor'
 import type {
   HomePagePayload,
   SponsorPayload,
   UpcomingEventPayload,
 } from 'types'
 
-import SponsorComponent from '../../sponsor/SponsorComponent'
 import { EventsListItem } from '../events/EventsListItem'
 
 export interface HomePageProps {
@@ -28,7 +26,7 @@ export function HomePage({ data, upcomingEvents, sponsors }: HomePageProps) {
       {title && <Header centered title={title} description={overview} />}
 
       {upcomingEvents ? (
-        <div>
+        <section>
           <h2 className="mb-6 text-3xl font-bold text-center">
             Upcoming Events
           </h2>
@@ -44,11 +42,11 @@ export function HomePage({ data, upcomingEvents, sponsors }: HomePageProps) {
               )
             })}
           </div>
-        </div>
+        </section>
       ) : null}
 
       {sponsors ? (
-        <div>
+        <section>
           <h2 className="mb-6 text-3xl font-bold text-center">Sponsor</h2>
 
           <div className="border rounded-md border-slate-200">
@@ -58,7 +56,7 @@ export function HomePage({ data, upcomingEvents, sponsors }: HomePageProps) {
               )
             })}
           </div>
-        </div>
+        </section>
       ) : null}
     </div>
   )

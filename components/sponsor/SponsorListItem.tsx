@@ -1,9 +1,4 @@
-import client from '@sanity/client'
-import imageUrlBuilder from '@sanity/image-url'
 import ImageBox from 'components/shared/ImageBox'
-import dayjs from 'dayjs'
-import { CalendarIcon, ClockIcon, MapPinIcon } from 'lucide-react'
-import Image from 'next/image'
 import type { SponsorPayload } from 'types'
 
 interface SponsorProps {
@@ -13,7 +8,6 @@ interface SponsorProps {
 
 export function SponsorListItem(props: SponsorProps) {
   const { sponsor, odd } = props
-  const srcImage = sponsor.logo.asset?._ref
 
   return (
     <div
@@ -32,10 +26,7 @@ export function SponsorListItem(props: SponsorProps) {
         <ImageBox
           image={sponsor.logo}
           alt={`logo for ${sponsor.name}`}
-          width={20}
-          height={20}
-          size="small"
-          classesWrapper="object-cover w-20 h-20"
+          className="object-cover"
         />
 
         <div>{sponsor.websiteLink ? <p></p> : null}</div>
