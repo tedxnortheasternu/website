@@ -43,6 +43,7 @@ export interface HomePagePayload {
   overview?: PortableTextBlock[]
   title?: string
   upcomingEvents: UpcomingEventPayload[]
+  sponsors: SponsorPayload[]
 }
 
 export interface PagePayload {

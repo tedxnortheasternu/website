@@ -1,8 +1,5 @@
-import ImageBox from 'components/shared/ImageBox'
 import { resolveHref } from 'lib/sanity.links'
-import Image from 'next/image'
 import Link from 'next/link'
-import sponsor from 'schemas/documents/sponsor'
 import { SponsorPayload } from 'types'
 
 import { SponsorListItem } from './SponsorListItem'
@@ -30,7 +27,7 @@ export function SponsorComponent({ data = [] }: SponsorComponentProps) {
             if (!srcImage || !href) return null
             return (
               <Link key={key} href={href}>
-                <SponsorListItem sponsor={sponsor} odd={key % 2} />
+                <SponsorListItem sponsor={sponsor} />
               </Link>
             )
           })}

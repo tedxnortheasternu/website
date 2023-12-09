@@ -9,7 +9,11 @@ import type { HomePageProps } from './HomePage'
 
 const HomePage = dynamic(() => import('./HomePage'))
 
-export default function HomePagePreview({ data }: HomePageProps) {
+export default function HomePagePreview({
+  data,
+  upcomingEvents,
+  sponsors,
+}: HomePageProps) {
   if (!data) {
     return (
       <div className="text-center">
@@ -18,5 +22,7 @@ export default function HomePagePreview({ data }: HomePageProps) {
     )
   }
 
-  return <HomePage data={data} />
+  return (
+    <HomePage data={data} upcomingEvents={upcomingEvents} sponsors={sponsors} />
+  )
 }
