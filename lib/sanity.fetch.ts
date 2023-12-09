@@ -9,17 +9,20 @@ import {
   homePageTitleQuery,
   pagePaths,
   pagesBySlugQuery,
+  positionsAcceptingApplicationsQuery,
   settingsQuery,
-  sponrshipQuery,
+  sponsorshipQuery,
   upcomingEventsQuery,
 } from 'lib/sanity.queries'
 import { draftMode } from 'next/headers'
 import type {
   HomePagePayload,
   PagePayload,
+  PositionPayload,
   SettingsPayload,
   SponsorPayload,
-  UpcomingEventPayload} from 'types'
+  UpcomingEventPayload,
+} from 'types'
 
 import { revalidateSecret } from './sanity.api'
 
@@ -100,9 +103,16 @@ export function getUpcomingEvents() {
   })
 }
 
+export function getPositionsAcceptingApplications() {
+  return sanityFetch<PositionPayload[] | null>({
+    query: positionsAcceptingApplicationsQuery,
+    tags: ['positions'],
+  })
+}
+
 export function getSponsor() {
   return sanityFetch<SponsorPayload[] | null>({
-    query: sponrshipQuery,
+    query: sponsorshipQuery,
     tags: ['home'],
   })
 }

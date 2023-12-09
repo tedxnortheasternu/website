@@ -19,12 +19,19 @@ export interface MilestoneItem {
   title?: string
 }
 
-// TODO: finish
+export interface Range {
+  min?: number
+  max?: number
+}
+
 export interface Campus {
   name: string
 }
 
-// TODO: finish
+export interface Team {
+  name: string
+}
+
 export interface EventCategory {
   name: string
 }
@@ -69,4 +76,15 @@ export interface SponsorPayload {
   logo: Image
   description?: string
   websiteLink?: Url
+}
+
+export interface PositionPayload {
+  name: string
+  // slug: string
+  team: Team
+  campuses: Campus[]
+  expectedHoursPerWeek: Range
+  description: string
+  responsibilities: PortableTextBlock[]
+  requirements: PortableTextBlock[]
 }

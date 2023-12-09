@@ -21,18 +21,27 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      type: 'reference',
+      type: 'array',
       name: 'campuses',
       title: 'Campuses',
-      to: [{ type: 'campus' }],
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'campus' }],
+        }),
+      ],
       description: 'All campuses this position is open to applicants from',
       validation: (rule) => rule.required(),
     }),
     defineField({
-      type: 'number',
+      type: 'range',
       name: 'expectedHoursPerWeek',
       title: 'Expected Hours Per Week',
-      initialValue: 5,
+      validation: (rule) => rule.required(),
+      initialValue: {
+        min: 4,
+        max: 6,
+      },
     }),
     defineField({
       type: 'boolean',

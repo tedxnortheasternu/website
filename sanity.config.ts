@@ -23,6 +23,7 @@ import sponsor from 'schemas/documents/sponsor'
 import team from 'schemas/documents/team'
 import duration from 'schemas/objects/duration'
 import milestone from 'schemas/objects/milestone'
+import range from 'schemas/objects/range'
 import timeline from 'schemas/objects/timeline'
 import home from 'schemas/singletons/home'
 import settings from 'schemas/singletons/settings'
@@ -80,6 +81,7 @@ export default defineConfig({
       // Objects
       duration,
       milestone,
+      range,
       timeline,
     ],
   },

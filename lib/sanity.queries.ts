@@ -22,7 +22,8 @@ export const upcomingEventsQuery = groq`
     }
   } | order(startDateTime desc)
 `
-export const sponrshipQuery = groq`
+
+export const sponsorshipQuery = groq`
   *[_type == "sponsor" ] {
     name,
     logo,
@@ -31,6 +32,25 @@ export const sponrshipQuery = groq`
   } | order(name asc)
 `
 
+export const positionsAcceptingApplicationsQuery = groq`
+  *[_type == "position" && acceptingApplications] {
+    name,
+    // "slug": slug.current,
+    team-> {
+      name
+    },
+    campuses[]->{
+      name
+    },
+    expectedHoursPerWeek {
+      min,
+      max
+    },
+    description,
+    responsibilities,
+    requirements
+  } | order(name asc)
+`
 
 export const eventPaths = groq`
   *[_type == "event" && slug.current != null].slug.current
