@@ -29,8 +29,6 @@ export default async function IndexRoute() {
   const data = await getHomePage()
   const upcomingEvents = await getUpcomingEvents()
 
-  console.log(upcomingEvents)
-
   if (!data && !draftMode().isEnabled) {
     return (
       <div className="text-center">
