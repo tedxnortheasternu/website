@@ -18,13 +18,14 @@ import event from 'schemas/documents/event'
 import eventCategory from 'schemas/documents/eventCategory'
 import member from 'schemas/documents/member'
 import page from 'schemas/documents/page'
+import position from 'schemas/documents/position'
+import sponsor from 'schemas/documents/sponsor'
 import team from 'schemas/documents/team'
 import duration from 'schemas/objects/duration'
 import milestone from 'schemas/objects/milestone'
 import timeline from 'schemas/objects/timeline'
 import home from 'schemas/singletons/home'
 import settings from 'schemas/singletons/settings'
-import sponsor from 'schemas/documents/sponsor'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
@@ -71,6 +72,7 @@ export default defineConfig({
       event,
       eventCategory,
       member,
+      position,
       team,
       sponsor,
       campus,
