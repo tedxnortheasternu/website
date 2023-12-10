@@ -18,7 +18,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   const { title = '', overview = [] } = data ?? {}
 
   return (
-    <div className="max-w-3xl space-y-16">
+    <div className="max-w-3xl mx-auto space-y-16">
       {/* Header */}
       {title && <Header centered title={title} description={overview} />}
 
