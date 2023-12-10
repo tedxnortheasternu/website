@@ -44,6 +44,7 @@ export interface HomePagePayload {
   title?: string
   upcomingEvents: UpcomingEventPayload[]
   sponsors: SponsorPayload[]
+  teams: TeamsPayload[]
 }
 
 export interface PagePayload {
@@ -88,4 +89,10 @@ export interface PositionPayload {
   description: string
   responsibilities: PortableTextBlock[]
   requirements: PortableTextBlock[]
+}
+
+export interface TeamsPayload {
+name: string
+slug: string
+description: string
 }

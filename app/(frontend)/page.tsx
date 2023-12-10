@@ -5,6 +5,7 @@ import {
   getHomePage,
   getSettings,
   getSponsor,
+  getTeams,
   getUpcomingEvents,
 } from 'lib/sanity.fetch'
 import { homePageQuery } from 'lib/sanity.queries'
@@ -30,6 +31,7 @@ export default async function IndexRoute() {
   const data = await getHomePage()
   const upcomingEvents = await getUpcomingEvents()
   const sponsors = await getSponsor()
+  const teams = await getTeams()
 
   if (!data && !draftMode().isEnabled) {
     return (
@@ -57,6 +59,7 @@ export default async function IndexRoute() {
         data={data}
         upcomingEvents={upcomingEvents}
         sponsors={sponsors}
+        teams={teams}
       />
     </LiveQuery>
   )

@@ -12,6 +12,9 @@ import {
   positionsAcceptingApplicationsQuery,
   settingsQuery,
   sponsorshipQuery,
+  teamBySlugQuery,
+  teamPaths,
+  teamsQuery,
   upcomingEventsQuery,
 } from 'lib/sanity.queries'
 import { draftMode } from 'next/headers'
@@ -21,6 +24,7 @@ import type {
   PositionPayload,
   SettingsPayload,
   SponsorPayload,
+  TeamsPayload,
   UpcomingEventPayload,
 } from 'types'
 
@@ -103,6 +107,13 @@ export function getUpcomingEvents() {
   })
 }
 
+export function getTeams() {
+  return sanityFetch<TeamsPayload[] | null>({
+    query: teamsQuery,
+    tags: ['teams'],
+  })
+}
+
 export function getPositionsAcceptingApplications() {
   return sanityFetch<PositionPayload[] | null>({
     query: positionsAcceptingApplicationsQuery,
@@ -123,6 +134,22 @@ export function getEventBySlug(slug: string) {
     params: { slug },
     tags: [`event:${slug}`],
   })
+}
+
+export function getTeamsSlug(slug: string){
+  return sanityFetch<TeamsPayload | null>({
+    query: teamBySlugQuery,
+    params: { slug },
+    tags: [`team:${slug}`],
+  })
+}
+
+export function getTeamsPaths() {
+  return client.fetch<string[]>(
+    teamPaths,
+    {},
+    { token, perspective: 'published' },
+  )
 }
 
 export function getEventsPaths() {

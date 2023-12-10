@@ -5,18 +5,26 @@ import Link from 'next/link'
 import type {
   HomePagePayload,
   SponsorPayload,
+  TeamsPayload,
   UpcomingEventPayload,
 } from 'types'
 
 import { EventsListItem } from '../events/EventsListItem'
+import { TeamsListItem } from '../teams/TeamsListItem'
 
 export interface HomePageProps {
   data: HomePagePayload | null
   upcomingEvents: UpcomingEventPayload[] | null
   sponsors: SponsorPayload[] | null
+  teams: TeamsPayload[] | null
 }
 
-export function HomePage({ data, upcomingEvents, sponsors }: HomePageProps) {
+export function HomePage({
+  data,
+  upcomingEvents,
+  sponsors,
+  teams,
+}: HomePageProps) {
   // Default to an empty object to allow previews on non-existent documents
   const { title = '', overview = [] } = data ?? {}
 
@@ -56,8 +64,29 @@ export function HomePage({ data, upcomingEvents, sponsors }: HomePageProps) {
           </div>
         </section>
       ) : null}
+
+      {teams ? (
+        <section>
+          <h2 className="mb-6 text-3xl font-bold text-center">
+            TedXNortheasternU Teams
+          </h2>
+
+          <div className="border rounded-md border-slate-200">
+            {teams.map((team, key) => {
+              const href = resolveHref('team', team.slug)
+              if (!href) return null
+              return (
+                <Link key={key} href={href}>
+                  <TeamsListItem team={team} odd={key % 2} />
+                </Link>
+              )
+            })}
+          </div>
+        </section>
+      ) : null}
     </div>
   )
 }
+      
 
 export default HomePage

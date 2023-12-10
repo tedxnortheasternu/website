@@ -23,6 +23,14 @@ export const upcomingEventsQuery = groq`
   } | order(startDateTime desc)
 `
 
+export const teamsQuery = groq`
+  *[_type == "team"] {
+    name,
+    "slug": slug.current,
+    description,
+  } | order(name asc)
+`
+
 export const sponsorshipQuery = groq`
   *[_type == "sponsor" ] {
     name,
@@ -68,6 +76,18 @@ export const eventBySlugQuery = groq`
       _id,
       name,
     }
+  }
+`
+
+export const teamPaths = groq`
+  *[_type == "team" && slug.current != null].slug.current
+`
+
+export const teamBySlugQuery = groq`
+  *[_type == "team" && slug.current == $slug][0] {
+    name,
+    "slug": slug.current,
+    description,
   }
 `
 
