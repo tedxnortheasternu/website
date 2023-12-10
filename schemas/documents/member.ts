@@ -16,6 +16,13 @@ export default defineType({
     }),
     defineField({
       type: 'reference',
+      name: 'position',
+      title: 'Position',
+      to: [{ type: 'position' }],
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      type: 'reference',
       name: 'team',
       title: 'Team',
       to: [{ type: 'team' }],
