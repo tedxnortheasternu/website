@@ -24,7 +24,7 @@ import type {
   UpcomingEventPayload,
 } from 'types'
 
-import { revalidateSecret } from './sanity.api'
+import { revalidateSecret } from '../sanity/lib/api'
 
 export const token = process.env.SANITY_API_READ_TOKEN
 
