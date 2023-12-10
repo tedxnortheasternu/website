@@ -1,6 +1,5 @@
-import type { MilestoneItem } from 'types'
-
 import ImageBox from '@/components/shared/ImageBox'
+import type { MilestoneItem } from '@/types'
 
 export function TimelineItem({
   isLast,
@@ -20,7 +19,7 @@ export function TimelineItem({
       <div className="flex flex-col">
         {/* Thumbnail */}
         <div
-          className="relative overflow-hidden rounded-md bg-black"
+          className="relative overflow-hidden bg-black rounded-md"
           style={{ width: '65px', height: '65px' }}
         >
           <ImageBox
@@ -32,7 +31,7 @@ export function TimelineItem({
           />
         </div>
         {/* Vertical line */}
-        {!isLast && <div className="mt-2 w-px grow self-center bg-slate-200" />}
+        {!isLast && <div className="self-center w-px mt-2 grow bg-slate-200" />}
       </div>
       <div className="flex-initial pl-4">
         {/* Title */}
@@ -48,7 +47,7 @@ export function TimelineItem({
           {startYear} - {endYear}
         </div>
         {/* Description */}
-        <div className="pb-5 pt-3 font-serif text-slate-600">{description}</div>
+        <div className="pt-3 pb-5 font-serif text-slate-600">{description}</div>
       </div>
     </div>
   )

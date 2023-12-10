@@ -7,7 +7,6 @@ import { defineConfig, SanityDocument } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { presentationTool } from 'sanity/presentation'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
-import { Iframe } from 'sanity-plugin-iframe-pane'
 
 import { apiVersion, dataset, projectId } from '@/sanity/lib/api'
 import { locate } from '@/sanity/plugins/locate'

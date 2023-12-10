@@ -13,7 +13,6 @@ import {
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
 import {
-  ApplyPagePayload,
   HomePagePayload,
   PagePayload,
   PositionPayload,
@@ -41,7 +40,7 @@ queryStore.setServerClient(serverClient)
 
 const usingCdn = serverClient.config().useCdn
 // Automatically handle draft mode
-export const loadQuery = ((query, params = {}, options = {}) => {
+export const loadQuery = ((query, params = {}, options: any = {}) => {
   const {
     perspective = draftMode().isEnabled ? 'previewDrafts' : 'published',
   } = options
