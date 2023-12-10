@@ -1,15 +1,15 @@
 import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
-import { LiveQuery } from 'next-sanity/preview/live-query'
 
-import EventPage from '@/components/pages/event/EventPage'
-import EventPreview from '@/components/pages/event/EventPreview'
-import { getEventBySlug, getEventsPaths } from '@/lib/sanity.fetch'
-import { defineMetadata } from '@/lib/utils.metadata'
-import { eventBySlugQuery } from '@/sanity/lib/queries'
-
-export const runtime = 'edge'
+import { EventPage } from '@/components/pages/event/EventPage'
+import { urlForOpenGraphImage } from '@/sanity/lib/utils'
+import { generateStaticSlugs } from '@/sanity/loader/generateStaticSlugs'
+import { loadEvent } from '@/sanity/loader/loadQuery'
+const EventPreview = dynamic(
+  () => import('@/components/pages/event/EventPreview'),
+)
 
 type Props = {
   params: { year: string; slug: string }
@@ -18,36 +18,35 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { year, slug } = params
 
-  const event = await getEventBySlug(year + '/' + slug)
+  const { data: event } = await loadEvent(year + '/' + slug)
+  const ogImage = urlForOpenGraphImage(event?.coverGraphic)
 
-  return defineMetadata({
-    description: event?.briefDescription,
-    image: event?.coverGraphic,
+  return {
     title: event?.name,
-  })
+    description: event?.briefDescription,
+    openGraph: ogImage
+      ? {
+          images: [ogImage],
+        }
+      : {},
+  }
 }
 
-export async function generateStaticParams() {
-  const slugs = await getEventsPaths()
-  return slugs.map((slug) => ({ slug }))
+export function generateStaticParams() {
+  return generateStaticSlugs('event')
 }
 
 export default async function EventSlugRoute({ params }: Props) {
-  const data = await getEventBySlug(params.year + '/' + params.slug)
+  const { year, slug } = params
+  const initial = await loadEvent(year + '/' + slug)
 
-  if (!data && !draftMode().isEnabled) {
+  if (draftMode().isEnabled) {
+    return <EventPreview params={params} initial={initial} />
+  }
+
+  if (!initial.data) {
     notFound()
   }
 
-  return (
-    <LiveQuery
-      enabled={draftMode().isEnabled}
-      query={eventBySlugQuery}
-      params={params}
-      initialData={data}
-      as={EventPreview}
-    >
-      <EventPage data={data} />
-    </LiveQuery>
-  )
+  return <EventPage data={initial.data} />
 }

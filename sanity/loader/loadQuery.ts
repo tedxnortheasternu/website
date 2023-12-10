@@ -4,12 +4,22 @@ import { draftMode } from 'next/headers'
 
 import { client } from '@/sanity/lib/client'
 import {
+  applyPageQuery as applyPageQuery,
+  eventBySlugQuery,
   homePageQuery,
   pagesBySlugQuery,
   settingsQuery,
+  upcomingEventsQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
-import { HomePagePayload, PagePayload, SettingsPayload } from '@/types'
+import {
+  ApplyPagePayload,
+  HomePagePayload,
+  PagePayload,
+  PositionPayload,
+  SettingsPayload,
+  UpcomingEventPayload,
+} from '@/types'
 
 import { queryStore } from './createQueryStore'
 
@@ -63,7 +73,7 @@ export function loadSettings() {
   return loadQuery<SettingsPayload>(
     settingsQuery,
     {},
-    { next: { tags: ['settings', 'home', 'page', 'project'] } },
+    { next: { tags: ['settings', 'home', 'page'] } },
   )
 }
 
@@ -71,7 +81,7 @@ export function loadHomePage() {
   return loadQuery<HomePagePayload | null>(
     homePageQuery,
     {},
-    { next: { tags: ['home', 'project'] } },
+    { next: { tags: ['home'] } },
   )
 }
 
@@ -80,5 +90,29 @@ export function loadPage(slug: string) {
     pagesBySlugQuery,
     { slug },
     { next: { tags: [`page:${slug}`] } },
+  )
+}
+
+export function loadEventsPage() {
+  return loadQuery<UpcomingEventPayload[] | null>(
+    upcomingEventsQuery,
+    {},
+    { next: { tags: [`events`] } },
+  )
+}
+
+export function loadEvent(slug: string) {
+  return loadQuery<UpcomingEventPayload | null>(
+    eventBySlugQuery,
+    { slug },
+    { next: { tags: [`event:${slug}`] } },
+  )
+}
+
+export function loadApplyPage() {
+  return loadQuery<PositionPayload[] | null>(
+    applyPageQuery,
+    {},
+    { next: { tags: [`positions`] } },
   )
 }

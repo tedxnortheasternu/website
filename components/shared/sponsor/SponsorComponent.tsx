@@ -1,6 +1,7 @@
-import { resolveHref } from '@/lib/sanity.links'
 import Link from 'next/link'
-import { SponsorPayload } from 'types'
+
+import { resolveHref } from '@/sanity/lib/utils'
+import { SponsorPayload } from '@/types'
 
 import { SponsorListItem } from './SponsorListItem'
 

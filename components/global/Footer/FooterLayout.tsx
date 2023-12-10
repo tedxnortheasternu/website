@@ -1,6 +1,7 @@
 import type { PortableTextBlock } from '@portabletext/types'
-import { CustomPortableText } from '@/components/shared/CustomPortableText'
-import type { SettingsPayload } from 'types'
+
+import { CustomPortableText } from '@/components//shared/CustomPortableText'
+import type { SettingsPayload } from '@/types'
 
 interface FooterProps {
   data: SettingsPayload
@@ -8,10 +9,14 @@ interface FooterProps {
 export default function Footer(props: FooterProps) {
   const { data } = props
   const footer = data?.footer || ([] as PortableTextBlock[])
+
   return (
-    <footer className="w-full py-4 text-center bg-slate-50">
+    <footer className="bottom-0 w-full py-12 text-center bg-white md:py-20">
       {footer && (
-        <CustomPortableText paragraphClasses="text-md" value={footer} />
+        <CustomPortableText
+          paragraphClasses="text-md md:text-xl"
+          value={footer}
+        />
       )}
     </footer>
   )

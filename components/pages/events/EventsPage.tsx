@@ -1,14 +1,20 @@
-import { resolveHref } from '@/lib/sanity.links'
+import { EncodeDataAttributeCallback } from '@sanity/react-loader'
 import Link from 'next/link'
-import { UpcomingEventPayload } from 'types'
+
+import { resolveHref } from '@/sanity/lib/utils'
+import { UpcomingEventPayload } from '@/types'
 
 import { EventsListItem } from './EventsListItem'
 
 export interface EventsPageProps {
   data: UpcomingEventPayload[] | null
+  encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
-export function EventsPage({ data = [] }: EventsPageProps) {
+export function EventsPage({
+  data = [],
+  encodeDataAttribute,
+}: EventsPageProps) {
   return (
     <div className="max-w-screen-lg mx-auto">
       {/* Header */}

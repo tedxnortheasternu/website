@@ -1,40 +1,22 @@
-import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
-import { LiveQuery } from 'next-sanity/preview/live-query'
 
-import EventsPage from '@/components/pages/events/EventsPage'
-import EventsPagePreview from '@/components/pages/events/EventsPagePreview'
-import { getSettings, getUpcomingEvents } from '@/lib/sanity.fetch'
-import { defineMetadata } from '@/lib/utils.metadata'
-import { upcomingEventsQuery } from '@/sanity/lib/queries'
+import { EventsPage } from '@/components/pages/events/EventsPage'
+import { loadEventsPage } from '@/sanity/loader/loadQuery'
+const EventsPagePreview = dynamic(
+  () => import('@/components/pages/events/EventsPagePreview'),
+)
 
-export const runtime = 'edge'
+export default async function ApplyRoute() {
+  const initial = await loadEventsPage()
 
-export async function generateMetadata(): Promise<Metadata> {
-  const settings = await getSettings()
-
-  return defineMetadata({
-    description: '',
-    image: settings?.ogImage,
-    title: 'Upcoming Events',
-  })
-}
-
-export default async function IndexRoute() {
-  const data = await getUpcomingEvents()
-
-  if (!data && !draftMode().isEnabled) {
-    return <div className="text-center">There are no events.</div>
+  if (draftMode().isEnabled) {
+    return <EventsPagePreview initial={initial} />
   }
 
-  return (
-    <LiveQuery
-      enabled={draftMode().isEnabled}
-      query={upcomingEventsQuery}
-      initialData={data}
-      as={EventsPagePreview}
-    >
-      <EventsPage data={data} />
-    </LiveQuery>
-  )
+  if (!initial.data) {
+    return <div className="text-center">There are no upcoming events.</div>
+  }
+
+  return <EventsPage data={initial.data} />
 }

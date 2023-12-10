@@ -32,7 +32,7 @@ export const sponsorshipQuery = groq`
   } | order(name asc)
 `
 
-export const positionsAcceptingApplicationsQuery = groq`
+export const applyPageQuery = groq`
   *[_type == "position" && acceptingApplications] {
     name,
     // "slug": slug.current,

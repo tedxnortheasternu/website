@@ -3,12 +3,13 @@
  */
 
 import { visionTool } from '@sanity/vision'
-import { defineConfig } from 'sanity'
+import { defineConfig, SanityDocument } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { presentationTool } from 'sanity/presentation'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
+import { Iframe } from 'sanity-plugin-iframe-pane'
 
-import { apiVersion, dataset, projectId, studioUrl } from '@/sanity/lib/api'
+import { apiVersion, dataset, projectId } from '@/sanity/lib/api'
 import { locate } from '@/sanity/plugins/locate'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
 import campus from '@/sanity/schemas/documents/campus'
@@ -26,6 +27,10 @@ import timeline from '@/sanity/schemas/objects/timeline'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
+interface Doc extends SanityDocument {
+  slug?: { current: any }
+}
+
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'TEDxNortheasternU Website'
 
@@ -42,6 +47,14 @@ export const PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS = [
 
 // Used to generate URLs for drafts and live previews
 export const PREVIEW_BASE_URL = '/api/draft'
+
+function getPreviewUrl(doc: Doc) {
+  return (PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS as string[]).includes(
+    doc._type,
+  ) && doc?.slug
+    ? `${PREVIEW_BASE_URL}/?redirectTo=/${doc?.slug?.current}`
+    : `${PREVIEW_BASE_URL}`
+}
 
 export default defineConfig({
   basePath: '/studio',

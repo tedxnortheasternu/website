@@ -1,23 +1,25 @@
-import Link from 'next/link'
+import { EncodeDataAttributeCallback } from '@sanity/react-loader'
 
+// import Link from 'next/link'
 import { Header } from '@/components/shared/Header'
-import { SponsorListItem } from '@/components/sponsor/SponsorListItem'
-import { resolveHref } from '@/lib/sanity.links'
+// import { SponsorListItem } from '@/components/shared/sponsor/SponsorListItem'
+// import { resolveHref } from '@/lib/sanity.links'
 import type {
   HomePagePayload,
-  SponsorPayload,
-  UpcomingEventPayload,
+  // SponsorPayload,
+  // UpcomingEventPayload,
 } from '@/types'
 
-import { EventsListItem } from '../events/EventsListItem'
+// import { EventsListItem } from '../events/EventsListItem'
 
 export interface HomePageProps {
   data: HomePagePayload | null
-  upcomingEvents: UpcomingEventPayload[] | null
-  sponsors: SponsorPayload[] | null
+  // upcomingEvents: UpcomingEventPayload[] | null
+  // sponsors: SponsorPayload[] | null
+  encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
-export function HomePage({ data, upcomingEvents, sponsors }: HomePageProps) {
+export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   // Default to an empty object to allow previews on non-existent documents
   const { title = '', overview = [] } = data ?? {}
 
@@ -26,7 +28,7 @@ export function HomePage({ data, upcomingEvents, sponsors }: HomePageProps) {
       {/* Header */}
       {title && <Header centered title={title} description={overview} />}
 
-      {upcomingEvents ? (
+      {/* {upcomingEvents ? (
         <section>
           <h2 className="mb-6 text-3xl font-bold text-center">
             Upcoming Events
@@ -56,7 +58,7 @@ export function HomePage({ data, upcomingEvents, sponsors }: HomePageProps) {
             })}
           </div>
         </section>
-      ) : null}
+      ) : null} */}
     </div>
   )
 }
