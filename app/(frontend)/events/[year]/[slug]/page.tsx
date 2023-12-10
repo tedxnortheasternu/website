@@ -1,12 +1,13 @@
-import EventPage from 'components/pages/event/EventPage'
-import EventPreview from 'components/pages/event/EventPreview'
-import { getEventBySlug, getEventsPaths } from 'lib/sanity.fetch'
-import { eventBySlugQuery } from 'lib/sanity.queries'
-import { defineMetadata } from 'lib/utils.metadata'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 import { LiveQuery } from 'next-sanity/preview/live-query'
+
+import EventPage from '@/components/pages/event/EventPage'
+import EventPreview from '@/components/pages/event/EventPreview'
+import { getEventBySlug, getEventsPaths } from '@/lib/sanity.fetch'
+import { defineMetadata } from '@/lib/utils.metadata'
+import { eventBySlugQuery } from '@/sanity/lib/queries'
 
 export const runtime = 'edge'
 

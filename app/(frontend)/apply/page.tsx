@@ -1,14 +1,15 @@
-import ApplyPage from 'components/pages/apply/ApplyPage'
-import ApplyPagePreview from 'components/pages/apply/ApplyPagePreview'
-import {
-  getPositionsAcceptingApplications,
-  getSettings,
-} from 'lib/sanity.fetch'
-import { positionsAcceptingApplicationsQuery } from 'lib/sanity.queries'
-import { defineMetadata } from 'lib/utils.metadata'
 import { Metadata } from 'next'
 import { draftMode } from 'next/headers'
 import { LiveQuery } from 'next-sanity/preview/live-query'
+
+import ApplyPage from '@/components/pages/apply/ApplyPage'
+import ApplyPagePreview from '@/components/pages/apply/ApplyPagePreview'
+import {
+  getPositionsAcceptingApplications,
+  getSettings,
+} from '@/lib/sanity.fetch'
+import { defineMetadata } from '@/lib/utils.metadata'
+import { positionsAcceptingApplicationsQuery } from '@/sanity/lib/queries'
 
 export const runtime = 'edge'
 

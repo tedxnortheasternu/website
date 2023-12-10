@@ -1,7 +1,10 @@
 import 'server-only'
 
 import type { QueryParams } from '@sanity/client'
-import { client } from 'lib/sanity.client'
+import { draftMode } from 'next/headers'
+
+import { revalidateSecret } from '@/sanity/lib/api'
+import { client } from '@/sanity/lib/client'
 import {
   eventBySlugQuery,
   eventPaths,
@@ -13,8 +16,7 @@ import {
   settingsQuery,
   sponsorshipQuery,
   upcomingEventsQuery,
-} from 'lib/sanity.queries'
-import { draftMode } from 'next/headers'
+} from '@/sanity/lib/queries'
 import type {
   HomePagePayload,
   PagePayload,
@@ -22,9 +24,7 @@ import type {
   SettingsPayload,
   SponsorPayload,
   UpcomingEventPayload,
-} from 'types'
-
-import { revalidateSecret } from '../sanity/lib/api'
+} from '@/types'
 
 export const token = process.env.SANITY_API_READ_TOKEN
 

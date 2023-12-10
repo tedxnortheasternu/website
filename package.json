@@ -19,6 +19,7 @@
     "@sanity/demo": "1.0.2",
     "@sanity/icons": "^2.7.0",
     "@sanity/image-url": "1.0.2",
+    "@sanity/react-loader": "^1.4.0",
     "@sanity/ui": "^1.9.3",
     "@sanity/vision": "^3.21.1",
     "@tailwindcss/typography": "^0.5.10",

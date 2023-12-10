@@ -1,15 +1,16 @@
-import 'styles/index.css'
+import '@/styles/index.css'
 
-import { Footer } from 'components/global/Footer'
-import { Navbar } from 'components/global/Navbar'
-import { PreviewBanner } from 'components/preview/PreviewBanner'
-import { token } from 'lib/sanity.fetch'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
 import { Suspense } from 'react'
 
+import { Footer } from '@/components/global/Footer'
+import { Navbar } from '@/components/global/Navbar'
+import { PreviewBanner } from '@/components/preview/PreviewBanner'
+import { token } from '@/lib/sanity.fetch'
+
 const PreviewProvider = dynamic(
-  () => import('components/preview/PreviewProvider'),
+  () => import('@/components/preview/PreviewProvider'),
 )
 
 export default async function IndexRoute({

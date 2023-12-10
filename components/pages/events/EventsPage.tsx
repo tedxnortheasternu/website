@@ -1,4 +1,4 @@
-import { resolveHref } from 'lib/sanity.links'
+import { resolveHref } from '@/lib/sanity.links'
 import Link from 'next/link'
 import { UpcomingEventPayload } from 'types'
 

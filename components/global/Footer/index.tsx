@@ -1,7 +1,8 @@
-import { getSettings } from 'lib/sanity.fetch'
-import { settingsQuery } from 'lib/sanity.queries'
 import { draftMode } from 'next/headers'
 import { LiveQuery } from 'next-sanity/preview/live-query'
+
+import { getSettings } from '@/lib/sanity.fetch'
+import { settingsQuery } from '@/sanity/lib/queries'
 
 import FooterLayout from './FooterLayout'
 import FooterPreview from './FooterPreview'

@@ -1,4 +1,4 @@
-import ImageBox from 'components/shared/ImageBox'
+import ImageBox from '@/components/shared/ImageBox'
 import type { MilestoneItem } from 'types'
 
 export function TimelineItem({

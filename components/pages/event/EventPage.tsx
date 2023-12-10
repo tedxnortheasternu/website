@@ -1,4 +1,4 @@
-import ImageBox from 'components/shared/ImageBox'
+import ImageBox from '@/components/shared/ImageBox'
 import dayjs from 'dayjs'
 import { CalendarIcon, ClockIcon, MapPinIcon } from 'lucide-react'
 import type { UpcomingEventPayload } from 'types'
