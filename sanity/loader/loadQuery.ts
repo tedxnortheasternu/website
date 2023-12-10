@@ -81,7 +81,7 @@ export function loadHomePage() {
   return loadQuery<HomePagePayload | null>(
     homePageQuery,
     {},
-    { next: { tags: ['home'] } },
+    { next: { tags: ['home', 'events', 'sponsors'] } },
   )
 }
 

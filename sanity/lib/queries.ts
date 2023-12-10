@@ -5,6 +5,24 @@ export const homePageQuery = groq`
     _id,
     overview,
     title,
+    "upcomingEvents": *[_type == "event" && dateTime(endDateTime) > dateTime(now())] {
+      name,
+      "slug": slug.current,
+      briefDescription,
+      coverGraphic,
+      startDateTime,
+      location,
+      category-> {
+        _id,
+        name,
+      }
+    } | order(startDateTime desc),
+    "sponsors": *[_type == "sponsor" ] {
+      name,
+      logo,
+      description,
+      websiteLink,
+    } | order(name asc)
   }
 `
 
@@ -23,7 +41,7 @@ export const upcomingEventsQuery = groq`
   } | order(startDateTime desc)
 `
 
-export const sponsorshipQuery = groq`
+export const sponsorsQuery = groq`
   *[_type == "sponsor" ] {
     name,
     logo,
