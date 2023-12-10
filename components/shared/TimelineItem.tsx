@@ -1,5 +1,6 @@
-import ImageBox from '@/components/shared/ImageBox'
 import type { MilestoneItem } from 'types'
+
+import ImageBox from '@/components/shared/ImageBox'
 
 export function TimelineItem({
   isLast,

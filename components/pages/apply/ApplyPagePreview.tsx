@@ -4,17 +4,17 @@ import { type QueryResponseInitial } from '@sanity/react-loader/rsc'
 
 import { applyPageQuery } from '@/sanity/lib/queries'
 import { useQuery } from '@/sanity/loader/useQuery'
-import { ApplyPagePayload } from '@/types'
+import { PositionPayload } from '@/types'
 
 import ApplyPage from './ApplyPage'
 
 type Props = {
-  initial: QueryResponseInitial<ApplyPagePayload | null>
+  initial: QueryResponseInitial<PositionPayload[] | null>
 }
 
 export default function ApplyPagePreview(props: Props) {
   const { initial } = props
-  const { data } = useQuery<ApplyPagePayload | null>(
+  const { data } = useQuery<PositionPayload[] | null>(
     applyPageQuery,
     {},
     { initial },

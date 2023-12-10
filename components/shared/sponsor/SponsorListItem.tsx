@@ -1,7 +1,8 @@
-import ImageBox from '@/components/shared/ImageBox'
-import { cn } from '@/lib/utils'
 import Link from 'next/link'
 import type { SponsorPayload } from 'types'
+
+import ImageBox from '@/components/shared/ImageBox'
+import { cn } from '@/lib/utils'
 
 interface SponsorProps {
   sponsor: SponsorPayload
