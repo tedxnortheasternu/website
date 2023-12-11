@@ -16,11 +16,6 @@ export function TeamsListItem(props: TeamsProps) {
           <div className="flex flex-row items-center gap-1.5 mb-2 text-xs font-bold uppercase">
             Team
             <span className="text-slate-400">&middot;</span>
-            {team.name ? (
-              <span className="bg-red-600 rounded-full px-2 py-0.5 text-white">
-                {team.slug}
-              </span>
-            ) : null}
           </div>
 
           {/* Title */}
@@ -30,7 +25,7 @@ export function TeamsListItem(props: TeamsProps) {
 
           <div>
             {/* Overview  */}
-            {team.description ? <p>{team.description}</p> : null}
+            {<p>{team.description}</p>}
           </div>
         </div>
       </div>

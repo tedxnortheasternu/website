@@ -14,7 +14,7 @@ export function TeamsPage({ data = [] }: TeamsPageProps) {
       {/* Header */}
       <div className="mx-auto mb-8 text-center">
         <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl">
-          TedXNortheasternU Teams
+          Teams
         </h1>
       </div>
 
