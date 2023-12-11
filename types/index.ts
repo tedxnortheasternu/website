@@ -92,7 +92,7 @@ export interface PositionPayload {
 }
 
 export interface TeamsPayload {
-name: string
-slug: string
-description: string
+  name: string
+  slug: string
+  description: string
 }

@@ -19,7 +19,7 @@ export function TeamPage({ data }: TeamPageProps) {
         </div>
 
         <div className="border rounded-md">
-          <p> {description} </p>
+          <p>{description}</p>
 
           <div className="grid grid-cols-1 p-3 space-y-4 lg:p-4"></div>
         </div>
