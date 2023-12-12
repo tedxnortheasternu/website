@@ -1,6 +1,7 @@
 import { ArrowRightIcon, ClockIcon, MapPinIcon } from 'lucide-react'
 import Link from 'next/link'
-import type { PositionPayload } from 'types'
+
+import type { PositionPayload } from '@/types'
 
 interface PositionProps {
   position: PositionPayload

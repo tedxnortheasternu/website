@@ -1,19 +1,29 @@
 'use client'
 
-import dynamic from 'next/dynamic'
+import { type QueryResponseInitial } from '@sanity/react-loader/rsc'
 
-import type { EventsPageProps } from './EventsPage'
+import { upcomingEventsQuery } from '@/sanity/lib/queries'
+import { useQuery } from '@/sanity/loader/useQuery'
+import { UpcomingEventPayload } from '@/types'
 
-// Re-exported components using next/dynamic ensures they're not bundled
-// and sent to the browser unless actually used, with draftMode().enabled.
+import EventsPage from './EventsPage'
 
-const EventsPage = dynamic(() => import('./EventsPage'))
+type Props = {
+  initial: QueryResponseInitial<UpcomingEventPayload[] | null>
+}
 
-export default function EventsPagePreview({ data }: EventsPageProps) {
+export default function ApplyPagePreview(props: Props) {
+  const { initial } = props
+  const { data } = useQuery<UpcomingEventPayload[] | null>(
+    upcomingEventsQuery,
+    {},
+    { initial },
+  )
+
   if (!data) {
     return (
       <div className="text-center">
-        Please start editing your event documents to see the preview!
+        Please start editing your Event documents to see the preview!
       </div>
     )
   }

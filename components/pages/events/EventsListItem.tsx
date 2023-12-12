@@ -1,6 +1,7 @@
 import dayjs from 'dayjs'
 import { CalendarIcon, ClockIcon, MapPinIcon } from 'lucide-react'
-import type { UpcomingEventPayload } from 'types'
+
+import type { UpcomingEventPayload } from '@/types'
 
 interface EventProps {
   event: UpcomingEventPayload

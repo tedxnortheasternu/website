@@ -1,13 +1,16 @@
-import ImageBox from 'components/shared/ImageBox'
+import { EncodeDataAttributeCallback } from '@sanity/react-loader'
 import dayjs from 'dayjs'
 import { CalendarIcon, ClockIcon, MapPinIcon } from 'lucide-react'
-import type { UpcomingEventPayload } from 'types'
+
+import ImageBox from '@/components/shared/ImageBox'
+import type { UpcomingEventPayload } from '@/types'
 
 export interface EventPageProps {
   data: UpcomingEventPayload | null
+  encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
-export function EventPage({ data }: EventPageProps) {
+export function EventPage({ data, encodeDataAttribute }: EventPageProps) {
   // Default to an empty object to allow previews on non-existent documents
   const {
     name,
@@ -39,6 +42,7 @@ export function EventPage({ data }: EventPageProps) {
           {/* Image  */}
           {coverGraphic ? (
             <ImageBox
+              data-sanity={encodeDataAttribute?.('coverGraphic')}
               image={coverGraphic}
               alt={`Cover image for ${name}`}
               className="relative aspect-[16/9]"

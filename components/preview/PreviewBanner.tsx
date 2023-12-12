@@ -2,7 +2,7 @@
 
 export function PreviewBanner() {
   return (
-    <div className="bg-black p-3 text-center text-white">
+    <div className="p-3 text-center text-white bg-black">
       {'Previewing drafts. '}
       <a
         className="underline transition hover:opacity-50"
