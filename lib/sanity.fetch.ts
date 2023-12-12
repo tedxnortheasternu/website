@@ -7,6 +7,7 @@ import {
   eventPaths,
   homePageQuery,
   homePageTitleQuery,
+  memberQuery,
   pagePaths,
   pagesBySlugQuery,
   positionsAcceptingApplicationsQuery,
@@ -20,6 +21,7 @@ import {
 import { draftMode } from 'next/headers'
 import type {
   HomePagePayload,
+  MemberPayload,
   PagePayload,
   PositionPayload,
   SettingsPayload,
@@ -111,6 +113,13 @@ export function getTeams() {
   return sanityFetch<TeamsPayload[] | null>({
     query: teamsQuery,
     tags: ['teams'],
+  })
+}
+
+export function getMembers() {
+  return sanityFetch<MemberPayload[] | null>({
+    query: memberQuery,
+    tags: ['members'],
   })
 }
 

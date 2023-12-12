@@ -23,10 +23,10 @@ export function TeamsListItem(props: TeamsProps) {
             {team.name}
           </h3>
 
-          <div>
-            {/* Overview  */}
-            {<p>{team.description}</p>}
-          </div>
+          {/* Overview  */}
+          <h4 className="mb-4 text-2xl tracking-tight md:text-2xl">
+            {team.description}
+          </h4>
         </div>
       </div>
     </div>

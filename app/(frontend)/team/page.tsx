@@ -1,4 +1,4 @@
-import TeamsPage from 'components/pages/teams/TeamsPage'
+import MembersPage from 'components/pages/members/MembersPage'
 import TeamsPagePreview from 'components/pages/teams/TeamsPagePreview'
 import { getMembers, getSettings, getTeams } from 'lib/sanity.fetch'
 import { teamsQuery } from 'lib/sanity.queries'
@@ -34,7 +34,7 @@ export default async function IndexRoute() {
       initialData={data}
       as={TeamsPagePreview}
     >
-      <TeamsPage data={data} />
+      <MembersPage data={data} members={members} />
     </LiveQuery>
   )
 }

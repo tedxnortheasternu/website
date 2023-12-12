@@ -2,13 +2,14 @@ import { resolveHref } from 'lib/sanity.links'
 import Link from 'next/link'
 import { MemberPayload, TeamsPayload } from 'types'
 
-import { TeamsListItem } from './TeamsListItem'
+import { MembersListItem } from './MembersListItem'
 
-export interface TeamsPageProps {
+export interface MembersPageProps {
   data: TeamsPayload[] | null
+  members: MemberPayload[] | null
 }
 
-export function TeamsPage({ data = [] }: TeamsPageProps) {
+export function MembersPage({ data = [], members = [] }: MembersPageProps) {
   return (
     <div className="max-w-screen-lg mx-auto">
       {/* Header */}
@@ -26,7 +27,7 @@ export function TeamsPage({ data = [] }: TeamsPageProps) {
             if (!href) return null
             return (
               <Link key={key} href={href}>
-                <TeamsListItem team={team} odd={key % 2} />
+                <MembersListItem team={team} odd={key % 2} members={members} />
               </Link>
             )
           })}
@@ -39,4 +40,4 @@ export function TeamsPage({ data = [] }: TeamsPageProps) {
   )
 }
 
-export default TeamsPage
+export default MembersPage

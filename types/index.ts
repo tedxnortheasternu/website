@@ -96,3 +96,13 @@ export interface TeamsPayload {
   slug: string
   description: string
 }
+
+export interface MemberPayload {
+  name: string
+  team: Team
+  campuses: Campus
+  image: Image
+  major: string
+  hometown: string
+  goToIceCream: string
+}

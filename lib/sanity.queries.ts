@@ -91,6 +91,22 @@ export const teamBySlugQuery = groq`
   }
 `
 
+export const memberQuery = groq`
+  *[_type == "member"] {
+    name,
+    image,
+    major,
+    hometown,
+    goToIceCream,
+    team-> {
+      name,
+    },
+    campus-> {
+      name,
+    },
+  } | order(name asc, team asc)
+`
+
 export const homePageTitleQuery = groq`
   *[_type == "home"][0].title
 `
