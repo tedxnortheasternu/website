@@ -10,7 +10,7 @@ export default function RenaissanceNavbarLayout() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="w-full h-full max-w-screen-xl px-4 py-4 mx-auto text-white md:py-1 bg-slate-900 xl:rounded-md lg:flex lg:items-center lg:justify-between lg:gap-4">
+    <div className="w-full h-full max-w-screen-xl px-4 py-4 mx-auto text-white md:py-3 bg-slate-900 xl:rounded-md lg:flex lg:items-center lg:justify-between lg:gap-4">
       <div className="flex items-center justify-between lg:gap-4">
         <Link href="/renaissance" className="font-bold">
           Renaissance
