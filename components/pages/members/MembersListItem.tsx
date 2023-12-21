@@ -44,13 +44,13 @@ export function MembersListItem(props: TeamsProps) {
             {filteredMembers.map((member, key) => (
               <div
                 key={key}
-                className="relative flex flex-col items-center px-20 group"
+                className="relative flex flex-col items-center px-24 group"
               >
                 <div className="relative mb-2 w-60 h-60">
                   <ImageBox
                     image={member.image}
                     alt={member.name}
-                    className="object-cover w-full h-full mb-2 rounded-md"
+                    className="object-cover w-full h-full px-1 mb-2 rounded-md"
                   />
                   <div className="absolute top-0 left-0 invisible w-full h-full p-4 overflow-hidden transition-opacity duration-300 ease-in-out bg-white rounded-md shadow-md opacity-0 hover-info-box group-hover:opacity-100 group-hover:visible">
                     <h4 className="text-lg font-semibold text-center">

@@ -26,7 +26,7 @@ export default function ImageBox({
     <div className={cn('rounded-md bg-slate-50', className)}>
       {imageUrl && (
         <Image
-          className="w-full h-full"
+          className="w-full h-full px-4"
           alt={alt}
           width={width}
           height={height}
