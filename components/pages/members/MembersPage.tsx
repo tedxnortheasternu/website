@@ -15,7 +15,7 @@ export function MembersPage({ data = [], members = [] }: MembersPageProps) {
       {/* Header */}
       <div className="mx-auto mb-8 text-center">
         <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl">
-          Teams
+          Our Team
         </h1>
       </div>
 
@@ -26,9 +26,9 @@ export function MembersPage({ data = [], members = [] }: MembersPageProps) {
             const href = resolveHref('team', team.slug)
             if (!href) return null
             return (
-              <Link key={key} href={href}>
+              <div key={key}>
                 <MembersListItem team={team} odd={key % 2} members={members} />
-              </Link>
+              </div>
             )
           })}
         </div>

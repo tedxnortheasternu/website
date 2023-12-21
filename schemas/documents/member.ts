@@ -52,5 +52,11 @@ export default defineType({
       title: 'Go-to Ice Cream Flavor',
       description: 'eg: Chocolate Chunk',
     }),
+    defineField({
+      type: 'string',
+      name: 'position',
+      title: 'Go-to Ice Cream Flavor',
+      description: 'eg: Chocolate Chunk',
+    }),
   ],
 })
