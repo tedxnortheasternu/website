@@ -1,7 +1,7 @@
-import { CalendarDays } from 'lucide-react';
+import { CalendarDays } from 'lucide-react'
 import { defineField, defineType } from 'sanity'
 
-const year = new Date().getFullYear().toString() + "/";
+const year = new Date().getFullYear().toString() + '/'
 
 export default defineType({
   name: 'event',

@@ -16,6 +16,13 @@ export default defineType({
     }),
     defineField({
       type: 'reference',
+      name: 'position',
+      title: 'Position',
+      to: [{ type: 'position' }],
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      type: 'reference',
       name: 'team',
       title: 'Team',
       to: [{ type: 'team' }],
@@ -39,6 +46,14 @@ export default defineType({
       name: 'major',
       title: 'Major',
       description: 'eg: Computer Science',
+    }),
+    defineField({
+      type: 'reference',
+      name: 'postion',
+      title: 'Postion',
+      description: 'eg: Wehsite Manager',
+      to: [{ type: 'position' }],
+      validation: (rule) => rule.required(),
     }),
     defineField({
       type: 'string',

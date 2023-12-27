@@ -1,10 +1,11 @@
 'use client'
 
-import { cn } from 'lib/utils'
 import { ArrowRightIcon, MenuIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+
+import { cn } from '@/lib/utils'
 
 import tedx from '../../images/tedxnortheasternu.png'
 import NavLink from './NavLink'

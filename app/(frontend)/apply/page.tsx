@@ -1,46 +1,26 @@
-import ApplyPage from 'components/pages/apply/ApplyPage'
-import ApplyPagePreview from 'components/pages/apply/ApplyPagePreview'
-import {
-  getPositionsAcceptingApplications,
-  getSettings,
-} from 'lib/sanity.fetch'
-import { positionsAcceptingApplicationsQuery } from 'lib/sanity.queries'
-import { defineMetadata } from 'lib/utils.metadata'
-import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
-import { LiveQuery } from 'next-sanity/preview/live-query'
 
-export const runtime = 'edge'
+import { ApplyPage } from '@/components/pages/apply/ApplyPage'
+import { loadApplyPage } from '@/sanity/loader/loadQuery'
+const ApplyPagePreview = dynamic(
+  () => import('@/components/pages/apply/ApplyPagePreview'),
+)
 
-export async function generateMetadata(): Promise<Metadata> {
-  const settings = await getSettings()
+export default async function ApplyRoute() {
+  const initial = await loadApplyPage()
 
-  return defineMetadata({
-    description: '',
-    image: settings?.ogImage,
-    title: 'Apply · Open Positions',
-  })
-}
+  if (draftMode().isEnabled) {
+    return <ApplyPagePreview initial={initial} />
+  }
 
-export default async function IndexRoute() {
-  const data = await getPositionsAcceptingApplications()
-
-  if (!data && !draftMode().isEnabled) {
+  if (!initial.data) {
     return (
       <div className="text-center">
-        We do not currently have any positions accepting applications.
+        There are no positions currently accepting applications.
       </div>
     )
   }
 
-  return (
-    <LiveQuery
-      enabled={draftMode().isEnabled}
-      query={positionsAcceptingApplicationsQuery}
-      initialData={data}
-      as={ApplyPagePreview}
-    >
-      <ApplyPage data={data} />
-    </LiveQuery>
-  )
+  return <ApplyPage data={initial.data} />
 }

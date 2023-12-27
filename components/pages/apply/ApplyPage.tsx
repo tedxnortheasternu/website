@@ -1,12 +1,18 @@
-import { PositionPayload } from 'types'
+import { EncodeDataAttributeCallback } from '@sanity/react-loader'
+
+import { PositionPayload } from '@/types'
 
 import { PositionListItem } from './PositionListItem'
 
 export interface ApplyPageProps {
   data: PositionPayload[] | null
+  encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
-export function ApplyPage({ data = [] }: ApplyPageProps) {
+export function ApplyPage({
+  data: positions,
+  encodeDataAttribute,
+}: ApplyPageProps) {
   return (
     <div className="max-w-screen-lg mx-auto">
       {/* Header */}
@@ -17,9 +23,9 @@ export function ApplyPage({ data = [] }: ApplyPageProps) {
       </div>
 
       {/* Positions List */}
-      {data && data.length > 0 ? (
+      {positions && positions.length > 0 ? (
         <div className="mx-auto border rounded-md border-slate-200 overflow-clip">
-          {data.map((position, key) => {
+          {positions.map((position, key) => {
             // const href = resolveHref('position', position.slug)
             // if (!href) return null
             // <Link key={key} href={href}>
