@@ -44,6 +44,7 @@ export interface HomePagePayload {
   title?: string
   upcomingEvents: UpcomingEventPayload[]
   sponsors: SponsorPayload[]
+  teams: TeamPayload[]
 }
 
 export interface PagePayload {
@@ -88,4 +89,35 @@ export interface PositionPayload {
   description: string
   responsibilities: PortableTextBlock[]
   requirements: PortableTextBlock[]
+}
+
+export interface TeamPayload {
+  name: string
+  slug: string
+  description: string
+}
+
+export interface MemberPayload {
+  name: string
+  position: {
+    name: string
+    team: {
+      slug: string
+    }
+  }
+  team: {
+    slug: string
+  }
+  campuses: Campus
+  image: Image
+  major: string
+  hometown: string
+  goToIceCream: string
+}
+
+export type TeamsPagePayload = TeamPayload[]
+
+export interface MembersPagePayload {
+  teams: TeamPayload[]
+  members: MemberPayload[]
 }

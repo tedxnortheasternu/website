@@ -56,5 +56,6 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
     </div>
   )
 }
+      
 
 export default HomePage

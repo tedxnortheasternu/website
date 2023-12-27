@@ -10,16 +10,18 @@ interface ImageBoxProps {
   height?: number
   size?: string
   className?: string
+  imageClassName?: string
   'data-sanity'?: string
 }
 
 export default function ImageBox({
   image,
   alt = 'Cover image',
-  width = 3500,
-  height = 2000,
+  width = 800,
+  height = 800,
   size = '100vw',
   className,
+  imageClassName,
   ...props
 }: ImageBoxProps) {
   const imageUrl =
@@ -32,7 +34,7 @@ export default function ImageBox({
     >
       {imageUrl && (
         <Image
-          className="w-full h-full"
+          className={cn('w-full h-full', imageClassName)}
           alt={alt}
           width={width}
           height={height}

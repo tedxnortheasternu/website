@@ -7,16 +7,20 @@ import {
   applyPageQuery as applyPageQuery,
   eventBySlugQuery,
   homePageQuery,
+  membersPageQuery as membersPageQuery,
   pagesBySlugQuery,
   settingsQuery,
+  teamsPageQuery,
   upcomingEventsQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
 import {
   HomePagePayload,
+  MembersPagePayload,
   PagePayload,
   PositionPayload,
   SettingsPayload,
+  TeamsPagePayload,
   UpcomingEventPayload,
 } from '@/types'
 
@@ -115,3 +119,35 @@ export function loadApplyPage() {
     { next: { tags: [`positions`] } },
   )
 }
+
+export function loadTeamsPage() {
+  return loadQuery<TeamsPagePayload | null>(
+    teamsPageQuery,
+    {},
+    { next: { tags: [`teams`] } },
+  )
+}
+
+export function loadMembersPage() {
+  return loadQuery<MembersPagePayload | null>(
+    membersPageQuery,
+    {},
+    { next: { tags: [`members`, `teams`] } },
+  )
+}
+
+// export function getTeamsSlug(slug: string){
+//   return sanityFetch<TeamsPayload | null>({
+//     query: teamBySlugQuery,
+//     params: { slug },
+//     tags: [`team:${slug}`],
+//   })
+// }
+
+// export function getTeamsPaths() {
+//   return client.fetch<string[]>(
+//     teamPaths,
+//     {},
+//     { token, perspective: 'published' },
+//   )
+// }
