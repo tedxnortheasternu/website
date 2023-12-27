@@ -109,6 +109,14 @@ export const teamBySlugQuery = groq`
   }
 `
 
+export const teamsPageQuery = groq`
+  *[_type == "team"] {
+    name,
+    "slug": slug.current,
+    description,
+  } | order(name asc)
+`
+
 export const membersPageQuery = groq`
   {
     "teams": *[_type == "team"] {

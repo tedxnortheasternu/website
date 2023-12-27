@@ -115,6 +115,8 @@ export interface MemberPayload {
   goToIceCream: string
 }
 
+export type TeamsPagePayload = TeamPayload[]
+
 export interface MembersPagePayload {
   teams: TeamPayload[]
   members: MemberPayload[]

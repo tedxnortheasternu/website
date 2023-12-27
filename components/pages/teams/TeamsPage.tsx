@@ -1,40 +1,30 @@
-import { resolveHref } from 'lib/sanity.links'
-import Link from 'next/link'
-import { MemberPayload, TeamsPayload } from 'types'
+import { TeamsPagePayload } from '@/types'
 
 import { TeamsListItem } from './TeamsListItem'
 
 export interface TeamsPageProps {
-  data: TeamsPayload[] | null
+  data: TeamsPagePayload | null
 }
 
-export function TeamsPage({ data = [] }: TeamsPageProps) {
+export function TeamsPage({ data }: TeamsPageProps) {
+  if (!data || data.length === 0) {
+    return <div className="text-center">No Teams.</div>
+  }
   return (
     <div className="max-w-screen-lg mx-auto">
       {/* Header */}
       <div className="mx-auto mb-8 text-center">
         <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl">
-          Teams
+          Our Teams
         </h1>
       </div>
 
-      {/* Events List */}
-      {data && data.length > 0 ? (
-        <div className="mx-auto border rounded-md border-slate-200 overflow-clip">
-          {data.map((team, key) => {
-            const href = resolveHref('team', team.slug)
-            if (!href) return null
-            return (
-              <Link key={key} href={href}>
-                <TeamsListItem team={team} odd={key % 2} />
-              </Link>
-            )
-          })}
-        </div>
-      ) : (
-        // TODO: improve styling
-        <div className="text-center">No Teams.</div>
-      )}
+      <div className="flex flex-col border rounded-md border-slate-200">
+        {/* Teams List */}
+        {data.map((team) => {
+          return <TeamsListItem key={team.slug} team={team} />
+        })}
+      </div>
     </div>
   )
 }

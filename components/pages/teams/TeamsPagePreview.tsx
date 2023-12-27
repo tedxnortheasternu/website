@@ -1,22 +1,29 @@
 'use client'
 
-import dynamic from 'next/dynamic'
+import { type QueryResponseInitial } from '@sanity/react-loader/rsc'
 
-import type { TeamsPageProps } from './TeamsPage'
+import { teamsPageQuery } from '@/sanity/lib/queries'
+import { useQuery } from '@/sanity/loader/useQuery'
+import { TeamsPagePayload } from '@/types'
 
+import TeamsPage from './TeamsPage'
 
+type Props = {
+  initial: QueryResponseInitial<TeamsPagePayload | null>
+}
 
-// Re-exported components using next/dynamic ensures they're not bundled
-// and sent to the browser unless actually used, with draftMode().enabled.
+export default function TeamsPagePreview(props: Props) {
+  const { initial } = props
+  const { data } = useQuery<TeamsPagePayload | null>(
+    teamsPageQuery,
+    {},
+    { initial },
+  )
 
-const TeamsPage = dynamic(() => import('./TeamsPage'))
-
-export default function TeamsPagePreview({ data }: TeamsPageProps) {
   if (!data) {
     return (
       <div className="text-center">
-        Please start editing your teams documents and members documents to see
-        the preview!
+        Please start editing your Team documents to see the preview!
       </div>
     )
   }

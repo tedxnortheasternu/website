@@ -28,5 +28,5 @@ export default function MembersPagePreview(props: Props) {
     )
   }
 
-  return <MembersPage teams={data.teams} members={data.members} />
+  return <MembersPage data={data} />
 }
