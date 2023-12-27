@@ -45,6 +45,12 @@ export default defineType({
     }),
     defineField({
       type: 'boolean',
+      name: 'isLeadership',
+      title: 'Leadership Position',
+      initialValue: false,
+    }),
+    defineField({
+      type: 'boolean',
       name: 'acceptingApplications',
       title: 'Accepting Applications',
       initialValue: true,
