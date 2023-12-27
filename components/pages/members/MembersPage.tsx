@@ -1,15 +1,15 @@
-import { resolveHref } from 'lib/sanity.links'
-import Link from 'next/link'
-import { MemberPayload, TeamsPayload } from 'types'
+import { MembersPagePayload } from '@/types'
 
 import { MembersListItem } from './MembersListItem'
 
 export interface MembersPageProps {
-  data: TeamsPayload[] | null
-  members: MemberPayload[] | null
+  data: MembersPagePayload | null
 }
 
-export function MembersPage({ data = [], members = [] }: MembersPageProps) {
+export function MembersPage({ data }: MembersPageProps) {
+  if (!data || data.teams.length === 0) {
+    return <div className="text-center">No Teams.</div>
+  }
   return (
     <div className="max-w-screen-lg mx-auto">
       {/* Header */}
@@ -19,23 +19,23 @@ export function MembersPage({ data = [], members = [] }: MembersPageProps) {
         </h1>
       </div>
 
-      {/* Events List */}
-      {data && data.length > 0 ? (
-        <div className="mx-auto border rounded-md border-slate-200 overflow-clip">
-          {data.map((team, key) => {
-            const href = resolveHref('team', team.slug)
-            if (!href) return null
-            return (
-              <div key={key}>
-                <MembersListItem team={team} odd={key % 2} members={members} />
-              </div>
-            )
-          })}
-        </div>
-      ) : (
-        // TODO: improve styling
-        <div className="text-center">No Teams.</div>
-      )}
+      <div className="space-y-16">
+        {/* Teams List */}
+        {data.teams.map((team, key) => {
+          return (
+            <div key={key}>
+              <MembersListItem
+                team={team}
+                members={data.members.filter(
+                  (m) =>
+                    m?.position?.team?.slug === team.slug ||
+                    m.team.slug === team.slug,
+                )}
+              />
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }

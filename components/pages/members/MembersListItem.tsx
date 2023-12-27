@@ -1,76 +1,68 @@
-import ImageBox from 'components/shared/ImageBox'
-import { resolveHref } from 'lib/sanity.links'
-import Link from 'next/link'
-import type { MemberPayload, TeamsPayload } from 'types'
+import ImageBox from '@/components/shared/ImageBox'
+import type { MemberPayload, TeamPayload } from '@/types'
 
-interface TeamsProps {
-  team: TeamsPayload
-  odd: number
-  members: MemberPayload[] | null
+interface MembersListItemProps {
+  team: TeamPayload
+  members: MemberPayload[]
 }
 
-export function MembersListItem(props: TeamsProps) {
+export function MembersListItem(props: MembersListItemProps) {
   const { team, members } = props
 
-  if (!members) return null
-  const filteredMembers = members.filter(
-    (member) => member.team.name === team.name,
-  )
+  if (members.length === 0) return null
 
-  const href = resolveHref('team', team.slug)
-  if (!href) return null
   return (
-    <div className={`flex flex-col p-4 transition hover:bg-slate-50/50`}>
-      <div className="grid gap-8 p-3 ">
-        <div>
-          {/* Tags */}
-          <div className="flex flex-row items-center gap-1.5 mb-2 text-xs font-bold uppercase">
-            <span className="text-slate-400">&middot;</span>
-          </div>
+    <div className="">
+      {/* Title */}
+      <h3 className="text-2xl font-bold tracking-tight md:text-3xl">
+        {team.name} Team
+      </h3>
 
-          {/* Title */}
-          <Link href={href}>
-            <h3 className="mb-4 text-2xl font-extrabold tracking-tight md:text-3xl">
-              {team.name}
-            </h3>
-          </Link>
-          {/* Team Description */}
-          <h4 className="mb-4 text-2xl tracking-tight md:text-2xl">
-            {team.description}
-          </h4>
+      {/* Team Description */}
+      <p className="mt-2 tracking-tight">{team.description}</p>
 
-          <div className="grid md:grid-cols-4">
-            {/* Members */}
-            {filteredMembers.map((member, key) => (
-              <div
-                key={key}
-                className="relative flex flex-col items-center px-24 group"
-              >
-                <div className="relative mb-2 w-60 h-60">
-                  <ImageBox
-                    image={member.image}
-                    alt={member.name}
-                    className="object-cover w-full h-full px-1 mb-2 rounded-md"
-                  />
-                  <div className="absolute top-0 left-0 invisible w-full h-full p-4 overflow-hidden transition-opacity duration-300 ease-in-out bg-white rounded-md shadow-md opacity-0 hover-info-box group-hover:opacity-100 group-hover:visible">
-                    <h4 className="text-lg font-semibold text-center">
-                      {member.name}
-                    </h4>
-                    <p className="overflow-hidden text-center whitespace-normal">
-                      <span className="">{member.hometown}</span>
-                      <br />
-                      {member.goToIceCream}
-                    </p>
-                  </div>
-                </div>
-                <div className="overflow-hidden text-center">
-                  {/* Other information */}
-                  {member.major}
-                </div>
-              </div>
-            ))}
+      <div className="grid grid-cols-2 gap-4 mt-6 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
+        {/* Members */}
+        {members.map((member, key) => (
+          <div
+            key={key}
+            className="w-full border rounded-md border-slate-200 bg-slate-50"
+          >
+            <ImageBox
+              image={member.image}
+              alt={member.name}
+              imageClassName="object-contain object-center rounded-t-md aspect-square"
+            />
+
+            <div className="w-full p-4">
+              <p className="text-xl font-semibold leading-tight text-red-700">
+                {member.name}
+              </p>
+
+              {/* <span className="text-xs uppercase text-slate-600">Major</span> */}
+              <p className="text-sm font-medium leading-tight">
+                {member?.position?.name}
+              </p>
+
+              <span className="text-xs uppercase text-slate-600">Major</span>
+              <p className="text-sm font-medium leading-tight">
+                {member.major}
+              </p>
+
+              <span className="text-xs uppercase text-slate-600">Hometown</span>
+              <p className="text-sm font-medium leading-tight">
+                {member.hometown}
+              </p>
+
+              <span className="text-xs uppercase text-slate-600">
+                Go-to Ice Cream
+              </span>
+              <p className="text-sm font-medium leading-tight">
+                {member.goToIceCream}
+              </p>
+            </div>
           </div>
-        </div>
+        ))}
       </div>
     </div>
   )

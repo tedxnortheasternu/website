@@ -18,6 +18,7 @@ export default defineType({
       type: 'reference',
       name: 'position',
       title: 'Position',
+      description: 'eg: Website Manager',
       to: [{ type: 'position' }],
       validation: (rule) => rule.required(),
     }),
@@ -48,14 +49,6 @@ export default defineType({
       description: 'eg: Computer Science',
     }),
     defineField({
-      type: 'reference',
-      name: 'postion',
-      title: 'Postion',
-      description: 'eg: Wehsite Manager',
-      to: [{ type: 'position' }],
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
       type: 'string',
       name: 'hometown',
       title: 'Hometown',
@@ -64,12 +57,6 @@ export default defineType({
     defineField({
       type: 'string',
       name: 'goToIceCream',
-      title: 'Go-to Ice Cream Flavor',
-      description: 'eg: Chocolate Chunk',
-    }),
-    defineField({
-      type: 'string',
-      name: 'position',
       title: 'Go-to Ice Cream Flavor',
       description: 'eg: Chocolate Chunk',
     }),

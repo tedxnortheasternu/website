@@ -10,6 +10,7 @@ interface ImageBoxProps {
   height?: number
   size?: string
   className?: string
+  imageClassName?: string
   'data-sanity'?: string
 }
 
@@ -20,6 +21,7 @@ export default function ImageBox({
   height = 800,
   size = '100vw',
   className,
+  imageClassName,
   ...props
 }: ImageBoxProps) {
   const imageUrl =
@@ -32,7 +34,7 @@ export default function ImageBox({
     >
       {imageUrl && (
         <Image
-          className="w-full h-full px-4"
+          className={cn('w-full h-full', imageClassName)}
           alt={alt}
           width={width}
           height={height}

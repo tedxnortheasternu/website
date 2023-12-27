@@ -1,40 +1,22 @@
-import MembersPage from 'components/pages/members/MembersPage'
-import TeamsPagePreview from 'components/pages/teams/TeamsPagePreview'
-import { getMembers, getSettings, getTeams } from 'lib/sanity.fetch'
-import { teamsQuery } from 'lib/sanity.queries'
-import { defineMetadata } from 'lib/utils.metadata'
-import { Metadata } from 'next'
+import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
-import { LiveQuery } from 'next-sanity/preview/live-query'
 
-export const runtime = 'edge'
+import { MembersPage } from '@/components/pages/members/MembersPage'
+import { loadMembersPage } from '@/sanity/loader/loadQuery'
+const MembersPagePreview = dynamic(
+  () => import('@/components/pages/members/MembersPagePreview'),
+)
 
-export async function generateMetadata(): Promise<Metadata> {
-  const settings = await getSettings()
+export default async function TeamRoute() {
+  const initial = await loadMembersPage()
 
-  return defineMetadata({
-    description: '',
-    image: settings?.ogImage,
-    title: 'TedXNortheasternU',
-  })
-}
-
-export default async function IndexRoute() {
-  const data = await getTeams()
-  const members = await getMembers()
-
-  if (!data && !draftMode().isEnabled) {
-    return <div className="text-center">There are no teams.</div>
+  if (draftMode().isEnabled) {
+    return <MembersPagePreview initial={initial} />
   }
 
-  return (
-    <LiveQuery
-      enabled={draftMode().isEnabled}
-      query={teamsQuery}
-      initialData={data}
-      as={TeamsPagePreview}
-    >
-      <MembersPage data={data} members={members} />
-    </LiveQuery>
-  )
+  if (!initial.data) {
+    return <div className="text-center">There are no members.</div>
+  }
+
+  return <MembersPage data={initial.data} />
 }

@@ -109,20 +109,33 @@ export const teamBySlugQuery = groq`
   }
 `
 
-export const memberQuery = groq`
-  *[_type == "member"] {
-    name,
-    image,
-    major,
-    hometown,
-    goToIceCream,
-    team-> {
+export const membersPageQuery = groq`
+  {
+    "teams": *[_type == "team"] {
       name,
-    },
-    campus-> {
+      "slug": slug.current,
+      description,
+    } | order(name asc),
+    "members": *[_type == "member"] {
       name,
-    },
-  } | order(name asc, team asc)
+      position->{
+        name,
+        team->{
+          "slug": slug.current,
+        },
+      },
+      image,
+      major,
+      hometown,
+      goToIceCream,
+      team->{
+        "slug": slug.current,
+      },
+      campus->{
+        name,
+      },
+    } | order(name asc, team asc)
+  }
 `
 
 export const homePageTitleQuery = groq`

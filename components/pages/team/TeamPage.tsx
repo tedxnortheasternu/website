@@ -1,7 +1,7 @@
-import type { TeamsPayload } from 'types'
+import type { TeamPayload } from '@/types'
 
 export interface TeamPageProps {
-  data: TeamsPayload | null
+  data: TeamPayload | null
 }
 
 export function TeamPage({ data }: TeamPageProps) {
