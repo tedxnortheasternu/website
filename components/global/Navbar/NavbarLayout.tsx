@@ -24,18 +24,18 @@ const aboutLinks: { title: string; href: string; description: string }[] = [
   {
     title: 'Overview',
     href: '/about',
-    description: 'An overview of our background, reach, and impact',
+    description: 'Learn about our background, reach, and impact',
   },
   {
     title: 'Members',
     href: '/team',
-    description:
-      'Introductions to our team members who bring TEDxNortheasternU to life',
+    description: 'Meet the team who brings TEDxNortheasternU to life',
   },
   {
     title: 'Teams',
     href: '/teams',
-    description: 'Our organizational structure and descriptions of each team',
+    description:
+      'Explore our organizational structure and team responsibilities',
   },
 ]
 
@@ -93,7 +93,8 @@ export default function NavbarLayout() {
                             About Us
                           </div>
                           <p className="text-sm leading-tight">
-                            Learn about who we are and what we do
+                            We&lsquo;re a student-run organization that spreads
+                            ideas from across Northeastern University.
                           </p>
                         </div>
                       </li>
