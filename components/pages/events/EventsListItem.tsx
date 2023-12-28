@@ -5,11 +5,10 @@ import type { UpcomingEventPayload } from '@/types'
 
 interface EventProps {
   event: UpcomingEventPayload
-  odd: number
 }
 
 export function EventsListItem(props: EventProps) {
-  const { event, odd } = props
+  const { event } = props
 
   return (
     <div className="flex flex-col p-4 transition border-t hover:bg-slate-50/50 first:border-0 border-slate-200">

@@ -30,9 +30,10 @@ export function EventsPage({
           {data.map((event, key) => {
             const href = resolveHref('event', event.slug)
             if (!href) return null
+
             return (
               <Link key={key} href={href}>
-                <EventsListItem event={event} odd={key % 2} />
+                <EventsListItem event={event} />
               </Link>
             )
           })}
