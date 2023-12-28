@@ -24,18 +24,18 @@ const aboutLinks: { title: string; href: string; description: string }[] = [
   {
     title: 'Overview',
     href: '/about',
-    description: 'Learn about our background, reach, and impact',
+    description: 'Learn about our background, reach, and impact.',
   },
   {
     title: 'Members',
     href: '/team',
-    description: 'Meet the team who brings TEDxNortheasternU to life',
+    description: 'Meet the team who brings TEDxNortheasternU to life.',
   },
   {
     title: 'Teams',
     href: '/teams',
     description:
-      'Explore our organizational structure and team responsibilities',
+      'Explore our organizational structure and team responsibilities.',
   },
 ]
 
