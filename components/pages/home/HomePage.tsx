@@ -103,7 +103,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
             Sponsors
           </h2>
 
-          <div className="grid items-center border rounded-md md:grid-cols-3 border-slate-200">
+          <div className="grid items-center justify-center gap-2 p-4 border rounded-md lg:p-6 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 border-slate-200">
             {data.sponsors.length > 0 ? (
               data.sponsors.map((sponsor, key) => {
                 return <SponsorListItem key={key} sponsor={sponsor} />

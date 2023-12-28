@@ -10,7 +10,8 @@ interface SponsorProps {
 
 export function SponsorListItem({ sponsor }: SponsorProps) {
   const baseWrapperClasses =
-    'relative flex flex-col justify-center p-4 text-center'
+    'h-full w-full flex flex-col justify-center rounded-md px-4 text-center'
+
   if (sponsor.websiteLink) {
     return (
       <Link
@@ -33,6 +34,7 @@ export function SponsorListItem({ sponsor }: SponsorProps) {
 }
 
 function SponsorListItemContent({ sponsor }: SponsorProps) {
+  console.log(sponsor.logo)
   return (
     <>
       {sponsor.logo ? (
@@ -40,11 +42,12 @@ function SponsorListItemContent({ sponsor }: SponsorProps) {
           image={sponsor.logo}
           alt={`logo for ${sponsor.name}`}
           height={300}
+          crop={false}
           className="bg-transparent"
           imageClassName="object-contain"
         />
       ) : (
-        <span className="font-bold tracking-tight">{sponsor.name}</span>
+        <span className="py-4 font-bold tracking-tight">{sponsor.name}</span>
       )}
     </>
   )
