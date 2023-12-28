@@ -39,7 +39,9 @@ function SponsorListItemContent({ sponsor }: SponsorProps) {
         <ImageBox
           image={sponsor.logo}
           alt={`logo for ${sponsor.name}`}
-          className="object-cover"
+          height={300}
+          className="bg-transparent"
+          imageClassName="object-contain"
         />
       ) : (
         <span className="font-bold tracking-tight">{sponsor.name}</span>
