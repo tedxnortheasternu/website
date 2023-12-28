@@ -31,11 +31,7 @@ export function EventsPage({
             const href = resolveHref('event', event.slug)
             if (!href) return null
 
-            return (
-              <Link key={key} href={href}>
-                <EventsListItem event={event} />
-              </Link>
-            )
+            return <EventsListItem key={key} event={event} />
           })}
         </div>
       ) : (

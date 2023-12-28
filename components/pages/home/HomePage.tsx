@@ -4,7 +4,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { SponsorListItem } from '@/components/shared/sponsor/SponsorListItem'
-import { resolveHref } from '@/sanity/lib/utils'
 import type { HomePagePayload } from '@/types'
 
 import aboutPage from '../../images/aboutPage.jpg'
@@ -87,14 +86,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
           <div className="border rounded-md border-slate-200">
             {data.upcomingEvents.length > 0 ? (
               data.upcomingEvents.map((event, key) => {
-                const href = resolveHref('event', event.slug)
-                if (!href) return null
-
-                return (
-                  <Link key={key} href={href}>
-                    <EventsListItem event={event} />
-                  </Link>
-                )
+                return <EventsListItem key={key} event={event} />
               })
             ) : (
               <p className="p-4 text-center">

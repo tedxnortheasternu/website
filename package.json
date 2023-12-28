@@ -34,6 +34,7 @@
     "create-next-app": "^14.0.4",
     "date-fns": "2.30.0",
     "dayjs": "^1.11.10",
+    "ics": "^3.7.2",
     "intl-segmenter-polyfill": "0.4.4",
     "lucide-react": "^0.294.0",
     "next": "^14.0.4",

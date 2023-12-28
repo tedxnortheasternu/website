@@ -1,6 +1,17 @@
-import { CalendarIcon, ClockIcon, MapPinIcon } from 'lucide-react'
+'use client'
+
+import {
+  ArrowRightIcon,
+  CalendarIcon,
+  CalendarPlusIcon,
+  ClockIcon,
+  MapPinIcon,
+} from 'lucide-react'
+import Link from 'next/link'
 
 import dayjs from '@/lib/dayjs'
+import { downloadICS } from '@/lib/utils'
+import { resolveHref } from '@/sanity/lib/utils'
 import type { UpcomingEventPayload } from '@/types'
 
 interface EventProps {
@@ -10,8 +21,10 @@ interface EventProps {
 export function EventsListItem(props: EventProps) {
   const { event } = props
 
+  if (!event) return null
+
   return (
-    <div className="flex flex-col p-4 transition border-t hover:bg-slate-50/50 first:border-0 border-slate-200">
+    <div className="flex flex-col p-4 border-t first:border-0 border-slate-200">
       <div className="grid gap-8 p-3 md:grid-cols-2">
         <div>
           {/* Tags */}
@@ -53,6 +66,29 @@ export function EventsListItem(props: EventProps) {
         <div>
           {/* Overview  */}
           {event.briefDescription ? <p>{event.briefDescription}</p> : null}
+
+          <button
+            onClick={() =>
+              downloadICS(
+                event.name,
+                event.startDateTime,
+                event.endDateTime,
+                event.briefDescription ?? '',
+                event.location,
+              )
+            }
+            className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-white uppercase transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"
+          >
+            Add to Calendar <CalendarPlusIcon size={16} />
+          </button>
+
+          <Link
+            target="_blank"
+            href={resolveHref('event', event.slug)}
+            className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-red-600 uppercase transition-colors rounded-full w-max hover:text-red-700"
+          >
+            View Details <ArrowRightIcon size={16} />
+          </Link>
         </div>
       </div>
     </div>

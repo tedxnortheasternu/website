@@ -1,8 +1,16 @@
+'use client'
+
 import { EncodeDataAttributeCallback } from '@sanity/react-loader'
-import { CalendarIcon, ClockIcon, MapPinIcon } from 'lucide-react'
+import {
+  CalendarIcon,
+  CalendarPlusIcon,
+  ClockIcon,
+  MapPinIcon,
+} from 'lucide-react'
 
 import ImageBox from '@/components/shared/ImageBox'
 import dayjs from '@/lib/dayjs'
+import { downloadICS } from '@/lib/utils'
 import type { UpcomingEventPayload } from '@/types'
 
 export interface EventPageProps {
@@ -22,6 +30,8 @@ export function EventPage({ data, encodeDataAttribute }: EventPageProps) {
     startDateTime,
     endDateTime,
   } = data ?? {}
+
+  if (!data) return null
 
   return (
     <>
@@ -69,6 +79,21 @@ export function EventPage({ data, encodeDataAttribute }: EventPageProps) {
 
             {/* Description */}
             <p className="text-xl text-slate-600">{briefDescription}</p>
+
+            <button
+              onClick={() =>
+                downloadICS(
+                  name,
+                  startDateTime,
+                  endDateTime,
+                  briefDescription ?? '',
+                  location,
+                )
+              }
+              className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-white uppercase transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"
+            >
+              Add to Calendar <CalendarPlusIcon size={16} />
+            </button>
 
             {/* Campuses */}
             {campuses ? (
