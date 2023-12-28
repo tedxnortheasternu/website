@@ -17,10 +17,9 @@ export interface HomePageProps {
 
 export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   return (
-    <div className="space-y-16">
-      {/* Header */}
+    <div className="max-w-screen-xl mx-auto space-y-16">
       {/* Top Section */}
-      <section className="grid items-center max-w-screen-xl gap-5 mx-auto lg:gap-10 md:grid-cols-2">
+      <section className="grid items-center gap-5 lg:gap-10 md:grid-cols-2">
         <Image
           src={aboutPage}
           alt="speaker talking to a small group"
@@ -49,7 +48,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
       </section>
 
       {/* Middle Section */}
-      <div className="grid max-w-screen-xl gap-5 px-4 mx-auto lg:gap-10 md:py-20 md:grid-cols-2 lg:px-6">
+      <div className="grid gap-5 px-4 lg:gap-10 md:py-20 md:grid-cols-2 lg:px-6">
         <div>
           {/* Title */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
@@ -78,7 +77,6 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
           </p>
         </div>
       </div>
-      {/* {title && <Header centered title={title} description={overview} />} */}
 
       {data?.upcomingEvents ? (
         <section>

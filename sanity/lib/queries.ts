@@ -11,6 +11,7 @@ export const homePageQuery = groq`
       briefDescription,
       coverGraphic,
       startDateTime,
+      endDateTime,
       location,
       category-> {
         _id,
@@ -33,6 +34,7 @@ export const upcomingEventsQuery = groq`
     briefDescription,
     coverGraphic,
     startDateTime,
+    endDateTime,
     location,
     category-> {
       _id,
