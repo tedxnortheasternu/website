@@ -1,6 +1,6 @@
-import dayjs from 'dayjs'
 import { CalendarIcon, ClockIcon, MapPinIcon } from 'lucide-react'
 
+import dayjs from '@/lib/dayjs'
 import type { UpcomingEventPayload } from '@/types'
 
 interface EventProps {
@@ -36,12 +36,12 @@ export function EventsListItem(props: EventProps) {
           <div className="grid grid-cols-2 gap-2">
             <div className="flex flex-col gap-2 px-4 pt-4 pb-3 rounded-md bg-slate-100">
               <CalendarIcon />
-              {dayjs(event.startDateTime).format('MMM. D, YYYY')}
+              {dayjs(event.startDateTime).local().format('MMM. D, YYYY')}
             </div>
             <div className="flex flex-col gap-2 px-4 pt-4 pb-3 rounded-md bg-slate-100">
               <ClockIcon />
-              {dayjs(event.startDateTime).format('h:mma')} -{' '}
-              {dayjs(event.endDateTime).format('h:mma')}
+              {dayjs(event.startDateTime).local().format('h:mma')} -{' '}
+              {dayjs(event.endDateTime).local().format('h:mma z')}
             </div>
             <div className="flex flex-col col-span-2 gap-2 px-4 pt-4 pb-3 rounded-md bg-slate-100">
               <MapPinIcon />

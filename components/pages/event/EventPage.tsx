@@ -1,8 +1,8 @@
 import { EncodeDataAttributeCallback } from '@sanity/react-loader'
-import dayjs from 'dayjs'
 import { CalendarIcon, ClockIcon, MapPinIcon } from 'lucide-react'
 
 import ImageBox from '@/components/shared/ImageBox'
+import dayjs from '@/lib/dayjs'
 import type { UpcomingEventPayload } from '@/types'
 
 export interface EventPageProps {
@@ -54,12 +54,12 @@ export function EventPage({ data, encodeDataAttribute }: EventPageProps) {
             <div className="grid grid-cols-2 gap-2 md:grid-cols-3">
               <div className="flex flex-col gap-2 px-4 pt-4 pb-3 rounded-md bg-slate-100">
                 <CalendarIcon />
-                {dayjs(startDateTime).format('MMM. D, YYYY')}
+                {dayjs(startDateTime).local().format('MMM. D, YYYY')}
               </div>
               <div className="flex flex-col gap-2 px-4 pt-4 pb-3 rounded-md bg-slate-100">
                 <ClockIcon />
-                {dayjs(startDateTime).format('h:mma')} -{' '}
-                {dayjs(endDateTime).format('h:mma')}
+                {dayjs(startDateTime).local().format('h:mma')} -{' '}
+                {dayjs(endDateTime).local().format('h:mma z')}
               </div>
               <div className="flex flex-col col-span-2 gap-2 px-4 pt-4 pb-3 rounded-md md:col-span-1 bg-slate-100">
                 <MapPinIcon />
