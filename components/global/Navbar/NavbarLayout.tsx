@@ -39,6 +39,24 @@ const aboutLinks: { title: string; href: string; description: string }[] = [
   },
 ]
 
+const joinLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: 'Open Positions',
+    href: '/apply',
+    description: 'Check out open roles for current Northeastern students.',
+  },
+  {
+    title: 'Speaker Nominations',
+    href: 'https://airtable.com/appD8TuOcD3E8n7BG/shr8Dc6qKWXq7Ns5T',
+    description: "Nominate a speaker, whether it's yourself or someone else.",
+  },
+  {
+    title: 'Events',
+    href: '/events',
+    description: 'Discover our upcoming events and how you can take part!',
+  },
+]
+
 export default function NavbarLayout() {
   const [open, setOpen] = useState(false)
 
@@ -88,8 +106,8 @@ export default function NavbarLayout() {
                   <NavigationMenuContent>
                     <ul className="grid gap-3 w-full p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                       <li className="row-span-3">
-                        <div className="flex flex-col justify-end w-full h-full p-6 no-underline rounded-md outline-none select-none bg-red-50 focus:shadow-md">
-                          <div className="mt-4 mb-2 text-lg font-bold text-red-600">
+                        <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-red-50 focus:shadow-md">
+                          <div className="mt-4 mb-2 text-lg font-bold leading-tight text-red-600">
                             About Us
                           </div>
                           <p className="text-sm leading-tight">
@@ -109,21 +127,36 @@ export default function NavbarLayout() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
+                  <NavigationMenuTrigger>Join</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid gap-3 w-full p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                      <li className="row-span-3">
+                        <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-red-50 focus:shadow-md">
+                          <div className="mt-4 mb-2 text-lg font-bold leading-tight text-red-600">
+                            Join Us
+                          </div>
+                          <p className="text-sm leading-tight">
+                            From speakers to teams behind the scenes, we offer a
+                            wide range of opportunities.
+                          </p>
+                        </div>
+                      </li>
+
+                      {joinLinks.map((l, key) => (
+                        <ListItem key={key} href={l.href} title={l.title}>
+                          {l.description}
+                        </ListItem>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
                   <Link href="/events" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
                       Events
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <Link href="/apply" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      Apply
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
