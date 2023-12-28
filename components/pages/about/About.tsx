@@ -19,10 +19,10 @@ export default function AboutPage() {
   return (
     <>
       {/* Top Section */}
-      <section className="grid items-center max-w-screen-xl gap-5 mx-auto lg:gap-7 md:grid-cols-2 lg:px-4">
+      <section className="grid items-center max-w-screen-xl gap-5 mx-auto lg:gap-10 md:grid-cols-2 lg:px-4">
         <Image
           src={aboutPage}
-          alt="speaker"
+          alt="speaker talking to a small group"
           className="object-cover w-full h-full"
         />
         <div className="px-4 md:pl-0 lg:px-0">
@@ -48,7 +48,7 @@ export default function AboutPage() {
       </section>
 
       {/* Middle Section */}
-      <div className="grid max-w-screen-xl gap-5 px-4 pt-24 pb-6 mx-auto lg:gap-7 md:py-20 md:grid-cols-2 lg:px-6">
+      <div className="grid max-w-screen-xl gap-5 px-4 pt-24 pb-6 mx-auto lg:gap-10 md:py-20 md:grid-cols-2 lg:px-6">
         <div>
           {/* Title */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
@@ -79,7 +79,7 @@ export default function AboutPage() {
       </div>
 
       {/* Bottom Section */}
-      <div className="grid max-w-screen-xl gap-5 px-4 py-6 mx-auto lg:gap-7 md:py-20 md:grid-cols-2 lg:px-6">
+      <div className="grid max-w-screen-xl gap-5 px-4 py-6 mx-auto lg:gap-10 md:py-20 md:grid-cols-2 lg:px-6">
         <div>
           {/* Text Section */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
