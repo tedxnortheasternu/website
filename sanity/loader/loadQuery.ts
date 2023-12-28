@@ -10,6 +10,7 @@ import {
   homePageQuery,
   membersPageQuery as membersPageQuery,
   pagesBySlugQuery,
+  positionByIdQuery,
   settingsQuery,
   teamsPageQuery,
   upcomingEventsQuery,
@@ -127,6 +128,14 @@ export function loadApplyPage() {
     applyPageQuery,
     {},
     { next: { tags: [`positions`] } },
+  )
+}
+
+export function loadPositionPage(slug: string) {
+  return loadQuery<PositionPayload | null>(
+    positionByIdQuery,
+    { slug },
+    { next: { tags: [`position:${slug}`] } },
   )
 }
 

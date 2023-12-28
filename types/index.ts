@@ -81,8 +81,8 @@ export interface SponsorPayload {
 }
 
 export interface PositionPayload {
+  _id: string
   name: string
-  // slug: string
   team: Team
   campuses: Campus[]
   expectedHoursPerWeek: Range

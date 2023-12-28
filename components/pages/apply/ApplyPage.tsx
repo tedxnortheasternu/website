@@ -25,14 +25,8 @@ export function ApplyPage({
       {/* Positions List */}
       {positions && positions.length > 0 ? (
         <div className="mx-auto border rounded-md border-slate-200 overflow-clip">
-          {positions.map((position, key) => {
-            // const href = resolveHref('position', position.slug)
-            // if (!href) return null
-            // <Link key={key} href={href}>
-            // </Link>
-            return (
-              <PositionListItem key={key} position={position} odd={key % 2} />
-            )
+          {positions.map((position) => {
+            return <PositionListItem key={position._id} position={position} />
           })}
         </div>
       ) : (

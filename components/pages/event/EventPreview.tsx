@@ -13,7 +13,7 @@ type Props = {
   initial: QueryResponseInitial<UpcomingEventPayload | null>
 }
 
-export default function ProjectPreview(props: Props) {
+export default function EventPagePreview(props: Props) {
   const { params, initial } = props
   const { data, encodeDataAttribute } = useQuery<UpcomingEventPayload | null>(
     eventBySlugQuery,

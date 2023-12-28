@@ -60,6 +60,7 @@ export const sponsorsQuery = groq`
 
 export const applyPageQuery = groq`
   *[_type == "position" && acceptingApplications] {
+    _id,
     name,
     // "slug": slug.current,
     team-> {
@@ -73,9 +74,26 @@ export const applyPageQuery = groq`
       max
     },
     description,
+  } | order(name asc)
+`
+
+export const positionByIdQuery = groq`
+  *[_type == "position" && _id == $slug][0] {
+    name,
+    team-> {
+      name
+    },
+    campuses[]->{
+      name
+    },
+    expectedHoursPerWeek {
+      min,
+      max
+    },
+    description,
     responsibilities,
     requirements
-  } | order(name asc)
+  }
 `
 
 export const eventPaths = groq`

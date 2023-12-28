@@ -25,7 +25,7 @@ export function EventPage({ data, encodeDataAttribute }: EventPageProps) {
 
   return (
     <>
-      <div className="mb-20 space-y-6">
+      <div className="space-y-6">
         {/* Header */}
         <div className="text-center">
           {category ? (

@@ -1,22 +1,22 @@
 import { ArrowRightIcon, ClockIcon, MapPinIcon } from 'lucide-react'
 import Link from 'next/link'
 
+import { resolveHref } from '@/sanity/lib/utils'
 import type { PositionPayload } from '@/types'
 
 interface PositionProps {
   position: PositionPayload
-  odd: number
 }
 
 export function PositionListItem(props: PositionProps) {
-  const { position, odd } = props
+  const { position } = props
+
+  const href = resolveHref('position', position._id)
+
+  if (!href) return null
 
   return (
-    <div
-      className={`flex flex-col p-4 transition hover:bg-slate-50/50 ${
-        odd && 'border-t border-slate-200'
-      }`}
-    >
+    <div className="flex flex-col p-4 transition border-t first:border-0 border-slate-200">
       <div className="grid gap-8 p-3 md:grid-cols-2">
         <div>
           {/* Tags */}
@@ -35,7 +35,7 @@ export function PositionListItem(props: PositionProps) {
             {position.name}
           </h3>
 
-          {/* Date/Time/Location */}
+          {/* Campuses/Expected Hours */}
           <div className="grid grid-cols-2 gap-2">
             <div className="flex flex-col gap-2 px-4 pt-4 pb-3 rounded-md bg-slate-100">
               <MapPinIcon />
@@ -55,10 +55,18 @@ export function PositionListItem(props: PositionProps) {
 
           <Link
             target="_blank"
-            href="https://airtable.com/shrZ5zWkRRS75nEvN"
+            href={href}
             className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-white uppercase transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"
           >
-            Apply Today <ArrowRightIcon size={16} />
+            Learn More <ArrowRightIcon size={16} />
+          </Link>
+
+          <Link
+            target="_blank"
+            href="https://airtable.com/shrZ5zWkRRS75nEvN"
+            className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-red-600 uppercase transition-colors rounded-full w-max hover:text-red-700"
+          >
+            Apply Now <ArrowRightIcon size={16} />
           </Link>
         </div>
       </div>
