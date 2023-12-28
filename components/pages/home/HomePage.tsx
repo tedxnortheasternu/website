@@ -87,15 +87,21 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
           </h2>
 
           <div className="border rounded-md border-slate-200">
-            {data?.upcomingEvents.map((event, key) => {
-              const href = resolveHref('event', event.slug)
-              if (!href) return null
-              return (
-                <Link key={key} href={href}>
-                  <EventsListItem event={event} odd={key % 2} />
-                </Link>
-              )
-            })}
+            {data.upcomingEvents.length > 0 ? (
+              data.upcomingEvents.map((event, key) => {
+                const href = resolveHref('event', event.slug)
+                if (!href) return null
+                return (
+                  <Link key={key} href={href}>
+                    <EventsListItem event={event} odd={key % 2} />
+                  </Link>
+                )
+              })
+            ) : (
+              <p className="p-4 text-center">
+                We do not have any upcoming events right now.
+              </p>
+            )}
           </div>
         </section>
       ) : null}
@@ -105,9 +111,24 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
           <h2 className="mb-6 text-3xl font-bold text-center">Sponsors</h2>
 
           <div className="grid items-center border rounded-md md:grid-cols-3 border-slate-200">
-            {data?.sponsors.map((sponsor, key) => {
-              return <SponsorListItem key={key} sponsor={sponsor} />
-            })}
+            {data.sponsors.length > 0 ? (
+              data.sponsors.map((sponsor, key) => {
+                return <SponsorListItem key={key} sponsor={sponsor} />
+              })
+            ) : (
+              <div className="col-span-3 p-4 text-center">
+                <p>
+                  Are you interested in sponsoring us? We&lsquo;d love to
+                  connect!
+                </p>
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-4 py-2 mt-2 text-xs font-bold text-white uppercase transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"
+                >
+                  Contact Us <ArrowRightIcon size={16} />
+                </Link>
+              </div>
+            )}
           </div>
         </section>
       ) : null}
