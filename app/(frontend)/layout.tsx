@@ -53,7 +53,7 @@ export default async function IndexRoute({
       <div className="flex flex-col min-h-screen text-black bg-white">
         {isDraftMode && <PreviewBanner />}
         <Navbar />
-        <div className="flex-grow px-4 mt-20 md:px-16 lg:px-32">
+        <div className="flex-grow px-4 mt-8 md:mt-16 md:px-16 lg:px-32">
           <Suspense>{children}</Suspense>
         </div>
         <Suspense>

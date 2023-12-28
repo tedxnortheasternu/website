@@ -24,10 +24,7 @@ export function MembersListItem(props: MembersListItemProps) {
       <div className="grid grid-cols-2 gap-4 mt-6 sm:grid-cols-3 lg:grid-cols-4 lg:gap-6">
         {/* Members */}
         {members.map((member, key) => (
-          <div
-            key={key}
-            className="w-full border rounded-md border-slate-200 bg-slate-50"
-          >
+          <div key={key} className="w-full border rounded-md border-slate-200">
             <ImageBox
               image={member.image}
               alt={member.name}
