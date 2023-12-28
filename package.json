@@ -14,6 +14,7 @@
     "singleQuote": true
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@portabletext/react": "^3.0.11",
     "@radix-ui/react-navigation-menu": "^1.1.4",
     "@sanity/client": "^6.9.3",
