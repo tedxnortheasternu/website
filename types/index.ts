@@ -117,6 +117,20 @@ export interface MemberPayload {
 
 export type TeamsPagePayload = TeamPayload[]
 
+export interface AboutPagePayload {
+  leaders: {
+    _id: string
+    name: string
+    position: {
+      name: string
+    }
+    image: Image
+  }[]
+  teamsCount: number
+  campusesCount: number
+  membersCount: number
+}
+
 export interface MembersPagePayload {
   teams: TeamPayload[]
   members: MemberPayload[]

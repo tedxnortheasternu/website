@@ -4,6 +4,7 @@ import { draftMode } from 'next/headers'
 
 import { client } from '@/sanity/lib/client'
 import {
+  aboutPageQuery,
   applyPageQuery as applyPageQuery,
   eventBySlugQuery,
   homePageQuery,
@@ -15,6 +16,7 @@ import {
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
 import {
+  AboutPagePayload,
   HomePagePayload,
   MembersPagePayload,
   PagePayload,
@@ -112,6 +114,14 @@ export function loadEvent(slug: string) {
   )
 }
 
+export function loadAboutPage() {
+  return loadQuery<AboutPagePayload | null>(
+    aboutPageQuery,
+    {},
+    { next: { tags: [`members`, `teams`] } },
+  )
+}
+
 export function loadApplyPage() {
   return loadQuery<PositionPayload[] | null>(
     applyPageQuery,
@@ -136,18 +146,3 @@ export function loadMembersPage() {
   )
 }
 
-// export function getTeamsSlug(slug: string){
-//   return sanityFetch<TeamsPayload | null>({
-//     query: teamBySlugQuery,
-//     params: { slug },
-//     tags: [`team:${slug}`],
-//   })
-// }
-
-// export function getTeamsPaths() {
-//   return client.fetch<string[]>(
-//     teamPaths,
-//     {},
-//     { token, perspective: 'published' },
-//   )
-// }

@@ -117,6 +117,23 @@ export const teamsPageQuery = groq`
   } | order(name asc)
 `
 
+export const aboutPageQuery = groq`
+  {
+    "leaders": *[_type == "member" && position->isLeadership] {
+      _id,
+      name,
+      "positionName": position->name,
+      position->{
+        name,
+      },
+      image,
+    } | order(positionName asc),
+    "campusesCount": count(*[_type == "campus"]),
+    "teamsCount": count(*[_type == "team"]),
+    "membersCount": count(*[_type == "member"])
+  }
+`
+
 export const membersPageQuery = groq`
   {
     "teams": *[_type == "team"] {
