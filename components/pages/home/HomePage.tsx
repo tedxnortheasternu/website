@@ -59,13 +59,13 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
         <div>
           {/* Text Section */}
           <p>
-            TEDx is a grassroots initiative, created in the spirit of TED’s
-            overall mission to research and discover “ideas worth spreading.”
-            TEDx brings the spirit of TED to local communities around the globe
-            through TEDx events. These events are organized by passionate
-            individuals who seek to uncover new ideas and to share the latest
-            research in their local areas that spark conversations in their
-            communities.
+            TEDx is a grassroots initiative, created in the spirit of
+            TED&lsquo;s overall mission to research and discover “ideas worth
+            spreading.” TEDx brings the spirit of TED to local communities
+            around the globe through TEDx events. These events are organized by
+            passionate individuals who seek to uncover new ideas and to share
+            the latest research in their local areas that spark conversations in
+            their communities.
           </p>
           <p className="mt-5">
             TEDx events include live speakers and recorded TED Talks, and are
@@ -80,7 +80,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
       {data?.upcomingEvents ? (
         <section>
-          <h2 className="mb-6 text-3xl font-bold text-center">
+          <h2 className="px-4 mb-6 text-4xl font-bold leading-tight lg:px-6">
             Upcoming Events
           </h2>
 
@@ -107,7 +107,9 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
       {data?.sponsors ? (
         <section>
-          <h2 className="mb-6 text-3xl font-bold text-center">Sponsors</h2>
+          <h2 className="px-4 mb-6 text-4xl font-bold leading-tight lg:px-6">
+            Sponsors
+          </h2>
 
           <div className="grid items-center border rounded-md md:grid-cols-3 border-slate-200">
             {data.sponsors.length > 0 ? (

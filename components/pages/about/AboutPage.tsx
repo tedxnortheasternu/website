@@ -59,13 +59,13 @@ export function ApplyPage({ data, encodeDataAttribute }: ApplyPageProps) {
         <div>
           {/* Text Section */}
           <p>
-            TEDx is a grassroots initiative, created in the spirit of TED’s
-            overall mission to research and discover “ideas worth spreading.”
-            TEDx brings the spirit of TED to local communities around the globe
-            through TEDx events. These events are organized by passionate
-            individuals who seek to uncover new ideas and to share the latest
-            research in their local areas that spark conversations in their
-            communities.
+            TEDx is a grassroots initiative, created in the spirit of
+            TED&lsquo;s overall mission to research and discover “ideas worth
+            spreading.” TEDx brings the spirit of TED to local communities
+            around the globe through TEDx events. These events are organized by
+            passionate individuals who seek to uncover new ideas and to share
+            the latest research in their local areas that spark conversations in
+            their communities.
           </p>
           <p className="mt-5">
             TEDx events include live speakers and recorded TED Talks, and are
