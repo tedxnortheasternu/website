@@ -19,6 +19,8 @@ export interface EventPageProps {
 }
 
 export function EventPage({ data, encodeDataAttribute }: EventPageProps) {
+  if (!data) return null
+
   // Default to an empty object to allow previews on non-existent documents
   const {
     name,
@@ -30,8 +32,6 @@ export function EventPage({ data, encodeDataAttribute }: EventPageProps) {
     startDateTime,
     endDateTime,
   } = data ?? {}
-
-  if (!data) return null
 
   return (
     <>

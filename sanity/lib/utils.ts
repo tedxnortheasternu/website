@@ -26,13 +26,13 @@ export function resolveHref(documentType?: string, slug?: string): string {
     case 'home':
       return '/'
     case 'page':
-      return slug ? `/${slug}` : undefined
+      return slug ? `/${slug}` : '/'
     case 'event':
-      return slug ? `/events/${slug}` : undefined
+      return slug ? `/events/${slug}` : '/events'
     case 'position':
-      return slug ? `/apply/${slug}` : undefined
+      return slug ? `/apply/${slug}` : '/apply'
     case 'team':
-      return slug ? `/teams/${slug}` : undefined
+      return slug ? `/teams/${slug}` : '/teams'
     default:
       console.warn('Invalid document type:', documentType)
       return '#'
