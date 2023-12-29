@@ -41,22 +41,38 @@ export function MembersListItem(props: MembersListItemProps) {
                 {member?.position?.name}
               </p>
 
-              <span className="text-xs uppercase text-slate-600">Major</span>
-              <p className="text-sm font-medium leading-tight">
-                {member.major}
-              </p>
+              {member.major ? (
+                <>
+                  <span className="text-xs uppercase text-slate-600">
+                    Major
+                  </span>
+                  <p className="text-sm font-medium leading-tight">
+                    {member.major}
+                  </p>
+                </>
+              ) : null}
 
-              <span className="text-xs uppercase text-slate-600">Hometown</span>
-              <p className="text-sm font-medium leading-tight">
-                {member.hometown}
-              </p>
+              {member.hometown ? (
+                <>
+                  <span className="text-xs uppercase text-slate-600">
+                    Hometown
+                  </span>
+                  <p className="text-sm font-medium leading-tight">
+                    {member.hometown}
+                  </p>
+                </>
+              ) : null}
 
-              <span className="text-xs uppercase text-slate-600">
-                Go-to Ice Cream
-              </span>
-              <p className="text-sm font-medium leading-tight">
-                {member.goToIceCream}
-              </p>
+              {member.goToIceCream ? (
+                <>
+                  <span className="text-xs uppercase text-slate-600">
+                    Go-to Ice Cream
+                  </span>
+                  <p className="text-sm font-medium leading-tight">
+                    {member.goToIceCream}
+                  </p>
+                </>
+              ) : null}
             </div>
           </div>
         ))}

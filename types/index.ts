@@ -110,9 +110,9 @@ export interface MemberPayload {
   }
   campuses: Campus
   image: Image
-  major: string
-  hometown: string
-  goToIceCream: string
+  major?: string
+  hometown?: string
+  goToIceCream?: string
 }
 
 export type TeamsPagePayload = TeamPayload[]
