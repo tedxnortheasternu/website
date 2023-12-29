@@ -34,7 +34,6 @@ export function SponsorListItem({ sponsor }: SponsorProps) {
 }
 
 function SponsorListItemContent({ sponsor }: SponsorProps) {
-  console.log(sponsor.logo)
   return (
     <>
       {sponsor.logo ? (
