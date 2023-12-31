@@ -1,10 +1,11 @@
 'use client'
 
-import NavLink from 'components/global/Navbar/NavLink'
-import { cn } from 'lib/utils'
 import { MenuIcon, XIcon } from 'lucide-react'
 import Link from 'next/link'
 import { useState } from 'react'
+
+import NavLink from '@/components/global/Navbar/NavLink'
+import { cn } from '@/lib/utils'
 
 export default function RenaissanceNavbarLayout() {
   const [open, setOpen] = useState(false)

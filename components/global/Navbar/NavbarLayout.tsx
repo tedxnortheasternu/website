@@ -159,6 +159,14 @@ export default function NavbarLayout() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
+                <Link href="/renaissance" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Renaissance
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Contact

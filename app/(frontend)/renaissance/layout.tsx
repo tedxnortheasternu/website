@@ -1,4 +1,4 @@
-import { RenaissanceNavbar } from 'components/global/renaissance/RenaissanceNavbar'
+import { RenaissanceNavbar } from '@/components/global/renaissance/RenaissanceNavbar'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
