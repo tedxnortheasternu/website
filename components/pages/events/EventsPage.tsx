@@ -1,16 +1,22 @@
-import { resolveHref } from 'lib/sanity.links'
+import { EncodeDataAttributeCallback } from '@sanity/react-loader'
 import Link from 'next/link'
-import { UpcomingEventPayload } from 'types'
+
+import { resolveHref } from '@/sanity/lib/utils'
+import { UpcomingEventPayload } from '@/types'
 
 import { EventsListItem } from './EventsListItem'
 
 export interface EventsPageProps {
   data: UpcomingEventPayload[] | null
+  encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
-export function EventsPage({ data = [] }: EventsPageProps) {
+export function EventsPage({
+  data = [],
+  encodeDataAttribute,
+}: EventsPageProps) {
   return (
-    <>
+    <div className="max-w-screen-lg mx-auto">
       {/* Header */}
       <div className="mx-auto mb-8 text-center">
         <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl">
@@ -24,18 +30,15 @@ export function EventsPage({ data = [] }: EventsPageProps) {
           {data.map((event, key) => {
             const href = resolveHref('event', event.slug)
             if (!href) return null
-            return (
-              <Link key={key} href={href}>
-                <EventsListItem event={event} odd={key % 2} />
-              </Link>
-            )
+
+            return <EventsListItem key={key} event={event} />
           })}
         </div>
       ) : (
         // TODO: improve styling
         <div className="text-center">No events.</div>
       )}
-    </>
+    </div>
   )
 }
 

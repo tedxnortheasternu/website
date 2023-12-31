@@ -1,21 +1,69 @@
 'use client'
 
-import { cn } from 'lib/utils'
 import { ArrowRightIcon, MenuIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
+import React from 'react'
+
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from '@/components/ui/navigation-menu'
+import { cn } from '@/lib/utils'
 
 import tedx from '../../images/tedxnortheasternu.png'
 import NavLink from './NavLink'
+
+const aboutLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: 'Overview',
+    href: '/about',
+    description: 'Learn about our background, reach, and impact.',
+  },
+  {
+    title: 'Members',
+    href: '/team',
+    description: 'Meet the team who brings TEDxNortheasternU to life.',
+  },
+  {
+    title: 'Teams',
+    href: '/teams',
+    description:
+      'Explore our organizational structure and team responsibilities.',
+  },
+]
+
+const joinLinks: { title: string; href: string; description: string }[] = [
+  {
+    title: 'Open Positions',
+    href: '/apply',
+    description: 'Check out open roles for current Northeastern students.',
+  },
+  {
+    title: 'Speaker Nominations',
+    href: 'https://airtable.com/appD8TuOcD3E8n7BG/shr8Dc6qKWXq7Ns5T',
+    description: "Nominate a speaker, whether it's yourself or someone else.",
+  },
+  {
+    title: 'Events',
+    href: '/events',
+    description: 'Discover our upcoming events and how you can take part!',
+  },
+]
 
 export default function NavbarLayout() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="z-50 w-full py-4 text-sm bg-white">
-      <nav className="w-full max-w-screen-xl px-4 mx-auto lg:flex lg:items-center lg:justify-between lg:gap-4">
-        <div className="flex items-center justify-between lg:gap-4">
+    <header className="w-full py-4 text-sm bg-white">
+      <nav className="w-full max-w-screen-xl px-4 mx-auto lg:flex lg:items-center lg:justify-between">
+        <div className="flex items-center justify-between">
           <Link href="/">
             <Image
               src={tedx}
@@ -46,21 +94,91 @@ export default function NavbarLayout() {
 
         <div
           className={cn(
-            'mt-2 shadow-md lg:mt-0 rounded-lg border border-slate-200 p-4 lg:p-0 flex flex-col lg:flex-row lg:justify-between overflow-hidden transition-all duration-300 basis-full grow lg:border-transparent lg:shadow-none lg:gap-4 lg:flex',
+            'mt-2 shadow-md lg:mt-0 rounded-lg border border-slate-200 p-4 lg:p-0 flex flex-col lg:flex-row lg:justify-between transition-all duration-300 basis-full grow lg:border-transparent lg:shadow-none lg:gap-4 lg:flex',
             open ? '' : 'hidden',
           )}
         >
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-5">
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/events">Events</NavLink>
-            <NavLink href="/renaissance">Renaissance</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
-            {process.env.NODE_ENV === 'development' ? (
-              <NavLink target="_blank" href="/studio">
-                [DEV] Studio
-              </NavLink>
-            ) : null}
-          </div>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>About</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 w-full p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-red-50 focus:shadow-md">
+                        <div className="mt-4 mb-2 text-lg font-bold leading-tight text-red-600">
+                          About Us
+                        </div>
+                        <p className="text-sm leading-tight">
+                          We&lsquo;re a student-run organization that spreads
+                          ideas from across Northeastern University.
+                        </p>
+                      </div>
+                    </li>
+
+                    {aboutLinks.map((l, key) => (
+                      <ListItem key={key} href={l.href} title={l.title}>
+                        {l.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger>Join</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 w-full p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-red-50 focus:shadow-md">
+                        <div className="mt-4 mb-2 text-lg font-bold leading-tight text-red-600">
+                          Join Us
+                        </div>
+                        <p className="text-sm leading-tight">
+                          From speakers to teams behind the scenes, we offer a
+                          wide range of opportunities.
+                        </p>
+                      </div>
+                    </li>
+
+                    {joinLinks.map((l, key) => (
+                      <ListItem key={key} href={l.href} title={l.title}>
+                        {l.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/events" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Events
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/contact" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Contact
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              {process.env.NODE_ENV === 'development' ? (
+                <NavigationMenuItem>
+                  <Link href="/studio" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      Studio
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              ) : null}
+            </NavigationMenuList>
+          </NavigationMenu>
 
           <hr
             className={cn(
@@ -69,7 +187,7 @@ export default function NavbarLayout() {
           />
 
           <div className="flex items-center space-x-4">
-            <NavLink href="/positions">{"We're Recruiting!"}</NavLink>
+            <NavLink href="/apply">{"We're Recruiting!"}</NavLink>
             <Link
               href="https://airtable.com/appD8TuOcD3E8n7BG/shr8Dc6qKWXq7Ns5T"
               className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"
@@ -82,3 +200,32 @@ export default function NavbarLayout() {
     </header>
   )
 }
+
+const ListItem = React.forwardRef<
+  React.ElementRef<'a'>,
+  React.ComponentPropsWithoutRef<'a'>
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            'block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-slate-50 focus:bg-slate-50 group',
+            className,
+          )}
+          {...props}
+        >
+          <div className="inline-flex items-center gap-1 text-sm font-medium leading-none">
+            {title}
+            <ArrowRightIcon className="w-4 h-4 transition-opacity opacity-0 group-hover:opacity-100 text-slate-400" />
+          </div>
+          <p className="text-sm leading-snug text-gray-800 line-clamp-2">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = 'ListItem'

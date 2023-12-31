@@ -3,32 +3,32 @@
  */
 
 import { visionTool } from '@sanity/vision'
-import { apiVersion, dataset, previewSecretId, projectId } from 'lib/sanity.api'
-import { pageStructure, singletonPlugin } from 'plugins/settings'
+import { CogIcon } from 'lucide-react'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
+import { presentationTool } from 'sanity/presentation'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
-import Iframe, {
-  defineUrlResolver,
-  IframeOptions,
-} from 'sanity-plugin-iframe-pane'
-import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
-import campus from 'schemas/documents/campus'
-import event from 'schemas/documents/event'
-import eventCategory from 'schemas/documents/eventCategory'
-import member from 'schemas/documents/member'
-import page from 'schemas/documents/page'
-import team from 'schemas/documents/team'
-import duration from 'schemas/objects/duration'
-import milestone from 'schemas/objects/milestone'
-import timeline from 'schemas/objects/timeline'
-import home from 'schemas/singletons/home'
-import settings from 'schemas/singletons/settings'
-import sponsor from 'schemas/documents/sponsor'
+
+import { apiVersion, dataset, projectId } from '@/sanity/lib/api'
+import { locate } from '@/sanity/plugins/locate'
+import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
+import campus from '@/sanity/schemas/documents/campus'
+import event from '@/sanity/schemas/documents/event'
+import eventCategory from '@/sanity/schemas/documents/eventCategory'
+import member from '@/sanity/schemas/documents/member'
+import page from '@/sanity/schemas/documents/page'
+import position from '@/sanity/schemas/documents/position'
+import sponsor from '@/sanity/schemas/documents/sponsor'
+import team from '@/sanity/schemas/documents/team'
+import duration from '@/sanity/schemas/objects/duration'
+import milestone from '@/sanity/schemas/objects/milestone'
+import range from '@/sanity/schemas/objects/range'
+import timeline from '@/sanity/schemas/objects/timeline'
+import home from '@/sanity/schemas/singletons/home'
+import settings from '@/sanity/schemas/singletons/settings'
 
 const title =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
-  'Next.js Personal Website with Sanity.io'
+  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'TEDxNortheasternU Website'
 
 export const PREVIEWABLE_DOCUMENT_TYPES = [
   home.name,
@@ -44,21 +44,12 @@ export const PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS = [
 // Used to generate URLs for drafts and live previews
 export const PREVIEW_BASE_URL = '/api/draft'
 
-export const urlResolver = defineUrlResolver({
-  base: PREVIEW_BASE_URL,
-  requiresSlug: PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS,
-})
-
-export const iframeOptions = {
-  url: urlResolver,
-  urlSecretId: previewSecretId,
-} satisfies IframeOptions
-
 export default defineConfig({
   basePath: '/studio',
   projectId: projectId || '',
   dataset: dataset || '',
   title,
+  icon: CogIcon,
   schema: {
     // If you want more content types, you can add them to this array
     types: [
@@ -71,6 +62,7 @@ export default defineConfig({
       event,
       eventCategory,
       member,
+      position,
       team,
       sponsor,
       campus,
@@ -78,39 +70,25 @@ export default defineConfig({
       // Objects
       duration,
       milestone,
+      range,
       timeline,
     ],
   },
   plugins: [
     deskTool({
       structure: pageStructure([home, settings]),
-      // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
-      // You can add any React component to `S.view.component` and it will be rendered in the pane
-      // and have access to content in the form in real-time.
-      // It's part of the Studio's “Structure Builder API” and is documented here:
-      // https://www.sanity.io/docs/structure-builder-reference
-      defaultDocumentNode: (S, { schemaType }) => {
-        if ((PREVIEWABLE_DOCUMENT_TYPES as string[]).includes(schemaType)) {
-          return S.document().views([
-            // Default form view
-            S.view.form(),
-            // Preview
-            S.view.component(Iframe).options(iframeOptions).title('Preview'),
-          ])
-        }
-
-        return null
+    }),
+    // Add the "Open preview" action
+    presentationTool({
+      locate,
+      previewUrl: {
+        draftMode: {
+          enable: PREVIEW_BASE_URL,
+        },
       },
     }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
     singletonPlugin([home.name, settings.name]),
-    // Add the "Open preview" action
-    previewUrl({
-      base: PREVIEW_BASE_URL,
-      requiresSlug: PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS,
-      urlSecretId: previewSecretId,
-      matchTypes: PREVIEWABLE_DOCUMENT_TYPES,
-    }),
     // Add an image asset source for Unsplash
     unsplashImageAsset(),
     // Vision lets you query your content with GROQ in the studio

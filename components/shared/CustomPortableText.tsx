@@ -1,8 +1,9 @@
 import { PortableText, PortableTextComponents } from '@portabletext/react'
 import type { PortableTextBlock } from '@portabletext/types'
-import ImageBox from 'components/shared/ImageBox'
-import { TimelineSection } from 'components/shared/TimelineSection'
 import { Image } from 'sanity'
+
+import ImageBox from '@/components/shared/ImageBox'
+import { TimelineSection } from '@/components/shared/TimelineSection'
 
 export function CustomPortableText({
   paragraphClasses,
@@ -41,7 +42,7 @@ export function CustomPortableText({
             <ImageBox
               image={value}
               alt={value.alt}
-              classesWrapper="relative aspect-[16/9]"
+              className="relative aspect-[16/9]"
             />
             {value?.caption && (
               <div className="font-sans text-sm text-slate-600">

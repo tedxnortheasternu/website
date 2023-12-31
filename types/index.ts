@@ -19,12 +19,19 @@ export interface MilestoneItem {
   title?: string
 }
 
-// TODO: finish
+export interface Range {
+  min?: number
+  max?: number
+}
+
 export interface Campus {
   name: string
 }
 
-// TODO: finish
+export interface Team {
+  name: string
+}
+
 export interface EventCategory {
   name: string
 }
@@ -36,6 +43,8 @@ export interface HomePagePayload {
   overview?: PortableTextBlock[]
   title?: string
   upcomingEvents: UpcomingEventPayload[]
+  sponsors: SponsorPayload[]
+  teams: TeamPayload[]
 }
 
 export interface PagePayload {
@@ -69,4 +78,60 @@ export interface SponsorPayload {
   logo: Image
   description?: string
   websiteLink?: Url
+}
+
+export interface PositionPayload {
+  _id: string
+  name: string
+  team: Team
+  campuses: Campus[]
+  expectedHoursPerWeek: Range
+  description: string
+  responsibilities: PortableTextBlock[]
+  requirements: PortableTextBlock[]
+}
+
+export interface TeamPayload {
+  name: string
+  slug: string
+  description: string
+}
+
+export interface MemberPayload {
+  name: string
+  position: {
+    name: string
+    team: {
+      slug: string
+    }
+  }
+  team: {
+    slug: string
+  }
+  campuses: Campus
+  image: Image
+  major?: string
+  hometown?: string
+  goToIceCream?: string
+}
+
+export type TeamsPagePayload = TeamPayload[]
+
+export interface AboutPagePayload {
+  leaders: {
+    _id: string
+    name: string
+    position: {
+      name: string
+    }
+    image: Image
+  }[]
+  teamsCount: number
+  campusesCount: number
+  membersCount: number
+}
+
+export interface MembersPagePayload {
+  teams: TeamPayload[]
+  members: MemberPayload[]
 }
