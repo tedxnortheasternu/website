@@ -1,7 +1,7 @@
 import 'tailwindcss/tailwind.css'
 
-import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
 import { Metadata } from 'next'
+import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
 
 const serif = PT_Serif({
   variable: '--font-serif',
@@ -21,11 +21,11 @@ const mono = IBM_Plex_Mono({
   weight: ['500', '700'],
 })
 
-export const metadata: Metadata = {
-  icons: {
-    icon: '/_assets/favicon.ico',
-  },
-}
+// export const metadata: Metadata = {
+//   icons: {
+//     icon: '/favicon.ico',
+//   },
+// }
 
 export default async function RootLayout({
   children,
