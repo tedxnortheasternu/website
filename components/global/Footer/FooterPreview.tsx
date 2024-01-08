@@ -11,5 +11,5 @@ type Props = {
 export default function NavbarPreview(props: Props) {
   const { data } = useSettings(props.initial)
 
-  return <FooterLayout data={data!} />
+  return <FooterLayout />
 }
