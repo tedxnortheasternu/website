@@ -21,12 +21,6 @@ const mono = IBM_Plex_Mono({
   weight: ['500', '700'],
 })
 
-// export const metadata: Metadata = {
-//   icons: {
-//     icon: '/favicon.ico',
-//   },
-// }
-
 export default async function RootLayout({
   children,
 }: {
