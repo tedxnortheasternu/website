@@ -82,7 +82,7 @@ export default function FooterLayout() {
           <div className="mt-6 ml-12 sm:mt-0">
             <ul className="flex items-center justify-center space-x-4">
               <Link
-                href="https://www.facebook.com/TEDxNortheasternU"
+                href="https://www.instagram.com/tedxnortheastern?igsh=dmUzbjBtbjN5Zmg4"
                 className="flex items-center justify-center rounded-full"
               >
                 <Image
@@ -93,7 +93,7 @@ export default function FooterLayout() {
                 />
               </Link>
               <Link
-                href="https://www.facebook.com/TEDxNortheasternU"
+                href="https://www.youtube.com/channel/UCsIbfqVPKzLTuuqeEY5sMHA"
                 className="flex items-center justify-center rounded-full"
               >
                 <Image
@@ -104,7 +104,7 @@ export default function FooterLayout() {
                 />
               </Link>
               <Link
-                href="https://www.facebook.com/TEDxNortheasternU"
+                href="https://www.tiktok.com/@tedxnortheastern?_t=8iquqwvq8Hy&_r=1"
                 className="flex items-center justify-center rounded-full"
               >
                 <Image
@@ -115,7 +115,7 @@ export default function FooterLayout() {
                 />
               </Link>
               <Link
-                href="https://www.facebook.com/TEDxNortheasternU"
+                href="https://www.linkedin.com/company/tedxneu"
                 className="flex items-center justify-center rounded-full"
               >
                 <Image
@@ -126,7 +126,7 @@ export default function FooterLayout() {
                 />
               </Link>
               <Link
-                href="https://www.facebook.com/TEDxNortheasternU"
+                href="https://x.com/tedxneu?s=21&t=LO_m6KDBjbKkf3Q81TfHVA"
                 className="flex items-center justify-center rounded-full"
               >
                 <Image
