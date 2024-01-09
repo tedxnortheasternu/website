@@ -3,6 +3,7 @@ import Link from 'next/link'
 import type { SimpleIcon } from 'simple-icons'
 
 export default function FooterLayout() {
+  const year = new Date().getFullYear().toString()
   return (
     <>
       <footer className="px-4 py-5 mx-auto mt-8 text-black rounded-lg max-w-screen-2xl md:px-8 bg-slate-100">
@@ -77,7 +78,7 @@ export default function FooterLayout() {
         </div>
         <div className="items-center justify-between py-6 border-t mt-9 sm:flex">
           <div className="mt-4 sm:mt-0">
-            © TEDxNortheasternU · All Rights Reserved
+            © {year} TEDxNortheasternU · All Rights Reserved
           </div>
           <div className="mt-6 ml-12 sm:mt-0">
             <ul className="flex items-center justify-center space-x-4">
