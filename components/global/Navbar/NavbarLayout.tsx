@@ -162,6 +162,20 @@ export default function NavbarLayout() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
+                  <Link
+                    href="https://giving.northeastern.edu/live/profiles/966-club-tedxnortheasternu"
+                    legacyBehavior
+                    passHref
+                  >
+                    <NavigationMenuLink
+                      className={navigationMenuTriggerStyle()}
+                    >
+                      <div className="hover:text-red-600">Donate</div>
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
                   <Link href="/contact" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
