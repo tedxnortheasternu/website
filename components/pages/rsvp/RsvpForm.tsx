@@ -25,7 +25,7 @@ export default function RsvpForm() {
           htmlFor="firstName"
           className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
         >
-          Preferred first name
+          First Name
         </label>
         <input
           type="text"
@@ -47,7 +47,7 @@ export default function RsvpForm() {
           htmlFor="lastName"
           className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
         >
-          Preferred last name
+          Last Name
         </label>
         <input
           type="text"
@@ -69,7 +69,7 @@ export default function RsvpForm() {
           htmlFor="email"
           className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
         >
-          Your email
+          Email Address
         </label>
         <input
           type="email"
@@ -82,6 +82,10 @@ export default function RsvpForm() {
         <ValidationError prefix="Email" field="email" errors={state.errors} />
       </div>
 
+      <div className="py-2">
+        <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
+      </div>
+
       <div>
         <label
           htmlFor="diet"
@@ -89,7 +93,7 @@ export default function RsvpForm() {
         >
           Dietary Allergies/Restrictions
         </label>
-        <p className="text-slate-700 dark:text-white text-xs mb-2">
+        <p className="mb-2 text-xs text-slate-700 dark:text-white">
           We strive to cater to various dietary needs, including vegetarian,
           vegan, gluten-free, and any specific food allergies. This information
           will help us ensure that your meal preferences are accommodated during
@@ -112,7 +116,7 @@ export default function RsvpForm() {
         >
           Accessibility Accommodations
         </label>
-        <p className="text-slate-700 dark:text-white text-xs mb-2">
+        <p className="mb-2 text-xs text-slate-700 dark:text-white">
           We are committed to making this event inclusive and accessible for all
           attendees. Please share any disability-related accommodations needed
           to facilitate your participation.
@@ -122,7 +126,7 @@ export default function RsvpForm() {
           id="accommodations"
           name="accommodations"
           className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="wheelchair"
+          placeholder="wheelchair access"
         />
         <ValidationError
           prefix="Accommodations"
@@ -138,7 +142,7 @@ export default function RsvpForm() {
         >
           Feedback/Comments
         </label>
-        <p className="text-slate-700 dark:text-white text-xs mb-2">
+        <p className="mb-2 text-xs text-slate-700 dark:text-white">
           We value your thoughts and suggestions! Please use this space to share
           any feedback, comments, or specific requests you might have regarding
           the event.
@@ -147,7 +151,7 @@ export default function RsvpForm() {
           id="comments"
           name="comments"
           className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="give your feedback here"
+          placeholder="Lorem ipsum..."
         />
         <ValidationError
           prefix="Comments"
@@ -155,6 +159,7 @@ export default function RsvpForm() {
           errors={state.errors}
         />
       </div>
+
       {state.errors ? (
         <Alert variant="destructive">
           <AlertTriangleIcon className="w-4 h-4" />
