@@ -171,16 +171,6 @@ export default function NavbarLayout() {
                   </Link>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                  <Link href="/rsvp" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
-                    >
-                      RSVP
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-
                 {process.env.NODE_ENV === 'development' ? (
                   <NavigationMenuItem>
                     <Link href="/studio" legacyBehavior passHref>
