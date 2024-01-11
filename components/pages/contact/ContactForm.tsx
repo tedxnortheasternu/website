@@ -20,7 +20,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="max-w-sm mx-auto space-y-5">
       <div>
         <label
-          htmlFor="text"
+          htmlFor="name"
           className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
         >
           Your name
