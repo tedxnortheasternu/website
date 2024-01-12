@@ -26,19 +26,19 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
       <div className="space-y-6">
         {/* Header */}
         <div className="text-center">
-          <div className="py-2">
-            <span className="px-4 py-1 font-bold text-white uppercase bg-red-600 rounded-full">
-              {data.team.name} Team
-            </span>
-            <h1 className="mx-auto mt-4 text-3xl font-extrabold md:text-5xl">
-              {data.name}
-            </h1>
+          <span className="px-4 py-1 font-bold text-white uppercase bg-red-600 rounded-full">
+            {data.team.name} Team
+          </span>
+          <h1 className="mx-auto mt-4 text-3xl font-extrabold md:text-5xl">
+            {data.name}
+          </h1>
+          <div className="pt-8">
+            {!data.acceptingApplications && (
+              <div className="px-4 py-4 font-bold text-black uppercase rounded-md bg-slate-100">
+                This position is no longer accepting applications.
+              </div>
+            )}
           </div>
-          {!data.acceptingApplications && (
-            <div className="px-4 py-4 font-bold text-black uppercase rounded-full bg-slate-100">
-              No Longer Accepting Applications
-            </div>
-          )}
         </div>
 
         <div className="border rounded-md">
@@ -83,7 +83,7 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
                 <CustomPortableText value={data.requirements} />
               </div>
             </div>
-            {data.acceptingApplications && (
+            {data.acceptingApplications ? (
               <Link
                 target="_blank"
                 href="https://airtable.com/shrZ5zWkRRS75nEvN"
@@ -91,7 +91,7 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
               >
                 Apply Now <ArrowRightIcon size={24} />
               </Link>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
