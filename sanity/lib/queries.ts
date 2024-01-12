@@ -94,7 +94,8 @@ export const positionByIdQuery = groq`
     },
     description,
     responsibilities,
-    requirements
+    requirements,
+    acceptingApplications
   }
 `
 
