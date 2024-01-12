@@ -87,6 +87,7 @@ export interface PositionPayload {
   campuses: Campus[]
   expectedHoursPerWeek: Range
   description: string
+  acceptingApplications: boolean
   responsibilities: PortableTextBlock[]
   requirements: PortableTextBlock[]
 }
