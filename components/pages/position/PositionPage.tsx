@@ -26,11 +26,6 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
       <div className="space-y-6">
         {/* Header */}
         <div className="text-center">
-          {!data.acceptingApplications && (
-            <div className="px-4 py-4 font-bold text-black uppercase rounded-full bg-slate-100">
-              No Longer Accepting Applications
-            </div>
-          )}
           <div className="py-2">
             <span className="px-4 py-1 font-bold text-white uppercase bg-red-600 rounded-full">
               {data.team.name} Team
@@ -39,6 +34,11 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
               {data.name}
             </h1>
           </div>
+          {!data.acceptingApplications && (
+            <div className="px-4 py-4 font-bold text-black uppercase rounded-full bg-slate-100">
+              No Longer Accepting Applications
+            </div>
+          )}
         </div>
 
         <div className="border rounded-md">
