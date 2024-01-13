@@ -1,4 +1,4 @@
-import RsvpForm from './RsvpForm'
+import { RsvpForm } from './RsvpForm'
 
 export default function RsvpPage() {
   return (
