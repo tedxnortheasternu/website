@@ -5,12 +5,15 @@ import { useFormState, useFormStatus } from 'react-dom'
 
 import { createRenaissanceRsvp } from '@/app/actions'
 import { Alert, AlertDescription } from '@/components/ui/alert'
+import { Label } from '@/components/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 
 const initialState = {
   firstName: '',
   lastName: '',
-  pronouns: '',
   email: '',
+  pronouns: '',
+  rsvp: 'yes',
   dietaryRestrictions: '',
   accommodations: '',
   comments: '',
@@ -51,48 +54,67 @@ export function RsvpForm() {
 
   return (
     <form action={formAction} className="max-w-sm mx-auto">
-      <div className="mb-5">
-        <label
-          htmlFor="firstName"
-          className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
-        >
-          First Name
-        </label>
-        <input
-          type="text"
-          id="firstName"
-          name="firstName"
-          className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Samuel"
-          required
-        />
-        {state?.errors?.firstName ? (
-          <Alert variant="destructive" size="sm" className="mt-2">
-            <AlertDescription>{state.errors.firstName}</AlertDescription>
-          </Alert>
-        ) : null}
+      <div className="flex flex-row gap-2">
+        <div className="flex-1 mb-5">
+          <label
+            htmlFor="firstName"
+            className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+          >
+            First Name
+          </label>
+          <input
+            type="text"
+            id="firstName"
+            name="firstName"
+            className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Sam"
+            required
+          />
+          {state?.errors?.firstName ? (
+            <Alert variant="destructive" size="sm" className="mt-2">
+              <AlertDescription>{state.errors.firstName}</AlertDescription>
+            </Alert>
+          ) : null}
+        </div>
+
+        <div className="flex-1 mb-5">
+          <label
+            htmlFor="lastName"
+            className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+          >
+            Last Name
+          </label>
+          <input
+            type="text"
+            id="lastName"
+            name="lastName"
+            className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Serif"
+            required
+          />
+          {state?.errors?.lastName ? (
+            <Alert variant="destructive" size="sm" className="mt-2">
+              <AlertDescription>{state.errors.lastName}</AlertDescription>
+            </Alert>
+          ) : null}
+        </div>
       </div>
 
       <div className="mb-5">
         <label
-          htmlFor="lastName"
+          htmlFor="email"
           className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
         >
-          Last Name
+          Email Address
         </label>
         <input
-          type="text"
-          id="lastName"
-          name="lastName"
+          type="email"
+          id="email"
+          name="email"
           className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="Serif"
+          placeholder="s.serif@northeastern.edu"
           required
         />
-        {state?.errors?.lastName ? (
-          <Alert variant="destructive" size="sm" className="mt-2">
-            <AlertDescription>{state.errors.lastName}</AlertDescription>
-          </Alert>
-        ) : null}
       </div>
 
       <div className="mb-5">
@@ -117,22 +139,33 @@ export function RsvpForm() {
         ) : null}
       </div>
 
-      <div className="mb-5">
-        <label
-          htmlFor="email"
-          className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+      <Label
+        htmlFor="rsvp"
+        className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+      >
+        Will you be attending?
+      </Label>
+      <RadioGroup
+        className="flex items-center gap-2.5"
+        defaultValue="yes"
+        id="rsvp"
+        name="rsvp"
+      >
+        <Label
+          className="border border-slate-300 cursor-pointer rounded-md p-2 flex items-center gap-2 text-slate-900 bg-slate-50 [&:has(:checked)]:bg-slate-100"
+          htmlFor="rsvp-yes"
         >
-          Email Address
-        </label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-          placeholder="samuel.serif@northeastern.edu"
-          required
-        />
-      </div>
+          <RadioGroupItem id="rsvp-yes" value="yes" />
+          Yes
+        </Label>
+        <Label
+          className="border border-slate-300 cursor-pointer rounded-md p-2 flex items-center gap-2 text-slate-900 bg-slate-50 [&:has(:checked)]:bg-slate-100"
+          htmlFor="rsvp-no"
+        >
+          <RadioGroupItem id="rsvp-no" value="no" />
+          No
+        </Label>
+      </RadioGroup>
 
       <div className="mt-8 mb-6">
         <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />

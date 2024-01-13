@@ -10,6 +10,7 @@ export async function createRenaissanceRsvp(
     lastName: string
     pronouns: string
     email: string
+    rsvp: 'yes' | 'no'
     dietaryRestrictions: string
     accommodations: string
     comments: string
@@ -21,6 +22,7 @@ export async function createRenaissanceRsvp(
     lastName: z.string().min(1).max(50),
     pronouns: z.string().max(50),
     email: z.string().email(),
+    rsvp: z.enum(['yes', 'no']),
     dietaryRestrictions: z.string().max(500).optional(),
     accommodations: z.string().max(500).optional(),
     comments: z.string().max(500).optional(),
@@ -30,6 +32,7 @@ export async function createRenaissanceRsvp(
     lastName: formData.get('lastName'),
     pronouns: formData.get('pronouns'),
     email: formData.get('email'),
+    rsvp: formData.get('rsvp'),
     dietaryRestrictions: formData.get('dietaryRestrictions'),
     accommodations: formData.get('accommodations'),
     comments: formData.get('comments'),
@@ -55,6 +58,7 @@ export async function createRenaissanceRsvp(
           lastName: data.lastName,
           pronouns: data.pronouns,
           email: data.email,
+          rsvp: data.rsvp,
           dietaryRestrictions: data.dietaryRestrictions,
           accommodations: data.accommodations,
           comments: data.comments,
