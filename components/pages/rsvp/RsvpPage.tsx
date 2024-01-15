@@ -5,7 +5,7 @@ export default function RsvpPage() {
     <>
       <div className="mx-auto mb-8 text-center">
         <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl">
-          Renaissance: RSVP
+          RSVP to Renaissance
         </h1>
       </div>
 
