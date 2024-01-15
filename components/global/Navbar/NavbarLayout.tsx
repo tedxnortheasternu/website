@@ -103,7 +103,7 @@ export default function NavbarLayout() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>About</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 w-full p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <ul className="grid gap-3 w-[350px] p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
                       <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-red-50 focus:shadow-md">
                         <div className="mt-4 mb-2 text-lg font-bold leading-tight text-red-600">
@@ -128,7 +128,7 @@ export default function NavbarLayout() {
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Join</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid gap-3 w-full p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                  <ul className="grid gap-3 w-[350px] p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
                       <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-red-50 focus:shadow-md">
                         <div className="mt-4 mb-2 text-lg font-bold leading-tight text-red-600">
