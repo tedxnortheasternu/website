@@ -17,7 +17,7 @@ export const homePageQuery = groq`
         _id,
         name,
       }
-    } | order(startDateTime desc),
+    } | order(startDateTime asc),
     "sponsors": *[_type == "sponsor" ] {
       name,
       logo,
