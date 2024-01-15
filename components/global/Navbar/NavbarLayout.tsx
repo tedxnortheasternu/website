@@ -170,7 +170,7 @@ export default function NavbarLayout() {
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                     >
-                      <div className="hover:text-red-600">Donate</div>
+                      Donate
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
