@@ -4,7 +4,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <RenaissanceNavbar />
-      <main className="max-w-screen-xl px-4 mx-auto my-8">{children}</main>
+      <main className="w-full max-w-screen-xl mx-auto my-8">{children}</main>
     </>
   )
 }

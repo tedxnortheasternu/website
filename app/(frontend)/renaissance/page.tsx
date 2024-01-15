@@ -1,3 +1,51 @@
+import { ArrowRightIcon } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+
+import renaissanceLogo from '@/components/images/renaissance-dark.png'
+
 export default function Renaissance() {
-  return <h1>Renaissance!</h1>
+  return (
+    <div className="w-full p-8 !pt-2 border rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+      <div className="mx-auto prose">
+        <div className="-ml-3.5">
+          <Image
+            src={renaissanceLogo}
+            alt="Renaissance Logo"
+            className="h-auto max-w-full mx-auto w-[28rem]"
+          />
+        </div>
+
+        <p>
+          <strong>TEDxNortheasternU: Renaissance</strong> is a day of inspiring
+          TEDx Talks and transformative ideas that celebrates the rebirth of
+          human potential. It embodies the idea of pushing boundaries, breaking
+          barriers, and exploring new frontiers.
+        </p>
+
+        <p>
+          During intermission, attendees have the opportunity to explore our
+          xLabs — dynamic exhibits that allow organizations to actively engage
+          with our audience through workshops, arts and crafts, and hands-on
+          demonstrations. Renaissance also features music and dance performances
+          as a source of entertainment and a reminder of the power of creativity
+          in transforming our world.
+        </p>
+
+        <p>
+          <strong>Join us on February 24th</strong> to share innovative ideas,
+          spark creativity, and inspire change across the global Northeastern
+          community.{' '}
+        </p>
+
+        <Link
+          target="_blank"
+          href="/renaissance/tickets"
+          className="inline-flex items-center gap-2 px-5 py-3 mt-4 text-sm font-bold text-white no-underline uppercase transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
+        >
+          Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
+        </Link>
+      </div>
+    </div>
+  )
 }

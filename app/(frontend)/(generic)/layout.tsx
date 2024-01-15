@@ -4,6 +4,8 @@ export default async function IndexRoute({
   children: React.ReactNode
 }) {
   return (
-    <main className="max-w-screen-xl mx-auto my-8 md:my-12">{children}</main>
+    <main className="w-full max-w-screen-xl mx-auto my-8 md:my-12">
+      {children}
+    </main>
   )
 }
