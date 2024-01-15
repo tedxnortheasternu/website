@@ -124,12 +124,14 @@ export default function RenaissanceSpeakers() {
                 </p>
                 <h2
                   className={cn(
-                    'mt-2 text-3xl',
+                    'mt-2 text-3xl whitespace-nowrap',
                     i < 4 ? 'text-renaissance-dark' : 'text-renaissance-light',
                   )}
                 >
-                  <span className="text-4xl font-bold">{s.name}</span> &middot;{' '}
-                  {s.pronouns}
+                  <span className="text-4xl font-bold whitespace-normal">
+                    {s.name}
+                  </span>{' '}
+                  &middot; {s.pronouns}
                 </h2>
               </div>
             </div>
