@@ -40,7 +40,7 @@ export const upcomingEventsQuery = groq`
       _id,
       name,
     }
-  } | order(startDateTime desc)
+  } | order(startDateTime asc)
 `
 
 export const teamsQuery = groq`
