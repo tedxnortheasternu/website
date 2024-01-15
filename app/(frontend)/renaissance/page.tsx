@@ -6,7 +6,7 @@ import renaissanceLogo from '@/components/images/renaissance-dark.png'
 
 export default function Renaissance() {
   return (
-    <div className="w-full p-8 !pt-2 border rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+    <div className="w-full p-8 !pt-0 border rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
       <div className="mx-auto prose">
         <div className="-ml-3.5">
           <Image
@@ -45,6 +45,15 @@ export default function Renaissance() {
         >
           Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
         </Link>
+
+        <div className="mt-12 aspect-video">
+          <iframe
+            className="w-full h-full rounded-md"
+            src="https://www.youtube.com/embed/QHgxTwobwXk"
+            title="THEME REVEAL | TEDxNortheasternU 2024: Renaissance"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          ></iframe>
+        </div>
       </div>
     </div>
   )
