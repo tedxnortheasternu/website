@@ -43,12 +43,10 @@ export function RsvpForm() {
 
   if (state?.success) {
     return (
-      <div className="text-center">
-        <p>
-          Thank you for reserving your seat. We look forward to seeing you at
-          Renaissance on Saturday, February 24th!
-        </p>
-      </div>
+      <p className="text-center">
+        Thank you for reserving your seat. We look forward to seeing you at
+        Renaissance on Saturday, February 24th!
+      </p>
     )
   }
 
