@@ -4,10 +4,10 @@ import Link from 'next/link'
 
 import renaissanceLogo from '@/components/images/renaissance-dark.png'
 
-export default function Renaissance() {
+export default function RenaissanceOverview() {
   return (
     <div className="w-full p-8 !pt-0 border md:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
-      <div className="mx-auto prose">
+      <div className="mx-auto font-serif prose">
         <div className="-ml-3.5">
           <Image
             src={renaissanceLogo}
@@ -41,7 +41,7 @@ export default function Renaissance() {
         <Link
           target="_blank"
           href="/renaissance/tickets"
-          className="inline-flex items-center gap-2 px-5 py-3 mt-4 text-sm font-bold text-white no-underline uppercase transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
+          className="inline-flex items-center gap-2 px-6 py-2 mt-4 text-xl text-white no-underline uppercase transition-colors rounded-full font-renaissance bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
         >
           Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
         </Link>

@@ -12,7 +12,8 @@ module.exports = {
     fontFamily: {
       mono: 'var(--font-mono)',
       sans: 'var(--font-sans)',
-      serif: 'var(--font-serif)',
+      serif: 'Garamond, Georgia',
+      renaissance: 'var(--font-renaissance)',
     },
     container: {
       center: true,

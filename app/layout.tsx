@@ -1,14 +1,7 @@
 import 'tailwindcss/tailwind.css'
 
-import { Metadata } from 'next'
-import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
+import { Bebas_Neue, IBM_Plex_Mono, Inter } from 'next/font/google'
 
-const serif = PT_Serif({
-  variable: '--font-serif',
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
-  weight: ['400', '700'],
-})
 const sans = Inter({
   variable: '--font-sans',
   subsets: ['latin'],
@@ -21,6 +14,13 @@ const mono = IBM_Plex_Mono({
   weight: ['500', '700'],
 })
 
+const renaissance = Bebas_Neue({
+  variable: '--font-renaissance',
+  style: ['normal'],
+  subsets: ['latin'],
+  weight: ['400'],
+})
+
 export default async function RootLayout({
   children,
 }: {
@@ -29,7 +29,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${mono.variable} ${sans.variable} ${serif.variable}`}
+      className={`${mono.variable} ${sans.variable} ${renaissance.variable}`}
     >
       <body>{children}</body>
     </html>

@@ -49,7 +49,7 @@ export default function RenaissanceNavbarLayout() {
           open ? '' : 'hidden',
         )}
       >
-        <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
+        <div className="flex flex-col gap-1 font-renaissance lg:flex-row lg:items-center">
           <NavLink href="/renaissance" variant="renaissance">
             Overview
           </NavLink>

@@ -29,8 +29,10 @@ export default function NavLink({
     <Link
       target={target}
       className={cn(
-        'font-medium whitespace-nowrap transition-colors',
-        variant === 'renaissance' ? 'px-4 py-2 rounded-md' : 'hover:underline',
+        'whitespace-nowrap transition-colors',
+        variant === 'renaissance'
+          ? 'px-4 py-2 rounded-md text-xl'
+          : 'hover:underline font-medium',
         active
           ? variant === 'renaissance'
             ? 'text-white hover:text-white bg-renaissance-light/15 hover:bg-renaissance-light/20'
