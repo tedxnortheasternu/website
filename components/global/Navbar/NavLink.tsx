@@ -10,11 +10,13 @@ import { cn } from '@/lib/utils'
 export default function NavLink({
   href,
   target,
+  variant = 'default',
   active,
   children,
 }: {
   href: Url
   target?: HTMLAttributeAnchorTarget
+  variant?: 'renaissance' | 'default'
   active?: boolean
   children: ReactNode
 }) {
@@ -27,14 +29,21 @@ export default function NavLink({
     <Link
       target={target}
       className={cn(
-        'font-medium hover:underline whitespace-nowrap',
+        'whitespace-nowrap transition-colors',
+        variant === 'renaissance'
+          ? 'px-4 py-2 rounded-md text-xl'
+          : 'hover:underline font-medium',
         active
-          ? 'text-red-600 hover:text-red-700'
-          : 'text-slate-600 hover:text-slate-700',
+          ? variant === 'renaissance'
+            ? 'text-white hover:text-white bg-renaissance-light/15 hover:bg-renaissance-light/20'
+            : 'text-red-600 hover:text-red-700'
+          : variant === 'renaissance'
+            ? 'text-renaissance-light hover:text-white hover:bg-renaissance-light/15'
+            : 'text-slate-600 hover:text-slate-700',
       )}
       href={href}
     >
-      {children}
+      {variant === 'renaissance' ? (active ? children : children) : children}
     </Link>
   )
 }

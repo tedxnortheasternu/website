@@ -25,7 +25,7 @@ function SubmitButton() {
   return (
     <button
       type="submit"
-      className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white uppercase transition-colors bg-red-600 rounded-full w-max hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300"
+      className="inline-flex items-center gap-2 px-6 py-1.5 mt-2 text-xl text-white no-underline uppercase transition-colors rounded-full font-renaissance bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
       aria-disabled={pending}
     >
       Submit{' '}
@@ -44,19 +44,19 @@ export function RsvpForm() {
   if (state?.success) {
     return (
       <p className="text-center">
-        Thank you for reserving your seat. We look forward to seeing you at
+        Thank you for submitting your RSVP. We look forward to seeing you at
         Renaissance on Saturday, February 24th!
       </p>
     )
   }
 
   return (
-    <form action={formAction} className="max-w-sm mx-auto">
+    <form action={formAction} className="max-w-sm mx-auto font-sans">
       <div className="flex flex-row gap-2">
         <div className="flex-1 mb-5">
           <label
             htmlFor="firstName"
-            className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+            className="block mb-2 text-sm font-semibold text-renaissance-dark"
           >
             First Name
           </label>
@@ -64,7 +64,7 @@ export function RsvpForm() {
             type="text"
             id="firstName"
             name="firstName"
-            className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="border border-renaissance-mid bg-transparent text-renaissance-dark text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5"
             placeholder="Sam"
             required
           />
@@ -78,7 +78,7 @@ export function RsvpForm() {
         <div className="flex-1 mb-5">
           <label
             htmlFor="lastName"
-            className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+            className="block mb-2 text-sm font-semibold text-renaissance-dark"
           >
             Last Name
           </label>
@@ -86,7 +86,7 @@ export function RsvpForm() {
             type="text"
             id="lastName"
             name="lastName"
-            className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="border border-renaissance-mid bg-transparent text-renaissance-dark text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5"
             placeholder="Serif"
             required
           />
@@ -101,7 +101,7 @@ export function RsvpForm() {
       <div className="mb-5">
         <label
           htmlFor="email"
-          className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+          className="block mb-2 text-sm font-semibold text-renaissance-dark"
         >
           Email Address
         </label>
@@ -109,7 +109,7 @@ export function RsvpForm() {
           type="email"
           id="email"
           name="email"
-          className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="border border-renaissance-mid bg-transparent text-renaissance-dark text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5"
           placeholder="s.serif@northeastern.edu"
           required
         />
@@ -118,7 +118,7 @@ export function RsvpForm() {
       <div className="mb-5">
         <label
           htmlFor="pronouns"
-          className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+          className="block mb-2 text-sm font-semibold text-renaissance-dark"
         >
           Pronouns
         </label>
@@ -126,7 +126,7 @@ export function RsvpForm() {
           type="text"
           id="pronouns"
           name="pronouns"
-          className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="border border-renaissance-mid bg-transparent text-renaissance-dark text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5"
           placeholder="she/her"
           required
         />
@@ -139,7 +139,7 @@ export function RsvpForm() {
 
       <Label
         htmlFor="rsvp"
-        className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+        className="block mb-2 text-sm font-semibold text-renaissance-dark"
       >
         Will you be attending?
       </Label>
@@ -150,14 +150,14 @@ export function RsvpForm() {
         name="rsvp"
       >
         <Label
-          className="border border-slate-300 cursor-pointer rounded-md p-2 flex items-center gap-2 text-slate-900 bg-slate-50 [&:has(:checked)]:bg-slate-100"
+          className="border border-renaissance-mid bg-transparent cursor-pointer rounded-md p-2 flex items-center gap-2 text-renaissance-dark [&:has(:checked)]:bg-transparent"
           htmlFor="rsvp-yes"
         >
           <RadioGroupItem id="rsvp-yes" value="yes" />
           Yes
         </Label>
         <Label
-          className="border border-slate-300 cursor-pointer rounded-md p-2 flex items-center gap-2 text-slate-900 bg-slate-50 [&:has(:checked)]:bg-slate-100"
+          className="border border-renaissance-mid bg-transparent cursor-pointer rounded-md p-2 flex items-center gap-2 text-renaissance-dark [&:has(:checked)]:bg-transparent"
           htmlFor="rsvp-no"
         >
           <RadioGroupItem id="rsvp-no" value="no" />
@@ -166,18 +166,20 @@ export function RsvpForm() {
       </RadioGroup>
 
       <div className="mt-8 mb-6">
-        <hr className="h-px bg-gray-200 border-0 dark:bg-gray-700" />
+        <hr className="h-px bg-gray-200 border-0" />
       </div>
 
       <div className="mb-5">
         <label
           htmlFor="dietaryRestrictions"
-          className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+          className="block mb-2 text-sm font-semibold text-renaissance-dark"
         >
           Dietary Allergies/Restrictions
-          <small className="ml-2 uppercase text-slate-500">Optional</small>
+          <small className="ml-2 font-normal uppercase text-renaissance-mid">
+            Optional
+          </small>
         </label>
-        <p className="mb-2 text-xs text-slate-700 dark:text-white">
+        <p className="mb-2 text-xs text-slate-700">
           We strive to cater to various dietary needs, including vegetarian,
           vegan, gluten-free, and any specific food allergies. This information
           will help us ensure that your meal preferences are accommodated during
@@ -187,7 +189,7 @@ export function RsvpForm() {
           type="text"
           id="dietaryRestrictions"
           name="dietaryRestrictions"
-          className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="border border-renaissance-mid bg-transparent text-renaissance-dark text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5"
           placeholder="vegetarian"
         />
       </div>
@@ -195,12 +197,14 @@ export function RsvpForm() {
       <div className="mb-5">
         <label
           htmlFor="accommodations"
-          className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+          className="block mb-2 text-sm font-semibold text-renaissance-dark"
         >
           Accessibility Accommodations
-          <small className="ml-2 uppercase text-slate-500">Optional</small>
+          <small className="ml-2 font-normal uppercase text-renaissance-mid">
+            Optional
+          </small>
         </label>
-        <p className="mb-2 text-xs text-slate-700 dark:text-white">
+        <p className="mb-2 text-xs text-slate-700">
           We are committed to making this event inclusive and accessible for all
           attendees. Please share any disability-related accommodations needed
           to facilitate your participation.
@@ -209,7 +213,7 @@ export function RsvpForm() {
           type="text"
           id="accommodations"
           name="accommodations"
-          className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="border border-renaissance-mid bg-transparent text-renaissance-dark text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5"
           placeholder="wheelchair access"
         />
       </div>
@@ -217,12 +221,14 @@ export function RsvpForm() {
       <div className="mb-5">
         <label
           htmlFor="comments"
-          className="block mb-2 text-sm font-medium text-slate-900 dark:text-white"
+          className="block mb-2 text-sm font-semibold text-renaissance-dark"
         >
           Feedback/Comments
-          <small className="ml-2 uppercase text-slate-500">Optional</small>
+          <small className="ml-2 font-normal uppercase text-renaissance-mid">
+            Optional
+          </small>
         </label>
-        <p className="mb-2 text-xs text-slate-700 dark:text-white">
+        <p className="mb-2 text-xs text-slate-700">
           We value your thoughts and suggestions! Please use this space to share
           any feedback, comments, or specific requests you might have regarding
           the event.
@@ -230,7 +236,7 @@ export function RsvpForm() {
         <textarea
           id="comments"
           name="comments"
-          className="bg-slate-50 border border-slate-300 text-slate-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-slate-700 dark:border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          className="border border-renaissance-mid bg-transparent text-renaissance-dark text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5"
           placeholder="Lorem ipsum..."
         />
       </div>

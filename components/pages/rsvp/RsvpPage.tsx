@@ -2,17 +2,17 @@ import { RsvpForm } from './RsvpForm'
 
 export default function RsvpPage() {
   return (
-    <>
+    <div className="w-full p-6 font-serif border md:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
       <div className="mx-auto mb-8 text-center">
-        <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl text-[#1D633E]">
-          VIP RSVP
+        <h1 className="text-2xl font-bold md:text-3xl text-renaissance-dark">
+          RSVP: Renaissance VIP
         </h1>
         <p className="mt-2 text-slate-600">Please RSVP by February 1, 2024.</p>
       </div>
 
-      <div className="max-w-md p-8 mx-auto border rounded-md border-slate-200">
+      <div className="max-w-md p-8 mx-auto border rounded-md border-renaissance-mid">
         <RsvpForm />
       </div>
-    </>
+    </div>
   )
 }

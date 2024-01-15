@@ -12,7 +12,8 @@ module.exports = {
     fontFamily: {
       mono: 'var(--font-mono)',
       sans: 'var(--font-sans)',
-      serif: 'var(--font-serif)',
+      serif: 'Garamond, Georgia',
+      renaissance: 'var(--font-renaissance)',
     },
     container: {
       center: true,
@@ -35,6 +36,13 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+      },
+      colors: {
+        renaissance: {
+          dark: '#183923',
+          mid: '#80a174',
+          light: '#e5f2d8',
+        },
       },
     },
   },
