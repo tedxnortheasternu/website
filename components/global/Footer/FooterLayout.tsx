@@ -11,10 +11,10 @@ export default function FooterLayout() {
   const year = new Date().getFullYear().toString()
 
   return (
-    <footer className="w-full max-w-screen-xl px-4 py-5 mx-auto mt-8 text-black rounded-lg md:px-8 bg-slate-100">
+    <footer className="w-full max-w-screen-xl p-8 mx-auto mt-8 text-black md:mb-8 md:rounded-md md:px-8 bg-slate-100">
       <div className="justify-between gap-6 md:flex">
         <div className="flex-1 max-w-xs">
-          <p className="mt-2 text-sm leading-relaxed">
+          <p className="text-sm leading-relaxed">
             TEDxNortheasternU is a student-run organization that brings together
             the global Northeastern University community.
           </p>
@@ -97,12 +97,10 @@ export default function FooterLayout() {
         </div>
       </div>
 
-      <div className="items-center justify-between py-6 border-t mt-9 sm:flex">
-        <div className="mt-4 sm:mt-0">
-          &copy; {year} TEDxNortheasternU · All Rights Reserved
-        </div>
+      <div className="flex flex-col items-center justify-between gap-4 pt-6 mt-6 border-t md:flex-row">
+        <p>&copy; {year} TEDxNortheasternU · All Rights Reserved</p>
 
-        <div className="mt-6 ml-12 sm:mt-0">
+        <div className="sm:mt-0">
           <ul className="flex items-center justify-center">
             <SocialIcon
               href="ttps://www.instagram.com/tedxnortheastern"
