@@ -18,9 +18,13 @@ import {
 } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 
-import NavLink from './NavLink'
+type NavLink = {
+  title: string
+  href: string
+  description: string
+}
 
-const aboutLinks: { title: string; href: string; description: string }[] = [
+const aboutLinks: NavLink[] = [
   {
     title: 'Overview',
     href: '/about',
@@ -39,7 +43,7 @@ const aboutLinks: { title: string; href: string; description: string }[] = [
   },
 ]
 
-const joinLinks: { title: string; href: string; description: string }[] = [
+const joinLinks: NavLink[] = [
   {
     title: 'Open Positions',
     href: '/apply',
@@ -54,6 +58,25 @@ const joinLinks: { title: string; href: string; description: string }[] = [
     title: 'Events',
     href: '/events',
     description: 'Discover our upcoming events and how you can take part!',
+  },
+]
+
+const renaissanceLinks: NavLink[] = [
+  {
+    title: 'Overview',
+    href: '/renaissance',
+    description:
+      'Discover the story behind our theme and how you can take part.',
+  },
+  {
+    title: 'Speakers',
+    href: '/renaissance/speakers',
+    description: 'Learn about the speakers who will be gracing our stage.',
+  },
+  {
+    title: 'Tickets',
+    href: '/renaissance/tickets',
+    description: 'Get your tickets to Renaissance!',
   },
 ]
 
@@ -151,17 +174,35 @@ export default function NavbarLayout() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/events" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Events
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuTrigger>Renaissance</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 w-[350px] p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-renaissance-light focus:shadow-md">
+                        <div className="mt-4 mb-2 text-lg font-bold leading-tight text-renaissance-dark">
+                          Attend Renaissance!
+                        </div>
+                        <p className="text-sm leading-tight">
+                          Join us on February 24th to share ideas, spark
+                          creativity, and inspire change across{' '}
+                          {"Northeastern's"} global community.
+                        </p>
+                      </div>
+                    </li>
+
+                    {renaissanceLinks.map((l, key) => (
+                      <ListItem key={key} href={l.href} title={l.title}>
+                        {l.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/renaissance" legacyBehavior passHref>
+                <Link href="/events" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Renaissance
+                    Events
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
