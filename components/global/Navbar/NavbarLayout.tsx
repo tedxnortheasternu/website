@@ -195,12 +195,12 @@ export default function NavbarLayout() {
           />
 
           <div className="flex items-center space-x-4">
-            <NavLink href="/apply">{"We're Recruiting!"}</NavLink>
+            {/* <NavLink href="/apply">{"We're Recruiting!"}</NavLink> */}
             <Link
-              href="https://airtable.com/appD8TuOcD3E8n7BG/shr8Dc6qKWXq7Ns5T"
-              className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"
+              href="/renaissance/tickets"
+              className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
             >
-              Nominate a Speaker <ArrowRightIcon size={16} />
+              Get Your Tickets to Renaissance <ArrowRightIcon size={16} />
             </Link>
           </div>
         </div>
