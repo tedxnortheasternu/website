@@ -36,6 +36,13 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      colors: {
+        renaissance: {
+          dark: '#183923',
+          mid: '#80a174',
+          light: '#e5f2d8',
+        },
+      },
     },
   },
   plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],

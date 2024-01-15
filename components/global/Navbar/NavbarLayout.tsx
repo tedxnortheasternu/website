@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import React from 'react'
 
+import tedx from '@/components/images/tedxnortheasternu.png'
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -17,7 +18,6 @@ import {
 } from '@/components/ui/navigation-menu'
 import { cn } from '@/lib/utils'
 
-import tedx from '../../images/tedxnortheasternu.png'
 import NavLink from './NavLink'
 
 const aboutLinks: { title: string; href: string; description: string }[] = [

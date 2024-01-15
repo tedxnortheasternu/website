@@ -1,31 +1,32 @@
 'use client'
 
 import { MenuIcon, XIcon } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
 
 import NavLink from '@/components/global/Navbar/NavLink'
+import renaissanceLogo from '@/components/images/renaissance.png'
 import { cn } from '@/lib/utils'
 
 export default function RenaissanceNavbarLayout() {
   const [open, setOpen] = useState(false)
 
   return (
-    <div className="w-full h-full max-w-screen-xl px-4 py-4 mx-auto text-white md:py-3 bg-[#1D633E] xl:rounded-md lg:flex lg:items-center lg:justify-between lg:gap-4">
+    <div className="w-full h-full max-w-screen-xl px-4 py-4 mx-auto text-white md:py-3 bg-renaissance-dark xl:rounded-md lg:flex lg:items-center lg:justify-between lg:gap-4">
       <div className="flex items-center justify-between lg:gap-4">
         <Link href="/renaissance" className="font-bold">
-          Renaissance
-          {/* <Image
-              src={tedx}
-              alt="TEDxNortheasternU Logo"
-              className="h-auto max-w-full -ml-3.5 w-80"
-            /> */}
+          <Image
+            src={renaissanceLogo}
+            alt="Renaissance Logo"
+            className="h-auto max-w-full -ml-3.5 w-80"
+          />
         </Link>
 
         <div className="lg:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium align-middle transition-all border rounded-lg shadow-sm border-slate-700 bg-slate-950 text-slate-300 hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue-600"
+            className="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium align-middle transition-all border rounded-lg shadow-sm border-slate-700 bg-slate-950 text-renaissance-light hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue-600"
             aria-controls="navbar-alignment"
             aria-label="Toggle navigation"
             onClick={() => setOpen(!open)}
@@ -48,7 +49,7 @@ export default function RenaissanceNavbarLayout() {
           open ? '' : 'hidden',
         )}
       >
-        <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-5">
+        <div className="flex flex-col gap-2 lg:flex-row lg:items-center">
           <NavLink href="/renaissance" variant="renaissance">
             Overview
           </NavLink>

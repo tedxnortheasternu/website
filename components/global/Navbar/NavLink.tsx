@@ -29,22 +29,19 @@ export default function NavLink({
     <Link
       target={target}
       className={cn(
-        'font-medium hover:underline whitespace-nowrap',
+        'font-medium whitespace-nowrap transition-colors',
+        variant === 'renaissance' ? 'px-4 py-2 rounded-md' : 'hover:underline',
         active
           ? variant === 'renaissance'
-            ? 'text-red-500 hover:text-red-400'
+            ? 'text-white hover:text-white bg-renaissance-light/15 hover:bg-renaissance-light/20'
             : 'text-red-600 hover:text-red-700'
           : variant === 'renaissance'
-            ? 'text-slate-300 hover:text-slate-200'
+            ? 'text-renaissance-light hover:text-white hover:bg-renaissance-light/15'
             : 'text-slate-600 hover:text-slate-700',
       )}
       href={href}
     >
-      {variant === 'renaissance'
-        ? active
-          ? `> ${children}`
-          : children
-        : children}
+      {variant === 'renaissance' ? (active ? children : children) : children}
     </Link>
   )
 }
