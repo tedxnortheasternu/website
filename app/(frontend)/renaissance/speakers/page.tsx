@@ -10,6 +10,7 @@ import dasPhoto from '@/components/images/renaissance/das.png'
 import liuPhoto from '@/components/images/renaissance/liu.png'
 import murphyPhoto from '@/components/images/renaissance/murphy.png'
 import redwoodPhoto from '@/components/images/renaissance/redwood.png'
+import { cn } from '@/lib/utils'
 
 type Speaker = {
   photo: StaticImageData
@@ -90,18 +91,41 @@ export default function RenaissanceSpeakers() {
       <div className="max-w-2xl mx-auto space-y-24">
         {speakers.map((s, i) => (
           <div key={i} className="grid gap-4">
-            <Image
-              src={s.photo}
-              alt={`Portrait of ${s.name}`}
-              className="w-64 h-auto max-w-full rounded-md aspect-square"
-            />
+            <div className="grid gap-2 md:grid-cols-2">
+              <Image
+                src={s.photo}
+                alt={`Portrait of ${s.name}`}
+                className="w-full h-auto max-w-full rounded-md aspect-square"
+              />
+
+              <div
+                className={cn(
+                  'flex flex-col justify-end p-8 rounded-md',
+                  i < 4 ? 'bg-renaissance-light' : 'bg-renaissance-dark',
+                )}
+              >
+                <p
+                  className={cn(
+                    'text-xl leading-none font-renaissance',
+                    i < 4
+                      ? 'text-renaissance-dark/85'
+                      : 'text-renaissance-light/85',
+                  )}
+                >
+                  {s.headline}
+                </p>
+                <h2
+                  className={cn(
+                    'mt-2 text-3xl',
+                    i < 4 ? 'text-renaissance-dark' : 'text-renaissance-light',
+                  )}
+                >
+                  <span className="text-4xl font-bold">{s.name}</span> &middot;{' '}
+                  {s.pronouns}
+                </h2>
+              </div>
+            </div>
             <div>
-              <h2 className="mt-2 mb-0.5 text-xl text-renaissance-dark">
-                <span className="font-bold">{s.name}</span> ({s.pronouns})
-              </h2>
-              <p className="text-xl font-renaissance text-renaissance-dark">
-                {s.headline}
-              </p>
               <p className="mt-6 leading-7">{s.bio}</p>
             </div>
           </div>
@@ -117,14 +141,6 @@ export default function RenaissanceSpeakers() {
           Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
         </Link>
       </div>
-    </div>
-  )
-}
-
-function Speaker() {
-  return (
-    <div className="flex flex-col gap-2 p-4 border-2 border-gray-100 rounded-md">
-      <span className="text-xl font-bold">Chloe Colipano</span>
     </div>
   )
 }
