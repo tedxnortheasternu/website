@@ -67,8 +67,8 @@ const speakers: Speaker[] = [
     photo: colipanoPhoto,
     name: 'Chloe Colipano',
     pronouns: 'she/they',
-    headline: 'CEO, Instagram Content Creator, Marketer',
-    bio: "Chloe Colipano, a Business Administration and Communications student at Northeastern University with a focus on Marketing, is deeply engaged in the world of entrepreneurship and brand building. They serve as the CEO of Hoosky, a parody clothing merchandise brand at NU, and also engage in nonprofit marketing and philanthropic initiatives. During high school, Chloe developed a personal brand on Instagram, amassing around 50k followers and reachingachieving up to 55k+ likes per post. Since then, Chloe's interest has evolved into exploring how individuals utilize social media for financial, cultural, social, and personal decision-making.",
+    headline: 'CEO, Content Creator, Marketer',
+    bio: "Chloe Colipano, a Business Administration and Communications student at Northeastern University with a focus on Marketing, is deeply engaged in the world of entrepreneurship and brand building. They serve as the CEO of Hoosky, a parody clothing merchandise brand at NU, and also engage in nonprofit marketing and philanthropic initiatives. During high school, Chloe developed a personal brand on Instagram, amassing 50k followers and reaching up to 55k likes per post. Since then, Chloe's interest has evolved into exploring how individuals utilize social media for financial, cultural, social, and personal decision-making.",
   },
   {
     photo: liuPhoto,
