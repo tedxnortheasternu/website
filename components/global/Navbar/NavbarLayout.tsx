@@ -43,7 +43,7 @@ const joinLinks: { title: string; href: string; description: string }[] = [
   {
     title: 'Open Positions',
     href: '/apply',
-    description: 'Check out open roles for current Northeastern students.',
+    description: 'Check out positions open to current Northeastern students.',
   },
   {
     title: 'Speaker Nominations',

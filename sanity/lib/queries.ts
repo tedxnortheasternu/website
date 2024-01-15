@@ -17,7 +17,7 @@ export const homePageQuery = groq`
         _id,
         name,
       }
-    } | order(startDateTime desc),
+    } | order(startDateTime asc),
     "sponsors": *[_type == "sponsor" ] {
       name,
       logo,
@@ -40,7 +40,7 @@ export const upcomingEventsQuery = groq`
       _id,
       name,
     }
-  } | order(startDateTime desc)
+  } | order(startDateTime asc)
 `
 
 export const teamsQuery = groq`
@@ -94,7 +94,8 @@ export const positionByIdQuery = groq`
     },
     description,
     responsibilities,
-    requirements
+    requirements,
+    acceptingApplications
   }
 `
 
