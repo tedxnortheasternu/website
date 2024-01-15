@@ -81,7 +81,7 @@ const speakers: Speaker[] = [
 
 export default function RenaissanceSpeakers() {
   return (
-    <div className="w-full p-8 font-serif border md:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+    <div className="w-full p-6 font-serif border md:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
       <div className="max-w-2xl mx-auto">
         <h1 className="mb-8 text-2xl font-bold md:text-3xl text-renaissance-dark">
           Meet Our Speakers!
@@ -91,16 +91,24 @@ export default function RenaissanceSpeakers() {
       <div className="max-w-2xl mx-auto space-y-24">
         {speakers.map((s, i) => (
           <div key={i} className="grid gap-4">
-            <div className="grid gap-2 md:grid-cols-2">
+            <div
+              className="grid gap-2 md:grid-cols-2"
+              style={{
+                gridTemplateAreas:
+                  i % 2 === 0
+                    ? '"speaker-photo speaker-info"'
+                    : '"speaker-info speaker-photo"',
+              }}
+            >
               <Image
                 src={s.photo}
                 alt={`Portrait of ${s.name}`}
-                className="w-full h-auto max-w-full rounded-md aspect-square"
+                className="w-full h-auto max-w-full rounded-md aspect-square [grid-area:speaker-photo]"
               />
 
               <div
                 className={cn(
-                  'flex flex-col justify-end p-8 rounded-md',
+                  'flex flex-col justify-end p-6 md:p-8 rounded-md [grid-area:speaker-info]',
                   i < 4 ? 'bg-renaissance-light' : 'bg-renaissance-dark',
                 )}
               >
