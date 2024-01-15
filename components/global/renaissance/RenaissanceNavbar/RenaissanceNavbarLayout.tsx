@@ -26,7 +26,7 @@ export default function RenaissanceNavbarLayout() {
         <div className="lg:hidden">
           <button
             type="button"
-            className="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium align-middle transition-all border rounded-lg shadow-sm border-slate-700 bg-slate-950 text-renaissance-light hover:bg-slate-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue-600"
+            className="inline-flex items-center justify-center gap-2 p-2 text-sm font-medium align-middle transition-all border rounded-lg shadow-sm border-renaissance-mid bg-renaissance-dark text-renaissance-light hover:bg-renaissance-light/15 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-black focus:ring-blue-600"
             aria-controls="navbar-alignment"
             aria-label="Toggle navigation"
             onClick={() => setOpen(!open)}
@@ -45,7 +45,7 @@ export default function RenaissanceNavbarLayout() {
 
       <div
         className={cn(
-          'mt-2 lg:mt-0 rounded-lg border border-slate-700 p-4 lg:p-0 flex flex-col lg:flex-row lg:justify-between overflow-hidden transition-all duration-300 basis-full grow lg:border-transparent lg:gap-4 lg:flex',
+          'mt-2 lg:mt-0 rounded-lg border border-renaissance-mid p-4 lg:p-0 flex flex-col lg:flex-row lg:justify-between overflow-hidden transition-all duration-300 basis-full grow lg:border-transparent lg:gap-4 lg:flex',
           open ? '' : 'hidden',
         )}
       >
@@ -55,6 +55,9 @@ export default function RenaissanceNavbarLayout() {
           </NavLink>
           <NavLink href="/renaissance/speakers" variant="renaissance">
             Speakers
+          </NavLink>
+          <NavLink href="/renaissance/tickets" variant="renaissance">
+            Tickets
           </NavLink>
         </div>
       </div>
