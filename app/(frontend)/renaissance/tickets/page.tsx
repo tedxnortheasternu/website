@@ -27,6 +27,7 @@ export default function RenaissanceSpeakers() {
           <div>
             <Link
               href={STUDENTS_LINK}
+              target="_blank"
               className="inline-flex items-center gap-2 px-6 py-2 mt-8 mb-3 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
             >
               Purchase for $10 <ArrowRightIcon size={16} />
@@ -48,6 +49,7 @@ export default function RenaissanceSpeakers() {
           <div>
             <Link
               href={PUBLIC_LINK}
+              target="_blank"
               className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-8 mb-3 text-xl uppercase transition-colors rounded-full text-renaissance-dark font-renaissance bg-renaissance-light w-max hover:bg-white"
             >
               Purchase for $15 <ArrowRightIcon size={16} />
