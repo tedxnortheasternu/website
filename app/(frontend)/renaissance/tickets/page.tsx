@@ -20,8 +20,7 @@ export default function RenaissanceSpeakers() {
           <div>
             <h2 className="mb-4 text-3xl font-bold">Northeastern Students</h2>
             <p className="leading-snug">
-              Discounted student tickets are available to for $10. Be sure to
-              log in with your Northeastern credentials.
+              Discounted student tickets are available for $10.
             </p>
           </div>
 
