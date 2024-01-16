@@ -110,15 +110,15 @@ export default function RenaissanceSpeakers() {
               <div
                 className={cn(
                   'flex flex-col justify-end p-6 md:p-8 rounded-md [grid-area:speaker-info]',
-                  i < 4 ? 'bg-renaissance-light' : 'bg-renaissance-dark',
+                  i < 4 ? 'bg-renaissance-dark' : 'bg-renaissance-light',
                 )}
               >
                 <p
                   className={cn(
                     'text-xl leading-none font-renaissance',
                     i < 4
-                      ? 'text-renaissance-dark/85'
-                      : 'text-renaissance-light/85',
+                      ? 'text-renaissance-light/85'
+                      : 'text-renaissance-dark/85',
                   )}
                 >
                   {s.headline}
@@ -126,7 +126,7 @@ export default function RenaissanceSpeakers() {
                 <h2
                   className={cn(
                     'mt-2 text-3xl whitespace-nowrap',
-                    i < 4 ? 'text-renaissance-dark' : 'text-renaissance-light',
+                    i < 4 ? 'text-renaissance-light' : 'text-renaissance-dark',
                   )}
                 >
                   <span className="text-4xl font-bold whitespace-normal">
