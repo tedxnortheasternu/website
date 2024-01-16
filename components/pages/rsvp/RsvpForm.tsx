@@ -25,7 +25,7 @@ function SubmitButton() {
   return (
     <button
       type="submit"
-      className="inline-flex items-center gap-2 px-6 py-1.5 mt-2 text-xl text-white no-underline uppercase transition-colors rounded-full font-renaissance bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
+      className="inline-flex items-center gap-2 px-6 py-1.5 mt-2 text-xl text-renaissance-light uppercase transition-colors rounded-full font-renaissance bg-renaissance-dark w-max hover:bg-black"
       aria-disabled={pending}
     >
       Submit{' '}

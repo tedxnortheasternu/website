@@ -15,7 +15,7 @@ export default async function IndexRoute({
         </p>
         <Link
           href="/renaissance"
-          className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-bold text-white transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
+          className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-bold text-renaissance-light transition-colors rounded-full bg-renaissance-dark w-max hover:bg-black"
         >
           Learn More <ArrowRightIcon size={16} />
         </Link>

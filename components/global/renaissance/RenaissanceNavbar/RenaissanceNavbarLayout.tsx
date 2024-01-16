@@ -1,6 +1,6 @@
 'use client'
 
-import { MenuIcon, XIcon } from 'lucide-react'
+import { ArrowRightIcon, MenuIcon, XIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState } from 'react'
@@ -49,16 +49,25 @@ export default function RenaissanceNavbarLayout() {
           open ? '' : 'hidden',
         )}
       >
-        <div className="flex flex-col gap-1 font-renaissance lg:flex-row lg:items-center">
+        <div className="flex flex-col space-x-2 font-renaissance lg:flex-row lg:items-center">
           <NavLink href="/renaissance" variant="renaissance">
             Overview
           </NavLink>
           <NavLink href="/renaissance/speakers" variant="renaissance">
             Speakers
           </NavLink>
-          <NavLink href="/renaissance/tickets" variant="renaissance">
-            Tickets
+          <NavLink href="/renaissance/schedule" variant="renaissance">
+            Schedule
           </NavLink>
+          <NavLink href="/renaissance/location" variant="renaissance">
+            Location
+          </NavLink>
+          <Link
+            href="/renaissance/tickets"
+            className="inline-flex items-center gap-2 px-4 py-1.5 uppercase transition-colors rounded-full text-renaissance-dark font-renaissance bg-renaissance-light w-max hover:bg-white"
+          >
+            Buy Tickets <ArrowRightIcon size={16} />
+          </Link>
         </div>
       </div>
     </div>

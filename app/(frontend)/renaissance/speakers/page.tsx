@@ -11,6 +11,7 @@ import liuPhoto from '@/components/images/renaissance/liu.png'
 import murphyPhoto from '@/components/images/renaissance/murphy.png'
 import redwoodPhoto from '@/components/images/renaissance/redwood.png'
 import { cn } from '@/lib/utils'
+import { Fragment } from 'react'
 
 type Speaker = {
   photo: StaticImageData
@@ -26,7 +27,7 @@ const speakers: Speaker[] = [
     name: 'Dr. Christie Chung',
     pronouns: 'she/her',
     headline: 'Cognitive Psychologist, Executive Director, Professor',
-    bio: 'is an award-winning academic leader, executive director, and professor in cognitive psychology. She has extensive research expertise in cognitive aging, emotional memory, and cross-cultural cognition. Dr. Chung has served in a variety of senior leadership roles and is committed to empowering leaders to reach their full potential through her work in executive coaching and consulting. Dr. Chung currently serves as the Executive Director of The Mills Institute and is dedicated to developing transformative programs and research to drive positive societal impact through a humanics-driven lens.',
+    bio: ' is an award-winning academic leader, executive director, and professor in cognitive psychology. She has extensive research expertise in cognitive aging, emotional memory, and cross-cultural cognition. Dr. Chung has served in a variety of senior leadership roles and is committed to empowering leaders to reach their full potential through her work in executive coaching and consulting. Dr. Chung currently serves as the Executive Director of The Mills Institute and is dedicated to developing transformative programs and research to drive positive societal impact through a humanics-driven lens.',
   },
   {
     photo: cutlerPhoto,
@@ -82,8 +83,8 @@ const speakers: Speaker[] = [
 export default function RenaissanceSpeakers() {
   return (
     <div className="w-full p-6 font-serif border md:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
-      <div className="max-w-2xl mx-auto">
-        <h1 className="mb-8 text-2xl font-bold text-center md:text-3xl text-renaissance-dark">
+      <div className="max-w-2xl mx-auto mb-8">
+        <h1 className="text-2xl font-bold text-center md:text-3xl text-renaissance-dark">
           Meet Our Speakers!
         </h1>
       </div>
@@ -146,7 +147,7 @@ export default function RenaissanceSpeakers() {
       <div className="max-w-2xl mx-auto">
         <Link
           href="/renaissance/tickets"
-          className="inline-flex items-center gap-2 px-6 py-2 mt-12 text-xl text-white no-underline uppercase transition-colors rounded-full font-renaissance bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
+          className="inline-flex items-center gap-2 px-6 py-2 mt-12 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
         >
           Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
         </Link>

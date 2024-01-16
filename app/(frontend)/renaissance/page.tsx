@@ -40,7 +40,7 @@ export default function RenaissanceOverview() {
 
         <Link
           href="/renaissance/tickets"
-          className="inline-flex items-center gap-2 px-6 py-2 mt-4 text-xl text-white no-underline uppercase transition-colors rounded-full font-renaissance bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
+          className="inline-flex items-center gap-2 px-6 py-2 mt-4 text-xl no-underline uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
         >
           Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
         </Link>
@@ -51,7 +51,7 @@ export default function RenaissanceOverview() {
             src="https://www.youtube.com/embed/QHgxTwobwXk"
             title="THEME REVEAL | TEDxNortheasternU 2024: Renaissance"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-          ></iframe>
+          />
         </div>
       </div>
     </div>
