@@ -49,7 +49,7 @@ export default function RenaissanceNavbarLayout() {
           open ? '' : 'hidden',
         )}
       >
-        <div className="flex flex-col space-x-2 font-renaissance lg:flex-row lg:items-center">
+        <div className="flex flex-col space-y-1 md:space-y-0 md:space-x-2 font-renaissance lg:flex-row lg:items-center">
           <NavLink href="/renaissance" variant="renaissance">
             Overview
           </NavLink>
@@ -64,7 +64,7 @@ export default function RenaissanceNavbarLayout() {
           </NavLink>
           <Link
             href="/renaissance/tickets"
-            className="inline-flex items-center gap-2 px-4 py-1.5 uppercase transition-colors rounded-full text-renaissance-dark font-renaissance bg-renaissance-light w-max hover:bg-white"
+            className="!mt-2 md:!mt-0 inline-flex items-center gap-2 px-4 py-1.5 uppercase transition-colors rounded-full text-renaissance-dark font-renaissance bg-renaissance-light w-max hover:bg-white"
           >
             Buy Tickets <ArrowRightIcon size={16} />
           </Link>
