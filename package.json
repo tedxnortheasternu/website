@@ -30,6 +30,7 @@
     "@sanity/ui": "1.9.3",
     "@sanity/vision": "^3.24.1",
     "@tailwindcss/typography": "^0.5.10",
+    "@vercel/analytics": "^1.1.1",
     "@vercel/og": "^0.6.2",
     "airtable": "^0.12.2",
     "class-variance-authority": "^0.7.0",

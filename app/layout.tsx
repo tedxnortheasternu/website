@@ -1,5 +1,6 @@
 import 'tailwindcss/tailwind.css'
 
+import { Analytics } from '@vercel/analytics/react'
 import { Bebas_Neue, IBM_Plex_Mono, Inter } from 'next/font/google'
 
 const sans = Inter({
@@ -31,7 +32,10 @@ export default async function RootLayout({
       lang="en"
       className={`${mono.variable} ${sans.variable} ${renaissance.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
