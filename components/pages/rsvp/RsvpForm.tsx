@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowRightIcon, Loader } from 'lucide-react'
+import { useSearchParams } from 'next/navigation'
 import { useFormState, useFormStatus } from 'react-dom'
 
 import { createRenaissanceRsvp } from '@/app/actions'
@@ -39,6 +40,7 @@ function SubmitButton() {
 }
 
 export function RsvpForm() {
+  const searchParams = useSearchParams()
   const [state, formAction] = useFormState(createRenaissanceRsvp, initialState)
 
   if (state?.success) {
@@ -66,6 +68,7 @@ export function RsvpForm() {
             name="firstName"
             className="border border-renaissance-mid bg-transparent text-renaissance-dark text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5"
             placeholder="Sam"
+            defaultValue={searchParams.get('firstName') ?? ''}
             required
           />
           {state?.errors?.firstName ? (
@@ -88,6 +91,7 @@ export function RsvpForm() {
             name="lastName"
             className="border border-renaissance-mid bg-transparent text-renaissance-dark text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5"
             placeholder="Serif"
+            defaultValue={searchParams.get('lastName') ?? ''}
             required
           />
           {state?.errors?.lastName ? (
@@ -111,6 +115,7 @@ export function RsvpForm() {
           name="email"
           className="border border-renaissance-mid bg-transparent text-renaissance-dark text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full px-3 py-2.5"
           placeholder="s.serif@northeastern.edu"
+          defaultValue={searchParams.get('email') ?? ''}
           required
         />
       </div>
