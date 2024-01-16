@@ -55,7 +55,7 @@ const speakers: Speaker[] = [
     name: 'Leeyan Redwood',
     pronouns: 'she/her',
     headline: 'Athlete, Singer, Youth Mentor',
-    bio: " is a first-generation Jamaican-American and a distinguished alumna of Northeastern's College of Arts, Media and Design. As a former Track and Field captain, she holds the third longest shot put record in the University's history. Now, she channels her energy into a non-profit career, focusing on community engagement and youth mentorship. With a passion for youth development, particularly through sports, she is dedicated to providing opportunities and advocacy for those without a voice. Her talents extend beyond the track; she is also an accomplished singer, having performed the national anthem at a sold-out Boston Red Sox game. She cherishes her Jamaican heritage, especially enjoying her mother's famous curry goat and oxtail dishes. A Long Island native, she loves relaxing at the beach with iced coffee, pizza, and bagels.",
+    bio: " is a first-generation Jamaican-American and a distinguished alumna of Northeastern's College of Arts, Media and Design. A former Track and Field captain, she holds the third-longest shot put record in the University's history. Now, she channels her energy into a non-profit career, focusing on community engagement and youth mentorship. She is dedicated to providing opportunities and advocacy for those without a voice. Leeyan is also an accomplished singer who performed the national anthem at a sold-out Boston Red Sox game. She cherishes her Jamaican heritage, especially enjoying her mother's famous curry goat and oxtail dishes.",
   },
   {
     photo: dasPhoto,
