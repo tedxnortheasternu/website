@@ -9,8 +9,8 @@ const STUDENTS_LINK =
 export default function RenaissanceSpeakers() {
   return (
     <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
-      <div className="max-w-2xl mx-auto mb-8">
-        <h1 className="text-2xl font-bold text-center md:text-3xl text-renaissance-dark">
+      <div className="max-w-2xl mx-auto mb-8 text-center">
+        <h1 className="text-2xl font-bold md:text-3xl text-renaissance-dark">
           Tickets
         </h1>
       </div>
@@ -59,6 +59,21 @@ export default function RenaissanceSpeakers() {
             </p>
           </div>
         </div>
+      </div>
+
+      <div className="max-w-2xl mx-auto">
+        <p className="mt-2 text-center text-renaissance-dark/85 text-balance">
+          If you require disability-related accommodations to participate in
+          this event, please{' '}
+          <Link
+            href="/contact"
+            target="_blank"
+            className="border-b border-b-renaissance-mid text-renaissance-dark"
+          >
+            contact us
+          </Link>{' '}
+          by February 10th.
+        </p>
       </div>
     </div>
   )
