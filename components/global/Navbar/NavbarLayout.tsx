@@ -76,7 +76,7 @@ const renaissanceLinks: NavLink[] = [
   {
     title: 'Tickets',
     href: '/renaissance/tickets',
-    description: 'Get your tickets to Renaissance!',
+    description: 'Get your ticket to Renaissance!',
   },
 ]
 
@@ -241,7 +241,7 @@ export default function NavbarLayout() {
               href="/renaissance/tickets"
               className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
             >
-              Get Your Tickets to Renaissance <ArrowRightIcon size={16} />
+              Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
             </Link>
           </div>
         </div>
