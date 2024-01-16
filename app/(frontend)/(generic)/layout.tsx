@@ -8,14 +8,14 @@ export default async function IndexRoute({
 }) {
   return (
     <div>
-      <div className="flex items-center justify-center w-full max-w-screen-xl gap-4 p-4 mx-auto my-2 text-center border bg-renaissance-light md:rounded-md border-renaissance-dark">
-        <p className="!m-0">
+      <div className="flex flex-col items-center justify-center w-full max-w-screen-xl gap-4 p-4 mx-auto text-center border-y xl:my-2 lg:flex-row xl:border bg-renaissance-light xl:rounded-md border-renaissance-dark">
+        <p className="!m-0 text-pretty">
           Join us for <strong>TEDxNortheasternU: Renaissance</strong>, our 2024
           flagship speaker event, on February 24th.
         </p>
         <Link
           href="/renaissance"
-          className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-bold text-renaissance-light transition-colors rounded-full bg-renaissance-dark w-max hover:bg-black"
+          className="shrink-0 inline-flex items-center gap-2 px-4 py-1.5 text-sm font-bold text-renaissance-light transition-colors rounded-full bg-renaissance-dark w-max hover:bg-black"
         >
           Learn More <ArrowRightIcon size={16} />
         </Link>

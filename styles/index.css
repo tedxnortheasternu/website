@@ -11,3 +11,15 @@ html {
 p:not(:last-child) {
   margin-bottom: 0.5rem;
 }
+
+.renaissance-speaker > div {
+  grid-template-areas: 'speaker-photo' 'speaker-info';
+}
+@media (min-width: 768px) {
+  .renaissance-speaker:nth-child(odd) > div {
+    grid-template-areas: 'speaker-photo speaker-info';
+  }
+  .renaissance-speaker:nth-child(even) > div {
+    grid-template-areas: 'speaker-info speaker-photo';
+  }
+}

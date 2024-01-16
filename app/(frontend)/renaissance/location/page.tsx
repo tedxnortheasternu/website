@@ -6,7 +6,7 @@ import map from '@/components/images/renaissance/map.png'
 
 export default function RenaissanceSpeakers() {
   return (
-    <div className="w-full p-6 font-serif border md:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+    <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
       <div className="max-w-2xl mx-auto mb-8 space-y-8">
         <div>
           <h1 className="text-2xl font-bold text-center md:text-3xl text-renaissance-dark">

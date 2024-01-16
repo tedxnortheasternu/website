@@ -6,7 +6,7 @@ import renaissanceLogo from '@/components/images/renaissance-dark.png'
 
 export default function RenaissanceOverview() {
   return (
-    <div className="w-full p-6 !pt-0 border md:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+    <div className="w-full p-6 !pt-0 border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
       <div className="mx-auto font-serif prose">
         <div className="-ml-3.5">
           <Image

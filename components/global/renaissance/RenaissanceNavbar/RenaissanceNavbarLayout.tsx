@@ -49,7 +49,7 @@ export default function RenaissanceNavbarLayout() {
           open ? '' : 'hidden',
         )}
       >
-        <div className="flex flex-col space-y-1 md:space-y-0 md:space-x-2 font-renaissance lg:flex-row lg:items-center">
+        <div className="flex flex-col space-y-1 md:space-y-0 md:space-x-2 font-renaissance md:flex-row md:items-center">
           <NavLink href="/renaissance" variant="renaissance">
             Overview
           </NavLink>

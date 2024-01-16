@@ -2,7 +2,7 @@ import { RsvpForm } from './RsvpForm'
 
 export default function RsvpPage() {
   return (
-    <div className="w-full p-6 font-serif border md:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+    <div className="w-full p-6 font-serif border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
       <div className="mx-auto mb-8 text-center">
         <h1 className="text-2xl font-bold md:text-3xl text-renaissance-dark">
           RSVP: Renaissance VIP

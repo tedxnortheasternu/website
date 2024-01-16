@@ -82,34 +82,26 @@ const speakers: Speaker[] = [
 
 export default function RenaissanceSpeakers() {
   return (
-    <div className="w-full p-6 font-serif border md:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+    <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
       <div className="max-w-2xl mx-auto mb-8">
         <h1 className="text-2xl font-bold text-center md:text-3xl text-renaissance-dark">
           Meet Our Speakers!
         </h1>
       </div>
 
-      <div className="max-w-2xl mx-auto space-y-24">
+      <div className="max-w-2xl mx-auto space-y-12 md:space-y-24">
         {speakers.map((s, i) => (
-          <div key={i}>
-            <div
-              className="grid gap-2 md:grid-cols-2"
-              style={{
-                gridTemplateAreas:
-                  i % 2 === 0
-                    ? '"speaker-photo speaker-info"'
-                    : '"speaker-info speaker-photo"',
-              }}
-            >
+          <div key={i} className="renaissance-speaker">
+            <div className="grid gap-2 md:grid-cols-2">
               <Image
                 src={s.photo}
                 alt={`Portrait of ${s.name}`}
-                className="w-full h-auto max-w-full rounded-md aspect-square [grid-area:speaker-photo]"
+                className="w-[50%] md:w-full h-auto max-w-full rounded-md aspect-square [grid-area:speaker-photo]"
               />
 
               <div
                 className={cn(
-                  'flex flex-col justify-end p-6 md:p-8 rounded-md [grid-area:speaker-info]',
+                  'flex flex-col justify-end px-6 py-8 md:p-8 rounded-md [grid-area:speaker-info]',
                   i < 4 ? 'bg-renaissance-dark' : 'bg-renaissance-light',
                 )}
               >
@@ -136,7 +128,7 @@ export default function RenaissanceSpeakers() {
                 </h2>
               </div>
             </div>
-            <p className="p-8 mt-2 leading-7 text-pretty bg-renaissance-light/25 md:rounded-md">
+            <p className="p-6 mt-2 leading-7 rounded-md md:p-8 text-pretty bg-renaissance-light/25">
               <b className="text-renaissance-dark">{s.name}</b>
               {s.bio}
             </p>

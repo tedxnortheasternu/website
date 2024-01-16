@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function RenaissanceSpeakers() {
   return (
-    <div className="w-full p-6 font-serif border md:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+    <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
       <div className="max-w-2xl mx-auto mb-8 space-y-8">
         <div>
           <h1 className="text-2xl font-bold text-center md:text-3xl text-renaissance-dark">
@@ -20,12 +20,12 @@ export default function RenaissanceSpeakers() {
           </h2>
 
           <div className="space-y-4 text-renaissance-dark">
-            <div className="grid grid-cols-[100px_1fr] items-center gap-4">
+            <div className="grid grid-cols-[100px_1fr] items-center gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">10:45am</time>
               <p className="text-lg font-bold">Doors Open</p>
             </div>
 
-            <div className="grid grid-cols-[100px_1fr] gap-4">
+            <div className="grid grid-cols-[100px_1fr] gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">11:15am</time>
               <div className="mt-1 space-y-4">
                 <p className="text-lg font-bold">Opening Remarks</p>
@@ -63,7 +63,7 @@ export default function RenaissanceSpeakers() {
               </div>
             </div>
 
-            <div className="grid grid-cols-[100px_1fr] items-center gap-4">
+            <div className="grid grid-cols-[100px_1fr] items-center gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">12:45pm</time>
               <p className="text-lg font-bold">
                 Intermission, xLabs, and Lunch
@@ -78,7 +78,7 @@ export default function RenaissanceSpeakers() {
           </h2>
 
           <div className="space-y-4 text-renaissance-light">
-            <div className="grid grid-cols-[100px_1fr] gap-4">
+            <div className="grid grid-cols-[100px_1fr] gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">1:45pm</time>
               <div className="mt-1 space-y-4">
                 <div>
@@ -114,7 +114,7 @@ export default function RenaissanceSpeakers() {
               </div>
             </div>
 
-            <div className="grid grid-cols-[100px_1fr] items-center gap-4">
+            <div className="grid grid-cols-[100px_1fr] items-center gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">3:45pm</time>
               <p className="text-lg font-bold">Closing Remarks</p>
             </div>

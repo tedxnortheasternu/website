@@ -11,7 +11,7 @@ export default function FooterLayout() {
   const year = new Date().getFullYear().toString()
 
   return (
-    <footer className="w-full max-w-screen-xl p-8 mx-auto mt-8 text-black md:mb-8 md:rounded-md md:px-8 bg-slate-50">
+    <footer className="w-full max-w-screen-xl p-8 mx-auto mt-8 text-black md:mb-8 xl:rounded-md md:px-8 bg-slate-50">
       <div className="justify-between gap-6 md:flex">
         <div className="flex-1 max-w-xs">
           <p className="text-sm leading-relaxed">
