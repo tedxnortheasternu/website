@@ -14,7 +14,6 @@ export default async function IndexRoute({
           flagship speaker event, on February 24th.
         </p>
         <Link
-          target="_blank"
           href="/renaissance"
           className="inline-flex items-center gap-2 px-4 py-1.5 text-sm font-bold text-white transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
         >

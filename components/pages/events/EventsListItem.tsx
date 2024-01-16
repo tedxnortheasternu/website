@@ -83,7 +83,6 @@ export function EventsListItem(props: EventProps) {
           </button>
 
           <Link
-            target="_blank"
             href={resolveHref('event', event.slug)}
             className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-red-600 uppercase transition-colors rounded-full w-max hover:text-red-700"
           >

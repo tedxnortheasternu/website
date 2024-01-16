@@ -54,7 +54,6 @@ export function PositionListItem(props: PositionProps) {
           <p>{position.description}</p>
 
           <Link
-            target="_blank"
             href={href}
             className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-white uppercase transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"
           >

@@ -39,7 +39,6 @@ export default function RenaissanceOverview() {
         </p>
 
         <Link
-          target="_blank"
           href="/renaissance/tickets"
           className="inline-flex items-center gap-2 px-6 py-2 mt-4 text-xl text-white no-underline uppercase transition-colors rounded-full font-renaissance bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
         >
