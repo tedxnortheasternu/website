@@ -25,8 +25,8 @@ const speakers: Speaker[] = [
     photo: chungPhoto,
     name: 'Dr. Christie Chung',
     pronouns: 'she/her',
-    headline: 'Cognitive Psychology Expert, Executive Director, Professor',
-    bio: 'Dr. Chung is an award-winning academic leader, executive director, and professor in cognitive psychology. She has extensive expertise in cognitive aging research and is dedicated to developing transformative programs and research to drive positive societal impact through a humanics-driven lens. Dr. Chung currently serves as the Executive Director of The Mills Institute and as a Professor of Psychology at Northeastern University.',
+    headline: 'Cognitive Psychologist, Executive Director, Professor',
+    bio: 'Dr. Chung is an award-winning academic leader, executive director, and professor in cognitive psychology. She has extensive research expertise in cognitive aging, emotional memory, and cross-cultural cognition. Dr. Chung has served in a variety of senior leadership roles and is committed to empowering leaders to reach their full potential through her work in executive coaching and consulting. Dr. Chung currently serves as the Executive Director of The Mills Institute and is dedicated to developing transformative programs and research to drive positive societal impact through a humanics-driven lens.',
   },
   {
     photo: cutlerPhoto,
