@@ -1,6 +1,7 @@
 import { ArrowRightIcon } from 'lucide-react'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
+import { Fragment } from 'react'
 
 import aliotoPhoto from '@/components/images/renaissance/alioto.png'
 import chungPhoto from '@/components/images/renaissance/chung.png'
@@ -11,7 +12,6 @@ import liuPhoto from '@/components/images/renaissance/liu.png'
 import murphyPhoto from '@/components/images/renaissance/murphy.png'
 import redwoodPhoto from '@/components/images/renaissance/redwood.png'
 import { cn } from '@/lib/utils'
-import { Fragment } from 'react'
 
 type Speaker = {
   photo: StaticImageData
@@ -41,14 +41,14 @@ const speakers: Speaker[] = [
     name: 'Dr. Nicole Alioto',
     pronouns: 'she/her',
     headline: 'CEO, Strategic Planner, Professor',
-    bio: ' has engaged with clients in the education and public sector for over 20 years. Her extensive professional experience spans institutional research, strategic planning, and program evaluation at various institutions and agencies. Dr. Alioto has taught statistics and research methods at several institutions. She also developed and taught a specialized graduate course in predictive analytics and data mining, aimed at professionals in government settings. As the CEO of Alla Breve Consulting, her goal is to assist public sector organizations and educational institutions in streamlining their strategic planning and analysis processes.',
+    bio: ' has engaged with clients in the education and public sector for over 20 years. Her extensive professional experience spans institutional research, strategic planning, and program evaluation at various institutions and agencies. Dr. Alioto has taught statistics and research methods at several institutions, developing and teaching a specialized graduate course in predictive analytics and data mining aimed at professionals in government settings. As the CEO of Alla Breve Consulting, her goal is to assist public sector organizations and educational institutions in streamlining their strategic planning and analysis processes.',
   },
   {
     photo: murphyPhoto,
     name: 'Cate Murphy',
     pronouns: 'she/her',
-    headline: 'President, Top Sisterhood Event Award Recipient, P3 Student',
-    bio: " is a P3 student in Northeastern's Doctor of Pharmacy program. Her choice to pursue pharmacy was inspired by her late father’s cancer treatment with a then experimental protocol that has since been approved by the FDA. In his honor, she works at Massachusetts General Hospital in the ambulatory oncology infusion pharmacy, where she prepares chemotherapy and immunotherapy regimens for patients. She is extremely passionate about her studies and enjoys tutoring peers. Outside class, she serves as President of Lambda Kappa Sigma, an organization through which she won the Top Sisterhood Event Award in 2022 for fostering communication and team-building skills. She is also a member of Phi Lambda Sigma (Pharmacy Leadership Society), the Northeastern University Pharmacy Student Alliance, and the Northeastern University Choral Society and Chamber Singers. Upon graduation, she hopes to pursue a pharmacy residency in either oncology or ambulatory care.",
+    headline: 'Leader, Pharmacist, P3 Student',
+    bio: ' is a P3 student in Northeastern’s Doctor of Pharmacy program. Her choice to pursue pharmacy was inspired by her late father’s cancer treatment with an experimental protocol that has since been approved by the FDA. In his honor, she works at Massachusetts General Hospital in the ambulatory oncology infusion pharmacy preparing chemotherapy and immunotherapy regimens for patients. She serves as President of Lambda Kappa Sigma and is a member of both the national Pharmacy Leadership Society and the Northeastern University Choral Society and Chamber Singers.',
   },
   {
     photo: redwoodPhoto,
@@ -76,7 +76,7 @@ const speakers: Speaker[] = [
     name: 'Melody Liu',
     pronouns: 'she/her',
     headline: 'Co-founder, Software Engineer, Digital Illustrator',
-    bio: ' is a 2023 graduate from Northeastern University with a degree in Computer Science and Business Administration, and is the co-founder of the Digital Illustration Association (DIA) at NU. DIA was driven by a simple yet powerful mission: to create a welcoming and open-minded community that embraces digital illustration in all its forms. Whether through drawing-parties, art challenges, or supportive critiques, DIA is a place where artists of all experience levels can connect with patrons and each other, fostering both personal and artistic growth.',
+    bio: ' is a 2023 Northeastern University graduate with a degree in Computer Science and Business Administration, and is the co-founder of the Digital Illustration Association (DIA) at NU. She shared a simple yet powerful mission: to create a welcoming and open-minded community that embraces digital illustration in all its forms. Whether through drawing-parties, art challenges, or supportive critiques, Melody helped create a space where artists of all experience levels can connect with patrons and each other, fostering both personal and artistic growth.',
   },
 ]
 
