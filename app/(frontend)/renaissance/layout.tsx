@@ -4,8 +4,8 @@ import { RenaissanceNavbar } from '@/components/global/renaissance/RenaissanceNa
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | Renaissance | TEDxNortheasternU`,
-    default: 'Renaissance',
+    template: `%s | TEDxNortheasternU: Renaissance`,
+    default: 'TEDxNortheasternU: Renaissance',
   },
   openGraph: {
     images: ['/renaissance-og.png'],
