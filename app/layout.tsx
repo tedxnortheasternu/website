@@ -1,6 +1,7 @@
 import 'tailwindcss/tailwind.css'
 
 import { Analytics } from '@vercel/analytics/react'
+import { Metadata, Viewport } from 'next'
 import { Bebas_Neue, IBM_Plex_Mono, Inter } from 'next/font/google'
 
 const sans = Inter({
@@ -21,6 +22,18 @@ const renaissance = Bebas_Neue({
   subsets: ['latin'],
   weight: ['400'],
 })
+
+export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : 'http://localhost:3000',
+  ),
+}
+
+export const viewport: Viewport = {
+  themeColor: '#eb0028',
+}
 
 export default async function RootLayout({
   children,
