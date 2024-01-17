@@ -1,4 +1,16 @@
+import { Metadata } from 'next'
+
 import { RenaissanceNavbar } from '@/components/global/renaissance/RenaissanceNavbar'
+
+export const metadata: Metadata = {
+  title: {
+    template: `%s | Renaissance | TEDxNortheasternU`,
+    default: 'Renaissance',
+  },
+  openGraph: {
+    images: ['/renaissance-og.png'],
+  },
+}
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (

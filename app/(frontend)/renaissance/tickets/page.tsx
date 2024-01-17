@@ -1,10 +1,15 @@
 import { ArrowRightIcon } from 'lucide-react'
+import { Metadata } from 'next'
 import Link from 'next/link'
 
 const PUBLIC_LINK =
   'https://nuhuskies.evenue.net/cgi-bin/ncommerce3/SEGetEventInfo?ticketCode=GS:ATHLETICS:SL2324:TED0224:&linkID=northeastern-athletics&siteId=ev_northeastern-athletics'
 const STUDENTS_LINK =
   'https://nuhuskies.evenue.net/cgi-bin/ncommerce3/SEGetEventInfo?ticketCode=ST:ATHLETICS:SL2324:TED0224:S3&linkID=northeastern-athletics&shopperContext=ST&groupCode=SL&siteId=ev_northeastern-athletics'
+
+export const metadata: Metadata = {
+  title: 'Tickets',
+}
 
 export default function RenaissanceSpeakers() {
   return (

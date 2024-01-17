@@ -12,6 +12,7 @@ import liuPhoto from '@/components/images/renaissance/liu.png'
 import murphyPhoto from '@/components/images/renaissance/murphy.png'
 import redwoodPhoto from '@/components/images/renaissance/redwood.png'
 import { cn } from '@/lib/utils'
+import { Metadata } from 'next'
 
 type Speaker = {
   photo: StaticImageData
@@ -79,6 +80,10 @@ const speakers: Speaker[] = [
     bio: ' is a 2023 Northeastern University graduate with a degree in Computer Science and Business Administration, and is the co-founder of the Digital Illustration Association (DIA) at NU. She shared a simple yet powerful mission: to create a welcoming and open-minded community that embraces digital illustration in all its forms. Whether through drawing-parties, art challenges, or supportive critiques, Melody helped create a space where artists of all experience levels can connect with patrons and each other, fostering both personal and artistic growth.',
   },
 ]
+
+export const metadata: Metadata = {
+  title: 'Speakers',
+}
 
 export default function RenaissanceSpeakers() {
   return (

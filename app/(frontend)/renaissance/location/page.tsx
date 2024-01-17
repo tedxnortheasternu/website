@@ -1,10 +1,15 @@
 import { ArrowRightIcon } from 'lucide-react'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import map from '@/components/images/renaissance/map.png'
 
-export default function RenaissanceSpeakers() {
+export const metadata: Metadata = {
+  title: 'Location',
+}
+
+export default function RenaissanceLocation() {
   return (
     <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
       <div className="max-w-2xl mx-auto mb-8 space-y-8">
