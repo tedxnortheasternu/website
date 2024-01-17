@@ -7,7 +7,9 @@ export default function RsvpPage() {
         <h1 className="text-2xl font-bold md:text-3xl text-renaissance-dark">
           RSVP: Renaissance VIP
         </h1>
-        <p className="mt-2 text-slate-600">Please RSVP by February 1, 2024.</p>
+        <p className="mt-2 text-renaissance-dark/85">
+          Please RSVP by February 1, 2024.
+        </p>
       </div>
 
       <div className="max-w-md p-8 mx-auto border rounded-md border-renaissance-mid">
