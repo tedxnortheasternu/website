@@ -11,13 +11,17 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
 ## Features
 
 - A performant, static personal website with editable projects
-- A native and customizable authoring environment, accessible on `yourpersonalwebsite.com/studio`
+- A native and customizable authoring environment, accessible on `loacalhost/studio`
 - Real-time and collaborative content editing with fine-grained revision history
 - Side-by-side instant content preview that works across your whole site
 - Support for block content and the most advanced custom fields capability in the industry
 - Webhook-triggered Incremental Static Revalidation; no need to wait for a rebuild to publish new content
 - Free Sanity project with unlimited admin users, free content updates, and pay-as-you-go for API overages
 - A project with starter-friendly and not too heavy-handed TypeScript and Tailwind.css
+
+## Understanding Slug
+- A slug is the http extension of a page i.e `https://tedxnu.com/events/2024/salon` the slug here is '2024/salon' because the original page is `https://tedxnu.com/events/` this can be helpful to make dynamic pages with the attributes being unique to the slug and the queries that it creates
+
 
 ## Table of Contents
 
@@ -48,11 +52,14 @@ The Studio connects to Sanity Content Lake, which gives you hosted content APIs 
 | `sanity.config.ts`                          | Config file for Sanity Studio                           |
 | `sanity.cli.ts`                             | Config file for Sanity CLI                              |
 | `/app/studio/[[...index]]/page.tsx`         | Where Sanity Studio is mounted                          |
-| `/app/api/revalidate/route.ts`              |  Serverless route for triggering ISR                    |
+| `/app/api/revalidate/route.ts`              | Serverless route for triggering ISR                    |
 | `/app/api/draft/route.ts`                   | Serverless route for triggering Draft mode              |
 | `/schemas`                                  | Where Sanity Studio gets its content types from         |
 | `/plugins`                                  | Where the advanced Sanity Studio customization is setup |
 | `/lib/sanity.api.ts`,`/lib/sanity.image.ts` | Configuration for the Sanity Content Lake client        |
+| `sanity/lib/queries.ts`,                     | Where to add new Sanity queries to acess in code 
+| `sanity/loader/loadQuery.ts`,                 | Where to load the Query for it to be active
+| `types/index.ts`,                             | Where to load the payload so the Query can be called in a tsx file 
 
 ## Configuration
 
@@ -68,7 +75,9 @@ Use the Deploy Button below. It will let you deploy the starter using [Vercel](h
 npx vercel link
 ```
 
-Download the environment variables needed to connect Next.js and the Studio to your Sanity project:
+Download the environment variables needed to connect Next.js and the Studio to your Sanity project: 
+
+#### VERY IMPORTANT
 
 ```bash
 npx vercel env pull
@@ -77,7 +86,7 @@ npx vercel env pull
 ### Step 3. Run Next.js locally in development mode
 
 ```bash
-npm install && npm run dev
+pnpm install && pnpm run dev
 ```
 
 When you run this development server, the changes you make in your frontend and studio configuration will be applied live using hot reloading.
@@ -109,6 +118,7 @@ In case of any issues or questions, you can post:
 - [GitHub Discussions for Next.js][vercel-github]
 - [Sanity's GitHub Discussions][sanity-github]
 - [Sanity's Community Slack][sanity-community]
+- [Feel free to ask Kaamil][@kaamil_95681]
 
 ## Next steps
 
