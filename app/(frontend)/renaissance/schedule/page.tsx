@@ -26,6 +26,11 @@ export default function RenaissanceSpeakers() {
 
           <div className="space-y-4 text-renaissance-dark">
             <div className="grid grid-cols-[100px_1fr] items-center gap-2 md:gap-4">
+              <time className="text-3xl font-renaissance">10:30am</time>
+              <p className="text-lg font-bold">Check-in Opens</p>
+            </div>
+
+            <div className="grid grid-cols-[100px_1fr] items-center gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">10:45am</time>
               <p className="text-lg font-bold">Doors Open</p>
             </div>
