@@ -41,6 +41,15 @@ const SponsorshipTiers = [
   },
 ]
 
+const InKindOptions = [
+  { title: 'Food & Beverages' },
+  { title: 'Printing' },
+  { title: 'Photography & Videography' },
+  { title: 'Media Partners' },
+  { title: 'Gift Bag Items' },
+  { title: 'Staff Shirts' },
+]
+
 const SponsorsPage: React.FC = () => {
   const getTierColorClass = (tierName: string) => {
     switch (tierName.toLowerCase()) {
@@ -94,6 +103,46 @@ const SponsorsPage: React.FC = () => {
             </div>
           ))}
         </div>
+      </section>
+      {/* In-Kind Sponsorships section */}
+      <section className="py-8 mb-12">
+        <h2 className="mb-6 text-3xl font-semibold">In-Kind Sponsorships</h2>
+        <p className="mb-6 text-lg leading-relaxed">
+          Besides cash donations, you can also support us through in-kind
+          donations! Below are some possible areas that we have identified. We
+          are also open to others and will customize benefits packages based on
+          the relative value of the in-kind gift.
+        </p>
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+          {InKindOptions.map((option, index) => (
+            <div
+              key={index}
+              className="p-4 font-semibold text-center border rounded-lg shadow"
+            >
+              {option.title}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Limitations section */}
+      <section className="mb-12">
+        <h2 className="mb-4 text-3xl font-semibold">Limitations</h2>
+        <p className="text-lg leading-relaxed">
+          As TEDx license holders, we must follow specific rules including those
+          around sponsorships and funding. These include that sponsors:
+        </p>
+        <ul className="pl-5 mb-4 list-disc list-outside">
+          <li className="mb-2">
+            May have no editorial control or veto power over event programming
+          </li>
+          <li className="mb-2">
+            May not be endorsed via TEDxNortheasternU social media properties
+          </li>
+          <li className="mb-2">
+            May not speak from the main stage at the event
+          </li>
+        </ul>
       </section>
     </div>
   )
