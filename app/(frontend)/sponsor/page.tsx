@@ -6,6 +6,6 @@ export const metadata: Metadata = {
   title: 'Sponsorship Opportunities',
 }
 
-export default function RsvpRoute() {
+export default function SponsorPageRoute() {
   return <SponsorsPage />
 }

@@ -2,8 +2,8 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next",
-    "format": "npx prettier --write . --ignore-path .gitignore",
+    "dev": "pnpm next",
+    "format": "pnpm prettier --write . --ignore-path .gitignore",
     "lint": "next lint -- --ignore-path .gitignore",
     "lint:fix": "pnpm run format && pnpm run lint -- --fix",
     "start": "next start",
