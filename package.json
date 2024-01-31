@@ -16,6 +16,7 @@
   "dependencies": {
     "@formspree/react": "^2.5.1",
     "@icons-pack/react-simple-icons": "^9.2.0",
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@portabletext/react": "^3.0.11",
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-navigation-menu": "^1.1.4",
@@ -33,6 +34,7 @@
     "@vercel/analytics": "^1.1.1",
     "@vercel/og": "^0.6.2",
     "airtable": "^0.12.2",
+    "axios": "^1.6.7",
     "class-variance-authority": "^0.7.0",
     "classnames": "2.5.1",
     "clsx": "^2.1.0",

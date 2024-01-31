@@ -6,8 +6,35 @@ import {
   SiYoutube,
 } from '@icons-pack/react-simple-icons'
 import Link from 'next/link'
+import { useState } from 'react';
+import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
 
 export default function FooterLayout() {
+
+  // THIS IS THE EMAIL LIST SECTION
+  const [email, setEmail] = useState('');
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+
+    try {
+      
+      const response = await axios.post(/* API ENDPOINT */'/api/subscribe', { email });
+      console.log(response.data);
+
+      // SUCCESS !
+      // you need to add a popup for success here
+      setEmail('');
+    } catch (error) {
+      console.error('Error subscribing:', error.response?.data);
+      // ERROR !
+    }
+  };
+
+  
+
   const year = new Date().getFullYear().toString()
 
   return (
@@ -136,3 +163,7 @@ const SocialIcon = ({ href, icon: Icon }: { href: string; icon: any }) => {
     </Link>
   )
 }
+
+
+
+// Add a Footer Icon
