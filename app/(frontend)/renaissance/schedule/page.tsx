@@ -51,7 +51,7 @@ export default function RenaissanceSpeakers() {
                   <p className="!mb-0 text-lg font-bold leading-snug">
                     Performance
                   </p>
-                  {/* <p className="!mb-0 leading-snug">TBA</p> */}
+                  <p className="!mb-0 leading-snug">NU Sanskriti</p>
                 </div>
                 <div>
                   <p className="!mb-0 text-lg font-bold leading-snug">

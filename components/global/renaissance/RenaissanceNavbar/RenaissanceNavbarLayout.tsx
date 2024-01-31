@@ -56,6 +56,9 @@ export default function RenaissanceNavbarLayout() {
           <NavLink href="/renaissance/speakers" variant="renaissance">
             Speakers
           </NavLink>
+          <NavLink href="/renaissance/performer" variant="renaissance">
+            Performers
+          </NavLink>
           <NavLink href="/renaissance/schedule" variant="renaissance">
             Schedule
           </NavLink>
