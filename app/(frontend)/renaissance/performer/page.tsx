@@ -9,7 +9,7 @@ import logo from '@/components/images/NUS Transparent.png'
 
 const NUSanskriti: React.FC = () => {
   return (
-    <div className="w-full p-6 font-serif border-orange-100 border-y xl:border xl:rounded-md md:p-12 bg-orange-50">
+    <div className="flex flex-col items-center p-6 font-serif border-orange-100 border-y xl:borderjustify-center bg-orange-50 xl:rounded-md">
       {/* Logo Section */}
       {/* Uncomment if using imported logo */}
       {/* Name Section */}
