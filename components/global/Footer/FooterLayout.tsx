@@ -7,6 +7,8 @@ import {
 } from '@icons-pack/react-simple-icons'
 import Link from 'next/link'
 
+import NewsLetterSignUpForm from './mail-signup.js'
+
 export default function FooterLayout() {
   const year = new Date().getFullYear().toString()
 
@@ -96,7 +98,9 @@ export default function FooterLayout() {
           </div>
         </div>
       </div>
-
+      <div className="flex flex-col items-center justify-between gap-4 pt-6 mt-6 border-t md:flex-row">
+        <NewsLetterSignUpForm />
+      </div>
       <div className="flex flex-col items-center justify-between gap-4 pt-6 mt-6 border-t md:flex-row">
         <p>&copy; {year} TEDxNortheasternU · All Rights Reserved</p>
 
