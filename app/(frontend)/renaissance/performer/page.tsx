@@ -9,10 +9,13 @@ import logo from '@/components/images/NUS Transparent.png'
 
 const NUSanskriti: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4 bg-orange-100">
+    <div className="w-full p-6 font-serif border-orange-100 border-y xl:border xl:rounded-md md:p-12 bg-orange-50">
       {/* Logo Section */}
-      {/* Uncomment if using imported logo */}{/* Name Section */}
-      <h1 className="mt-4 font-bold text-6axl">NU Sanskriti</h1>
+      {/* Uncomment if using imported logo */}
+      {/* Name Section */}
+      <h1 className="text-2xl font-bold text-center md:text-3xl text-renaissance-dark">
+        NU Sanskriti
+      </h1>
       <Image
         src={logo}
         alt="NUSankrit Logo"
@@ -30,11 +33,11 @@ const NUSanskriti: React.FC = () => {
         showcase their individuality while adapting to different cultures.
       </p>
       <Link
-          href="/renaissance/tickets"
-          className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-12 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
-        >
-          Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
-        </Link>
+        href="/renaissance/tickets"
+        className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-12 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
+      >
+        Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
+      </Link>
     </div>
   )
 }
