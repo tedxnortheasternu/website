@@ -12,30 +12,30 @@ export default async function handler(
 ) {
   const { email_address, status } = req.body
 
-  // Set the mailchimp config with your API key and server prefix
   mailchimp.setConfig({
     apiKey: process.env.MAILCHIMP_API_KEY,
     server: process.env.MAILCHIMP_API_SERVER,
   })
 
-  const subscriberHash = md5(email_address.toLowerCase())
-
-  // Set the Audience ID generated earlier to add email to that audience
   try {
-    await mailchimp.lists.setListMember(
-      process.env.MAILCHIMP_AUDIENCE_ID,
-      subscriberHash,
-      {
-        email_address,
-        status_if_new: status,
-      },
-    )
+    await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
+      email_address,
+      status: status === 'subscribed' ? 'subscribed' : 'pending',
+    })
 
     res.status(200).json({
-      message: `You will receive article updates in ${email_address}`,
+      message: 'You will receive article updates in ${email_address}',
     })
   } catch (err) {
-    const errorResponse = JSON.parse(err.response.text)
-    return res.status(err.status).json({ message: errorResponse.title })
+    let errorMessage = 'Error adding to mailing list'
+    if (err.response) {
+      try {
+        const errorResponse = JSON.parse(err.response.text)
+        errorMessage = errorResponse.title
+      } catch (parseError) {
+        // Fallback error message
+      }
+    }
+    return res.status(err.status || 500).json({ message: errorMessage })
   }
 }

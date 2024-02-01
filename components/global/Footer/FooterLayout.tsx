@@ -7,7 +7,7 @@ import {
 } from '@icons-pack/react-simple-icons'
 import Link from 'next/link'
 
-import NewsLetterSignUpForm from './mail-signup.js'
+import NewsLetterSignUpForm from './mail-signup'
 
 export default function FooterLayout() {
   const year = new Date().getFullYear().toString()

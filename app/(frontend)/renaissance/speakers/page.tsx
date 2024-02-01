@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from 'lucide-react'
+import { Metadata } from 'next'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
