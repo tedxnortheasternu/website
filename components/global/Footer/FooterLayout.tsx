@@ -4,15 +4,12 @@ import {
   SiTiktok,
   SiX,
   SiYoutube,
-} from '@icons-pack/react-simple-icons';
-import NewsLetterSignUpForm from './mail-signup';
+} from '@icons-pack/react-simple-icons'
 import Link from 'next/link';
-import axios from 'axios';
-import dotenv from 'dotenv';
-dotenv.config();
+
 
 export default function FooterLayout() {
-  const year = new Date().getFullYear().toString();
+  const year = new Date().getFullYear().toString()
 
   return (
     <div className="flex items-center justify-center">
@@ -20,8 +17,8 @@ export default function FooterLayout() {
         <div className="justify-between gap-6 md:flex">
           <div className="flex-1 max-w-xs">
             <p className="text-sm leading-relaxed">
-              TEDxNortheasternU is a student-run organization that brings together
-              the global Northeastern University community.
+              TEDxNortheasternU is a student-run organization that brings
+              together the global Northeastern University community.
             </p>
           </div>
 
@@ -81,8 +78,8 @@ export default function FooterLayout() {
             <div>
               <h4 className="text-sm font-bold text-red-600">ENGAGE</h4>
               <ul>
-                 <li>
-                   <Link
+                <li>
+                  <Link
                     href="/events"
                     className="text-sm text-black hover:text-gray-600 hover:underline"
                   >
@@ -100,10 +97,6 @@ export default function FooterLayout() {
               </ul>
             </div>
           </div>
-        </div>
-
-        <div className="flex flex-col items-center justify-between gap-4 pt-6 mt-6 border-t md:flex-row">
-        <NewsLetterSignUpForm />
         </div>
 
         <div className="flex flex-col items-center justify-between gap-4 pt-6 mt-6 border-t md:flex-row">
@@ -133,7 +126,7 @@ export default function FooterLayout() {
         </div>
       </footer>
     </div>
-  );
+  )
 }
 
 const SocialIcon = ({ href, icon: Icon }: { href: string; icon: any }) => {

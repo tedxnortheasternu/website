@@ -208,6 +208,14 @@ export default function NavbarLayout() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
+                <Link href="/sponsor" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    Sponsor
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     Contact

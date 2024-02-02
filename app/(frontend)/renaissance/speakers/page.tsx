@@ -1,4 +1,5 @@
 import { ArrowRightIcon } from 'lucide-react'
+import { Metadata } from 'next'
 import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
@@ -12,7 +13,6 @@ import liuPhoto from '@/components/images/renaissance/liu.png'
 import murphyPhoto from '@/components/images/renaissance/murphy.png'
 import redwoodPhoto from '@/components/images/renaissance/redwood.png'
 import { cn } from '@/lib/utils'
-import { Metadata } from 'next'
 
 type Speaker = {
   photo: StaticImageData

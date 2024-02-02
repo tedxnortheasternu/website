@@ -11,7 +11,7 @@ export default function NotFound() {
         href="/"
         className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-white uppercase transition-colors bg-red-600 rounded-full w-max hover:bg-red-700"
       >
-        Return Home <ArrowRightIcon size={16} />
+        Return Home <ArrowRightIcon />
       </Link>
     </div>
   )
