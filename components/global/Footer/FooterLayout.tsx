@@ -8,6 +8,7 @@ import {
 import Link from 'next/link'
 
 import NewsLetterSignUpForm from './mail-signup'
+import MailingListForm from '@/components/pages/api/MailingListForm'
 
 export default function FooterLayout() {
   const year = new Date().getFullYear().toString()
@@ -99,7 +100,7 @@ export default function FooterLayout() {
         </div>
       </div>
       <div className="flex flex-col items-center justify-between gap-4 pt-6 mt-6 border-t md:flex-row">
-        <NewsLetterSignUpForm />
+        <MailingListForm />
       </div>
       <div className="flex flex-col items-center justify-between gap-4 pt-6 mt-6 border-t md:flex-row">
         <p>&copy; {year} TEDxNortheasternU · All Rights Reserved</p>
