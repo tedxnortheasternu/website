@@ -1,7 +1,8 @@
 // MailingListForm.tsx
+'use client'
 
 import React, { useState } from 'react';
-import { subscribeToMailingList } from '@/app/mailinglist';
+import { subscribeToMailingListService } from '@/components/services/MailingListService';
 
 export default function MailingListForm() {
   const [email, setEmail] = useState('');
@@ -11,18 +12,15 @@ export default function MailingListForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const formData = new FormData();
-      formData.append('email', email); // Append the email field to the FormData object
-  
-      const response = await subscribeToMailingList(formData);
+      const response = await subscribeToMailingListService(email);
       setMessage(response.message);
       setEmail('');
       setError('');
     } catch (error) {
       setError('Failed to subscribe. Please try again.');
+      console.log(error)
     }
   };
-  
 
   return (
     <form onSubmit={handleSubmit}>
