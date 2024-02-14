@@ -29,9 +29,6 @@ export const metadata: Metadata = {
       ? `https://${process.env.VERCEL_URL}`
       : 'http://localhost:3000',
   ),
-  openGraph: {
-    images: ['/og.png'],
-  },
 }
 
 export const viewport: Viewport = {
