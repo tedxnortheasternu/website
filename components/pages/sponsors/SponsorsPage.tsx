@@ -25,7 +25,7 @@ const SponsorshipTiers = [
   },
   {
     name: 'Gold',
-    price: '$2000+',
+    price: '$1500+',
     benefits: [
       'Complimentary VIP tickets: 5',
       'Recognition on organization website',
