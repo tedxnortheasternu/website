@@ -1,7 +1,7 @@
 // MailingListService.ts
 
 export async function subscribeToMailingListService(email: string): Promise<{ message: string }> {
-    const apiKey = process.env.MAILCHIMP_API_KEY;
+    const API_KEY = process.env.MAILCHIMP_API_KEY;
     const listId = process.env.MAILCHIMP_API_SERVER;
     const batchId = process.env.MAILCHIMP_AUDIENCE_ID;
 
@@ -11,14 +11,14 @@ export async function subscribeToMailingListService(email: string): Promise<{ me
     };
 
     try {
-        const response = await fetch(`https://${batchId}.api.mailchimp.com/3.0/lists/${listId}/members`, {
-            method: 'POST',
+        const response = await fetch(`https://${listId}.api.mailchimp.com/3.0/lists/${batchId}/members`, {
+            body: JSON.stringify(data),
             headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Basic ${Buffer.from(`apikey:${apiKey}`).toString('base64')}`
+              Authorization: `apikey ${API_KEY}`,
+              'Content-Type': 'application/json',
             },
-            body: JSON.stringify(data)
-        });
+            method: 'POST',
+          });
 
         const responseData = await response.json();
 
