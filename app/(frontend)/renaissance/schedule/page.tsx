@@ -106,12 +106,6 @@ export default function RenaissanceSpeakers() {
                 </div>
                 <div>
                   <p className="!mb-0 text-lg font-bold leading-snug">
-                    Social Media and Algorithmic Womanhood
-                  </p>
-                  <p className="!mb-0 leading-snug">Chloe Colipano</p>
-                </div>
-                <div>
-                  <p className="!mb-0 text-lg font-bold leading-snug">
                     Pixels and Principles: Ethics of AI Art
                   </p>
                   <p className="!mb-0 leading-snug">Melody Liu</p>
@@ -120,7 +114,7 @@ export default function RenaissanceSpeakers() {
             </div>
 
             <div className="grid grid-cols-[100px_1fr] items-center gap-2 md:gap-4">
-              <time className="text-3xl font-renaissance">3:45pm</time>
+              <time className="text-3xl font-renaissance">3:30pm</time>
               <p className="text-lg font-bold">Closing Remarks</p>
             </div>
           </div>
