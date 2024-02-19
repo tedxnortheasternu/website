@@ -66,13 +66,6 @@ const speakers: Speaker[] = [
     bio: " recently graduated from Northeastern University's MBA program and is currently pursuing pre-medicine studies at Columbia University. She has an international academic background with a Bachelor's Degree in Neuroscience from the National University of Singapore and the University of Melbourne, and a Master's Degree in Global Affairs from China's Tsinghua University. Debpriya stands out as the first Bangladeshi to receive the Schwarzman Scholarship and has been recognized with esteemed accolades including Northeastern's Huntington 100 and the Women Who Empower Innovator Award. Above all, she is recognized as an accomplished biology teacher and is the founder of Bioland, her own coaching center.",
   },
   {
-    photo: colipanoPhoto,
-    name: 'Chloe Colipano',
-    pronouns: 'she/they',
-    headline: 'CEO, Content Creator, Marketer',
-    bio: ", a Business Administration and Communications student at Northeastern University with a focus on Marketing, is deeply engaged in the world of entrepreneurship and brand building. They serve as the CEO of Hoosky, a parody clothing merchandise brand at NU, and also engage in nonprofit marketing and philanthropic initiatives. During high school, Chloe developed a personal brand on Instagram, amassing 50k followers and reaching up to 55k likes per post. Since then, Chloe's interest has evolved into exploring how individuals utilize social media for financial, cultural, social, and personal decision-making.",
-  },
-  {
     photo: liuPhoto,
     name: 'Melody Liu',
     pronouns: 'she/her',
