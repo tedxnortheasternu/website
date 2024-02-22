@@ -25,6 +25,15 @@ export default function RenaissanceSpeakers() {
           </h2>
 
           <div className="space-y-4 text-renaissance-dark">
+            <div className="grid grid-cols-[100px_1fr] gap-2 md:gap-4">
+              <time className="text-3xl font-renaissance">10:15am</time>
+              <p className="text-lg font-bold">
+                Registration Opens
+                <br />
+                Coffee and Light Pastries
+              </p>
+            </div>
+
             <div className="grid grid-cols-[100px_1fr] items-center gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">10:45am</time>
               <p className="text-lg font-bold">Doors Open</p>
@@ -68,10 +77,14 @@ export default function RenaissanceSpeakers() {
               </div>
             </div>
 
-            <div className="grid grid-cols-[100px_1fr] items-center gap-2 md:gap-4">
+            <div className="grid grid-cols-[100px_1fr] gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">12:45pm</time>
               <p className="text-lg font-bold">
-                Intermission, xLabs, and Lunch
+                Intermission
+                <br />
+                xLabs (Interactive Exhibits)
+                <br />
+                Catered Lunch
               </p>
             </div>
           </div>
@@ -113,19 +126,23 @@ export default function RenaissanceSpeakers() {
               </div>
             </div>
 
-            <div className="grid grid-cols-[100px_1fr] items-center gap-2 md:gap-4">
+            <div className="grid grid-cols-[100px_1fr] gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">3:30pm</time>
-              <p className="text-lg font-bold">Closing Remarks</p>
+              <p className="text-lg font-bold">
+                Closing Remarks
+                <br />
+                Sweet Treat
+              </p>
             </div>
           </div>
         </div>
 
-        <Link
+        {/* <Link
           href="/renaissance/tickets"
           className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-12 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
         >
           Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
-        </Link>
+        </Link> */}
       </div>
     </div>
   )

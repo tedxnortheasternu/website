@@ -45,12 +45,12 @@ export default function RenaissanceLocation() {
           />
         </div>
 
-        <Link
+        {/* <Link
           href="/renaissance/tickets"
           className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-12 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
         >
           Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
-        </Link>
+        </Link> */}
       </div>
     </div>
   )

@@ -74,9 +74,9 @@ const renaissanceLinks: NavLink[] = [
     description: 'Learn about the speakers who will be gracing our stage.',
   },
   {
-    title: 'Tickets',
-    href: '/renaissance/tickets',
-    description: 'Get your ticket to Renaissance!',
+    title: 'Performers',
+    href: '/renaissance/performers',
+    description: "Check out our event's performers.",
   },
 ]
 
@@ -246,10 +246,10 @@ export default function NavbarLayout() {
           <div className="flex items-center space-x-4">
             {/* <NavLink href="/apply">{"We're Recruiting!"}</NavLink> */}
             <Link
-              href="/renaissance/tickets"
+              href="/renaissance/schedule"
               className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
             >
-              Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
+              At Renaissance? View Schedule <ArrowRightIcon size={16} />
             </Link>
           </div>
         </div>

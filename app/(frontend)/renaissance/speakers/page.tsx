@@ -134,14 +134,14 @@ export default function RenaissanceSpeakers() {
         ))}
       </div>
 
-      <div className="max-w-2xl mx-auto">
+      {/* <div className="max-w-2xl mx-auto">
         <Link
           href="/renaissance/tickets"
           className="inline-flex items-center gap-2 px-6 py-2 mt-12 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
         >
           Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
         </Link>
-      </div>
+      </div> */}
     </div>
   )
 }

@@ -53,14 +53,14 @@ export default function RenaissanceNavbarLayout() {
           <NavLink href="/renaissance" variant="renaissance">
             Overview
           </NavLink>
+          <NavLink href="/renaissance/schedule" variant="renaissance">
+            Schedule
+          </NavLink>
           <NavLink href="/renaissance/speakers" variant="renaissance">
             Speakers
           </NavLink>
           <NavLink href="/renaissance/performer" variant="renaissance">
             Performers
-          </NavLink>
-          <NavLink href="/renaissance/schedule" variant="renaissance">
-            Schedule
           </NavLink>
           <NavLink href="/renaissance/location" variant="renaissance">
             Location
@@ -69,7 +69,7 @@ export default function RenaissanceNavbarLayout() {
             href="/renaissance/tickets"
             className="!mt-2 md:!mt-0 inline-flex items-center gap-2 px-4 py-1.5 uppercase transition-colors rounded-full text-renaissance-dark font-renaissance bg-renaissance-light w-max hover:bg-white"
           >
-            Buy Tickets <ArrowRightIcon size={16} />
+            Join Waitlist <ArrowRightIcon size={16} />
           </Link>
         </div>
       </div>

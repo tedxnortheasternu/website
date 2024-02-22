@@ -14,13 +14,23 @@ export const metadata: Metadata = {
 export default function RenaissanceSpeakers() {
   return (
     <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
-      <div className="max-w-2xl mx-auto mb-8 text-center">
+      <div className="max-w-2xl mx-auto text-center">
         <h1 className="text-2xl font-bold md:text-3xl text-renaissance-dark">
           Tickets
         </h1>
+        <p className="mt-2 text-center text-slate-600">
+          <strong>This event is sold out.</strong> To join our waitlist, please{' '}
+          <Link
+            href="/contact"
+            className="font-medium underline transition-colors text-renaissance-dark"
+          >
+            reach out
+          </Link>
+          .
+        </p>
       </div>
 
-      <div className="grid max-w-2xl gap-4 mx-auto mb-8 md:grid-cols-2">
+      {/* <div className="grid max-w-2xl gap-4 mx-auto mb-8 md:grid-cols-2">
         <div className="flex flex-col justify-between p-8 rounded-md bg-renaissance-light text-renaissance-dark">
           <div>
             <h2 className="mb-4 text-3xl font-bold">Northeastern Students</h2>
@@ -64,9 +74,9 @@ export default function RenaissanceSpeakers() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      <div className="max-w-2xl mx-auto">
+      {/* <div className="max-w-2xl mx-auto">
         <p className="mt-2 text-center text-renaissance-dark/85 text-balance">
           If you require disability-related accommodations to participate in
           this event, please{' '}
@@ -79,7 +89,7 @@ export default function RenaissanceSpeakers() {
           </Link>{' '}
           by February 10th.
         </p>
-      </div>
+      </div> */}
     </div>
   )
 }

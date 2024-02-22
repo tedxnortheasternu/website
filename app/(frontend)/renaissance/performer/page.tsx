@@ -32,12 +32,12 @@ const NUSanskriti: React.FC = () => {
         campus to experience a sense of belonging and find a safe haven to
         showcase their individuality while adapting to different cultures.
       </p>
-      <Link
+      {/* <Link
         href="/renaissance/tickets"
         className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-12 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
       >
         Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
-      </Link>
+      </Link> */}
     </div>
   )
 }
