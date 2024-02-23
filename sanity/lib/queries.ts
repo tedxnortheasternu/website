@@ -99,6 +99,7 @@ export const positionByIdQuery = groq`
   }
 `
 
+
 export const eventPaths = groq`
   *[_type == "event" && slug.current != null].slug.current
 `

@@ -73,3 +73,48 @@ export async function createRenaissanceRsvp(
     return { message: 'Failed to create RSVP' }
   }
 }
+
+export async function createRenaissanceFeedback(
+  prevState: {
+    email: string
+    feedback: string
+  },
+  formData: FormData,
+) {
+  const schema = z.object({
+    email: z.string().email().optional(),
+    feedback: z.string().max(500),
+  })
+  const validatedFields = schema.safeParse({
+    email: formData.get('email'),
+    feedback: formData.get('feedback'),
+  })
+
+  if (!validatedFields.success) {
+    return {
+      message: 'Failed to create Feedback',
+      errors: validatedFields.error.flatten().fieldErrors,
+    }
+  }
+
+  const data = validatedFields.data
+
+  try {
+    const base = new Airtable({ apiKey: process.env.AIRTABLE_TOKEN }).base(
+      process.env.AIRTABLE_FEEDBACK_BASE_KEY!,
+    )
+    base('Renaissance').create([
+      {
+        fields: {
+          email: data.email,
+          feedback: data.feedback,
+        },
+      },
+    ])
+
+    revalidatePath('/renaissance/feedback')
+    return { message: 'Submitted Feedback!', success: true }
+  } catch (e) {
+    return { message: 'Failed to create feedback' }
+  }
+}

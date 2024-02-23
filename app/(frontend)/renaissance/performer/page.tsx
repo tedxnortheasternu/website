@@ -39,6 +39,7 @@ const NUSanskriti: React.FC = () => {
         Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
       </Link> */}
     </div>
+    
   )
 }
 
