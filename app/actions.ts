@@ -74,10 +74,6 @@ export async function createRenaissanceRsvp(
   }
 }
 
-
-
-
-
 export async function createRenaissanceFeedback(
   prevState: {
     email: string
@@ -90,6 +86,7 @@ export async function createRenaissanceFeedback(
     feedback: z.string().max(500),
   })
   const validatedFields = schema.safeParse({
+    email: formData.get('email'),
     feedback: formData.get('feedback'),
   })
 
