@@ -12,6 +12,7 @@ import {
   pagesBySlugQuery,
   positionByIdQuery,
   settingsQuery,
+  sponsorsQuery,
   teamsPageQuery,
   upcomingEventsQuery,
 } from '@/sanity/lib/queries'
@@ -23,6 +24,7 @@ import {
   PagePayload,
   PositionPayload,
   SettingsPayload,
+  SponsorPayload,
   TeamsPagePayload,
   UpcomingEventPayload,
 } from '@/types'
@@ -88,6 +90,14 @@ export function loadHomePage() {
     homePageQuery,
     {},
     { next: { tags: ['home', 'events', 'sponsors'] } },
+  )
+}
+
+export function loadSponsors() {
+  return loadQuery<SponsorPayload[] | null>(
+  sponsorsQuery,
+  {},
+  { next: { tags: ['sponsors'] } },
   )
 }
 

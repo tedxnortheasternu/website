@@ -7,7 +7,13 @@ import { useState } from 'react'
 
 import NavLink from '@/components/global/Navbar/NavLink'
 import renaissanceLogo from '@/components/images/renaissance.png'
+import { SponsorListItem } from '@/components/shared/sponsor/SponsorListItem'
 import { cn } from '@/lib/utils'
+import { SponsorPayload } from '@/types'
+
+export interface SponsorListProps {
+  data: SponsorPayload[] | null
+}
 
 export default function RenaissanceNavbarLayout() {
   const [open, setOpen] = useState(false)
