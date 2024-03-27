@@ -7,7 +7,6 @@ import { useState } from 'react'
 
 import NavLink from '@/components/global/Navbar/NavLink'
 import renaissanceLogo from '@/components/images/renaissance.png'
-import { SponsorListItem } from '@/components/shared/sponsor/SponsorListItem'
 import { cn } from '@/lib/utils'
 import { SponsorPayload } from '@/types'
 
@@ -65,7 +64,7 @@ export default function RenaissanceNavbarLayout() {
           <NavLink href="/renaissance/speakers" variant="renaissance">
             Speakers
           </NavLink>
-          <NavLink href="/renaissance/performer" variant="renaissance">
+          <NavLink href="/renaissance/performers" variant="renaissance">
             Performers
           </NavLink>
           <NavLink href="/renaissance/location" variant="renaissance">
