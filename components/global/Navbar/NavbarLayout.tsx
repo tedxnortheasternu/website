@@ -245,12 +245,12 @@ export default function NavbarLayout() {
 
           <div className="flex items-center space-x-4">
             {/* <NavLink href="/apply">{"We're Recruiting!"}</NavLink> */}
-            <Link
+            {/* <Link
               href="/renaissance/schedule"
               className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
             >
               At Renaissance? View Schedule <ArrowRightIcon size={16} />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </nav>
