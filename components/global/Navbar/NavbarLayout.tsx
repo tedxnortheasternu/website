@@ -180,12 +180,12 @@ export default function NavbarLayout() {
                     <li className="row-span-3">
                       <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-renaissance-light focus:shadow-md">
                         <div className="mt-4 mb-2 text-lg font-bold leading-tight text-renaissance-dark">
-                          Attend Renaissance!
+                          Relive Renaissance!
                         </div>
                         <p className="text-sm leading-tight">
-                          Join us on February 24th to share ideas, spark
-                          creativity, and inspire change across{' '}
-                          {"Northeastern's"} global community.
+                          On February 24th, our {"Northeastern's"} global
+                          community came together to share ideas, spark
+                          creativity, and inspire change across our school.
                         </p>
                       </div>
                     </li>
@@ -244,13 +244,23 @@ export default function NavbarLayout() {
           />
 
           <div className="flex items-center space-x-4">
-            {/* <NavLink href="/apply">{"We're Recruiting!"}</NavLink> */}
+            <Link
+              href="/talk"
+              className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
+            >
+              Watch Our Last Renaissance Talks <ArrowRightIcon size={16} />
+            </Link>
+            {/* 
+            FOR RECRUITMENT
+            <NavLink href="/apply">{"We're Recruiting!"}</NavLink> */}
+            {/* 
+            FOR RENAISSANCE
             <Link
               href="/renaissance/schedule"
               className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
             >
               At Renaissance? View Schedule <ArrowRightIcon size={16} />
-            </Link>
+            </Link> */}
           </div>
         </div>
       </nav>
