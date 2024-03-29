@@ -245,7 +245,7 @@ export default function NavbarLayout() {
 
           <div className="flex items-center space-x-4">
             <Link
-              href=""
+              href="https://www.youtube.com/playlist?list=PLakUFMIqnYGtctgWhU_K4gKzYa2eMQ1bs"
               className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
             >
               Watch Our Last Renaissance Talks <ArrowRightIcon size={16} />
