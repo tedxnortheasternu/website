@@ -35,7 +35,7 @@ export default function RenaissanceSpeakers() {
               target="_blank"
               className="inline-flex items-center gap-2 px-6 py-2 mt-8 mb-3 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
             >
-              Purchase for $10 <ArrowRightIcon size={16} />
+              Purchase for $10 <ArrowRightIcon />
             </Link>
             <p className="ml-5 leading-snug uppercase font-renaissance">
               *Limit one (1) per person
@@ -57,7 +57,7 @@ export default function RenaissanceSpeakers() {
               target="_blank"
               className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-8 mb-3 text-xl uppercase transition-colors rounded-full text-renaissance-dark font-renaissance bg-renaissance-light w-max hover:bg-white"
             >
-              Purchase for $15 <ArrowRightIcon size={16} />
+              Purchase for $15 <ArrowRightIcon />
             </Link>
             <p className="ml-5 leading-snug uppercase font-renaissance">
               *Limit two (2) per person

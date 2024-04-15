@@ -42,7 +42,7 @@ export default function RenaissanceOverview() {
           href="/renaissance/tickets"
           className="inline-flex items-center gap-2 px-6 py-2 mt-4 text-xl no-underline uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
         >
-          Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
+          Get Your Ticket to Renaissance <ArrowRightIcon />
         </Link>
 
         <div className="mt-12 aspect-video">

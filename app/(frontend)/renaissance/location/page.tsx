@@ -33,7 +33,7 @@ export default function RenaissanceLocation() {
             href="https://www.google.com/maps/dir//Northeastern+University+Interdisciplinary+Science+and+Engineering+Complex,+805+Columbus+Ave,+Boston,+MA+02120/@42.3377192,-71.0895366,17z/"
             className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-4 text-xl uppercase transition-colors rounded-full text-renaissance-dark font-renaissance bg-renaissance-light w-max hover:bg-white"
           >
-            Get Directions <ArrowRightIcon size={16} />
+            Get Directions <ArrowRightIcon />
           </Link>
         </div>
 
@@ -49,7 +49,7 @@ export default function RenaissanceLocation() {
           href="/renaissance/tickets"
           className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-12 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
         >
-          Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
+          Get Your Ticket to Renaissance <ArrowRightIcon />
         </Link>
       </div>
     </div>
