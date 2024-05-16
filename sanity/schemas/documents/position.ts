@@ -64,7 +64,7 @@ export default defineType({
     defineField({
       type: 'array',
       name: 'responsibilities',
-      title: 'Responsibilities',
+      title: 'Responsibile',
       of: [
         defineArrayMember({
           type: 'block',
@@ -81,6 +81,12 @@ export default defineType({
           },
         }),
       ],
+    }),
+    defineField({
+      type: 'number',
+      name: 'priorityRank',
+      title: 'Priority Placement Of Position',
+      initialValue: 1
     }),
     defineField({
       type: 'array',

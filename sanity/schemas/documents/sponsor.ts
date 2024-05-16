@@ -24,7 +24,7 @@ export default defineType({
     defineField({
       type: 'string',
       name: 'description',
-      title: 'Brief Description',
+      title: 'Brief Descriptio',
       description: 'Description of the sponsor',
     }),
 

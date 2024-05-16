@@ -14,6 +14,8 @@ export function PositionListItem(props: PositionProps) {
   const href = resolveHref('position', position._id)
 
   if (!href) return null
+  console.log(position.name)
+  console.log(position.priorityRank)
 
   return (
     <div className="flex flex-col p-4 transition border-t first:border-0 border-slate-200">
@@ -29,7 +31,6 @@ export function PositionListItem(props: PositionProps) {
               </span>
             ) : null}
           </div>
-
           {/* Title */}
           <h3 className="mb-4 text-2xl font-extrabold tracking-tight md:text-3xl">
             {position.name}

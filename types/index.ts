@@ -30,6 +30,7 @@ export interface Campus {
 
 export interface Team {
   name: string
+  priorityRank: number
 }
 
 export interface EventCategory {
@@ -90,12 +91,14 @@ export interface PositionPayload {
   acceptingApplications: boolean
   responsibilities: PortableTextBlock[]
   requirements: PortableTextBlock[]
+  priorityRank: number
 }
 
 export interface TeamPayload {
   name: string
   slug: string
   description: string
+  priorityRank: number
 }
 
 export interface MemberPayload {
@@ -104,7 +107,8 @@ export interface MemberPayload {
     name: string
     team: {
       slug: string
-    }
+    },
+    priorityRank: number,
   }
   team: {
     slug: string

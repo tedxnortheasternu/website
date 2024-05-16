@@ -21,9 +21,11 @@ export function TeamsPage({ data }: TeamsPageProps) {
 
       <div className="flex flex-col border rounded-md border-slate-200">
         {/* Teams List */}
-        {data.map((team) => {
-          return <TeamsListItem key={team.slug} team={team} />
-        })}
+        {data
+          .sort((a, b) => b.priorityRank - a.priorityRank)
+          .map((team) => {
+            return <TeamsListItem key={team.slug} team={team} />
+          })}
       </div>
     </div>
   )

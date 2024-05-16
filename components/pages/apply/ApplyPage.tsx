@@ -25,9 +25,12 @@ export function ApplyPage({
       {/* Positions List */}
       {positions && positions.length > 0 ? (
         <div className="mx-auto border rounded-md border-slate-200 overflow-clip">
-          {positions.map((position) => {
-            return <PositionListItem key={position._id} position={position} />
-          })}
+          {positions
+            .slice() // Makes a shallow copy of the array
+            .sort((a, b) => b.priorityRank - a.priorityRank)
+            .map((position) => {
+              return <PositionListItem key={position._id} position={position} />
+            })}
         </div>
       ) : (
         // TODO: improve styling
