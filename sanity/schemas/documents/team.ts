@@ -32,5 +32,11 @@ export default defineType({
       description: 'Description of the team',
       validation: (rule) => rule.max(155).required(),
     }),
+    defineField({
+      type: 'number',
+      name: 'priorityRank',
+      title: 'Priority Placement Of Team',
+      initialValue: 1
+    }),
   ],
 })

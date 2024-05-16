@@ -48,6 +48,7 @@ export const teamsQuery = groq`
     name,
     "slug": slug.current,
     description,
+    priorityRank,
   } | order(name asc)
 `
 
@@ -76,6 +77,7 @@ export const applyPageQuery = groq`
       max
     },
     description,
+    priorityRank,
   } | order(name asc)
 `
 
@@ -95,6 +97,7 @@ export const positionByIdQuery = groq`
     description,
     responsibilities,
     requirements,
+    priorityRank,
     acceptingApplications
   }
 `
@@ -137,6 +140,7 @@ export const teamsPageQuery = groq`
     name,
     "slug": slug.current,
     description,
+    priorityRank,
   } | order(name asc)
 `
 
@@ -163,6 +167,7 @@ export const membersPageQuery = groq`
       name,
       "slug": slug.current,
       description,
+      priorityRank,
     } | order(name asc),
     "members": *[_type == "member"] {
       name,
@@ -171,6 +176,7 @@ export const membersPageQuery = groq`
         team->{
           "slug": slug.current,
         },
+        priorityRank,
       },
       image,
       major,

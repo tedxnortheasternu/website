@@ -18,23 +18,24 @@ export function MembersPage({ data }: MembersPageProps) {
           Our Team
         </h1>
       </div>
-
       <div className="space-y-16">
         {/* Teams List */}
-        {data.teams.map((team, key) => {
-          return (
-            <div key={key}>
-              <MembersListItem
-                team={team}
-                members={data.members.filter(
-                  (m) =>
-                    m?.position?.team?.slug === team.slug ||
-                    m.team.slug === team.slug,
-                )}
-              />
-            </div>
-          )
-        })}
+        {data.teams
+          .sort((a, b) => b.priorityRank - a.priorityRank)
+          .map((team, key) => {
+            return (
+              <div key={key}>
+                <MembersListItem
+                  team={team}
+                  members={data.members.filter(
+                    (m) =>
+                      m?.position?.team?.slug === team.slug ||
+                      m.team.slug === team.slug,
+                  )}
+                />
+              </div>
+            )
+          })}
       </div>
     </div>
   )
