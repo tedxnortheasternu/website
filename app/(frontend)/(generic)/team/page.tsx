@@ -14,8 +14,12 @@ export default async function TeamRoute() {
     return <MembersPagePreview initial={initial} />
   }
 
-  if (!initial.data) {
-    return <div className="text-center">There are no members.</div>
+  if (initial.data) {
+    return (
+      <div className="text-center">
+        We are currently taking applications please apply
+      </div>
+    )
   }
 
   return <MembersPage data={initial.data} />
