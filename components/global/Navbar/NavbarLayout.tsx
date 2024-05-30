@@ -51,7 +51,7 @@ const joinLinks: NavLink[] = [
   },
   {
     title: 'Speaker Nominations',
-    href: 'https://airtable.com/appD8TuOcD3E8n7BG/shr8Dc6qKWXq7Ns5T',
+    href: 'https://airtable.com/appqG2AJwajWIUmWp/shryuSMzpDKQriGbP',
     description: "Nominate a speaker, whether it's yourself or someone else.",
   },
   {
