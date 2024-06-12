@@ -3,6 +3,7 @@ import { ArrowRightIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 
+import InstagramEmbed from '@/components/global/InstagramFeed/InstagramFeedLayout'
 import { SponsorListItem } from '@/components/shared/sponsor/SponsorListItem'
 import type { HomePagePayload } from '@/types'
 
@@ -51,7 +52,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
         <div>
           {/* Title */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
-            “Ideas worth spreading”&mdash;A grassroots initiative
+            “Ideas change everything”&mdash;A grassroots initiative
           </h2>
         </div>
 
@@ -96,6 +97,9 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
           </div>
         </section>
       ) : null}
+      <section className="flex items-center justify-center">
+        <InstagramEmbed />
+      </section>
 
       {data?.sponsors ? (
         <section>

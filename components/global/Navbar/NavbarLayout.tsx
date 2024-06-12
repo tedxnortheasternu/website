@@ -50,7 +50,7 @@ const joinLinks: NavLink[] = [
     description: 'Check out positions open to current Northeastern students.',
   },
   {
-    title: 'Speaker Nominations',
+    title: 'Speaker Applications',
     href: 'https://airtable.com/appqG2AJwajWIUmWp/shryuSMzpDKQriGbP',
     description: "Nominate a speaker, whether it's yourself or someone else.",
   },
