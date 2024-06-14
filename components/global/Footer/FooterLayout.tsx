@@ -69,7 +69,7 @@ export default function FooterLayout() {
                     href="https://airtable.com/apppF8LcqIJPagRlz/shr8gbJDilpFkZSxP"
                     className="text-sm text-black hover:text-gray-600 hover:underline "
                   >
-                    Speaker Nominations
+                    Speaker Applications
                   </Link>
                 </li>
               </ul>
