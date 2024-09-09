@@ -52,7 +52,7 @@ export function ApplyPage({ data, encodeDataAttribute }: ApplyPageProps) {
         <div>
           {/* Title */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
-            “Ideas worth spreading”&mdash;A grassroots initiative
+            “ideas change everything”&mdash;A grassroots initiative
           </h2>
         </div>
 
