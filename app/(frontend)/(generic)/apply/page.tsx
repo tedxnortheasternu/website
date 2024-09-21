@@ -17,7 +17,7 @@ export default async function ApplyRoute() {
   if (initial.data) {
     return (
       <div className="text-center">
-        There are no positions currently accepting applications.
+        Please apply during the next cycle in Spring 2025
       </div>
     )
   }
