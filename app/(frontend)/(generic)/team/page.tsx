@@ -17,7 +17,7 @@ export default async function TeamRoute() {
   if (initial.data) {
     return (
       <div className="text-center">
-        We are currently taking applications please apply
+        Please apply during the next cycle in Spring 2025
       </div>
     )
   }

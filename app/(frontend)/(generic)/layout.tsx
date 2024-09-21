@@ -8,7 +8,7 @@ export default async function IndexRoute({
 }) {
   return (
     <div>
-      <div className="flex flex-col items-center justify-center w-full max-w-screen-xl gap-4 p-4 mx-auto text-center bg-red-300 border-red-800 border-y xl:my-2 lg:flex-row xl:border xl:rounded-md">
+      {/* <div className="flex flex-col items-center justify-center w-full max-w-screen-xl gap-4 p-4 mx-auto text-center bg-red-300 border-red-800 border-y xl:my-2 lg:flex-row xl:border xl:rounded-md">
         <p className="!m-0 text-pretty">
           <strong>Applications Now Open for TEDxNortheasternU 2024-2025</strong>
         </p>
@@ -18,7 +18,7 @@ export default async function IndexRoute({
         >
           Apply Here <ArrowRightIcon size={16} />
         </Link>
-      </div>
+      </div> */}
 
       <main className="w-full max-w-screen-xl mx-auto my-8 md:my-12">
         {children}
