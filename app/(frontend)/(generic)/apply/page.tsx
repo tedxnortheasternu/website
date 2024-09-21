@@ -14,7 +14,7 @@ export default async function ApplyRoute() {
     return <ApplyPagePreview initial={initial} />
   }
 
-  if (!initial.data) {
+  if (initial.data) {
     return (
       <div className="text-center">
         There are no positions currently accepting applications.
