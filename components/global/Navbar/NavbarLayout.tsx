@@ -61,24 +61,25 @@ const joinLinks: NavLink[] = [
   },
 ]
 
-const renaissanceLinks: NavLink[] = [
-  {
-    title: 'Overview',
-    href: '/renaissance',
-    description:
-      'Discover the story behind our theme and how you can take part.',
-  },
-  {
-    title: 'Speakers',
-    href: '/renaissance/speakers',
-    description: 'Learn about the speakers who will be gracing our stage.',
-  },
-  {
-    title: 'Performers',
-    href: '/renaissance/performers',
-    description: "Check out our event's performers.",
-  },
-]
+
+// const renaissanceLinks: NavLink[] = [
+//   {
+//     title: 'Overview',
+//     href: '/renaissance',
+//     description:
+//       'Discover the story behind our theme and how you can take part.',
+//   },
+//   {
+//     title: 'Speakers',
+//     href: '/renaissance/speakers',
+//     description: 'Learn about the speakers who will be gracing our stage.',
+//   },
+//   {
+//     title: 'Performers',
+//     href: '/renaissance/performers',
+//     description: "Check out our event's performers.",
+//   },
+// ]
 
 export default function NavbarLayout() {
   const [open, setOpen] = useState(false)
@@ -173,7 +174,7 @@ export default function NavbarLayout() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              <NavigationMenuItem>
+              {/* <NavigationMenuItem>
                 <NavigationMenuTrigger>Renaissance</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid gap-3 w-[350px] p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -197,7 +198,7 @@ export default function NavbarLayout() {
                     ))}
                   </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem>
+              </NavigationMenuItem> while renaissance is closed*/}
 
               <NavigationMenuItem>
                 <Link href="/events" legacyBehavior passHref>

@@ -23,6 +23,16 @@ const config = {
     taint: true,
     serverMinification: false,
   },
+  async redirects() {
+    return [
+      {
+        source: '/renaissance',
+        destination: '/',
+        permanent: true,  // or `false` if it is meant to be a temporary redirect
+      },
+    ]
+  },
 }
+
 
 export default config
