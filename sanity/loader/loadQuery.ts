@@ -10,6 +10,8 @@ import {
   homePageQuery,
   membersPageQuery as membersPageQuery,
   pagesBySlugQuery,
+  pastEventsQuery,
+  pastEventsSlugQuery,
   positionByIdQuery,
   settingsQuery,
   sponsorsQuery,
@@ -22,6 +24,7 @@ import {
   HomePagePayload,
   MembersPagePayload,
   PagePayload,
+  PastEventsPayload,
   PositionPayload,
   SettingsPayload,
   SponsorPayload,
@@ -109,6 +112,14 @@ export function loadPage(slug: string) {
   )
 }
 
+export function loadPastEventsPage() {
+  return loadQuery<UpcomingEventPayload[] | null>(
+    pastEventsQuery,
+    {},
+    { next: { tags: [`pastEvents`] } },
+  )
+}
+
 export function loadEventsPage() {
   return loadQuery<UpcomingEventPayload[] | null>(
     upcomingEventsQuery,
@@ -122,6 +133,14 @@ export function loadEvent(slug: string) {
     eventBySlugQuery,
     { slug },
     { next: { tags: [`event:${slug}`] } },
+  )
+}
+
+export function loadPastEvent(slug: string) {
+  return loadQuery<UpcomingEventPayload | null>(
+    pastEventsSlugQuery,
+    { slug },
+    { next: { tags: [`pastEvent:${slug}`] } },
   )
 }
 

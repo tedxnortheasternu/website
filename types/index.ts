@@ -74,6 +74,8 @@ export interface UpcomingEventPayload {
   location: string
 }
 
+export type PastEventsPayload = UpcomingEventPayload[]
+
 export interface SponsorPayload {
   name: string
   logo: Image

@@ -27,6 +27,8 @@ import timeline from '@/sanity/schemas/objects/timeline'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
 
+import pastEvents from './sanity/schemas/documents/pastEvents'
+
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'TEDxNortheasternU Website'
 
@@ -60,6 +62,7 @@ export default defineConfig({
       // Documents
       page,
       event,
+      pastEvents,
       eventCategory,
       member,
       position,

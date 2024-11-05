@@ -123,6 +123,47 @@ export const eventBySlugQuery = groq`
   }
 `
 
+export const pastEventsQuery = groq`
+  *[_type == "pastEvent"] {
+    "event": event-> {
+      name,                 
+      "slug": slug.current, 
+      briefDescription,     
+      coverGraphic,         
+      startDateTime,       
+      endDateTime,     
+      location,            
+      "category": category-> {
+        _id,               
+        name                
+      }
+    }
+  } | order(endDateTime desc) // Ordering the results by the end date in descending order
+`
+
+export const pastEventsSlugQuery = groq`
+  *[_type == "pastEvent" ] {
+    event-> {
+      name,
+      "slug": slug.current,
+      briefDescription,
+      coverGraphic,
+      startDateTime,
+      endDateTime,
+      location,
+      category-> {
+        _id,
+        name,
+      }
+    }
+  }
+`
+
+export const pastEventPaths = groq`
+  *[_type == "pastEvents" && slug.current != null].slug.current
+`
+
+
 export const teamPaths = groq`
   *[_type == "team" && slug.current != null].slug.current
 `
