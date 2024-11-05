@@ -252,12 +252,12 @@ export default function NavbarLayout() {
               Watch Our Last Renaissance Talks <ArrowRightIcon size={16} />
             </Link> */}
 
-            <Link
+            {/* <Link
               href="/apply"
               className="inline-flex items-center gap-2 px-12 py-2 font-bold text-white transition-colors bg-red-800 rounded-full w-max hover:bg-red-800/85"
             >
               {"We're Recruiting!"}
-            </Link>
+            </Link> */}
             {/* 
             FOR RENAISSANCE
             <Link
