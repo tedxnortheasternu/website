@@ -4,23 +4,23 @@ import ImageBox from '@/components/shared/ImageBox'
 import dayjs from '@/lib/dayjs'
 import type { UpcomingEventPayload } from '@/types'
 
-import { EventPageProps } from '../event/EventPage'
-
 export interface PastEventPageProps {
-  data: UpcomingEventPayload | null
+  data: Array<{ event: UpcomingEventPayload }> | null
   encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
 export function PastEventPage({
   data,
   encodeDataAttribute,
-}: EventPageProps) {
-  if (!data) return <p>No event data available.</p>
+}: PastEventPageProps) {
+  if (!data || data.length === 0) return <p>No data available</p>
 
-  const { name, briefDescription, coverGraphic, startDateTime } = data
+  // Assuming you're still just displaying the first event
+  const { event } = data[1]
+  const { name, briefDescription, coverGraphic, startDateTime } = event
 
-  // Debug output
-  console.log('Event Data:', data)
+  // Debug: Check the structure of the coverGraphic
+  console.log('Cover Graphic Info:', coverGraphic)
 
   return (
     <div className="max-w-4xl p-6 mx-auto">
@@ -36,8 +36,8 @@ export function PastEventPage({
           <ImageBox
             data-sanity={encodeDataAttribute?.('coverGraphic')}
             image={coverGraphic}
-            alt={`Cover image of ${name}`}
-            className="object-cover w-full"
+            alt={`Cover image for ${name}`}
+            className="relative aspect-[16/9]"
           />
         </div>
       ) : (

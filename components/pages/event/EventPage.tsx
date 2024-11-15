@@ -33,6 +33,7 @@ export function EventPage({ data, encodeDataAttribute }: EventPageProps) {
     endDateTime,
   } = data ?? {}
 
+  console.log(data)
   return (
     <>
       <div className="space-y-6">

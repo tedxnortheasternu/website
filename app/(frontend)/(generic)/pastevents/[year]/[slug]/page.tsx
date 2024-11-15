@@ -18,12 +18,12 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { year, slug } = params
 
-  const { data: event } = await loadPastEvent(year + '/' + slug)
-  const ogImage = urlForOpenGraphImage(event?.coverGraphic)
+  const { data: pastEvent } = await loadPastEvent(year + '/' + slug)
+  const ogImage = urlForOpenGraphImage(pastEvent?.coverGraphic)
 
   return {
-    title: event?.name,
-    description: event?.briefDescription,
+    title: pastEvent?.name,
+    description: pastEvent?.briefDescription,
     openGraph: {
       images: ogImage ? [ogImage] : [],
     },

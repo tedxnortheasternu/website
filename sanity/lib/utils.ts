@@ -33,6 +33,8 @@ export function resolveHref(documentType?: string, slug?: string): string {
       return slug ? `/apply/${slug}` : '/apply'
     case 'team':
       return slug ? `/teams/${slug}` : '/teams'
+    case 'pastevents':
+      return slug ? `/pastevents/${slug}` : '/pastevents'
     default:
       console.warn('Invalid document type:', documentType)
       return '#'
