@@ -46,5 +46,10 @@ export default async function PastEventSlugRoute({ params }: Props) {
     notFound()
   }
 
-  return <PastEventPage data={initial.data} />
+  return (
+    <PastEventPage
+      data={initial.data ? [{ event: initial.data }] : null}
+      slug={year + '/' + slug}
+    />
+  )
 }

@@ -7,17 +7,24 @@ import type { UpcomingEventPayload } from '@/types'
 export interface PastEventPageProps {
   data: Array<{ event: UpcomingEventPayload }> | null
   encodeDataAttribute?: EncodeDataAttributeCallback
+  slug: string
 }
 
 export function PastEventPage({
   data,
   encodeDataAttribute,
+  slug,
 }: PastEventPageProps) {
+  const currentSlug = slug
   if (!data || data.length === 0) return <p>No data available</p>
 
-  // Assuming you're still just displaying the first event
-  const { event } = data[0]
-  const { name, briefDescription, coverGraphic, startDateTime } = event
+  const eventObject = data.find((d) => d.event[0].event.slug === currentSlug)
+  if (!eventObject) return <p>No event found for this slug</p>
+  const { event } = eventObject.event[0]
+  const name = event.name
+  const startDateTime = event.startDateTime
+  const briefDescription = event.briefDescription
+  const coverGraphic = event.coverGraphic
 
   // Debug: Check the structure of the coverGraphic
   console.log('Cover Graphic Info:', coverGraphic)

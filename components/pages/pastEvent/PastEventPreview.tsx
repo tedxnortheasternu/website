@@ -25,6 +25,6 @@ export default function PastEventPagePreview(props: Props) {
   const eventData = data ? [{ event: data }] : null
 
   return (
-    <PastEventPage data={eventData} encodeDataAttribute={encodeDataAttribute} />
+    <PastEventPage data={eventData} encodeDataAttribute={encodeDataAttribute} slug={params.slug}/>
   )
 }
