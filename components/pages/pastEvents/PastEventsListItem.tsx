@@ -1,7 +1,8 @@
+import Link from 'next/link' // Ensure it's imported correctly
 import React from 'react'
+
 import ImageBox from '@/components/shared/ImageBox'
 import type { UpcomingEventPayload } from '@/types'
-import Link from 'next/link' // Ensure it's imported correctly
 
 export interface PastEventsListItemProps {
   event: UpcomingEventPayload

@@ -21,5 +21,10 @@ export default function PastEventPagePreview(props: Props) {
     { initial },
   )
 
-  return <PastEventPage data={data!} encodeDataAttribute={encodeDataAttribute} />
+  // Transform data into the required format for PastEventPage
+  const eventData = data ? [{ event: data }] : null
+
+  return (
+    <PastEventPage data={eventData} encodeDataAttribute={encodeDataAttribute} />
+  )
 }

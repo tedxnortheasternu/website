@@ -16,7 +16,7 @@ export function PastEventPage({
   if (!data || data.length === 0) return <p>No data available</p>
 
   // Assuming you're still just displaying the first event
-  const { event } = data[1]
+  const { event } = data[0]
   const { name, briefDescription, coverGraphic, startDateTime } = event
 
   // Debug: Check the structure of the coverGraphic
