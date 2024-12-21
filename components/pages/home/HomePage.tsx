@@ -51,7 +51,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
         <div>
           {/* Title */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
-            “ideas change everything”&mdash; A grassroots initiative
+            “Ideas change everything”&mdash; A grassroots initiative
           </h2>
         </div>
 
@@ -59,8 +59,8 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
           {/* Text Section */}
           <p>
             TEDx is a grassroots initiative, created in the spirit of
-            TED&lsquo;s overall mission to research and discover “ideas worth
-            spreading.” TEDx brings the spirit of TED to local communities
+            TED&lsquo;s overall mission to research and discover “ideas change
+            everything.” TEDx brings the spirit of TED to local communities
             around the globe through TEDx events. These events are organized by
             passionate individuals who seek to uncover new ideas and to share
             the latest research in their local areas that spark conversations in
