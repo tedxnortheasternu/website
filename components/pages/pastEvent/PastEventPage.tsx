@@ -30,7 +30,7 @@ export function PastEventPage({
   console.log('Cover Graphic Info:', coverGraphic)
 
   return (
-    <div className="max-w-4xl p-6 mx-auto">
+    <div className="items-center max-w-4xl p-6 mx-auto">
       <div className="space-y-4 text-center">
         <h1 className="text-4xl font-bold">{name}</h1>
         <h2 className="text-xl text-gray-600">
@@ -39,12 +39,12 @@ export function PastEventPage({
       </div>
 
       {coverGraphic ? (
-        <div className="my-6">
+        <div className="flex items-center mx-48 my-6">
           <ImageBox
             data-sanity={encodeDataAttribute?.('coverGraphic')}
             image={coverGraphic}
             alt={`Cover image for ${name}`}
-            className="relative aspect-[16/9]"
+            className="relative h-fit w-fit "
           />
         </div>
       ) : (

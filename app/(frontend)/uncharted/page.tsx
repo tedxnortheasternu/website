@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import renaissanceLogo from '@/components/images/renaissance-dark.png'
+import unchartedLogo from '@/components/images/uncharted/ted-uncharted-blue-bg-black.png'
 
 export default function RenaissanceOverview() {
   return (
@@ -10,14 +11,14 @@ export default function RenaissanceOverview() {
       <div className="mx-auto font-serif prose">
         <div className="-ml-3.5">
           <Image
-            src={renaissanceLogo}
+            src={unchartedLogo}
             alt="Renaissance Logo"
             className="h-auto max-w-full mx-auto w-[28rem]"
           />
         </div>
 
         <p>
-          <strong>TEDxNortheasternU: Renaissance</strong> is a day of inspiring
+          <strong>TEDxNortheasternU: Uncharted</strong> is a day of inspiring
           TEDx Talks and transformative ideas that celebrates the rebirth of
           human potential. It embodies the idea of pushing boundaries, breaking
           barriers, and exploring new frontiers.
@@ -49,7 +50,7 @@ export default function RenaissanceOverview() {
           <iframe
             className="w-full h-full rounded-md"
             src="https://www.youtube.com/embed/QHgxTwobwXk"
-            title="THEME REVEAL | TEDxNortheasternU 2024: Renaissance"
+            title="THEME REVEAL | TEDxNortheasternU 2025: Uncharted"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           />
         </div>

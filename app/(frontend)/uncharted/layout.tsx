@@ -2,7 +2,7 @@ import { ArrowRightIcon } from 'lucide-react'
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-import { RenaissanceNavbar } from '@/components/global/renaissance/RenaissanceNavbar'
+import { UnchartedNavBar } from '@/components/global/Uncharted/index'
 import { SponsorListItem } from '@/components/shared/sponsor/SponsorListItem'
 import { loadSponsors } from '@/sanity/loader/loadQuery'
 import { SponsorPayload } from '@/types'
@@ -31,7 +31,7 @@ export default async function Layout({
 
   return (
     <>
-      <RenaissanceNavbar />
+      <UnchartedNavBar />
       <main className="w-full max-w-screen-xl mx-auto xl:mt-4">{children}</main>
 
       {data ? (

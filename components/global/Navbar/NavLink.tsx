@@ -38,7 +38,7 @@ export default function NavLink({
             ? 'text-white hover:text-white bg-renaissance-light/15 hover:bg-renaissance-light/20'
             : 'text-red-600 hover:text-red-700'
           : variant === 'renaissance'
-            ? 'text-renaissance-light hover:text-white hover:bg-renaissance-light/15'
+            ? 'text-[#b4bcd4] hover:text-white hover:bg-renaissance-light/15'
             : 'text-slate-600 hover:text-slate-700',
       )}
       href={href}

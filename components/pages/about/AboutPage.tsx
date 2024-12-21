@@ -52,7 +52,7 @@ export function ApplyPage({ data, encodeDataAttribute }: ApplyPageProps) {
         <div>
           {/* Title */}
           <h2 className="text-4xl font-bold leading-tight text-balance">
-            “ideas change everything”&mdash; A grassroots initiative
+            “Ideas change everything”&mdash; A grassroots initiative
           </h2>
         </div>
 
@@ -93,10 +93,6 @@ export function ApplyPage({ data, encodeDataAttribute }: ApplyPageProps) {
             <div className="flex flex-col">
               <h3 className="text-sm uppercase">Teams</h3>
               <p className="text-2xl font-bold">{data.teamsCount - 1}</p>
-            </div>
-            <div className="flex flex-col">
-              <h3 className="text-sm uppercase">Campuses</h3>
-              <p className="text-2xl font-bold">{data.campusesCount}</p>
             </div>
           </div>
         </div>
