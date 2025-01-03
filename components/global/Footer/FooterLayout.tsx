@@ -58,7 +58,7 @@ export default function FooterLayout() {
               <ul>
                 <li>
                   <Link
-                    href="/apply"
+                    href="https://airtable.com/apppF8LcqIJPagRlz/shrtXHY2aq85jEwSD"
                     className="text-sm text-black hover:text-gray-600 hover:underline"
                   >
                     Open Positions
@@ -66,7 +66,7 @@ export default function FooterLayout() {
                 </li>
                 <li>
                   <Link
-                    href="https://airtable.com/apppF8LcqIJPagRlz/shrtXHY2aq85jEwSD"
+                    href="https://airtable.com/apppF8LcqIJPagRlz/shr8gbJDilpFkZSxP"
                     className="text-sm text-black hover:text-gray-600 hover:underline "
                   >
                     Speaker Applications
