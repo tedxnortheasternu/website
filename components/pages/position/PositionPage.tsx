@@ -86,7 +86,7 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
             {data.acceptingApplications ? (
               <Link
                 target="_blank"
-                href="https://airtable.com/apppF8LcqIJPagRlz/shr8gbJDilpFkZSxP"
+                href="https://airtable.com/apppF8LcqIJPagRlz/shrtXHY2aq85jEwSD"
                 className="inline-flex items-center justify-center w-full gap-2 px-4 py-2 mt-8 text-xl font-bold text-white uppercase transition-colors bg-red-600 rounded-full hover:bg-red-700"
               >
                 Apply Now <ArrowRightIcon size={24} />
