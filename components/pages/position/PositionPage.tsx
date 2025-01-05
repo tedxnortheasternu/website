@@ -91,7 +91,7 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
               >
                 Apply Now <ArrowRightIcon size={24} />
               </Link>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
