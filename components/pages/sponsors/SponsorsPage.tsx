@@ -3,42 +3,59 @@ import React from 'react'
 const SponsorshipTiers = [
   {
     name: 'Bronze',
-    price: '$750+',
+    price: '$500 - $749',
     benefits: [
-      'Complimentary VIP tickets: 3',
-      'Recognition on organization website',
-      'Recognition in pre-roll and post-roll video credits for each Talk uploaded to the official “TEDx Talks” Youtube Channel',
+      'Complimentary 2 VIP tickets to attend the event.',
+      'Acknowledgment on the TEDxNortheasternU website and in event programs.',
+      'Inclusion in the credits of TEDx Talks uploaded to the official TEDx Talks YouTube channel.',
+      'Recognition on presentation slides during the event.',
+      'Recognition in pre-roll video credits for each Talk uploaded to YouTube.',
     ],
   },
   {
     name: 'Silver',
-    price: '$1000+',
+    price: '$750 - $999',
     benefits: [
-      'Complimentary VIP tickets: 4',
-      'Recognition on organization website',
-      'Recognition in pre-roll and post-roll video credits for each Talk uploaded to the official “TEDx Talks” Youtube Channel',
-      'Recognition on social media leading up to and during the event',
-      'Opportunity for interactive exhibit space during intermission',
-      'Logo placement on presentation slides and event program',
-      'Opportunity to place items in attendee and/or speaker gift bags',
+      'Complimentary 3 VIP tickets to attend the event.',
+      'Acknowledgment on the TEDxNortheasternU website and in event programs.',
+      'Inclusion in the credits of TEDx Talks uploaded to the official TEDx Talks YouTube channel.',
+      'Recognition on presentation slides during the event.',
+      'Recognition in pre-roll video credits for each Talk uploaded to YouTube.',
+      'Recognition on TEDxNortheasternU social media ',
+      'Opportunity to include your organization’s materials (e.g., flyers) in attendee gift bags.',
     ],
+    
   },
   {
     name: 'Gold',
-    price: '$2000+',
+    price: '$1,000 - $1,999',
     benefits: [
-      'Complimentary VIP tickets: 5',
-      'Recognition on organization website',
-      'Recognition in pre-roll and post-roll video credits for each Talk uploaded to the official “TEDx Talks” Youtube Channel',
-      'Recognition on social media leading up to and during the event',
-      'Opportunity for interactive exhibit space during intermission',
-      'Logo placement on presentation slides and event program',
-      'Opportunity to place items in attendee and/or speaker gift bags',
-      'On-stage recognition during opening and closing remarks',
-      'Half-page advertisement in event program',
-      'Logo placement on promotional flyers and day-of posters',
+     'Complimentary 5 VIP tickets to attend the event.',
+      'Acknowledgment on the TEDxNortheasternU website and in event programs.',
+      'Inclusion in the credits of TEDx Talks uploaded to the official TEDx Talks YouTube channel.',
+      'Recognition on presentation slides during the event.',
+      'Recognition in pre-roll video credits for each Talk uploaded to YouTube.',
+      'Recognition on TEDxNortheasternU social media ',
+      'Opportunity to include your organization’s materials (e.g., flyers) in attendee gift bags.',
+      'Logo placement on event signage and promotional materials.',
     ],
   },
+  {
+    name: 'Platinum',
+    price: '$2000+',
+    benefits: [
+      'Complimentary 6 VIP tickets to attend the event.',
+      'Acknowledgment on the TEDxNortheasternU website and in event programs.',
+      'Inclusion in the credits of TEDx Talks uploaded to the official TEDx Talks YouTube channel.',
+      'Recognition on presentation slides during the event.',
+      'Recognition in pre-roll video credits for each Talk uploaded to YouTube.',
+      'Recognition on TEDxNortheasternU social media ',
+      'Opportunity to include your organization’s materials (e.g., flyers) in attendee gift bags.',
+      'Logo placement on event signage and promotional materials.',
+      'On-stage acknowledgment during the event’s opening and closing remarks.',
+      'Half-page advertisement in the event program.'
+    ],
+  }
 ]
 
 const InKindOptions = [
@@ -59,6 +76,8 @@ const SponsorsPage: React.FC = () => {
         return 'text-gray-400'
       case 'gold':
         return 'text-yellow-400'
+      case 'platinum':
+        return 'text-blue-400'
       default:
         return 'text-black'
     }
@@ -85,7 +104,7 @@ const SponsorsPage: React.FC = () => {
       </section>
       <section>
         <h2 className="mb-4 text-3xl font-semibold">Sponsorship Tiers</h2>
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
           {SponsorshipTiers.map((tier) => (
             <div key={tier.name} className="p-8 border shadow-lg b ronded-lg">
               <h3
@@ -113,7 +132,7 @@ const SponsorsPage: React.FC = () => {
           are also open to others and will customize benefits packages based on
           the relative value of the in-kind gift.
         </p>
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-3 lg:grid-cols-6">
+        <div className="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
           {InKindOptions.map((option, index) => (
             <div
               key={index}
