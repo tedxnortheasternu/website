@@ -45,14 +45,14 @@ export default function RenaissanceOverview() {
           Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
         </Link> */}
 
-        {/* <div className="mt-12 aspect-video">
+        <div className="mt-12 aspect-video">
           <iframe
             className="w-full h-full rounded-md"
-            src="https://www.youtube.com/embed/QHgxTwobwXk"
+            src="https://www.youtube.com/embed/vHDTd8U96qQ?si=e4u0HIuimjrPyxgy"
             title="THEME REVEAL | TEDxNortheasternU 2025: Uncharted"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           />
-        </div> */}
+        </div>
       </div>
     </div>
   )
