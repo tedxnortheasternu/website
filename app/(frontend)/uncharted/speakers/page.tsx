@@ -12,6 +12,7 @@ import dasPhoto from '@/components/images/renaissance/das.png'
 import liuPhoto from '@/components/images/renaissance/liu.png'
 import murphyPhoto from '@/components/images/renaissance/murphy.png'
 import redwoodPhoto from '@/components/images/renaissance/redwood.png'
+import zaranorthover from '@/components/images/uncharted/Zara_Northover.png'
 import { cn } from '@/lib/utils'
 
 type Speaker = {
@@ -24,8 +25,8 @@ type Speaker = {
 
 const speakers: Speaker[] = [
   {
-    photo: chungPhoto,
-    name: 'Dr. Christie Chung',
+    photo: zaranorthover,
+    name: 'Zara Northover',
     pronouns: 'she/her',
     headline: 'Cognitive Psychologist, Executive Director, Professor',
     bio: ' is an award-winning academic leader, executive director, and professor in cognitive psychology. She has extensive research expertise in cognitive aging, emotional memory, and cross-cultural cognition. Dr. Chung has served in a variety of senior leadership roles and is committed to empowering leaders to reach their full potential through her work in executive coaching and consulting. Dr. Chung currently serves as the Executive Director of The Mills Institute and is dedicated to developing transformative programs and research to drive positive societal impact through a humanics-driven lens.',
@@ -80,7 +81,7 @@ export const metadata: Metadata = {
 
 export default function RenaissanceSpeakers() {
   return (
-    <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+    <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-[#748cab]/25">
       <div className="max-w-2xl mx-auto mb-8">
         <h1 className="text-2xl font-bold text-center md:text-3xl text-renaissance-dark">
           Meet Our Speakers!
@@ -100,15 +101,15 @@ export default function RenaissanceSpeakers() {
               <div
                 className={cn(
                   'flex flex-col justify-end px-6 py-8 md:p-8 rounded-md [grid-area:speaker-info]',
-                  i < 4 ? 'bg-renaissance-dark' : 'bg-renaissance-light',
+                  i < 4 ? 'bg-[#1d2d44]' : 'bg-[#748cab]',
                 )}
               >
                 <p
                   className={cn(
                     'text-xl leading-none font-renaissance',
                     i < 4
-                      ? 'text-renaissance-light/85'
-                      : 'text-renaissance-dark/85',
+                      ? 'text-[#748cab]/85'
+                      : 'text-[#1d2d44]/85',
                   )}
                 >
                   {s.headline}
@@ -116,7 +117,7 @@ export default function RenaissanceSpeakers() {
                 <h2
                   className={cn(
                     'mt-2 text-3xl whitespace-nowrap',
-                    i < 4 ? 'text-renaissance-light' : 'text-renaissance-dark',
+                    i < 4 ? 'text-[#748cab]' : 'text-renaissance-dark',
                   )}
                 >
                   <span className="text-4xl font-bold whitespace-normal">
@@ -126,7 +127,7 @@ export default function RenaissanceSpeakers() {
                 </h2>
               </div>
             </div>
-            <p className="p-6 mt-2 leading-7 rounded-md md:p-8 text-pretty bg-renaissance-light/25">
+            <p className="p-6 mt-2 leading-7 rounded-md md:p-8 text-pretty bg-[#748cab]/25">
               <b className="text-renaissance-dark">{s.name}</b>
               {s.bio}
             </p>

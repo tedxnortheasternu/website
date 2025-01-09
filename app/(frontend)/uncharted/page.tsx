@@ -3,39 +3,39 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import renaissanceLogo from '@/components/images/renaissance-dark.png'
+import unchartedLogo from '@/components/images/uncharted/TEDxNortheasternU_Black_Uncharted_Transparent_1750x475.png'
 
 export default function RenaissanceOverview() {
   return (
-    <div className="w-full p-6 !pt-0 border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+    <div className="w-full p-6 !pt-0 border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-[#748cab]/30">
       <div className="mx-auto font-serif prose">
-        <div className="-ml-3.5">
+        <div className="-ml-3.5 my-20">
           <Image
-            src={renaissanceLogo}
+            src={unchartedLogo}
             alt="Renaissance Logo"
             className="h-auto max-w-full mx-auto w-[28rem]"
           />
         </div>
 
         <p>
-          <strong>TEDxNortheasternU: Renaissance</strong> is a day of inspiring
-          TEDx Talks and transformative ideas that celebrates the rebirth of
-          human potential. It embodies the idea of pushing boundaries, breaking
-          barriers, and exploring new frontiers.
+          <strong>TEDxNortheasternU: Uncharted</strong> Uncharted sets forth on
+          a day of insightful TEDx Talks and innovative ideas that observe the
+          changing present.
         </p>
 
         <p>
-          During intermission, attendees have the opportunity to explore our
-          xLabs — dynamic exhibits that allow organizations to actively engage
-          with our audience through workshops, arts and crafts, and hands-on
-          demonstrations. Renaissance also features music and dance performances
-          as a source of entertainment and a reminder of the power of creativity
-          in transforming our world.
+          During the intermission, all attendees are invited to explore xLabs -
+          dynamic exhibits that allow organizations to actively engage with our
+          audience through workshops, crafts, and hands-on demonstrations. Other
+          features include live performances as a source of entertainment and
+          showcase the power of innovation in our journey to understanding the
+          world.
         </p>
 
         <p>
-          <strong>Join us on February 24th</strong> to share innovative ideas,
-          spark creativity, and inspire change across the global Northeastern
-          community.{' '}
+          <strong>Join us on Saturday, February 22nd</strong> to spread
+          transformative ideas, spark creativity, and inspire change within our
+          Northeastern community.{' '}
         </p>
 
         {/* <Link
@@ -45,14 +45,14 @@ export default function RenaissanceOverview() {
           Get Your Ticket to Renaissance <ArrowRightIcon size={16} />
         </Link> */}
 
-        <div className="mt-12 aspect-video">
+        {/* <div className="mt-12 aspect-video">
           <iframe
             className="w-full h-full rounded-md"
             src="https://www.youtube.com/embed/QHgxTwobwXk"
-            title="THEME REVEAL | TEDxNortheasternU 2024: Renaissance"
+            title="THEME REVEAL | TEDxNortheasternU 2025: Uncharted"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   )

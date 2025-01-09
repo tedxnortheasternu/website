@@ -35,10 +35,10 @@ export default function NavLink({
           : 'hover:underline font-medium',
         active
           ? variant === 'renaissance'
-            ? 'text-white hover:text-white bg-renaissance-light/15 hover:bg-renaissance-light/20'
+            ? 'text-white hover:text-white bg-[#748cab]/15 hover:bg-[#748cab]/20'
             : 'text-red-600 hover:text-red-700'
           : variant === 'renaissance'
-            ? 'text-renaissance-light hover:text-white hover:bg-renaissance-light/15'
+            ? 'text-renaissance-light hover:text-white hover:bg-[#748cab]/15'
             : 'text-slate-600 hover:text-slate-700',
       )}
       href={href}

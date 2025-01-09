@@ -74,24 +74,24 @@ const eventLinks: NavLink[] = [
   },
 ]
 
-// const renaissanceLinks: NavLink[] = [
-//   {
-//     title: 'Overview',
-//     href: '/renaissance',
-//     description:
-//       'Discover the story behind our theme and how you can take part.',
-//   },
-//   {
-//     title: 'Speakers',
-//     href: '/renaissance/speakers',
-//     description: 'Learn about the speakers who will be gracing our stage.',
-//   },
-//   {
-//     title: 'Performers',
-//     href: '/renaissance/performers',
-//     description: "Check out our event's performers.",
-//   },
-// ]
+const renaissanceLinks: NavLink[] = [
+  {
+    title: 'Overview',
+    href: '/uncharted',
+    description:
+      'Discover the story behind our theme and how you can take part.',
+  },
+  // {
+  //   title: 'Speakers',
+  //   href: '/renaissance/speakers',
+  //   description: 'Learn about the speakers who will be gracing our stage.',
+  // },
+  // {
+  //   title: 'Performers',
+  //   href: '/renaissance/performers',
+  //   description: "Check out our event's performers.",
+  // },
+]
 
 export default function NavbarLayout() {
   const [open, setOpen] = useState(false)
@@ -191,8 +191,8 @@ export default function NavbarLayout() {
                 <NavigationMenuContent>
                   <ul className="grid gap-3 w-[350px] p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                     <li className="row-span-3">
-                      <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-renaissance-light focus:shadow-md">
-                        <div className="mt-4 mb-2 text-lg font-bold leading-tight text-renaissance-dark">
+                      <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-[#748cab] focus:shadow-md">
+                        <div className="mt-4 mb-2 text-lg font-bold leading-tight text-[#1d2d44]">
                           Relive Renaissance!
                         </div>
                         <p className="text-sm leading-tight">
@@ -210,7 +210,9 @@ export default function NavbarLayout() {
                     ))}
                   </ul>
                 </NavigationMenuContent>
-              </NavigationMenuItem> while renaissance is closed*/}
+              </NavigationMenuItem> */}
+
+              {/*while renaissance is closed*/}
 
               {/* <NavigationMenuItem>
                 <Link href="/events" legacyBehavior passHref>
@@ -294,14 +296,13 @@ export default function NavbarLayout() {
             >
               {"We're Recruiting!"}
             </Link> */}
-            {/* 
-            FOR RENAISSANCE
+
             <Link
-              href="/renaissance/schedule"
-              className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-renaissance-dark w-max hover:bg-renaissance-dark/85"
+              href="/uncharted"
+              className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-[#1d2d44] w-max hover:bg-[#1d2d44]/85"
             >
-              At Renaissance? View Schedule <ArrowRightIcon size={16} />
-            </Link> */}
+              Check Out Our Flagship <ArrowRightIcon size={16} />
+            </Link>
           </div>
         </div>
       </nav>

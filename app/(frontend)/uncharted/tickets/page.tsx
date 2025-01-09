@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
 export default function RenaissanceSpeakers() {
   return (
-    <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
-      <div className="max-w-2xl mx-auto text-center">
+    <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-[#748cab]/15">
+      {/* <div className="max-w-2xl mx-auto text-center">
         <h1 className="text-2xl font-bold md:text-3xl text-renaissance-dark">
           Tickets
         </h1>
@@ -28,10 +28,10 @@ export default function RenaissanceSpeakers() {
           </Link>
           .
         </p>
-      </div>
+      </div> */}
 
-      {/* <div className="grid max-w-2xl gap-4 mx-auto mb-8 md:grid-cols-2">
-        <div className="flex flex-col justify-between p-8 rounded-md bg-renaissance-light text-renaissance-dark">
+      <div className="grid max-w-2xl gap-4 mx-auto mb-8 md:grid-cols-2">
+        <div className="flex flex-col justify-between p-8 rounded-md bg-[#748cab] text-[#1d2d44]">
           <div>
             <h2 className="mb-4 text-3xl font-bold">Northeastern Students</h2>
             <p className="leading-snug">
@@ -43,7 +43,7 @@ export default function RenaissanceSpeakers() {
             <Link
               href={STUDENTS_LINK}
               target="_blank"
-              className="inline-flex items-center gap-2 px-6 py-2 mt-8 mb-3 text-xl uppercase transition-colors rounded-full text-renaissance-light font-renaissance bg-renaissance-dark w-max hover:bg-black"
+              className="inline-flex items-center gap-2 px-6 py-2 mt-8 mb-3 text-xl uppercase transition-colors rounded-full text-[#748cab] font-renaissance bg-[#1d2d44] w-max hover:bg-black"
             >
               Purchase for $10 <ArrowRightIcon size={16} />
             </Link>
@@ -53,7 +53,7 @@ export default function RenaissanceSpeakers() {
           </div>
         </div>
 
-        <div className="flex flex-col justify-between p-8 rounded-md bg-renaissance-dark text-renaissance-light">
+        <div className="flex flex-col justify-between p-8 rounded-md bg-[#1d2d44] text-[#748cab]">
           <div>
             <h2 className="mb-4 text-3xl font-bold">General Public</h2>
             <p className="leading-snug">
@@ -65,31 +65,31 @@ export default function RenaissanceSpeakers() {
             <Link
               href={PUBLIC_LINK}
               target="_blank"
-              className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-8 mb-3 text-xl uppercase transition-colors rounded-full text-renaissance-dark font-renaissance bg-renaissance-light w-max hover:bg-white"
+              className="inline-flex items-center gap-2 px-6 py-2 mx-auto mt-8 mb-3 text-xl uppercase transition-colors rounded-full text-[#1d2d44] font-renaissance bg-[#748cab] w-max hover:bg-white"
             >
               Purchase for $15 <ArrowRightIcon size={16} />
             </Link>
             <p className="ml-5 leading-snug uppercase font-renaissance">
-              *Limit two (2) per person
+              *Limit one (1) per person
             </p>
           </div>
         </div>
-      </div> */}
+      </div>
 
-      {/* <div className="max-w-2xl mx-auto">
-        <p className="mt-2 text-center text-renaissance-dark/85 text-balance">
+      <div className="max-w-2xl mx-auto">
+        <p className="mt-2 text-center text-[#1d2d44]/85 text-balance">
           If you require disability-related accommodations to participate in
           this event, please{' '}
           <Link
             href="/contact"
             target="_blank"
-            className="border-b border-b-renaissance-mid text-renaissance-dark"
+            className="border-b border-b-[#748cab] text-[#1d2d44]"
           >
             contact us
           </Link>{' '}
           by February 10th.
         </p>
-      </div> */}
+      </div>
     </div>
   )
 }
