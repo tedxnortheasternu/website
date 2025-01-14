@@ -8,10 +8,10 @@ export const metadata: Metadata = {
 
 export default function RenaissanceSpeakers() {
   return (
-    <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-renaissance-light/15">
+    <div className="w-full p-6 font-serif border-y xl:border xl:rounded-md md:p-12 border-[#] bg-[#748cab]/15">
       <div className="max-w-2xl mx-auto mb-8 space-y-8">
         <div>
-          <h1 className="text-2xl font-bold text-center md:text-3xl text-renaissance-dark">
+          <h1 className="text-2xl font-bold text-center md:text-3xl text-[#1d2d44]">
             Schedule
           </h1>
           <p className="mt-2 text-center text-slate-600">
@@ -19,12 +19,12 @@ export default function RenaissanceSpeakers() {
           </p>
         </div>
 
-        <div className="p-8 rounded-md bg-renaissance-light">
-          <h2 className="mb-4 text-3xl font-bold text-renaissance-dark">
+        <div className="p-8 rounded-md bg-[#748cab]">
+          <h2 className="mb-4 text-3xl font-bold text-[#1d2d44]">
             Session 1
           </h2>
 
-          <div className="space-y-4 text-renaissance-dark">
+          <div className="space-y-4 text-[#1d2d44]">
             <div className="grid grid-cols-[100px_1fr] gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">10:15am</time>
               <p className="text-lg font-bold">
@@ -90,12 +90,12 @@ export default function RenaissanceSpeakers() {
           </div>
         </div>
 
-        <div className="p-8 rounded-md bg-renaissance-dark">
-          <h2 className="mb-8 text-3xl font-bold text-renaissance-light">
+        <div className="p-8 rounded-md bg-[#1d2d44]">
+          <h2 className="mb-8 text-3xl font-bold text-[#748cab]">
             Session 2
           </h2>
 
-          <div className="space-y-4 text-renaissance-light">
+          <div className="space-y-4 text-[#748cab]">
             <div className="grid grid-cols-[100px_1fr] gap-2 md:gap-4">
               <time className="text-3xl font-renaissance">1:45pm</time>
               <div className="mt-1 space-y-4">

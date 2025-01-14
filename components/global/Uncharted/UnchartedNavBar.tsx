@@ -21,7 +21,7 @@ export default function UnchartedNavBarLayout() {
   return (
     <div className="w-full h-full max-w-screen-xl px-4 py-4 mx-auto text-white md:py-3 bg-[#1d2d44] xl:rounded-md lg:flex lg:items-center lg:justify-between lg:gap-4">
       <div className="flex items-center justify-between lg:gap-4">
-        <Link href="/renaissance" className="font-bold">
+        <Link href="/uncharted" className="font-bold">
           <Image
             src={renaissanceLogo}
             alt="Renaissance Logo"
@@ -57,8 +57,11 @@ export default function UnchartedNavBarLayout() {
         )}
       >
         <div className="flex flex-col space-y-1 md:space-y-0 md:space-x-2 font-renaissance md:flex-row md:items-center text-[#748cab]">
-           <NavLink href="/uncharted" variant="renaissance">
+          <NavLink href="/uncharted" variant="renaissance">
             Overview
+          </NavLink>
+          <NavLink href="/uncharted/location" variant="renaissance">
+            Location
           </NavLink>
           {/*
           <NavLink href="/uncharted/schedule" variant="renaissance">

@@ -64,13 +64,26 @@ const joinLinks: NavLink[] = [
 const eventLinks: NavLink[] = [
   {
     title: 'Current Events',
-    href: '/events',
+    href: '/uncharted',
     description: 'Discover our upcoming events and how you can take part!',
   },
   {
     title: 'Past Events',
     href: '/pastevents',
     description: 'Discover our past events and how you can take part!',
+  },
+]
+
+const sponsorLinks: NavLink[] = [
+  {
+    title: 'Overview',
+    href: '/sponsor',
+    description: 'Learn about our sponsorship opportunities and benefits.',
+  },
+  {
+    title: 'Donate',
+    href: 'https://giving.northeastern.edu/live/profiles/966-club-tedxnortheasternu',
+    description: 'Become a sponsor and support our mission.',
   },
 ]
 
@@ -247,11 +260,28 @@ export default function NavbarLayout() {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/sponsor" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Sponsor
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuTrigger>Sponsor</NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid gap-3 w-[350px] p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                    <li className="row-span-3">
+                      <div className="flex flex-col justify-end w-full h-full p-5 no-underline rounded-md outline-none select-none bg-red-50 focus:shadow-md">
+                        <div className="mt-4 mb-2 text-lg font-bold leading-tight text-red-600">
+                          Sponsor
+                        </div>
+                        <p className="text-sm leading-tight">
+                          Support the TEDxNortheasternU mission ideas change
+                          everythign and become a sponsor.
+                        </p>
+                      </div>
+                    </li>
+
+                    {sponsorLinks.map((l, key) => (
+                      <ListItem key={key} href={l.href} title={l.title}>
+                        {l.description}
+                      </ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
