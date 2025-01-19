@@ -77,7 +77,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
         </div>
       </div>
 
-      {data?.upcomingEvents ? (
+      {/* {data?.upcomingEvents ? (
         <section>
           <h2 className="px-4 mb-6 text-4xl font-bold leading-tight lg:px-6">
             Upcoming Events
@@ -95,7 +95,16 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
             )}
           </div>
         </section>
-      ) : null}
+      ) : null} */}
+
+      <div className="w-full px-4 lg:px-0">
+        <Link
+          href="/uncharted/tickets"
+          className="block text-center py-4 mt-4 text-xl no-underline uppercase transition-colors rounded-full text-[#748cab] font-renaissance bg-[#1d2d44] hover:bg-black w-full"
+        >
+          Get Your Ticket to Uncharted
+        </Link>
+      </div>
 
       {data?.sponsors ? (
         <section>
