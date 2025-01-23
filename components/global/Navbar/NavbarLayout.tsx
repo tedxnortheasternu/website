@@ -54,11 +54,11 @@ const joinLinks: NavLink[] = [
     href: 'https://airtable.com/appqG2AJwajWIUmWp/shryuSMzpDKQriGbP',
     description: 'Apply to be a speaker at our annual flagship event',
   },
-  {
-    title: 'Events',
-    href: '/events',
-    description: 'Discover our upcoming events and how you can take part!',
-  },
+  // {
+  //   title: 'Events',
+  //   href: '/events',
+  //   description: 'Discover our upcoming events and how you can take part!',
+  // },
 ]
 
 const eventLinks: NavLink[] = [
