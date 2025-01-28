@@ -9,11 +9,11 @@ import { SponsorPayload } from '@/types'
 
 export const metadata: Metadata = {
   title: {
-    template: `%s | TEDxNortheasternU: Renaissance`,
-    default: 'TEDxNortheasternU: Renaissance',
+    template: `%s | TEDxNortheasternU: Uncharted`,
+    default: 'TEDxNortheasternU: Uncharted',
   },
   openGraph: {
-    images: ['/renaissance-og.png'],
+    images: ['/ted-uncharted-blue-bg-white.png'],
   },
 }
 
