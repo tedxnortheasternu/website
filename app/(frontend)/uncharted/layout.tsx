@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: 'TEDxNortheasternU: Uncharted',
   },
   openGraph: {
-    images: ['/ted-uncharted-blue-bg-white.png'],
+    images: ['/ted-uncharted-blue-bg-black.png'],
   },
 }
 
