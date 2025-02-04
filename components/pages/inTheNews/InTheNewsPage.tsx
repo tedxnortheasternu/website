@@ -32,7 +32,6 @@ export function InTheNewsPage({
         <div className="mx-auto border rounded-md border-slate-200 overflow-clip">
           {articles
             .slice() // Makes a shallow copy of the array
-            .sort((a, b) => b.postDateTime.getTime() - a.postDateTime.getTime()) // sort by date
             .map((article) => {
               return <ArticleListItem key={article._id} article={article} />
             })}

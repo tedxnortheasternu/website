@@ -106,17 +106,8 @@ export const newsPageQuery = groq`
   *[_type == "article" && showArticle] {
     _id,
     title,
-    // "slug": slug.current,
     authors,
     description,
-    articlePhoto {
-      asset-> {
-        _id,
-        url
-      },
-      crop,
-      hotspot
-    }
     content,
     postDateTime,
   } | order(postDateTime desc)
