@@ -110,12 +110,12 @@ export const newsPageQuery = groq`
     authors,
     description,
     articlePhoto {
-    asset-> {
-      _id,
-      url
-    },
-    crop,
-    hotspot
+      asset-> {
+        _id,
+        url
+      },
+      crop,
+      hotspot
     }
     content,
     postDateTime,
@@ -130,12 +130,12 @@ export const articleByIdQuery = groq`
     authors,
     description,
     articlePhoto {
-    asset-> {
-      _id,
-      url
-    },
-    crop,
-    hotspot
+      asset-> {
+        _id,
+        url
+      },
+      crop,
+      hotspot
     }
     content,
     postDateTime,
