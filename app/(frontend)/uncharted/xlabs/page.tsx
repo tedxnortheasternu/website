@@ -42,29 +42,28 @@ export default function XLabs() {
               title: 'EXP Makerspace',
               portrait: spiderman,
               logo: makerspace,
+              link: 'https://www.instagram.com/expmakerspace',
             },
             {
               title: 'IDEA: Venture Accelerator',
               portrait: rohan_surana,
               logo: idea_long_logo,
+              link: 'https://www.instagram.com/ideaneu',
             },
             {
               title: 'Co-Founder Matching',
               portrait: agasthya_pic,
               logo: idea_long_logo,
+              link: 'https://www.instagram.com/kaamilthobani',
             },
-          ].map(({ title, portrait, logo }, index) => (
+          ].map(({ title, portrait, logo, link }, index) => (
             <div key={index} className="space-y-2">
               <h3 className="text-xl font-bold text-[#1d2d44] text-center">
                 {title}
               </h3>
               <div className="flex justify-center items-start space-x-4">
                 <div className="flex-shrink-0 w-48 h-48 rounded-md overflow-hidden cursor-pointer">
-                  <Link
-                    href="https://www.instagram.com/kaamilthobani/"
-                    passHref
-                    target="_blank"
-                  >
+                  <Link href={link} passHref target="_blank">
                     <Image
                       src={portrait}
                       alt={`Portrait of ${title}`}
