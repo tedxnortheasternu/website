@@ -102,6 +102,46 @@ export const positionByIdQuery = groq`
   }
 `
 
+export const newsPageQuery = groq`
+  *[_type == "article" && showArticle] {
+    _id,
+    title,
+    // "slug": slug.current,
+    authors,
+    description,
+    articlePhoto {
+    asset-> {
+      _id,
+      url
+    },
+    crop,
+    hotspot
+    }
+    content,
+    postDateTime,
+  } | order(postDateTime desc)
+`
+
+export const articleByIdQuery = groq`
+  *[_type == "article" && _id == $slug][0] {
+    _id,
+    title,
+    // "slug": slug.current,
+    authors,
+    description,
+    articlePhoto {
+    asset-> {
+      _id,
+      url
+    },
+    crop,
+    hotspot
+    }
+    content,
+    postDateTime,
+    showArticle
+  } 
+`
 
 export const eventPaths = groq`
   *[_type == "event" && slug.current != null].slug.current

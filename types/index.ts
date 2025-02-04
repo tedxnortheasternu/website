@@ -96,6 +96,17 @@ export interface PositionPayload {
   priorityRank: number
 }
 
+export interface ArticlePayload {
+  _id: string
+  title: string
+  authors: string[]
+  description: string
+  content: PortableTextBlock[]
+  showArticle: boolean
+  articlePhoto?: Image
+  postDateTime: Date
+}
+
 export interface TeamPayload {
   name: string
   slug: string
