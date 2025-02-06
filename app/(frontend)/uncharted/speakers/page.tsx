@@ -4,21 +4,15 @@ import Image, { StaticImageData } from 'next/image'
 import Link from 'next/link'
 import { Fragment } from 'react'
 
-import aliotoPhoto from '@/components/images/renaissance/alioto.png'
-import chungPhoto from '@/components/images/renaissance/chung.png'
-import colipanoPhoto from '@/components/images/renaissance/colipano.png'
-import cutlerPhoto from '@/components/images/renaissance/cutler.png'
-import dasPhoto from '@/components/images/renaissance/das.png'
-import liuPhoto from '@/components/images/renaissance/liu.png'
-import murphyPhoto from '@/components/images/renaissance/murphy.png'
-import redwoodPhoto from '@/components/images/renaissance/redwood.png'
-import zaranorthover from '@/components/images/uncharted/Zara_Northover.png'
+import zaranorthover from '@/components/images/uncharted/Zara-Northover2025.png'
+import naomiPhoto from '@/components/images/uncharted/Naomi-Rajput.png'
 import { cn } from '@/lib/utils'
 
 type Speaker = {
   photo: StaticImageData
   name: string
   pronouns: string
+  title: string
   headline: string
   bio: string
 }
@@ -28,51 +22,53 @@ const speakers: Speaker[] = [
     photo: zaranorthover,
     name: 'Zara Northover',
     pronouns: 'she/her',
+    title: 'We are Worth The Cost of Justice',
     headline: 'Cognitive Psychologist, Executive Director, Professor',
     bio: ' is an award-winning academic leader, executive director, and professor in cognitive psychology. She has extensive research expertise in cognitive aging, emotional memory, and cross-cultural cognition. Dr. Chung has served in a variety of senior leadership roles and is committed to empowering leaders to reach their full potential through her work in executive coaching and consulting. Dr. Chung currently serves as the Executive Director of The Mills Institute and is dedicated to developing transformative programs and research to drive positive societal impact through a humanics-driven lens.',
   },
+  // {
+  //   photo: cutlerPhoto, //todo
+  //   name: 'Adrian Luzio',
+  //   pronouns: 'he/him',
+  //   headline: 'Entrepreneurship & Finance Senior at Northeastern University',
+  //   bio: " is a senior at Northeastern University, pursuing a Business Administration degree with concentrations in Entrepreneurial Startups and Finance. Diagnosed with ADHD at a young age, Adrian’s journey is one of resilience, growth, and transformation. From navigating the challenges of ADHD to pursuing his ambitions, Adrian has cultivated a unique perspective on self-perception, identity, and embracing challenges. Adrian reframes ADHD as a sensitivity rather than a limitation—an opportunity to uncover one’s unique rhythm. By rejecting societal labels, he inspires others to rewrite their narratives, viewing challenges as catalysts for growth, self-discovery, and purpose. His story highlights universal lessons in resilience and individuality, resonating far beyond ADHD.",
+  // },
+  // {
+  //   photo: aliotoPhoto, //todo
+  //   name: 'Brecker Ferguson',
+  //   pronouns: 'he/him',
+  //   headline: 'A Global Advocate for Sustainability, Business Innovation, and Social Impact Leadership',
+  //   bio: ' is a sustainability scholar graduating from Northeastern University this spring. His research focuses on the intersections of the environment, society, and economics worldwide. He has worked as a nonprofit consultant, a conservation researcher in South Africa, a nonprofit program director in South Africa, and in business development for a climate tech startup. Brecker loves to travel and learn about places near and far. In his free time, Brecker plays the cello and writes, and he expects to publish a memoir later in 2025.',
+  // },
+  // {
+  //   photo: murphyPhoto, //todo
+  //   name: 'Janine Hamner Holman',
+  //   pronouns: 'she/her',
+  //   headline: 'Champion for Workplace Excellence, Organizational Growth, and Inclusive Leadership',
+  //   bio: ' brings over 30 years of experience helping organizations and leaders thrive. As the CEO of J&J Consulting Group, she specializes in leadership development, team performance, and creating workplace cultures where people want to stay and succeed. Janine has worked with Fortune 200 companies, nonprofits, and public sector organizations, blending practical strategies with cutting-edge insights to drive real results. She’s also the host of The Cost of Not Paying Attention podcast and the author of Mind the Gap: A Thought Leader’s Guide to 21st Century Leadership. Her work is about making workplaces better for everyone.',
+  // },
+  // {
+  //   photo: redwoodPhoto, //todo
+  //   name: 'Jarrett Lobb',
+  //   pronouns: 'he/him',
+  //   headline: 'Future Legal Advocate Driving Reform, Policy Research, and Community Impact',
+  //   bio: " is a second-year undergraduate at Northeastern University, pursuing a combined major in mathematics and political science with a concentration in law and legal studies. Jarrett developed an intense interest in the US criminal justice system after a transformative summer volunteering experience at the Haley House Soup Kitchen. By sharing powerful stories from his internship, Jarrett highlights the damage caused by a justice system intended to re-build. Outside of academics, Jarett is actively involved in the Northeastern Debate Society and the Student Alliance for Prison Reform. Some of his favorite hobbies include rock climbing, skateboarding, and spending time with his three pups\!",
+  // },
   {
-    photo: cutlerPhoto,
-    name: 'William Cutler',
-    pronouns: 'he/him',
-    headline: 'Computer Scientist, Physicist, Advocate',
-    bio: ", a Northeastern University senior, is pursuing a combined major in Computer Science and Physics. His unique interest lies at the crossroads of these fields, which he has developed through co-op experiences and research internships. These include two software development co-ops, software and physics research internships in quantum computing, and a nuclear fusion experiment co-op. William brings a fresh viewpoint on blending sciences and humanities, particularly in political discourse. He advocates for the use of a scientific approach to navigate and enrich political conversations in today's divided climate. As graduation nears, William is eager to delve deeper into these intersections and apply his insights to societal challenges.",
-  },
-  {
-    photo: aliotoPhoto,
-    name: 'Dr. Nicole Alioto',
+    photo: naomiPhoto, //todo
+    name: 'Naomi Rajput',
     pronouns: 'she/her',
-    headline: 'CEO, Strategic Planner, Professor',
-    bio: ' has engaged with clients in the education and public sector for over 20 years. Her extensive professional experience spans institutional research, strategic planning, and program evaluation at various institutions and agencies. Dr. Alioto has taught statistics and research methods at several institutions, developing and teaching a specialized graduate course in predictive analytics and data mining aimed at professionals in government settings. As the CEO of Alla Breve Consulting, her goal is to assist public sector organizations and educational institutions in streamlining their strategic planning and analysis processes.',
-  },
-  {
-    photo: murphyPhoto,
-    name: 'Cate Murphy',
-    pronouns: 'she/her',
-    headline: 'Leader, Pharmacist, P3 Student',
-    bio: ' is a P3 student in Northeastern’s Doctor of Pharmacy program. Her choice to pursue pharmacy was inspired by her late father’s cancer treatment with an experimental protocol that has since been approved by the FDA. In his honor, she works at Massachusetts General Hospital in the ambulatory oncology infusion pharmacy preparing chemotherapy and immunotherapy regimens for patients. She serves as President of Lambda Kappa Sigma and is a member of both the national Pharmacy Leadership Society and the Northeastern University Choral Society and Chamber Singers.',
-  },
-  {
-    photo: redwoodPhoto,
-    name: 'Leeyan Redwood',
-    pronouns: 'she/her',
-    headline: 'Athlete, Singer, Youth Mentor',
-    bio: " is a first-generation Jamaican-American and a distinguished alumna of Northeastern's College of Arts, Media and Design. A former Track and Field captain, she holds the third-longest shot put record in the University's history. Now, she channels her energy into a non-profit career, focusing on community engagement and youth mentorship. She is dedicated to providing opportunities and advocacy for those without a voice. Leeyan is also an accomplished singer who performed the national anthem at a sold-out Boston Red Sox game. She cherishes her Jamaican heritage, especially enjoying her mother's famous curry goat and oxtail dishes.",
-  },
-  {
-    photo: dasPhoto,
-    name: 'Debpriya Das',
-    pronouns: 'she/her',
-    headline: 'International Academic, Schwarzman Scholar, Biology Teacher',
-    bio: " recently graduated from Northeastern University's MBA program and is currently pursuing pre-medicine studies at Columbia University. She has an international academic background with a Bachelor's Degree in Neuroscience from the National University of Singapore and the University of Melbourne, and a Master's Degree in Global Affairs from China's Tsinghua University. Debpriya stands out as the first Bangladeshi to receive the Schwarzman Scholarship and has been recognized with esteemed accolades including Northeastern's Huntington 100 and the Women Who Empower Innovator Award. Above all, she is recognized as an accomplished biology teacher and is the founder of Bioland, her own coaching center.",
-  },
-  {
-    photo: liuPhoto,
-    name: 'Melody Liu',
-    pronouns: 'she/her',
-    headline: 'Co-founder, Software Engineer, Digital Illustrator',
-    bio: ' is a 2023 Northeastern University graduate with a degree in Computer Science and Business Administration, and is the co-founder of the Digital Illustration Association (DIA) at NU. She shared a simple yet powerful mission: to create a welcoming and open-minded community that embraces digital illustration in all its forms. Whether through drawing-parties, art challenges, or supportive critiques, Melody helped create a space where artists of all experience levels can connect with patrons and each other, fostering both personal and artistic growth.',
-  },
+    title: 'The Growth Blueprint',
+    headline: 'Advancing Neuroscience, DEI, and Community Impact Through Research and Leadership',
+    bio: " is a dedicated researcher, visionary entrepreneur, and champion of Diversity, Equity, and Inclusion, with a strong focus on healthcare and neuroscience. Her work spans pediatric research, addressing early speech intervention, infant-mother relationships, and digital health, while also collaborating with startups to innovate and validate groundbreaking healthcare solutions. A dynamic leader, Naomi empowers underrepresented communities, particularly Asian Americans and women, by merging her academic expertise with impactful advocacy initiatives. As a talented musician, she has performed over 40 shows across Massachusetts, seamlessly blending Indian Classical and Western music. Naomi exemplifies determination, innovation, and a relentless commitment to advancing research, entrepreneurship, and the arts.",
+  }
+  // {
+  //   photo: liuPhoto, //todo
+  //   name: 'Zara Poon',
+  //   pronouns: 'she/her',
+  //   headline: 'Bridging Bioengineering, Neuroscience, and Mental Health Advocacy',
+  //   bio: ' is a fourth-year undergraduate student at Northeastern University majoring in Bioengineering and Biochemistry. Originally from Berkeley Heights, New Jersey, Zara draws from her personal experiences to explore themes of resilience, self-compassion, and recovery. In her TEDx talk, she opens up about her journey with an eating disorder, providing a candid look into the challenges of recovery and the importance of addressing mental health with empathy. Through her story, Zara hopes to inspire others to embrace vulnerability and navigate life\'s struggles with courage and understanding.',
+  // },
 ]
 
 export const metadata: Metadata = {
@@ -104,7 +100,15 @@ export default function RenaissanceSpeakers() {
                   i < 4 ? 'bg-[#1d2d44]' : 'bg-[#748cab]',
                 )}
               >
-                <p
+                <h2
+                  className={cn(
+                    'mt-2 text-4xl whitespace-wrap text-center font-bold',
+                    i < 4 ? 'text-[#748cab]' : 'text-renaissance-dark',
+                  )}
+                >
+                  {s.title}
+                </h2>
+                {/* <p
                   className={cn(
                     'text-xl leading-none font-renaissance',
                     i < 4
@@ -113,18 +117,29 @@ export default function RenaissanceSpeakers() {
                   )}
                 >
                   {s.headline}
-                </p>
-                <h2
+                </p> */}
+                <h3
                   className={cn(
                     'mt-2 text-3xl whitespace-nowrap',
                     i < 4 ? 'text-[#748cab]' : 'text-renaissance-dark',
                   )}
                 >
-                  <span className="text-4xl font-bold whitespace-normal">
+                  {s.pronouns}<br />
+                  <span className="text-3xl font-bold whitespace-normal">
                     {s.name}
                   </span>{' '}
-                  &middot; {s.pronouns}
-                </h2>
+
+                </h3>
+                <p
+                  className={cn(
+                    'text-xl leading-none font-renaissance pt-4',
+                    i < 4
+                      ? 'text-[#748cab]/85'
+                      : 'text-[#1d2d44]/85',
+                  )}
+                >
+                  {s.headline}
+                </p>
               </div>
             </div>
             <p className="p-6 mt-2 leading-7 rounded-md md:p-8 text-pretty bg-[#748cab]/25">
