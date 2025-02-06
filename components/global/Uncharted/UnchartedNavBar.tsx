@@ -63,6 +63,9 @@ export default function UnchartedNavBarLayout() {
           <NavLink href="/uncharted/location" variant="renaissance">
             Location
           </NavLink>
+          <NavLink href="/uncharted/xlabs" variant="renaissance">
+            XLabs
+          </NavLink>
           <Link
             href="/uncharted/tickets"
             className="!mt-2 md:!mt-0 inline-flex items-center gap-2 px-4 py-1.5 uppercase transition-colors rounded-full text-[#1d2d44] font-renaissance bg-[#b4bcd4] w-max hover:bg-white"
