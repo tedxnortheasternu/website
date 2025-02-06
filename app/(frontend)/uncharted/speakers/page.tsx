@@ -22,9 +22,9 @@ const speakers: Speaker[] = [
     photo: zaranorthover,
     name: 'Zara Northover',
     pronouns: 'she/her',
-    title: 'We are Worth The Cost of Justice',
-    headline: 'Cognitive Psychologist, Executive Director, Professor',
-    bio: ' is an award-winning academic leader, executive director, and professor in cognitive psychology. She has extensive research expertise in cognitive aging, emotional memory, and cross-cultural cognition. Dr. Chung has served in a variety of senior leadership roles and is committed to empowering leaders to reach their full potential through her work in executive coaching and consulting. Dr. Chung currently serves as the Executive Director of The Mills Institute and is dedicated to developing transformative programs and research to drive positive societal impact through a humanics-driven lens.',
+    title: 'We Are Worth the Cost of Justice',
+    headline: 'Olympian, Industry Leader, Advocate for Justice.',
+    bio: ' is a trailblazing Olympian, industry leader, and CEO of Moving in Faith, a global empowerment brand. Representing Jamaica in the shot put at the 2008 Beijing Olympics, she made history as Northeastern University’s first female Olympian and was inducted into its Hall of Fame in 2014. After transitioning from athletics, Zara excelled in the corporate world, driving $40 million in sales as a Purchase Banker within a year, surpassing occupancy goals as a Property Manager. As a Product Manager of Strategy and Innovation, she created initiatives that advanced employee diversity, growth, and organizational success. Currently, she leads Business Development for a Detroit-based architectural firm known for curating extraordinary spaces across the nation. As a sought-after speaker, advocate, and author preparing to release her book, The Cost of Justice, Zara’s journey inspires others to break barriers, lead with faith, and achieve greatness with resilience and courage.',
   },
   // {
   //   photo: cutlerPhoto, //todo
@@ -58,7 +58,7 @@ const speakers: Speaker[] = [
     photo: naomiPhoto, //todo
     name: 'Naomi Rajput',
     pronouns: 'she/her',
-    title: 'The Growth Blueprint',
+    title: 'The Growth Blueprint: Neuroplasticity, Grit, and the Power of Change',
     headline: 'Advancing Neuroscience, DEI, and Community Impact Through Research and Leadership',
     bio: " is a dedicated researcher, visionary entrepreneur, and champion of Diversity, Equity, and Inclusion, with a strong focus on healthcare and neuroscience. Her work spans pediatric research, addressing early speech intervention, infant-mother relationships, and digital health, while also collaborating with startups to innovate and validate groundbreaking healthcare solutions. A dynamic leader, Naomi empowers underrepresented communities, particularly Asian Americans and women, by merging her academic expertise with impactful advocacy initiatives. As a talented musician, she has performed over 40 shows across Massachusetts, seamlessly blending Indian Classical and Western music. Naomi exemplifies determination, innovation, and a relentless commitment to advancing research, entrepreneurship, and the arts.",
   }
@@ -102,7 +102,7 @@ export default function RenaissanceSpeakers() {
               >
                 <h2
                   className={cn(
-                    'mt-2 text-4xl whitespace-wrap text-center font-bold',
+                    'pt-6 text-1xl whitespace-wrap text-left font-bold',
                     i < 4 ? 'text-[#748cab]' : 'text-renaissance-dark',
                   )}
                 >
@@ -120,15 +120,12 @@ export default function RenaissanceSpeakers() {
                 </p> */}
                 <h3
                   className={cn(
-                    'mt-2 text-3xl whitespace-nowrap',
+                    'mt-7 text-3xl whitespace-normal',
                     i < 4 ? 'text-[#748cab]' : 'text-renaissance-dark',
                   )}
                 >
-                  {s.pronouns}<br />
-                  <span className="text-3xl font-bold whitespace-normal">
-                    {s.name}
-                  </span>{' '}
-
+                  <span className="font-bold">{s.name}</span><br />
+                  <span className="mt-2 text-3xl whitespace-nowrap">{s.pronouns}</span>
                 </h3>
                 <p
                   className={cn(
@@ -143,7 +140,7 @@ export default function RenaissanceSpeakers() {
               </div>
             </div>
             <p className="p-6 mt-2 leading-7 rounded-md md:p-8 text-pretty bg-[#748cab]/25">
-              <b className="text-renaissance-dark">{s.name}</b>
+              <b className="text-[#1d2d44] ">{s.name}</b>
               {s.bio}
             </p>
           </div>
