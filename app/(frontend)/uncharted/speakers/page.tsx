@@ -6,6 +6,7 @@ import { Fragment } from 'react'
 
 import zaranorthover from '@/components/images/uncharted/Zara-Northover2025.png'
 import naomiPhoto from '@/components/images/uncharted/Naomi-Rajput.png'
+import poonPhoto from '@/components/images/uncharted/Zara-Poon.png'
 import { cn } from '@/lib/utils'
 
 type Speaker = {
@@ -61,14 +62,15 @@ const speakers: Speaker[] = [
     title: 'The Growth Blueprint: Neuroplasticity, Grit, and the Power of Change',
     headline: 'Advancing Neuroscience, DEI, and Community Impact Through Research and Leadership',
     bio: " is a dedicated researcher, visionary entrepreneur, and champion of Diversity, Equity, and Inclusion, with a strong focus on healthcare and neuroscience. Her work spans pediatric research, addressing early speech intervention, infant-mother relationships, and digital health, while also collaborating with startups to innovate and validate groundbreaking healthcare solutions. A dynamic leader, Naomi empowers underrepresented communities, particularly Asian Americans and women, by merging her academic expertise with impactful advocacy initiatives. As a talented musician, she has performed over 40 shows across Massachusetts, seamlessly blending Indian Classical and Western music. Naomi exemplifies determination, innovation, and a relentless commitment to advancing research, entrepreneurship, and the arts.",
+  },
+  {
+    photo: poonPhoto, //todo
+    name: 'Zara Poon',
+    pronouns: 'she/her',
+    title: 'Lessons from the Psych Ward: The Importance of Vulnerability',
+    headline: 'Bridging Bioengineering, Neuroscience, and Mental Health Advocacy',
+    bio: ' is a fourth-year undergraduate student at Northeastern University majoring in Bioengineering and Biochemistry. Originally from Berkeley Heights, New Jersey, Zara draws from her personal experiences to explore themes of resilience, self-compassion, and recovery. In her TEDx talk, she opens up about her journey with an eating disorder, providing a candid look into the challenges of recovery and the importance of addressing mental health with empathy. Through her story, Zara hopes to inspire others to embrace vulnerability and navigate life\'s struggles with courage and understanding.',
   }
-  // {
-  //   photo: liuPhoto, //todo
-  //   name: 'Zara Poon',
-  //   pronouns: 'she/her',
-  //   headline: 'Bridging Bioengineering, Neuroscience, and Mental Health Advocacy',
-  //   bio: ' is a fourth-year undergraduate student at Northeastern University majoring in Bioengineering and Biochemistry. Originally from Berkeley Heights, New Jersey, Zara draws from her personal experiences to explore themes of resilience, self-compassion, and recovery. In her TEDx talk, she opens up about her journey with an eating disorder, providing a candid look into the challenges of recovery and the importance of addressing mental health with empathy. Through her story, Zara hopes to inspire others to embrace vulnerability and navigate life\'s struggles with courage and understanding.',
-  // },
 ]
 
 export const metadata: Metadata = {
