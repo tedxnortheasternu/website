@@ -7,6 +7,7 @@ import { Fragment } from 'react'
 import zaranorthover from '@/components/images/uncharted/Zara-Northover2025.png'
 import naomiPhoto from '@/components/images/uncharted/Naomi-Rajput.png'
 import poonPhoto from '@/components/images/uncharted/Zara-Poon.png'
+import jarrettPhoto from '@/components/images/uncharted/Jarrett-Lobb.png'
 import { cn } from '@/lib/utils'
 
 type Speaker = {
@@ -48,13 +49,6 @@ const speakers: Speaker[] = [
   //   headline: 'Champion for Workplace Excellence, Organizational Growth, and Inclusive Leadership',
   //   bio: ' brings over 30 years of experience helping organizations and leaders thrive. As the CEO of J&J Consulting Group, she specializes in leadership development, team performance, and creating workplace cultures where people want to stay and succeed. Janine has worked with Fortune 200 companies, nonprofits, and public sector organizations, blending practical strategies with cutting-edge insights to drive real results. She’s also the host of The Cost of Not Paying Attention podcast and the author of Mind the Gap: A Thought Leader’s Guide to 21st Century Leadership. Her work is about making workplaces better for everyone.',
   // },
-  // {
-  //   photo: redwoodPhoto, //todo
-  //   name: 'Jarrett Lobb',
-  //   pronouns: 'he/him',
-  //   headline: 'Future Legal Advocate Driving Reform, Policy Research, and Community Impact',
-  //   bio: " is a second-year undergraduate at Northeastern University, pursuing a combined major in mathematics and political science with a concentration in law and legal studies. Jarrett developed an intense interest in the US criminal justice system after a transformative summer volunteering experience at the Haley House Soup Kitchen. By sharing powerful stories from his internship, Jarrett highlights the damage caused by a justice system intended to re-build. Outside of academics, Jarett is actively involved in the Northeastern Debate Society and the Student Alliance for Prison Reform. Some of his favorite hobbies include rock climbing, skateboarding, and spending time with his three pups\!",
-  // },
   {
     photo: naomiPhoto, //todo
     name: 'Naomi Rajput',
@@ -70,6 +64,14 @@ const speakers: Speaker[] = [
     title: 'Lessons from the Psych Ward: The Importance of Vulnerability',
     headline: 'Bridging Bioengineering, Neuroscience, and Mental Health Advocacy',
     bio: ' is a fourth-year undergraduate student at Northeastern University majoring in Bioengineering and Biochemistry. Originally from Berkeley Heights, New Jersey, Zara draws from her personal experiences to explore themes of resilience, self-compassion, and recovery. In her TEDx talk, she opens up about her journey with an eating disorder, providing a candid look into the challenges of recovery and the importance of addressing mental health with empathy. Through her story, Zara hopes to inspire others to embrace vulnerability and navigate life\'s struggles with courage and understanding.',
+  },
+  {
+    photo: jarrettPhoto, //todo
+    name: 'Jarrett Lobb',
+    pronouns: 'he/him',
+    title: 'Reimagining Justice: Changing Perspectives on the Prison System',
+    headline: 'Future Legal Advocate Driving Reform, Policy Research, and Community Impact',
+    bio: " is a second-year undergraduate at Northeastern University, pursuing a combined major in mathematics and political science with a concentration in law and legal studies. Jarrett developed an intense interest in the US criminal justice system after a transformative summer volunteering experience at the Haley House Soup Kitchen. By sharing powerful stories from his internship, Jarrett highlights the damage caused by a justice system intended to re-build. Outside of academics, Jarett is actively involved in the Northeastern Debate Society and the Student Alliance for Prison Reform. Some of his favorite hobbies include rock climbing, skateboarding, and spending time with his three pups\!",
   }
 ]
 
