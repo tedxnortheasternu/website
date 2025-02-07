@@ -24,7 +24,7 @@ const speakers: Speaker[] = [
     name: 'Zara Northover',
     pronouns: 'she/her',
     title: 'We Are Worth the Cost of Justice',
-    headline: 'Olympian, Industry Leader, Advocate for Justice.',
+    headline: 'Olympian, Industry Leader, Advocate for Justice',
     bio: ' is a trailblazing Olympian, industry leader, and CEO of Moving in Faith, a global empowerment brand. Representing Jamaica in the shot put at the 2008 Beijing Olympics, she made history as Northeastern University’s first female Olympian and was inducted into its Hall of Fame in 2014. After transitioning from athletics, Zara excelled in the corporate world, driving $40 million in sales as a Purchase Banker within a year, surpassing occupancy goals as a Property Manager. As a Product Manager of Strategy and Innovation, she created initiatives that advanced employee diversity, growth, and organizational success. Currently, she leads Business Development for a Detroit-based architectural firm known for curating extraordinary spaces across the nation. As a sought-after speaker, advocate, and author preparing to release her book, The Cost of Justice, Zara’s journey inspires others to break barriers, lead with faith, and achieve greatness with resilience and courage.',
   },
   // {
