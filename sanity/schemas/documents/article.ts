@@ -62,10 +62,20 @@ export default defineType({
       to: [{ type: 'image' }],
     }),
     defineField({
-        type: 'datetime',
-        name: 'postDateTime',
-        title: 'Post Date',
-      }),
+      type: 'datetime',
+      name: 'postDateTime',
+      title: 'Posting Date',
+    }),
+    defineField({
+      type: 'string',
+      name: 'linkToArticle',
+      title: 'Insert Link to Article'
+    }),
+    defineField({
+      type: 'string',
+      name: 'articleType',
+      title: 'Insert the article type (Blog, Op-ed, etc)'
+    })
   ],
   preview: {
     select: {

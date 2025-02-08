@@ -105,6 +105,8 @@ export interface ArticlePayload {
   showArticle: boolean
   articlePhoto?: Image
   postDateTime: Date
+  linkToArticle: string;
+  articleType: string;
 }
 
 export interface TeamPayload {

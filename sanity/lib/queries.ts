@@ -110,6 +110,8 @@ export const newsPageQuery = groq`
     description,
     content,
     postDateTime,
+    linkToArticle,
+    articleType,
   } | order(postDateTime desc)
 `
 
@@ -130,6 +132,8 @@ export const articleByIdQuery = groq`
     }
     content,
     postDateTime,
+    linkToArticle,
+    articleType,
     showArticle
   } 
 `
