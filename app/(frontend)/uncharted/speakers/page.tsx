@@ -8,6 +8,7 @@ import zaranorthover from '@/components/images/uncharted/Zara-Northover2025.png'
 import naomiPhoto from '@/components/images/uncharted/Naomi-Rajput.png'
 import poonPhoto from '@/components/images/uncharted/Zara-Poon.png'
 import jarrettPhoto from '@/components/images/uncharted/Jarrett-Lobb.png'
+import janinePhoto from '@/components/images/uncharted/Janine-Hamner-Holman.png'
 import { cn } from '@/lib/utils'
 
 type Speaker = {
@@ -42,13 +43,6 @@ const speakers: Speaker[] = [
   //   headline: 'A Global Advocate for Sustainability, Business Innovation, and Social Impact Leadership',
   //   bio: ' is a sustainability scholar graduating from Northeastern University this spring. His research focuses on the intersections of the environment, society, and economics worldwide. He has worked as a nonprofit consultant, a conservation researcher in South Africa, a nonprofit program director in South Africa, and in business development for a climate tech startup. Brecker loves to travel and learn about places near and far. In his free time, Brecker plays the cello and writes, and he expects to publish a memoir later in 2025.',
   // },
-  // {
-  //   photo: murphyPhoto, //todo
-  //   name: 'Janine Hamner Holman',
-  //   pronouns: 'she/her',
-  //   headline: 'Champion for Workplace Excellence, Organizational Growth, and Inclusive Leadership',
-  //   bio: ' brings over 30 years of experience helping organizations and leaders thrive. As the CEO of J&J Consulting Group, she specializes in leadership development, team performance, and creating workplace cultures where people want to stay and succeed. Janine has worked with Fortune 200 companies, nonprofits, and public sector organizations, blending practical strategies with cutting-edge insights to drive real results. She’s also the host of The Cost of Not Paying Attention podcast and the author of Mind the Gap: A Thought Leader’s Guide to 21st Century Leadership. Her work is about making workplaces better for everyone.',
-  // },
   {
     photo: naomiPhoto, //todo
     name: 'Naomi Rajput',
@@ -72,6 +66,14 @@ const speakers: Speaker[] = [
     title: 'Reimagining Justice: Changing Perspectives on the Prison System',
     headline: 'Future Legal Advocate Driving Reform, Policy Research, and Community Impact',
     bio: " is a second-year undergraduate at Northeastern University, pursuing a combined major in mathematics and political science with a concentration in law and legal studies. Jarrett developed an intense interest in the US criminal justice system after a transformative summer volunteering experience at the Haley House Soup Kitchen. By sharing powerful stories from his internship, Jarrett highlights the damage caused by a justice system intended to re-build. Outside of academics, Jarett is actively involved in the Northeastern Debate Society and the Student Alliance for Prison Reform. Some of his favorite hobbies include rock climbing, skateboarding, and spending time with his three pups\!",
+  },
+  {
+    photo: janinePhoto, //todo
+    name: 'Janine Hamner Holman',
+    pronouns: 'she/her',
+    title: 'The Revolution At Work That No One Noticed',
+    headline: 'Champion for Workplace Excellence, Growth, and Inclusive Leadership',
+    bio: ' brings over 30 years of experience helping organizations and leaders thrive. As the CEO of J&J Consulting Group, she specializes in leadership development, team performance, and creating workplace cultures where people want to stay and succeed. Janine has worked with Fortune 200 companies, nonprofits, and public sector organizations, blending practical strategies with cutting-edge insights to drive real results. She’s also the host of The Cost of Not Paying Attention podcast and the author of Mind the Gap: A Thought Leader’s Guide to 21st Century Leadership. Her work is about making workplaces better for everyone.',
   }
 ]
 
@@ -100,14 +102,12 @@ export default function RenaissanceSpeakers() {
 
               <div
                 className={cn(
-                  'flex flex-col justify-end px-6 py-8 md:p-8 rounded-md [grid-area:speaker-info]',
-                  i < 4 ? 'bg-[#1d2d44]' : 'bg-[#748cab]',
+                  'flex flex-col justify-end px-6 py-8 md:p-8 rounded-md [grid-area:speaker-info] bg-[#1d2d44]'
                 )}
               >
                 <h2
                   className={cn(
-                    'pt-6 text-1xl whitespace-wrap text-left font-bold',
-                    i < 4 ? 'text-[#748cab]' : 'text-renaissance-dark',
+                    'pt-6 text-1xl whitespace-wrap text-left font-bold text-[#748cab]'
                   )}
                 >
                   {s.title}
@@ -124,19 +124,15 @@ export default function RenaissanceSpeakers() {
                 </p> */}
                 <h3
                   className={cn(
-                    'mt-7 text-3xl whitespace-normal',
-                    i < 4 ? 'text-[#748cab]' : 'text-renaissance-dark',
+                    'mt-7 text-3xl whitespace-normal text-[#748cab]'
                   )}
                 >
                   <span className="font-bold">{s.name}</span><br />
-                  <span className="mt-2 text-3xl whitespace-nowrap">{s.pronouns}</span>
+                  <span className="mt-2 text-2xl whitespace-nowrap">{s.pronouns}</span>
                 </h3>
                 <p
                   className={cn(
-                    'text-xl leading-none font-renaissance pt-4',
-                    i < 4
-                      ? 'text-[#748cab]/85'
-                      : 'text-[#1d2d44]/85',
+                    'text-xl leading-none font-renaissance pt-4 text-[#748cab]/85'
                   )}
                 >
                   {s.headline}
