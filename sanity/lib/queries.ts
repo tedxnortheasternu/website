@@ -116,7 +116,7 @@ export const newsPageQuery = groq`
 `
 
 export const articleByIdQuery = groq`
-  *[_type == "article" && _id == $slug][0] {
+  *[_type == "article"]{
     _id,
     title,
     // "slug": slug.current,
