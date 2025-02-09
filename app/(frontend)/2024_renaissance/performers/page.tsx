@@ -43,7 +43,7 @@ const NUSanskriti: React.FC = () => {
     </div>
 
 
-    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
+    <div className="grid w-full grid-cols-1 gap-4 mx-auto lg:grid-cols-3 max-w-7xl">
     <WobbleCard
         containerClassName="col-span-1 lg:col-span-2 h-full  bg-[#1d2d44] min-h-[500px] lg:min-h-[300px]"
         className=""
@@ -54,10 +54,10 @@ const NUSanskriti: React.FC = () => {
           NU Malhar
           </h2>
           <p className="mt-4 mr-5 text-left text-base/6 text-neutral-200">
-          Experience the rich tapestry of Indian classical music with NU Malhar, Northeastern University's premier Indian classical music ensemble. Featuring a blend of traditional ragas and contemporary interpretations, NU Malhar's performance is a deep dive into the soul-stirring world of Indian music. Let the melodious harmonies of sitars, tablas, and voices transport you to a realm of musical bliss that transcends boundaries and resonates with the heart.
+          Experience the rich tapestry of Indian classical music with NU Malhar, Northeastern Universitys premier Indian classical music ensemble. Featuring a blend of traditional ragas and contemporary interpretations, NU Malhars performance is a deep dive into the soul-stirring world of Indian music. Let the melodious harmonies of sitars, tablas, and voices transport you to a realm of musical bliss that transcends boundaries and resonates with the heart.
           </p>
         </div>
-        <div className="content-center items-center">
+        <div className="items-center content-center">
           <Image
             src={NUMalharLogo}
             width={500}
