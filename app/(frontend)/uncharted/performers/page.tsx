@@ -55,9 +55,9 @@ const NUSanskriti: React.FC = () => {
               </h2>
               <p className="mt-4 mr-5 text-left text-base/6 text-neutral-200">
                 Experience the rich tapestry of Indian classical music with NU
-                Malhar, Northeastern University's premier Indian classical music
+                Malhar, Northeastern University premier Indian classical music
                 ensemble. Featuring a blend of traditional ragas and
-                contemporary interpretations, NU Malhar's performance is a deep
+                contemporary interpretations, NU Malhars performance is a deep
                 dive into the soul-stirring world of Indian music. Let the
                 melodious harmonies of sitars, tablas, and voices transport you
                 to a realm of musical bliss that transcends boundaries and
