@@ -28,10 +28,11 @@ export function InTheNewsPage({
       </div>
 
       {/* Articles List */}
-      {articles.length > 0 ? (
+      {articles && articles.length > 0 ? (
         <div className="mx-auto border rounded-md border-slate-200 overflow-clip">
           {articles
             .slice() // Makes a shallow copy of the array
+            .sort((a,b) => new Date(b.postDateTime).getTime() - new Date(a.postDateTime).getTime())
             .map((article) => {
               return <ArticleListItem key={article._id} article={article} />
             })}

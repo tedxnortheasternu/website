@@ -22,7 +22,7 @@ export function ArticleListItem(props: ArticleProps) {
 
   const postDate = new Date(article.postDateTime)
 
-  if (postDate == null) return new Date()
+  // if (postDate == null) return new Date()
 
   return (
     <div className="flex flex-col p-4 transition border-t first:border-0 border-slate-200">
