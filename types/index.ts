@@ -104,7 +104,7 @@ export interface ArticlePayload {
   content: PortableTextBlock[]
   showArticle: boolean
   articlePhoto?: Image
-  postDateTime: Date
+  postDateTime: string
   linkToArticle: string;
   articleType: string;
 }
