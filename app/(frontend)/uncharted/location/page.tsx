@@ -37,6 +37,15 @@ export default function RenaissanceLocation() {
           </Link>
         </div>
 
+        <div className="p-8 rounded-md bg-[#748cab] text-[#1d2d44]">
+          <p className="text-md leading-tight">
+            Parking is not included in the ticket price, and unfortunately, we are unable to reimburse any parking expenses. However, there are several convenient options nearby. Free street parking is available on most of Columbus Avenue throughout the weekend, as well as on certain sections of surrounding streets like Tremont and Camden. To help you find free parking, we recommend using the Spot Angel app, but please be sure to check street signs for any restrictions before you park.
+            <br></br>
+            <br></br>
+            For those who prefer garage parking, the Renaissance Park and Columbus garages are just a 3-minute walk from ISEC, and both charge a $20 fee on weekends.
+          </p>
+        </div>
+
         <div className="bg-[#748cab]">
           <Image
             src={map}
