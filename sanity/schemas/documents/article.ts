@@ -74,7 +74,12 @@ export default defineType({
     defineField({
       type: 'string',
       name: 'articleType',
-      title: 'Insert the article type (Blog, Op-ed, etc)'
+      title: 'Insert the article type (ex. Blog, Op-ed, etc)'
+    }),
+    defineField({
+      type: 'string',
+      name: 'semesterPosted',
+      title: 'Insert the semester this was posted (ex. Fall 2024, Spring 2025)'
     })
   ],
   preview: {

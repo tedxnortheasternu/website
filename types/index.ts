@@ -107,6 +107,7 @@ export interface ArticlePayload {
   postDateTime: string
   linkToArticle: string;
   articleType: string;
+  semesterPosted: string;
 }
 
 export interface TeamPayload {

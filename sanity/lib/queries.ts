@@ -112,6 +112,7 @@ export const newsPageQuery = groq`
     postDateTime,
     linkToArticle,
     articleType,
+    semesterPosted,
   } | order(postDateTime desc)
 `
 
@@ -134,6 +135,7 @@ export const articleByIdQuery = groq`
     postDateTime,
     linkToArticle,
     articleType,
+    semesterPosted,
     showArticle
   } 
 `

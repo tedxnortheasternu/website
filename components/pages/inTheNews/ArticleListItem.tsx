@@ -22,15 +22,13 @@ export function ArticleListItem(props: ArticleProps) {
 
   const postDate = new Date(article.postDateTime)
 
-  // if (postDate == null) return new Date()
-
   return (
     <div className="flex flex-col p-4 transition border-t first:border-0 border-slate-200">
       <div className="grid gap-8 p-3 md:grid-cols-2">
         <div>
           {/* Authors */}
           <div className="flex flex-row items-center gap-1.5 mb-2 text-xs font-bold uppercase">
-            ...
+            {article.semesterPosted}
             <span className="text-slate-400">&middot;</span>
             <span className="bg-red-600 rounded-full px-2 py-0.5 text-white">
                 {article.articleType || "Article"}
