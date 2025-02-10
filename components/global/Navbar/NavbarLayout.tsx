@@ -106,12 +106,21 @@ const renaissanceLinks: NavLink[] = [
   // },
 ]
 
+// const mediaLinks: NavLink[] = [
+//   {
+//     title: 'In The News',
+//     href: '/inthenews',
+//     description: 'Stay updated with our latest features, achievements, and news coverage.'
+//   },
+// ]
+
 export default function NavbarLayout() {
   const [open, setOpen] = useState(false)
 
   return (
     <header className="w-full py-4 text-sm bg-white">
       <nav className="w-full max-w-screen-xl px-4 mx-auto lg:flex lg:items-center lg:justify-between">
+        {/* TEDxNortheasternU Logo Links */}
         <div className="flex items-center justify-between">
           <Link href="/">
             <Image
@@ -141,6 +150,7 @@ export default function NavbarLayout() {
           </div>
         </div>
 
+        {/* Navbar Subcategories */}
         <div
           className={cn(
             'mt-2 shadow-md lg:mt-0 rounded-lg border border-slate-200 p-4 lg:p-0 flex flex-col lg:flex-row lg:justify-between transition-all duration-300 basis-full grow lg:border-transparent lg:shadow-none lg:gap-4 lg:flex',
@@ -149,6 +159,7 @@ export default function NavbarLayout() {
         >
           <NavigationMenu>
             <NavigationMenuList>
+              {/* About Pages */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger>About</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -174,6 +185,7 @@ export default function NavbarLayout() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
+                {/* Join Pages */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Join</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -234,6 +246,8 @@ export default function NavbarLayout() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem> */}
+
+              {/* Event Pages */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Events</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -259,6 +273,7 @@ export default function NavbarLayout() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
+              {/* Sponsor Pages */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Sponsor</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -284,6 +299,16 @@ export default function NavbarLayout() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
+              {/* In The News Pages */}
+              <NavigationMenuItem>
+                <Link href="/inTheNews" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    News
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              
+              {/* Contact Pages */}
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -291,7 +316,8 @@ export default function NavbarLayout() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-
+                
+              {/* Studio Pages */}
               {process.env.NODE_ENV === 'development' ? (
                 <NavigationMenuItem>
                   <Link href="/studio" legacyBehavior passHref>

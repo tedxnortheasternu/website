@@ -6,9 +6,11 @@ import { client } from '@/sanity/lib/client'
 import {
   aboutPageQuery,
   applyPageQuery as applyPageQuery,
+  articleByIdQuery,
   eventBySlugQuery,
   homePageQuery,
   membersPageQuery as membersPageQuery,
+  newsPageQuery,
   pagesBySlugQuery,
   pastEventsQuery,
   pastEventsSlugQuery,
@@ -16,11 +18,12 @@ import {
   settingsQuery,
   sponsorsQuery,
   teamsPageQuery,
-  upcomingEventsQuery,
+  upcomingEventsQuery
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
 import {
   AboutPagePayload,
+  ArticlePayload,
   HomePagePayload,
   MembersPagePayload,
   PagePayload,
@@ -165,6 +168,22 @@ export function loadPositionPage(slug: string) {
     positionByIdQuery,
     { slug },
     { next: { tags: [`position:${slug}`] } },
+  )
+}
+
+export function loadNewsPage() {
+  return loadQuery<ArticlePayload[] | null>(
+    newsPageQuery,
+    {},
+    { next: { tags: [`articles`] } },
+  )
+}
+
+export function loadArticlePage(slug: string) {
+  return loadQuery<ArticlePayload | null>(
+    articleByIdQuery,
+    { slug },
+    { next: { tags: [`article:${slug}`] } },
   )
 }
 

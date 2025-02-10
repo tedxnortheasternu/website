@@ -12,6 +12,7 @@ import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { apiVersion, dataset, projectId } from '@/sanity/lib/api'
 import { locate } from '@/sanity/plugins/locate'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
+import article from '@/sanity/schemas/documents/article'
 import campus from '@/sanity/schemas/documents/campus'
 import event from '@/sanity/schemas/documents/event'
 import eventCategory from '@/sanity/schemas/documents/eventCategory'
@@ -60,6 +61,7 @@ export default defineConfig({
       settings,
 
       // Documents
+      article,
       page,
       event,
       pastEvents,
