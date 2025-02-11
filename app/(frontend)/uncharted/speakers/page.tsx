@@ -9,6 +9,7 @@ import naomiPhoto from '@/components/images/uncharted/Naomi-Rajput.png'
 import poonPhoto from '@/components/images/uncharted/Zara-Poon.png'
 import jarrettPhoto from '@/components/images/uncharted/Jarrett-Lobb.png'
 import janinePhoto from '@/components/images/uncharted/Janine-Hamner-Holman.png'
+import breckerPhoto from '@/components/images/uncharted/Brecker-Ferguson.png'
 import { cn } from '@/lib/utils'
 
 type Speaker = {
@@ -29,22 +30,8 @@ const speakers: Speaker[] = [
     headline: 'Olympian, Industry Leader, Advocate for Justice',
     bio: ' is a trailblazing Olympian, industry leader, and CEO of Moving in Faith, a global empowerment brand. Representing Jamaica in the shot put at the 2008 Beijing Olympics, she made history as Northeastern University’s first female Olympian and was inducted into its Hall of Fame in 2014. After transitioning from athletics, Zara excelled in the corporate world, driving $40 million in sales as a Purchase Banker within a year, surpassing occupancy goals as a Property Manager. As a Product Manager of Strategy and Innovation, she created initiatives that advanced employee diversity, growth, and organizational success. Currently, she leads Business Development for a Detroit-based architectural firm known for curating extraordinary spaces across the nation. As a sought-after speaker, advocate, and author preparing to release her book, The Cost of Justice, Zara’s journey inspires others to break barriers, lead with faith, and achieve greatness with resilience and courage.',
   },
-  // {
-  //   photo: cutlerPhoto, //todo
-  //   name: 'Adrian Luzio',
-  //   pronouns: 'he/him',
-  //   headline: 'Entrepreneurship & Finance Senior at Northeastern University',
-  //   bio: " is a senior at Northeastern University, pursuing a Business Administration degree with concentrations in Entrepreneurial Startups and Finance. Diagnosed with ADHD at a young age, Adrian’s journey is one of resilience, growth, and transformation. From navigating the challenges of ADHD to pursuing his ambitions, Adrian has cultivated a unique perspective on self-perception, identity, and embracing challenges. Adrian reframes ADHD as a sensitivity rather than a limitation—an opportunity to uncover one’s unique rhythm. By rejecting societal labels, he inspires others to rewrite their narratives, viewing challenges as catalysts for growth, self-discovery, and purpose. His story highlights universal lessons in resilience and individuality, resonating far beyond ADHD.",
-  // },
-  // {
-  //   photo: aliotoPhoto, //todo
-  //   name: 'Brecker Ferguson',
-  //   pronouns: 'he/him',
-  //   headline: 'A Global Advocate for Sustainability, Business Innovation, and Social Impact Leadership',
-  //   bio: ' is a sustainability scholar graduating from Northeastern University this spring. His research focuses on the intersections of the environment, society, and economics worldwide. He has worked as a nonprofit consultant, a conservation researcher in South Africa, a nonprofit program director in South Africa, and in business development for a climate tech startup. Brecker loves to travel and learn about places near and far. In his free time, Brecker plays the cello and writes, and he expects to publish a memoir later in 2025.',
-  // },
   {
-    photo: naomiPhoto, //todo
+    photo: naomiPhoto,
     name: 'Naomi Rajput',
     pronouns: 'she/her',
     title: 'The Growth Blueprint: Neuroplasticity, Grit, and the Power of Change',
@@ -52,7 +39,7 @@ const speakers: Speaker[] = [
     bio: " is a dedicated researcher, visionary entrepreneur, and champion of Diversity, Equity, and Inclusion, with a strong focus on healthcare and neuroscience. Her work spans pediatric research, addressing early speech intervention, infant-mother relationships, and digital health, while also collaborating with startups to innovate and validate groundbreaking healthcare solutions. A dynamic leader, Naomi empowers underrepresented communities, particularly Asian Americans and women, by merging her academic expertise with impactful advocacy initiatives. As a talented musician, she has performed over 40 shows across Massachusetts, seamlessly blending Indian Classical and Western music. Naomi exemplifies determination, innovation, and a relentless commitment to advancing research, entrepreneurship, and the arts.",
   },
   {
-    photo: poonPhoto, //todo
+    photo: poonPhoto,
     name: 'Zara Poon',
     pronouns: 'she/her',
     title: 'Lessons from the Psych Ward: The Importance of Vulnerability',
@@ -60,7 +47,7 @@ const speakers: Speaker[] = [
     bio: ' is a fourth-year undergraduate student at Northeastern University majoring in Bioengineering and Biochemistry. Originally from Berkeley Heights, New Jersey, Zara draws from her personal experiences to explore themes of resilience, self-compassion, and recovery. In her TEDx talk, she opens up about her journey with an eating disorder, providing a candid look into the challenges of recovery and the importance of addressing mental health with empathy. Through her story, Zara hopes to inspire others to embrace vulnerability and navigate life\'s struggles with courage and understanding.',
   },
   {
-    photo: jarrettPhoto, //todo
+    photo: jarrettPhoto,
     name: 'Jarrett Lobb',
     pronouns: 'he/him',
     title: 'Reimagining Justice: Changing Perspectives on the Prison System',
@@ -68,12 +55,20 @@ const speakers: Speaker[] = [
     bio: " is a second-year undergraduate at Northeastern University, pursuing a combined major in mathematics and political science with a concentration in law and legal studies. Jarrett developed an intense interest in the US criminal justice system after a transformative summer volunteering experience at the Haley House Soup Kitchen. By sharing powerful stories from his internship, Jarrett highlights the damage caused by a justice system intended to re-build. Outside of academics, Jarett is actively involved in the Northeastern Debate Society and the Student Alliance for Prison Reform. Some of his favorite hobbies include rock climbing, skateboarding, and spending time with his three pups\!",
   },
   {
-    photo: janinePhoto, //todo
+    photo: janinePhoto,
     name: 'Janine Hamner Holman',
     pronouns: 'she/her',
     title: 'The Revolution At Work That No One Noticed',
     headline: 'Champion for Workplace Excellence, Growth, and Inclusive Leadership',
     bio: ' brings over 30 years of experience helping organizations and leaders thrive. As the CEO of J&J Consulting Group, she specializes in leadership development, team performance, and creating workplace cultures where people want to stay and succeed. Janine has worked with Fortune 200 companies, nonprofits, and public sector organizations, blending practical strategies with cutting-edge insights to drive real results. She’s also the host of The Cost of Not Paying Attention podcast and the author of Mind the Gap: A Thought Leader’s Guide to 21st Century Leadership. Her work is about making workplaces better for everyone.',
+  },
+  {
+    photo: breckerPhoto,
+    name: 'Brecker Ferguson',
+    pronouns: 'he/him',
+    title: 'Witnessing Violence in a Broken Conservation System',
+    headline: 'A Global Advocate for Sustainability, Business Innovation, and Leadership',
+    bio: ' is a sustainability scholar graduating from Northeastern University this spring. His research focuses on the intersections of the environment, society, and economics worldwide. He has worked as a nonprofit consultant, a conservation researcher in South Africa, a nonprofit program director in South Africa, and in business development for a climate tech startup. Brecker loves to travel and learn about places near and far. In his free time, Brecker plays the cello and writes, and he expects to publish a memoir later in 2025.',
   }
 ]
 
