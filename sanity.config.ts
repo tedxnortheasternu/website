@@ -2,6 +2,7 @@
  * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
  */
 
+import { colorInput } from '@sanity/color-input'
 import { visionTool } from '@sanity/vision'
 import { CogIcon } from 'lucide-react'
 import { defineConfig } from 'sanity'
@@ -12,6 +13,7 @@ import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import { apiVersion, dataset, projectId } from '@/sanity/lib/api'
 import { locate } from '@/sanity/plugins/locate'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
+import article from '@/sanity/schemas/documents/article'
 import campus from '@/sanity/schemas/documents/campus'
 import event from '@/sanity/schemas/documents/event'
 import eventCategory from '@/sanity/schemas/documents/eventCategory'
@@ -60,6 +62,7 @@ export default defineConfig({
       settings,
 
       // Documents
+      article,
       page,
       event,
       pastEvents,
@@ -97,5 +100,7 @@ export default defineConfig({
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
+    // Colorwheel plug in
+    colorInput()
   ],
 })
