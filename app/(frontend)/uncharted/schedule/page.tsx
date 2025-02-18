@@ -15,7 +15,7 @@ export default function RenaissanceSpeakers() {
             Schedule
           </h1>
           <p className="mt-2 text-center text-slate-600">
-            Join us on February 24, 2024.
+            Join us on February 22, 2025.
           </p>
         </div>
 
@@ -45,34 +45,27 @@ export default function RenaissanceSpeakers() {
                 <p className="text-lg font-bold">Opening Remarks</p>
                 <div>
                   <p className="!mb-0 text-lg font-bold leading-snug">
-                    Bridging Minds and Machines: Advancing AI Innovation through
-                    Cognitive Science
+                    We Are Worth the Cost of Justice
                   </p>
-                  <p className="!mb-0 leading-snug">Dr. Christie Chung</p>
+                  <p className="!mb-0 leading-snug">Zara Northover</p>
                 </div>
                 <div>
                   <p className="!mb-0 text-lg font-bold leading-snug">
-                    Debate Like a Scientist
+                    The Growth Blueprint: Neuroplasticity, Grit, and the Power of Change
                   </p>
-                  <p className="!mb-0 leading-snug">William Cutler</p>
+                  <p className="!mb-0 leading-snug">Naomi Rajput</p>
                 </div>
                 <div>
                   <p className="!mb-0 text-lg font-bold leading-snug">
                     Performance
                   </p>
-                  <p className="!mb-0 leading-snug">TBA</p>
+                  <p className="!mb-0 leading-snug">NU Kaliente</p>
                 </div>
                 <div>
                   <p className="!mb-0 text-lg font-bold leading-snug">
-                    Measuring Success for Better Schools
+                    Lessons from the Psych Ward: The Importance of Vulnerability
                   </p>
-                  <p className="!mb-0 leading-snug">Dr. Nicole Alioto</p>
-                </div>
-                <div>
-                  <p className="!mb-0 text-lg font-bold leading-snug">
-                    Break the Silence: {'Let’s'} Talk About Grief
-                  </p>
-                  <p className="!mb-0 leading-snug">Cate Murphy</p>
+                  <p className="!mb-0 leading-snug">Zara Poon</p>
                 </div>
               </div>
             </div>
@@ -103,25 +96,25 @@ export default function RenaissanceSpeakers() {
                   <p className="!mb-0 text-lg font-bold leading-snug">
                     Music Performance
                   </p>
-                  <p className="!mb-0 leading-snug">NU Sanskriti</p>
+                  <p className="!mb-0 leading-snug">NU Malhar</p>
                 </div>
                 <div>
                   <p className="!mb-0 text-lg font-bold leading-snug">
-                    Variety of Voice: The Power of Authenticity
+                    Reimagining Justice: Changing Perspectives on the Prison System
                   </p>
-                  <p className="!mb-0 leading-snug">Leeyan Redwood</p>
+                  <p className="!mb-0 leading-snug">Jarrett Lobb</p>
                 </div>
                 <div>
                   <p className="!mb-0 text-lg font-bold leading-snug">
-                    The Story of a 19-year-old High School Biology Teacher
+                    The Revolution At Work That No One Noticed
                   </p>
-                  <p className="!mb-0 leading-snug">Debpriya Das</p>
+                  <p className="!mb-0 leading-snug">Janine Holman</p>
                 </div>
                 <div>
                   <p className="!mb-0 text-lg font-bold leading-snug">
-                    Pixels and Principles: Ethics of AI Art
+                    Witnessing Violence in a Broken Conservation System
                   </p>
-                  <p className="!mb-0 leading-snug">Melody Liu</p>
+                  <p className="!mb-0 leading-snug">Brecker Ferguson</p>
                 </div>
               </div>
             </div>
