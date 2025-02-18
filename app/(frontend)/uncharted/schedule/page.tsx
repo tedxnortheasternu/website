@@ -108,7 +108,7 @@ export default function RenaissanceSpeakers() {
                   <p className="!mb-0 text-lg font-bold leading-snug">
                     The Revolution At Work That No One Noticed
                   </p>
-                  <p className="!mb-0 leading-snug">Janine Holman</p>
+                  <p className="!mb-0 leading-snug">Janine Hamner Holman</p>
                 </div>
                 <div>
                   <p className="!mb-0 text-lg font-bold leading-snug">
