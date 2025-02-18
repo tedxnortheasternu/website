@@ -14,6 +14,11 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      type: 'color',
+      name: 'titleColor',
+      title: 'Pick a color for the title text',
+    }),
+    defineField({
       type: 'array',
       name: 'authors',
       title: 'Authors',

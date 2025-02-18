@@ -112,6 +112,10 @@ export interface ArticlePayload {
     hex: string
     alpha?: number
   }
+  titleColor: {
+    hex: string
+    alpha?: number
+  }
 }
 
 export interface TeamPayload {

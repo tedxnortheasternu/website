@@ -10,7 +10,6 @@ interface ArticleProps {
 
 export function ArticleListItem(props: ArticleProps) {
   const { article } = props
-  // const [tagColors, setTagColors] = useState('')
 
   const href = resolveHref('article', article._id)
   console.log('Generated href:', href)
@@ -23,10 +22,15 @@ export function ArticleListItem(props: ArticleProps) {
   const postDate = new Date(article.postDateTime)
 
   const buttonColor = article.readMoreButtonColor || { hex: "#dc2626", alpha: 1 }
-
   const readMoreButtonStyle = {
     backgroundColor: buttonColor.hex,
     opacity: buttonColor.alpha,
+  }
+
+  const titleColor = article.titleColor || { hex: "#FFFFFF", alpha: 1 }
+  const articleTitleStyle = {
+    color: titleColor.hex,
+    opacity: titleColor.alpha,
   }
 
   console.log(`Background image information: ${article.articlePhoto}`)
@@ -74,7 +78,7 @@ export function ArticleListItem(props: ArticleProps) {
               }}
             >
               {/* Article Title */}
-              <h3 className="text-2xl font-extrabold text-white">{article.title}</h3>
+              <h3 className="text-2xl font-extrabold text-white" style={articleTitleStyle}>{article.title}</h3>
             </div>
 
             {/* Article Author & Date Information */}

@@ -115,6 +115,7 @@ export const newsPageQuery = groq`
     semesterPosted,
     readMoreButtonColor,
     articlePhoto,
+    titleColor,
   } | order(postDateTime desc)
 `
 
@@ -132,7 +133,8 @@ export const articleByIdQuery = groq`
     articleType,
     semesterPosted,
     readMoreButtonColor,
-    showArticle
+    showArticle,
+    titleColor,
   } 
 `
 
