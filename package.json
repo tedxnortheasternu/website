@@ -39,6 +39,7 @@
     "create-next-app": "^14.0.4",
     "date-fns": "3.2.0",
     "dayjs": "^1.11.10",
+    "framer-motion": "^12.4.4",
     "ics": "^3.7.2",
     "intl-segmenter-polyfill": "0.4.4",
     "lucide-react": "^0.309.0",
