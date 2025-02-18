@@ -66,6 +66,9 @@ export default function UnchartedNavBarLayout() {
           <NavLink href="/uncharted/speakers" variant="renaissance">
             Speakers
           </NavLink>
+          <NavLink href="/uncharted/performers" variant="renaissance">
+            Performances
+          </NavLink>
           <NavLink href="/uncharted/schedule" variant="renaissance">
             Schedule
           </NavLink>
