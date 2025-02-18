@@ -113,6 +113,8 @@ export const newsPageQuery = groq`
     linkToArticle,
     articleType,
     semesterPosted,
+    readMoreButtonColor,
+    articlePhoto,
   } | order(postDateTime desc)
 `
 
@@ -123,19 +125,13 @@ export const articleByIdQuery = groq`
     // "slug": slug.current,
     authors,
     description,
-    articlePhoto {
-      asset-> {
-        _id,
-        url
-      },
-      crop,
-      hotspot
-    }
+    articlePhoto,
     content,
     postDateTime,
     linkToArticle,
     articleType,
     semesterPosted,
+    readMoreButtonColor,
     showArticle
   } 
 `

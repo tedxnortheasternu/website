@@ -2,6 +2,7 @@
  * This config is used to set up Sanity Studio that's mounted on the `/pages/studio/[[...index]].tsx` route
  */
 
+import { colorInput } from '@sanity/color-input'
 import { visionTool } from '@sanity/vision'
 import { CogIcon } from 'lucide-react'
 import { defineConfig } from 'sanity'
@@ -99,5 +100,7 @@ export default defineConfig({
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
+    // Colorwheel plug in
+    colorInput()
   ],
 })

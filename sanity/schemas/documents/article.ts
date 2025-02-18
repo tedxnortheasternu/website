@@ -56,15 +56,15 @@ export default defineType({
       initialValue: false,
     }),
     defineField({
-      type: 'reference',
+      type: 'image',
       name: 'articlePhoto',
-      title: 'Article Photo',
-      to: [{ type: 'image' }],
+      title: 'Upload an article photo'
     }),
     defineField({
       type: 'datetime',
       name: 'postDateTime',
       title: 'Posting Date',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       type: 'string',
@@ -74,13 +74,20 @@ export default defineType({
     defineField({
       type: 'string',
       name: 'articleType',
-      title: 'Insert the article type (ex. Blog, Op-ed, etc)'
+      title: 'Insert the article type (ex. Blog, Op-ed, etc)',
+      validation: (rule) => rule.required(),
     }),
     defineField({
       type: 'string',
       name: 'semesterPosted',
-      title: 'Insert the semester this was posted (ex. Fall 2024, Spring 2025)'
-    })
+      title: 'Insert the semester this was posted (ex. Fall 2024, Spring 2025)',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      type: 'color',
+      name: 'readMoreButtonColor',
+      title: 'Pick a color for the read more button',
+    }),
   ],
   preview: {
     select: {

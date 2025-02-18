@@ -105,9 +105,13 @@ export interface ArticlePayload {
   showArticle: boolean
   articlePhoto?: Image
   postDateTime: string
-  linkToArticle: string;
-  articleType: string;
-  semesterPosted: string;
+  linkToArticle: string
+  articleType: string
+  semesterPosted: string
+  readMoreButtonColor: {
+    hex: string
+    alpha?: number
+  }
 }
 
 export interface TeamPayload {
