@@ -44,39 +44,7 @@ const NUSanskriti: React.FC = () => {
       </div>
 
       <div className="grid w-full grid-cols-1 gap-4 mx-auto lg:grid-cols-1 max-w-7xl">
-        <WobbleCard
-          containerClassName="col-span-1 lg:col-span-2 h-full  bg-[#b87827] min-h-[500px] lg:min-h-[300px]"
-          className=""
-        >
-          <div className="flex">
-            <div className="max-w-xs">
-              <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
-                NU Malhar
-              </h2>
-              <p className="mt-4 mr-5 text-left text-base/6 text-neutral-200">
-                Experience the rich tapestry of Indian classical music with NU
-                Malhar, Northeastern University premier Indian classical music
-                ensemble. Featuring a blend of traditional ragas and
-                contemporary interpretations, NU Malhars performance is a deep
-                dive into the soul-stirring world of Indian music. Let the
-                melodious harmonies of sitars, tablas, and voices transport you
-                to a realm of musical bliss that transcends boundaries and
-                resonates with the heart.
-              </p>
-            </div>
-            <div className="items-center content-center">
-              <Image
-                src={NUMalharLogo}
-                width={500}
-                height={500}
-                alt="linear demo image"
-                className="rounded-2xl h-auto mx-auto w-[28rem]"
-              />
-            </div>
-          </div>
-        </WobbleCard>
-
-        <div className="grid w-full grid-cols-1 gap-4 mx-auto lg:grid-cols-1 max-w-7xl">
+        
           <WobbleCard
             containerClassName="col-span-1 lg:col-span-2 h-full  bg-[#ed2726] min-h-[500px] lg:min-h-[300px]"
             className=""
@@ -107,6 +75,39 @@ const NUSanskriti: React.FC = () => {
               </div>
             </div>
           </WobbleCard>
+
+        <div className="grid w-full grid-cols-1 gap-4 mx-auto lg:grid-cols-1 max-w-7xl">
+          <WobbleCard
+          containerClassName="col-span-1 lg:col-span-2 h-full  bg-[#b87827] min-h-[500px] lg:min-h-[300px]"
+          className=""
+        >
+          <div className="flex">
+            <div className="max-w-xs">
+              <h2 className="text-left text-balance text-base md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                NU Malhar
+              </h2>
+              <p className="mt-4 mr-5 text-left text-base/6 text-neutral-200">
+                Experience the rich tapestry of Indian classical music with NU
+                Malhar, Northeastern University premier Indian classical music
+                ensemble. Featuring a blend of traditional ragas and
+                contemporary interpretations, NU Malhars performance is a deep
+                dive into the soul-stirring world of Indian music. Let the
+                melodious harmonies of sitars, tablas, and voices transport you
+                to a realm of musical bliss that transcends boundaries and
+                resonates with the heart.
+              </p>
+            </div>
+            <div className="items-center content-center">
+              <Image
+                src={NUMalharLogo}
+                width={500}
+                height={500}
+                alt="linear demo image"
+                className="rounded-2xl h-auto mx-auto w-[28rem]"
+              />
+            </div>
+          </div>
+        </WobbleCard>
         </div>
 
         {/* <WobbleCard containerClassName="col-span-1 lg:col-span-3 bg-slate-500 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
