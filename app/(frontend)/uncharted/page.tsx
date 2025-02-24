@@ -38,12 +38,12 @@ export default function RenaissanceOverview() {
           Northeastern community.{' '}
         </p>
 
-        <Link
+        {/* <Link
           href="/uncharted/tickets"
           className="inline-flex items-center gap-2 px-6 py-2 mt-4 text-xl no-underline uppercase transition-colors rounded-full text-[#748cab] font-renaissance bg-[#1d2d44] w-max hover:bg-black"
         >
           Get Your Ticket to Uncharted <ArrowRightIcon size={16} />
-        </Link>
+        </Link> */}
 
         <div className="mt-12 aspect-video">
           <iframe
