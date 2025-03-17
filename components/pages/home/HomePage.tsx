@@ -98,12 +98,12 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
       ) : null} */}
 
       <div className="w-full px-4 lg:px-0">
-        <Link
+        {/* <Link
           href="/uncharted/tickets"
           className="block text-center py-4 mt-4 text-xl no-underline uppercase transition-colors rounded-full text-[#748cab] font-renaissance bg-[#1d2d44] hover:bg-black w-full"
         >
           Get Your Ticket to Uncharted
-        </Link>
+        </Link> */}
       </div>
 
       {data?.sponsors ? (
