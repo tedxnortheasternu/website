@@ -51,7 +51,7 @@ const joinLinks: NavLink[] = [
   },
   {
     title: 'Speaker Applications',
-    href: 'https://airtable.com/appqG2AJwajWIUmWp/shryuSMzpDKQriGbP',
+    href: 'https://airtable.com/appfmGmk4yM44WDKh/shrqqY5VGETe2x7tk',
     description: 'Apply to be a speaker at our annual flagship event',
   },
   // {
