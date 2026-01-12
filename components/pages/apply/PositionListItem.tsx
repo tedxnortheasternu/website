@@ -63,7 +63,7 @@ export function PositionListItem(props: PositionProps) {
 
           <Link
             target="_blank"
-            href="https://airtable.com/appaQrU3UQvRIleJT/shrKfFo0jlqmHBvbK"
+            href="https://airtable.com/appaQrU3UQvRIleJT/shrd80SX5RxZBBJ5j"
             className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-red-600 uppercase transition-colors rounded-full w-max hover:text-red-700"
           >
             Apply Now <ArrowRightIcon size={16} />
