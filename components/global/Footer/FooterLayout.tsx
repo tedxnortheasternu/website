@@ -105,7 +105,7 @@ export default function FooterLayout() {
           <div className="sm:mt-0">
             <ul className="flex items-center justify-center">
               <SocialIcon
-                href="https://www.instagram.com/tedxnortheastern"
+                href="https://www.instagram.com/tedxnortheasternu/"
                 icon={SiInstagram}
               />
               <SocialIcon
