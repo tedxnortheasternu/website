@@ -33,8 +33,7 @@ export function ApplyPage({
             })}
         </div>
       ) : (
-        // TODO: improve styling
-        <div className="text-center">No positions.</div>
+        <div className="text-center">No current positions are avaiable for this semester. If you are interested in joining TEDx, please come back next semester!</div>
       )}
     </div>
   )
