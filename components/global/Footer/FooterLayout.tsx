@@ -109,7 +109,7 @@ export default function FooterLayout() {
                 icon={SiInstagram}
               />
               <SocialIcon
-                href="https://www.youtube.com/channel/@tedxnortheasternu"
+                href="https://www.youtube.com/@tedxnortheasternu/featured"
                 icon={SiYoutube}
               />
               <SocialIcon
