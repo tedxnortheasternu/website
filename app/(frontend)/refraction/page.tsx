@@ -18,7 +18,7 @@ export default function RefractionOverview() {
         <h1 className="text-center text-4xl mb-8">TEDxNortheasternU: Refraction</h1>
         
         <p>
-          Our 2025 flagship event centers on the theme of <strong>Refraction</strong>, 
+          Our 2026 flagship event centers on the theme of <strong>Refraction</strong>, 
           exploring how ideas, perspectives, and experiences bend and transform when 
           they pass through different mediums. Just as light refracts when it moves 
           from air to water, revealing new colors and dimensions, our speakers will 
