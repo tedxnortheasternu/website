@@ -64,7 +64,7 @@ const joinLinks: NavLink[] = [
 const eventLinks: NavLink[] = [
   {
     title: 'Current Events',
-    href: '/uncharted',
+    href: '/refraction',
     description: 'Discover our upcoming events and how you can take part!',
   },
   {
@@ -354,7 +354,7 @@ export default function NavbarLayout() {
             </Link> */}
 
             <Link
-              href="/uncharted"
+              href="/refraction"
               className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-[#1d2d44] w-max hover:bg-[#1d2d44]/85"
             >
               Check Out Our Flagship <ArrowRightIcon size={16} />
