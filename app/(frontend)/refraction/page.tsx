@@ -27,11 +27,11 @@ export default function RefractionOverview() {
         </p>
         
         <p>
-          Refraction is about transformation through transition. It's about the beauty 
-          that emerges when we're willing to shift angles, the innovation born from 
+          Refraction is about transformation through transition. It&apos;s about the beauty 
+          that emerges when we&apos;re willing to shift angles, the innovation born from 
           viewing problems through multiple perspectives, and the growth that comes 
           from allowing our experiences to bend us into new shapes. Through this lens, 
-          we'll explore stories of resilience, reimagination, and the remarkable ways 
+          we&apos;ll explore stories of resilience, reimagination, and the remarkable ways 
           individuals and ideas evolve when they encounter new environments.
         </p>
         
