@@ -18,7 +18,7 @@ export default function RefractionOverview() {
         <h1 className="text-center text-4xl mb-8">TEDxNortheasternU: Refraction</h1>
         
         <p>
-          Our 2025 flagship event centers on the theme of <strong>Refraction</strong>, 
+          Our 2026 flagship event centers on the theme of <strong>Refraction</strong>, 
           exploring how ideas, perspectives, and experiences bend and transform when 
           they pass through different mediums. Just as light refracts when it moves 
           from air to water, revealing new colors and dimensions, our speakers will 
@@ -27,11 +27,11 @@ export default function RefractionOverview() {
         </p>
         
         <p>
-          Refraction is about transformation through transition. It's about the beauty 
-          that emerges when we're willing to shift angles, the innovation born from 
+          Refraction is about transformation through transition. It&apos;s about the beauty 
+          that emerges when we&apos;re willing to shift angles, the innovation born from 
           viewing problems through multiple perspectives, and the growth that comes 
           from allowing our experiences to bend us into new shapes. Through this lens, 
-          we'll explore stories of resilience, reimagination, and the remarkable ways 
+          we&apos;ll explore stories of resilience, reimagination, and the remarkable ways 
           individuals and ideas evolve when they encounter new environments.
         </p>
         
