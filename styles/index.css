@@ -23,3 +23,11 @@ p:not(:last-child) {
     grid-template-areas: 'speaker-info speaker-photo';
   }
 }
+
+.refraction-rainbow {
+  background: linear-gradient(to right,#6f9ba8fa,#909aecf4, #e778b0f1, #6366f1, #7715fffc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+

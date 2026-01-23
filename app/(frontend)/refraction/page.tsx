@@ -14,11 +14,12 @@ export default function RefractionOverview() {
             className="h-auto max-w-full mx-auto w-[28rem]"
           />
         </div>
-        
-        <h1 className="text-center text-4xl mb-8">TEDxNortheasternU: Refraction</h1>
+  
+        <h1 className="text-center text-4xl mb-8">TEDxNortheasternU: <span className="refraction-rainbow">Refraction</span>
+</h1>
         
         <p>
-          Our 2026 flagship event centers on the theme of <strong>Refraction</strong>, 
+          Our 2026 flagship event centers on the theme of <span className="refraction-rainbow">Refraction</span>, 
           exploring how ideas, perspectives, and experiences bend and transform when 
           they pass through different mediums. Just as light refracts when it moves 
           from air to water, revealing new colors and dimensions, our speakers will 
@@ -45,16 +46,20 @@ export default function RefractionOverview() {
         </div>
         
         <p>
-          <strong>Join us on February 21st, 2026 @ ISEC.</strong> Tickets out soon!
+          <strong>Join us on February 21st, 2026 @ ISEC.</strong> Tickets out now!
         </p>
         
-        {/* Uncomment when tickets are ready */}
-        {/* <Link
-          href="/refraction/tickets"
-          className="inline-flex items-center gap-2 px-6 py-2 mt-4 text-xl no-underline uppercase transition-colors rounded-full text-[#748cab] font-renaissance bg-[#1d2d44] w-max hover:bg-black"
-        >
-          Get Your Ticket to Refraction <ArrowRightIcon size={16} />
-        </Link> */}
+        {
+          <Link
+            href="https://nuhuskies.evenue.net/event/SL2526/TED0221"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-2 mt-4 text-xl no-underline uppercase transition-colors rounded-full text-[#748cab] font-renaissance bg-[#1d2d44] w-max hover:bg-black">
+            Get Your Ticket to{' '}
+           <span className="refraction-rainbow">Refraction</span>{' '}
+          <ArrowRightIcon size={16} />
+        </Link>
+        }
       </div>
     </div>
   )
