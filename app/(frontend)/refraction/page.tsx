@@ -14,9 +14,22 @@ export default function RefractionOverview() {
             className="h-auto max-w-full mx-auto w-[28rem]"
           />
         </div>
+
+        <div className="flex justify-center mb-8">
+          <Link
+            href="https://nuhuskies.evenue.net/event/SL2526/TED0221"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-2 text-xl no-underline uppercase transition-colors rounded-full text-[#748cab] font-renaissance bg-[#1d2d44] hover:bg-black">
+            Get Your Ticket to{' '}
+            <span className="refraction-rainbow">Refraction</span>{' '}
+            <ArrowRightIcon size={16} />
+          </Link>
+        </div>
   
-        <h1 className="text-center text-4xl mb-8">TEDxNortheasternU: <span className="refraction-rainbow">Refraction</span>
-</h1>
+        <h1 className="text-center text-4xl mb-8">
+          TEDxNortheasternU: <span className="refraction-rainbow">Refraction</span>
+        </h1>
         
         <p>
           Our 2026 flagship event centers on the theme of <span className="refraction-rainbow">Refraction</span>, 
@@ -28,7 +41,7 @@ export default function RefractionOverview() {
         </p>
         
         <p>
-          Refraction is about transformation through transition. It&apos;s about the beauty 
+          <span className="refraction-rainbow">Refraction</span> is about transformation through transition. It&apos;s about the beauty 
           that emerges when we&apos;re willing to shift angles, the innovation born from 
           viewing problems through multiple perspectives, and the growth that comes 
           from allowing our experiences to bend us into new shapes. Through this lens, 
@@ -48,18 +61,6 @@ export default function RefractionOverview() {
         <p>
           <strong>Join us on February 21st, 2026 @ ISEC.</strong> Tickets out now!
         </p>
-        
-        {
-          <Link
-            href="https://nuhuskies.evenue.net/event/SL2526/TED0221"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2 mt-4 text-xl no-underline uppercase transition-colors rounded-full text-[#748cab] font-renaissance bg-[#1d2d44] w-max hover:bg-black">
-            Get Your Ticket to{' '}
-           <span className="refraction-rainbow">Refraction</span>{' '}
-          <ArrowRightIcon size={16} />
-        </Link>
-        }
       </div>
     </div>
   )
