@@ -7,7 +7,7 @@ export default function RefractionOverview() {
   return (
     <div className="w-full p-6 !pt-0 border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-[#000000]">
       <div className="mx-auto font-serif prose prose-p:text-[#b8c3d4] prose-strong:text-[#b8c3d4]">
-        <div className="-ml-3.5 my-20 -my-16">
+        <div className="-ml-3.5 mt-2 mb-1">
           <Image
             src={refractionLogo}
             alt="Refraction Logo"
@@ -15,7 +15,7 @@ export default function RefractionOverview() {
           />
         </div>
 
-        <div className="flex justify-center mb-8">
+        <div className="flex justify-center mb-4">
           <Link
             href="https://nuhuskies.evenue.net/event/SL2526/TED0221"
             target="_blank"
