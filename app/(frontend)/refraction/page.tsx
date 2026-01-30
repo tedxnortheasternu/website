@@ -5,13 +5,13 @@ import refractionLogo from '/components/images/refraction/TEDxNortheasternU_Refr
 
 export default function RefractionOverview() {
   return (
-    <div className="w-full p-6 !pt-0 border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-[#748cab]/30">
-      <div className="mx-auto font-serif prose">
-        <div className="-ml-3.5 my-20">
+    <div className="w-full p-6 !pt-0 border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-[#000000]">
+      <div className="mx-auto font-serif prose prose-p:text-[#b8c3d4] prose-strong:text-[#b8c3d4]">
+        <div className="-ml-3.5 my-20 -my-16">
           <Image
             src={refractionLogo}
             alt="Refraction Logo"
-            className="h-auto max-w-full mx-auto w-[28rem]"
+            className="h-auto max-w-full mx-auto w-[60rem]"
           />
         </div>
 
@@ -20,14 +20,14 @@ export default function RefractionOverview() {
             href="https://nuhuskies.evenue.net/event/SL2526/TED0221"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2 text-xl no-underline uppercase transition-colors rounded-full text-[#748cab] font-renaissance bg-[#1d2d44] hover:bg-black">
+            className="inline-flex items-center gap-2 px-6 py-2 text-xl no-underline uppercase transition-colors rounded-full text-[#b8c3d4] font-renaissance bg-[#1d2d44] hover:bg-black">
             Get Your Ticket to{' '}
             <span className="refraction-rainbow">Refraction</span>{' '}
             <ArrowRightIcon size={16} />
           </Link>
         </div>
   
-        <h1 className="text-center text-4xl mb-8">
+        <h1 className="text-center text-4xl mb-8 text-[#b8c3d4]">
           TEDxNortheasternU: <span className="refraction-rainbow">Refraction</span>
         </h1>
         
