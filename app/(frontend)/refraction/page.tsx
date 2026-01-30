@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from 'lucide-react'
+import { ArrowRightIcon, InfoIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import refractionLogo from '/components/images/refraction/TEDxNortheasternU_Refraction_Logo.png'
@@ -20,11 +20,22 @@ export default function RefractionOverview() {
             href="https://nuhuskies.evenue.net/event/SL2526/TED0221"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2 text-xl no-underline uppercase transition-colors rounded-full text-[#b8c3d4] font-renaissance bg-[#1d2d44] hover:bg-black">
+            className="inline-flex items-center gap-2 px-8 py-3 text-2xl no-underline uppercase transition-colors rounded-full text-[#b8c3d4] font-renaissance bg-[#1d2d44] hover:bg-black">
             Get Your Ticket to{' '}
             <span className="refraction-rainbow">Refraction</span>{' '}
             <ArrowRightIcon size={16} />
           </Link>
+
+
+          <div className="group relative flex items-center gap-2">
+            <InfoIcon size={20} className="text-[#b8c3d4] cursor-help" />
+            <div className="invisible group-hover:visible absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 px-4 py-3 bg-[#1d2d44] text-[#b8c3d4] text-sm rounded-lg shadow-lg border border-[#748cab]">
+              <p className="text-center">
+                <strong>NEU Students & Staff:</strong> Log in with your Husky credentials to get discounted tickets for $10! (regular price: $15)
+              </p>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-[#1d2d44]"></div>
+            </div>
+          </div>
         </div>
   
         <h1 className="text-center text-4xl mb-8 text-[#b8c3d4]">
