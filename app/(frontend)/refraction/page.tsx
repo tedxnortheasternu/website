@@ -7,12 +7,12 @@ export default function RefractionOverview() {
   return (
     <div className="w-full p-6 !pt-0 border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-[#000000]">
       <div className="mx-auto font-serif prose prose-p:text-[#b8c3d4] prose-strong:text-[#b8c3d4]">
-        <div className="-ml-3.5 mt-2 mb-1">
+        <div className="-mx-6 md:-mx-12 -my-6 md:-my-12">
           <Image
             src={refractionLogo}
             alt="Refraction Logo"
-            className="h-auto max-w-full mx-auto w-[60rem]"
-          />
+            className="h-auto w-full"
+          />  
         </div>
 
         <div className="flex justify-center mb-4">
