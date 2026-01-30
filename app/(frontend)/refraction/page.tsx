@@ -1,17 +1,17 @@
-import { ArrowRightIcon } from 'lucide-react'
+import { ArrowRightIcon, InfoIcon } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import refractionLogo from '/components/images/refraction/TEDxNortheasternU_Refraction_Logo.png'
 
 export default function RefractionOverview() {
   return (
-    <div className="w-full p-6 !pt-0 border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-[#748cab]/30">
-      <div className="mx-auto font-serif prose">
-        <div className="-ml-3.5 my-20">
+    <div className="w-full p-6 !pt-0 border-y xl:border xl:rounded-md md:p-12 border-renaissance-light bg-[#000000]">
+      <div className="mx-auto font-serif prose prose-p:text-[#b8c3d4] prose-strong:text-[#b8c3d4]">
+        <div className="-ml-3.5 my-20 -my-16">
           <Image
             src={refractionLogo}
             alt="Refraction Logo"
-            className="h-auto max-w-full mx-auto w-[28rem]"
+            className="h-auto max-w-full mx-auto w-[60rem]"
           />
         </div>
 
@@ -20,14 +20,25 @@ export default function RefractionOverview() {
             href="https://nuhuskies.evenue.net/event/SL2526/TED0221"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2 text-xl no-underline uppercase transition-colors rounded-full text-[#748cab] font-renaissance bg-[#1d2d44] hover:bg-black">
+            className="inline-flex items-center gap-2 px-8 py-3 text-2xl no-underline uppercase transition-colors rounded-full text-[#b8c3d4] font-renaissance bg-[#1d2d44] hover:bg-black">
             Get Your Ticket to{' '}
             <span className="refraction-rainbow">Refraction</span>{' '}
             <ArrowRightIcon size={16} />
           </Link>
+
+
+          <div className="group relative flex items-center gap-2">
+            <InfoIcon size={20} className="text-[#b8c3d4] cursor-help" />
+            <div className="invisible group-hover:visible absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 px-4 py-3 bg-[#1d2d44] text-[#b8c3d4] text-sm rounded-lg shadow-lg border border-[#748cab]">
+              <p className="text-center">
+                <strong>NEU Students & Staff:</strong> Log in with your Husky credentials to get discounted tickets for $10! (regular price: $15)
+              </p>
+              <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-[#1d2d44]"></div>
+            </div>
+          </div>
         </div>
   
-        <h1 className="text-center text-4xl mb-8">
+        <h1 className="text-center text-4xl mb-8 text-[#b8c3d4]">
           TEDxNortheasternU: <span className="refraction-rainbow">Refraction</span>
         </h1>
         
