@@ -185,7 +185,7 @@ export default function NavbarLayout() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              {/* Join Pages */}
+                {/* Join Pages */}
               <NavigationMenuItem>
                 <NavigationMenuTrigger>Join</NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -307,7 +307,7 @@ export default function NavbarLayout() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-
+              
               {/* Contact Pages */}
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
@@ -316,7 +316,7 @@ export default function NavbarLayout() {
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
-
+                
               {/* Studio Pages */}
               {process.env.NODE_ENV === 'development' ? (
                 <NavigationMenuItem>
@@ -355,7 +355,7 @@ export default function NavbarLayout() {
 
             <Link
               href="/refraction"
-              className="font-renaissance text-lg inline-flex items-center justify-center gap-2 px-4 py-2 text-white transition-colors rounded-full bg-[#1d2d44] w-max hover:bg-[#1d2d44]/85 leading-none"
+              className="inline-flex items-center gap-2 px-4 py-2 font-bold text-white transition-colors rounded-full bg-[#1d2d44] w-max hover:bg-[#1d2d44]/85"
             >
               Check Out Our Flagship <ArrowRightIcon size={16} />
             </Link>
