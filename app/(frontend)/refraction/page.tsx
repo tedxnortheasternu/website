@@ -36,9 +36,7 @@ export default function RefractionOverview() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-8 py-3 text-2xl no-underline uppercase transition-colors rounded-full text-[#b8c3d4] font-renaissance bg-[#1d2d44] hover:bg-black">
-              Get Your Ticket to{' '}
-              <span className="refraction-rainbow">Refraction</span>{' '}
-              <ArrowRightIcon size={16} />
+              Tickets are no longer on sale.{' '}
             </Link>
 
 
@@ -46,7 +44,8 @@ export default function RefractionOverview() {
               <InfoIcon size={20} className="text-[#b8c3d4] cursor-help" />
               <div className="invisible group-hover:visible absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 px-4 py-3 bg-[#1d2d44] text-[#b8c3d4] text-sm rounded-lg shadow-lg border border-[#748cab]">
                 <p className="text-center">
-                  <strong>NEU Students & Staff:</strong> Log in with your Husky credentials to get discounted tickets for $10! (regular price: $15)
+                  <strong>NEU Students & Staff:</strong> Limited Walk-in Tickets available. Walks-in will be available between 10:15AM to 11AM to claim the ticket in ISEC.
+
                 </p>
                 <div className="absolute top-full left-1/2 -translate-x-1/2 -mt-1 border-4 border-transparent border-t-[#1d2d44]"></div>
               </div>
