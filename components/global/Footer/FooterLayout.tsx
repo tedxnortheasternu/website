@@ -58,7 +58,7 @@ export default function FooterLayout() {
               <ul>
                 <li>
                   <Link
-                    href="https://airtable.com/apppF8LcqIJPagRlz/shrtXHY2aq85jEwSD"
+                    href="/apply"
                     className="text-sm text-black hover:text-gray-600 hover:underline"
                   >
                     Open Positions

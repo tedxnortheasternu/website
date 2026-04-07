@@ -1,3 +1,6 @@
+import { ArrowRightIcon } from 'lucide-react'
+import Link from 'next/link'
+
 import { EncodeDataAttributeCallback } from '@sanity/react-loader'
 
 import { PositionPayload } from '@/types'
@@ -22,6 +25,20 @@ export function ApplyPage({
         </h1>
       </div>
 
+      {/* General Application CTA */}
+      <div className="mb-8 p-6 text-center border rounded-md border-slate-200 bg-slate-50">
+        <p className="mb-4 text-slate-700">
+          Interested in joining our team? Check out our open positions below or apply now using the general team application!
+        </p>
+        <Link
+          target="_blank"
+          href="https://airtable.com/appaQrU3UQvRIleJT/shr67F3NWrxOUSiw6"
+          className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white uppercase transition-colors bg-red-600 rounded-full hover:bg-red-700"
+        >
+          Apply to Join TEDx <ArrowRightIcon size={16} />
+        </Link>
+      </div>
+
       {/* Positions List */}
       {positions && positions.length > 0 ? (
         <div className="mx-auto border rounded-md border-slate-200 overflow-clip">
@@ -33,7 +50,7 @@ export function ApplyPage({
             })}
         </div>
       ) : (
-        <div className="text-center">We are currently not accepting applications for this semester. If you are interested in joining TEDx, please come back next semester!</div>
+        <div className="text-center text-slate-500">No specific positions are listed right now. Use the application link above to express your interest.</div>
       )}
     </div>
   )
