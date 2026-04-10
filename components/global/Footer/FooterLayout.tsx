@@ -1,6 +1,7 @@
 import {
   SiInstagram,
   SiLinkedin,
+  SiMedium,
   SiTiktok,
   SiX,
   SiYoutube,
@@ -112,9 +113,13 @@ export default function FooterLayout() {
                 href="https://www.youtube.com/@tedxnortheasternu/featured"
                 icon={SiYoutube}
               />
-              <SocialIcon
+              {/* <SocialIcon
                 href="https://www.tiktok.com/@tedxnortheastern"
                 icon={SiTiktok}
+              /> */}
+              <SocialIcon
+                href='https://medium.com/@TEDxNortheasternU'
+                icon={SiMedium}
               />
               <SocialIcon
                 href="https://www.linkedin.com/company/tedxneu"
