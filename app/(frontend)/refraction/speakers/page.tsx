@@ -52,7 +52,7 @@ const speakers: Speaker[] = [
   {
     photo: tiffanyJoseph,
     name: 'Dr. Tiffany Joseph, PhD',
-    pronouns: 'he/him',
+    pronouns: 'she/her',
     title: 'Imagining a Better Healthcare System in the Face of Shifting Paradigms',
     headline: 'Sociology professor and award-winning author examining race, immigration, and healthcare access through groundbreaking research at Northeastern University.',
     bio: ' is an author, professor, and researcher of sociology and anthropology who examines race, immigration, and healthcare access. She is known for her award winning research publications and her books: Race on the Move: Brazilian Migrants and the Global Reconstruction and Not All In: Race, Immigration, and Healthcare Exclusion in the Age of Obamacare. Dr. Joseph is an associate professor of Sociology and International Affairs at Northeastern University and continues to conduct ground-breaking research in intersections between accessibility and healthcare. Joseph currently lives with her husband and two children in Massachusetts.',
