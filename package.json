@@ -1,11 +1,15 @@
 {
   "private": true,
+  "packageManager": "npm@10.9.2",
+  "engines": {
+    "node": "20.x"
+  },
   "scripts": {
     "build": "next build",
-    "dev": "pnpm next",
-    "format": "pnpm prettier --write . --ignore-path .gitignore",
+    "dev": "next",
+    "format": "prettier --write . --ignore-path .gitignore",
     "lint": "next lint -- --ignore-path .gitignore",
-    "lint:fix": "pnpm run format && pnpm run lint -- --fix",
+    "lint:fix": "npm run format && npm run lint -- --fix",
     "start": "next start",
     "type-check": "tsc --noEmit"
   },

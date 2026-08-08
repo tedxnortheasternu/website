@@ -42,6 +42,3 @@ yarn-error.log*
 # Env files created by scripts for working locally
 .env
 studio/.env.development
-
-# api key
-48677f5bf6068ac18b7e83374f16e6f2-us17
