@@ -57,13 +57,6 @@ export default function RefractionNavBarLayout() {
           >
             Overview
           </NavLink>
-          {/* <NavLink
-            href="/refraction/location"
-            variant="renaissance"
-            active={undefined}
-          >
-            Location
-          </NavLink> */}
           <NavLink
             href="/refraction/speakers"
             variant="renaissance"
@@ -71,20 +64,6 @@ export default function RefractionNavBarLayout() {
           >
             Speakers
           </NavLink>
-          {/* <NavLink
-            href="/refraction/performers"
-            variant="renaissance"
-            active={undefined}
-          >
-            Performances
-          </NavLink> */}
-          {/* <NavLink
-            href="/refraction/schedule"
-            variant="renaissance"
-            active={undefined}
-          >
-            Schedule
-          </NavLink> */}
         </div>
       </div>
     </div>
