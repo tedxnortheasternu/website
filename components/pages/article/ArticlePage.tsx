@@ -34,7 +34,7 @@ export function ArticlePage({ data, encodeDataAttribute }: ArticlePageProps) {
         <div className="border rounded-md">
           <div className="p-3 lg:p-4">
             <Link
-              href="/inthenews"
+              href="/inTheNews"
               className="inline-flex flex-row items-center gap-2 px-4 py-2 text-sm font-bold text-red-600 transition-colors border border-red-600 rounded-full hover:bg-red-600 hover:text-white"
             >
               <ArrowLeftIcon size={16} />

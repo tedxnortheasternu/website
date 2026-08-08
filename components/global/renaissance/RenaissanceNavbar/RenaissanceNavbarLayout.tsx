@@ -55,23 +55,23 @@ export default function RenaissanceNavbarLayout() {
         )}
       >
         <div className="flex flex-col space-y-1 md:space-y-0 md:space-x-2 font-renaissance md:flex-row md:items-center">
-          <NavLink href="/renaissance" variant="renaissance">
+          <NavLink href="/2024_renaissance" variant="renaissance">
             Overview
           </NavLink>
-          <NavLink href="/renaissance/schedule" variant="renaissance">
+          <NavLink href="/2024_renaissance/schedule" variant="renaissance">
             Schedule
           </NavLink>
-          <NavLink href="/renaissance/speakers" variant="renaissance">
+          <NavLink href="/2024_renaissance/speakers" variant="renaissance">
             Speakers
           </NavLink>
-          <NavLink href="/renaissance/performers" variant="renaissance">
+          <NavLink href="/2024_renaissance/performers" variant="renaissance">
             Performers
           </NavLink>
-          <NavLink href="/renaissance/location" variant="renaissance">
+          <NavLink href="/2024_renaissance/location" variant="renaissance">
             Location
           </NavLink>
           <Link
-            href="/renaissance/tickets"
+            href="/2024_renaissance/tickets"
             className="!mt-2 md:!mt-0 inline-flex items-center gap-2 px-4 py-1.5 uppercase transition-colors rounded-full text-renaissance-dark font-renaissance bg-renaissance-light w-max hover:bg-white"
           >
             Join Waitlist <ArrowRightIcon size={16} />
