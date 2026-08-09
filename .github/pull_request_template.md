@@ -1,21 +1,37 @@
-## What changed
+## Summary
+<!-- 1-2 sentences: what does this PR do and why does it matter? -->
 
-## Why
+## Type of change
+- [ ] Feature
+- [ ] Bug fix
+- [ ] Refactor / chore
+- [ ] Docs
+- [ ] Config / infra (CI, deploy, tooling)
 
+## Related issue
 Closes #
 
-## Preview
+## What changed
+<!-- Bullet points > paragraphs. Call out anything non-obvious. -->
 
-<!-- Vercel preview link. Screenshots for any visual change. -->
+## Why
+<!-- The problem this solves or the motivation behind it. -->
 
-## How I tested
+## Screenshots / Preview
+<!-- Vercel preview link. Before/after screenshots for any visual change. -->
 
-## Notes for the reviewer
+## Testing
+<!-- Steps taken, not just "tested locally." Include edge cases you checked. -->
 
-<!-- Context that is not obvious from the diff, or anything you want a second opinion on. -->
+
+## Notes for the reviewer + Additional Information
+<!-- Context not obvious from the diff, or anything you want a second opinion on. -->
 
 ## Checklist
-- [ ] CI is green
+- [ ] Lint passes
+- [ ] Tests pass (unit / integration as applicable)
+- [ ] Build succeeds
 - [ ] Preview checked on mobile
 - [ ] Docs updated if behavior changed
-- [ ] No debug code left
+- [ ] No debug code / console logs left
+- [ ] No secrets or API keys committed
