@@ -1,6 +1,10 @@
 import { ArrowRightIcon, ClockIcon, MapPinIcon } from 'lucide-react'
 import Link from 'next/link'
 
+import {
+  TEAM_APPLICATION_URL,
+  TEAM_APPLICATIONS_OPEN,
+} from '@/lib/applications'
 import { resolveHref } from '@/sanity/lib/utils'
 import type { PositionPayload } from '@/types'
 
@@ -61,13 +65,15 @@ export function PositionListItem(props: PositionProps) {
             Learn More <ArrowRightIcon size={16} />
           </Link>
 
-          <Link
-            target="_blank"
-            href="https://airtable.com/appaQrU3UQvRIleJT/shr67F3NWrxOUSiw6"
-            className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-red-600 uppercase transition-colors rounded-full w-max hover:text-red-700"
-          >
-            Apply Now <ArrowRightIcon size={16} />
-          </Link>
+          {TEAM_APPLICATIONS_OPEN && (
+            <Link
+              target="_blank"
+              href={TEAM_APPLICATION_URL}
+              className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-red-600 uppercase transition-colors rounded-full w-max hover:text-red-700"
+            >
+              Apply Now <ArrowRightIcon size={16} />
+            </Link>
+          )}
         </div>
       </div>
     </div>

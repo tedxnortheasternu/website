@@ -67,7 +67,7 @@ export default function FooterLayout() {
                 </li>
                 <li>
                   <Link
-                    href="https://airtable.com/apppF8LcqIJPagRlz/shr8gbJDilpFkZSxP"
+                    href="/speakerapply"
                     className="text-sm text-black hover:text-gray-600 hover:underline "
                   >
                     Speaker Applications

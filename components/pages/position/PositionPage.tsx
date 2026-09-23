@@ -9,6 +9,10 @@ import {
 import Link from 'next/link'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
+import {
+  TEAM_APPLICATION_URL,
+  TEAM_APPLICATIONS_OPEN,
+} from '@/lib/applications'
 import type { PositionPayload } from '@/types'
 
 export interface PositionPageProps {
@@ -20,6 +24,9 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
   // Default to an empty object to allow previews on non-existent documents
 
   if (!data) return null
+
+  const isAcceptingApplications =
+    TEAM_APPLICATIONS_OPEN && data.acceptingApplications
 
   return (
     <>
@@ -33,7 +40,7 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
             {data.name}
           </h1>
           <div className="pt-8">
-            {!data.acceptingApplications && (
+            {!isAcceptingApplications && (
               <div className="px-4 py-4 font-bold text-black uppercase rounded-md bg-slate-100">
                 This position is no longer accepting applications.
               </div>
@@ -83,10 +90,10 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
                 <CustomPortableText value={data.requirements} />
               </div>
             </div>
-            {data.acceptingApplications ? (
+            {isAcceptingApplications ? (
               <Link
                 target="_blank"
-                href="https://airtable.com/appaQrU3UQvRIleJT/shr67F3NWrxOUSiw6"
+                href={TEAM_APPLICATION_URL}
                 className="inline-flex items-center justify-center w-full gap-2 px-4 py-2 mt-8 text-xl font-bold text-white uppercase transition-colors bg-red-600 rounded-full hover:bg-red-700"
               >
                 Apply Now <ArrowRightIcon size={24} />
