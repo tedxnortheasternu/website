@@ -1,8 +1,11 @@
+import { EncodeDataAttributeCallback } from '@sanity/react-loader'
 import { ArrowRightIcon } from 'lucide-react'
 import Link from 'next/link'
 
-import { EncodeDataAttributeCallback } from '@sanity/react-loader'
-
+import {
+  TEAM_APPLICATION_URL,
+  TEAM_APPLICATIONS_OPEN,
+} from '@/lib/applications'
 import { PositionPayload } from '@/types'
 
 import { PositionListItem } from './PositionListItem'
@@ -26,18 +29,20 @@ export function ApplyPage({
       </div>
 
       {/* General Application CTA */}
-      <div className="mb-8 p-6 text-center border rounded-md border-slate-200 bg-slate-50">
-        <p className="mb-4 text-slate-700">
-          Interested in joining our team? Check out our open positions below or apply now using the general team application!
-        </p>
-        <Link
-          target="_blank"
-          href="https://airtable.com/appaQrU3UQvRIleJT/shr67F3NWrxOUSiw6"
-          className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white uppercase transition-colors bg-red-600 rounded-full hover:bg-red-700"
-        >
-          Apply to Join TEDx <ArrowRightIcon size={16} />
-        </Link>
-      </div>
+      {TEAM_APPLICATIONS_OPEN && (
+        <div className="mb-8 p-6 text-center border rounded-md border-slate-200 bg-slate-50">
+          <p className="mb-4 text-slate-700">
+            Interested in joining our team? Check out our open positions below or apply now using the general team application!
+          </p>
+          <Link
+            target="_blank"
+            href={TEAM_APPLICATION_URL}
+            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white uppercase transition-colors bg-red-600 rounded-full hover:bg-red-700"
+          >
+            Apply to Join TEDx <ArrowRightIcon size={16} />
+          </Link>
+        </div>
+      )}
 
       {/* Positions List */}
       {positions && positions.length > 0 ? (

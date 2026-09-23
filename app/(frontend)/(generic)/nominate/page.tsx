@@ -1,6 +1,15 @@
 import { redirect } from 'next/navigation'
 
+import { ApplicationsClosed } from '@/components/shared/ApplicationsClosed'
+import {
+  SPEAKER_APPLICATION_URL,
+  SPEAKER_APPLICATIONS_OPEN,
+} from '@/lib/applications'
+
 export default function Page() {
-  redirect('https://airtable.com/appfmGmk4yM44WDKh/shrqqY5VGETe2x7tk')
-  return null
+  if (SPEAKER_APPLICATIONS_OPEN) {
+    redirect(SPEAKER_APPLICATION_URL)
+  }
+
+  return <ApplicationsClosed variant="speaker" />
 }
