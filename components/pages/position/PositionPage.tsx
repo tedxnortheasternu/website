@@ -9,10 +9,7 @@ import {
 import Link from 'next/link'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
-import {
-  TEAM_APPLICATION_URL,
-  TEAM_APPLICATIONS_OPEN,
-} from '@/lib/applications'
+import { TEAM_APPLICATION_URL } from '@/lib/applications'
 import type { PositionPayload } from '@/types'
 
 export interface PositionPageProps {
@@ -24,9 +21,6 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
   // Default to an empty object to allow previews on non-existent documents
 
   if (!data) return null
-
-  const isAcceptingApplications =
-    TEAM_APPLICATIONS_OPEN && data.acceptingApplications
 
   return (
     <>
@@ -40,7 +34,7 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
             {data.name}
           </h1>
           <div className="pt-8">
-            {!isAcceptingApplications && (
+            {!data.acceptingApplications && (
               <div className="px-4 py-4 font-bold text-black uppercase rounded-md bg-slate-100">
                 This position is no longer accepting applications.
               </div>
@@ -90,7 +84,7 @@ export function PositionPage({ data, encodeDataAttribute }: PositionPageProps) {
                 <CustomPortableText value={data.requirements} />
               </div>
             </div>
-            {isAcceptingApplications ? (
+            {data.acceptingApplications ? (
               <Link
                 target="_blank"
                 href={TEAM_APPLICATION_URL}
