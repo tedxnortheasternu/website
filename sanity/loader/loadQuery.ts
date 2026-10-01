@@ -159,7 +159,7 @@ export function loadApplyPage() {
   return loadQuery<PositionPayload[] | null>(
     applyPageQuery,
     {},
-    { next: { tags: [`positions`] } },
+    { next: { tags: [`position`] } },
   )
 }
 
@@ -167,7 +167,7 @@ export function loadPositionPage(slug: string) {
   return loadQuery<PositionPayload | null>(
     positionByIdQuery,
     { slug },
-    { next: { tags: [`position:${slug}`] } },
+    { next: { tags: [`position`] } },
   )
 }
 

@@ -2,10 +2,8 @@ import { EncodeDataAttributeCallback } from '@sanity/react-loader'
 import { ArrowRightIcon } from 'lucide-react'
 import Link from 'next/link'
 
-import {
-  TEAM_APPLICATION_URL,
-  TEAM_APPLICATIONS_OPEN,
-} from '@/lib/applications'
+import { ApplicationsClosed } from '@/components/shared/ApplicationsClosed'
+import { TEAM_APPLICATION_URL } from '@/lib/applications'
 import { PositionPayload } from '@/types'
 
 import { PositionListItem } from './PositionListItem'
@@ -19,6 +17,14 @@ export function ApplyPage({
   data: positions,
   encodeDataAttribute,
 }: ApplyPageProps) {
+  // Applications are open exactly when Sanity has a position accepting them.
+  // Checked here rather than in the route so the Presentation preview, which
+  // re-runs applyPageQuery in the browser and renders this component, gets the
+  // same closed notice.
+  if (!positions || positions.length === 0) {
+    return <ApplicationsClosed variant="team" />
+  }
+
   return (
     <div className="max-w-screen-lg mx-auto">
       {/* Header */}
@@ -29,34 +35,28 @@ export function ApplyPage({
       </div>
 
       {/* General Application CTA */}
-      {TEAM_APPLICATIONS_OPEN && (
-        <div className="mb-8 p-6 text-center border rounded-md border-slate-200 bg-slate-50">
-          <p className="mb-4 text-slate-700">
-            Interested in joining our team? Check out our open positions below or apply now using the general team application!
-          </p>
-          <Link
-            target="_blank"
-            href={TEAM_APPLICATION_URL}
-            className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white uppercase transition-colors bg-red-600 rounded-full hover:bg-red-700"
-          >
-            Apply to Join TEDx <ArrowRightIcon size={16} />
-          </Link>
-        </div>
-      )}
+      <div className="mb-8 p-6 text-center border rounded-md border-slate-200 bg-slate-50">
+        <p className="mb-4 text-slate-700">
+          Interested in joining our team? Check out our open positions below or apply now using the general team application!
+        </p>
+        <Link
+          target="_blank"
+          href={TEAM_APPLICATION_URL}
+          className="inline-flex items-center gap-2 px-6 py-3 text-sm font-bold text-white uppercase transition-colors bg-red-600 rounded-full hover:bg-red-700"
+        >
+          Apply to Join TEDx <ArrowRightIcon size={16} />
+        </Link>
+      </div>
 
       {/* Positions List */}
-      {positions && positions.length > 0 ? (
-        <div className="mx-auto border rounded-md border-slate-200 overflow-clip">
-          {positions
-            .slice() // Makes a shallow copy of the array
-            .sort((a, b) => b.priorityRank - a.priorityRank)
-            .map((position) => {
-              return <PositionListItem key={position._id} position={position} />
-            })}
-        </div>
-      ) : (
-        <div className="text-center text-slate-500">No specific positions are listed right now. Use the application link above to express your interest.</div>
-      )}
+      <div className="mx-auto border rounded-md border-slate-200 overflow-clip">
+        {positions
+          .slice() // Makes a shallow copy of the array
+          .sort((a, b) => b.priorityRank - a.priorityRank)
+          .map((position) => {
+            return <PositionListItem key={position._id} position={position} />
+          })}
+      </div>
     </div>
   )
 }

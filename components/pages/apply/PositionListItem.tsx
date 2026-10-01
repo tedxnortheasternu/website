@@ -1,10 +1,7 @@
 import { ArrowRightIcon, ClockIcon, MapPinIcon } from 'lucide-react'
 import Link from 'next/link'
 
-import {
-  TEAM_APPLICATION_URL,
-  TEAM_APPLICATIONS_OPEN,
-} from '@/lib/applications'
+import { TEAM_APPLICATION_URL } from '@/lib/applications'
 import { resolveHref } from '@/sanity/lib/utils'
 import type { PositionPayload } from '@/types'
 
@@ -18,8 +15,6 @@ export function PositionListItem(props: PositionProps) {
   const href = resolveHref('position', position._id)
 
   if (!href) return null
-  console.log(position.name)
-  console.log(position.priorityRank)
 
   return (
     <div className="flex flex-col p-4 transition border-t first:border-0 border-slate-200">
@@ -65,15 +60,13 @@ export function PositionListItem(props: PositionProps) {
             Learn More <ArrowRightIcon size={16} />
           </Link>
 
-          {TEAM_APPLICATIONS_OPEN && (
-            <Link
-              target="_blank"
-              href={TEAM_APPLICATION_URL}
-              className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-red-600 uppercase transition-colors rounded-full w-max hover:text-red-700"
-            >
-              Apply Now <ArrowRightIcon size={16} />
-            </Link>
-          )}
+          <Link
+            target="_blank"
+            href={TEAM_APPLICATION_URL}
+            className="inline-flex items-center gap-2 px-4 py-2 mt-4 text-xs font-bold text-red-600 uppercase transition-colors rounded-full w-max hover:text-red-700"
+          >
+            Apply Now <ArrowRightIcon size={16} />
+          </Link>
         </div>
       </div>
     </div>
