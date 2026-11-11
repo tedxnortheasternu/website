@@ -141,6 +141,7 @@ export interface MemberPayload {
   image: Image
   major?: string
   hometown?: string
+  linkedin?: string
   goToIceCream?: string
 }
 

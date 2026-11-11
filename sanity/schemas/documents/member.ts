@@ -55,6 +55,13 @@ export default defineType({
       description: 'City and State or City and Country, eg: Dallas, TX',
     }),
     defineField({
+      type: 'url',
+      name: 'linkedin',
+      title: 'LinkedIn',
+      description: 'Full profile URL, eg: https://www.linkedin.com/in/jay-sella',
+      validation: (rule) => rule.uri({ scheme: ['http', 'https'] }),
+    }),
+    defineField({
       type: 'string',
       name: 'goToIceCream',
       title: 'Go-to Ice Cream Flavor',

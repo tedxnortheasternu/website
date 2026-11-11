@@ -257,6 +257,7 @@ export const membersPageQuery = groq`
       image,
       major,
       hometown,
+      linkedin,
       goToIceCream,
       team->{
         "slug": slug.current,
