@@ -1,3 +1,5 @@
+import { SiLinkedin } from '@icons-pack/react-simple-icons'
+
 import ImageBox from '@/components/shared/ImageBox'
 import type { MemberPayload, TeamPayload } from '@/types'
 
@@ -79,6 +81,18 @@ export function MembersListItem(props: MembersListItemProps) {
                       {member.goToIceCream}
                     </p>
                   </>
+                ) : null}
+
+                {member.linkedin ? (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${member.name} on LinkedIn`}
+                    className="inline-flex mt-3 rounded-sm text-slate-600 hover:text-red-700 focus:outline-none focus:ring-2 focus:ring-red-700 focus:ring-offset-2"
+                  >
+                    <SiLinkedin className="w-5 h-5" aria-hidden="true" />
+                  </a>
                 ) : null}
               </div>
             </div>
