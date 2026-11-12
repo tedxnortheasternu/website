@@ -11,7 +11,7 @@ export function MembersPage({ data }: MembersPageProps) {
     return <div className="text-center">No Teams.</div>
   }
   return (
-    <div className="max-w-screen-lg mx-auto">
+    <div className="max-w-screen-lg px-4 mx-auto">
       {/* Header */}
       <div className="mx-auto mb-8 text-center">
         <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl">
