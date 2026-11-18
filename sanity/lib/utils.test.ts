@@ -9,7 +9,6 @@ describe('resolveHref', () => {
       ['event', 'uncharted', '/events/uncharted'],
       ['position', 'tech-lead', '/apply/tech-lead'],
       ['team', 'finance', '/teams/finance'],
-      ['pastevents', 'renaissance', '/pastevents/renaissance'],
     ])('maps %s + slug to %s', (documentType, slug, expected) => {
       expect(resolveHref(documentType, slug)).toBe(expected)
     })
@@ -21,7 +20,6 @@ describe('resolveHref', () => {
       ['event', '/events'],
       ['position', '/apply'],
       ['team', '/teams'],
-      ['pastevents', '/pastevents'],
     ])('falls back to the %s listing page, %s', (documentType, expected) => {
       expect(resolveHref(documentType)).toBe(expected)
     })
@@ -33,9 +31,18 @@ describe('resolveHref', () => {
       ['event', '/events'],
       ['position', '/apply'],
       ['team', '/teams'],
-      ['pastevents', '/pastevents'],
     ])('treats an empty %s slug as absent, %s', (documentType, expected) => {
       expect(resolveHref(documentType, '')).toBe(expected)
+    })
+  })
+
+  describe('pastEvent', () => {
+    it.each([
+      ['a year and slug', 2024, 'renaissance', '/pastevents/2024/renaissance'],
+      ['a missing slug', 2024, undefined, '/pastevents'],
+      ['a missing year', undefined, 'renaissance', '/pastevents'],
+    ])('maps %s to %s', (_label, eventYear, slug, expected) => {
+      expect(resolveHref('pastEvent', slug, eventYear)).toBe(expected)
     })
   })
 

@@ -2,6 +2,7 @@ import Link from 'next/link' // Ensure it's imported correctly
 import React from 'react'
 
 import ImageBox from '@/components/shared/ImageBox'
+import { pastEventHref } from '@/sanity/lib/utils'
 import type { UpcomingEventPayload } from '@/types'
 
 export interface PastEventsListItemProps {
@@ -9,10 +10,12 @@ export interface PastEventsListItemProps {
 }
 
 export function PastEventsListItem({ event }) {
-  const { name, slug, coverGraphic, briefDescription } = event.event
+  const { name, slug, coverGraphic, briefDescription, startDateTime } =
+    event.event
+  const eventYear = new Date(startDateTime).getFullYear()
 
   return (
-    <Link href={`/pastevents/${slug}`}>
+    <Link href={pastEventHref(eventYear, slug)}>
       <div className="relative overflow-hidden border rounded-md cursor-pointer group">
         {/* Event Image */}
         {coverGraphic ? (
