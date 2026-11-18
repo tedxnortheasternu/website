@@ -40,6 +40,7 @@ export default defineType({
       type: 'image',
       name: 'image',
       title: 'Image',
+      options: { hotspot: true },
       validation: (rule) => rule.required(),
     }),
     defineField({
