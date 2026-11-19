@@ -19,6 +19,7 @@ import event from '@/sanity/schemas/documents/event'
 import eventCategory from '@/sanity/schemas/documents/eventCategory'
 import member from '@/sanity/schemas/documents/member'
 import page from '@/sanity/schemas/documents/page'
+import pastEvent from '@/sanity/schemas/documents/pastEvent'
 import position from '@/sanity/schemas/documents/position'
 import sponsor from '@/sanity/schemas/documents/sponsor'
 import team from '@/sanity/schemas/documents/team'
@@ -32,8 +33,6 @@ import talk from '@/sanity/schemas/objects/talk'
 import timeline from '@/sanity/schemas/objects/timeline'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
-
-import pastEvents from './sanity/schemas/documents/pastEvents'
 
 const title =
   process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'TEDxNortheasternU Website'
@@ -69,7 +68,7 @@ export default defineConfig({
       article,
       page,
       event,
-      pastEvents,
+      pastEvent,
       eventCategory,
       member,
       position,
