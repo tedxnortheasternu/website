@@ -2,29 +2,24 @@
 
 import { type QueryResponseInitial } from '@sanity/react-loader/rsc'
 
-import { eventBySlugQuery } from '@/sanity/lib/queries'
+import { pastEventBySlugQuery } from '@/sanity/lib/queries'
 import { useQuery } from '@/sanity/loader/useQuery'
-import { UpcomingEventPayload } from '@/types'
+import type { PastEventPayload } from '@/types'
 
 import PastEventPage from './PastEventPage'
 
 type Props = {
-  params: { slug: string }
-  initial: QueryResponseInitial<UpcomingEventPayload | null>
+  params: { year: number; slug: string }
+  initial: QueryResponseInitial<PastEventPayload | null>
 }
 
 export default function PastEventPagePreview(props: Props) {
   const { params, initial } = props
-  const { data, encodeDataAttribute } = useQuery<UpcomingEventPayload | null>(
-    eventBySlugQuery,
+  const { data, encodeDataAttribute } = useQuery<PastEventPayload | null>(
+    pastEventBySlugQuery,
     params,
     { initial },
   )
 
-  // Transform data into the required format for PastEventPage
-  const eventData = data ? [{ event: data }] : null
-
-  return (
-    <PastEventPage data={eventData} encodeDataAttribute={encodeDataAttribute} slug={params.slug}/>
-  )
+  return <PastEventPage data={data} encodeDataAttribute={encodeDataAttribute} />
 }

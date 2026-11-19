@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { PastEventsPayload } from '@/types'
+import type { PastEventCardPayload } from '@/types'
 
 import { PastEventsListItem } from './PastEventsListItem'
 
 export interface PastEventsPageProps {
-  data: PastEventsPayload | null // This should be an array or null
+  data: PastEventCardPayload[] | null
 }
 
 export function PastEventsPage({ data }: PastEventsPageProps) {
@@ -19,12 +19,9 @@ export function PastEventsPage({ data }: PastEventsPageProps) {
         <h1 className="text-3xl font-bold md:text-5xl">Past Events</h1>
       </div>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-        {data.map(
-          (event, index) => (
-            console.log(event), // Log each event to see its structure
-            (<PastEventsListItem key={event.slug || index} event={event} />)
-          ),
-        )}
+        {data.map((event) => (
+          <PastEventsListItem key={event._id} event={event} />
+        ))}
       </div>
     </div>
   )

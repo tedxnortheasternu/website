@@ -158,46 +158,109 @@ export const eventBySlugQuery = groq`
   }
 `
 
+// Index list. `published != false` keeps legacy documents (field missing,
+// so `null != false` is true) visible and hides new ones until the toggle is
+// flipped. The `defined(...)` guards keep half-entered documents out.
 export const pastEventsQuery = groq`
-  *[_type == "pastEvent"] {
-    "event": event-> {
-      name,                 
-      "slug": slug.current, 
-      briefDescription,     
-      coverGraphic,         
-      startDateTime,       
-      endDateTime,     
-      location,            
-      "category": category-> {
-        _id,               
-        name                
-      }
-    }
-  } | order(endDateTime desc) // Ordering the results by the end date in descending order
-`
-
-export const pastEventsSlugQuery = groq`
-  *[_type == "pastEvent" ] {
-    event-> {
-      name,
-      "slug": slug.current,
-      briefDescription,
-      coverGraphic,
-      startDateTime,
-      endDateTime,
-      location,
-      category-> {
-        _id,
-        name,
-      }
-    }
+  *[_type == "pastEvent" && defined(slug.current) && defined(eventYear) && published != false] | order(eventYear desc) {
+    _id,
+    title,
+    theme,
+    "slug": slug.current,
+    eventYear,
+    eventDate,
+    briefDescription,
+    coverGraphic
   }
 `
 
-export const pastEventPaths = groq`
-  *[_type == "pastEvents" && slug.current != null].slug.current
+// Detail page. Deliberately does NOT filter on `published`: the unlisted
+// URL is how an entry is reviewed before it goes on the index page.
+export const pastEventBySlugQuery = groq`
+  *[_type == "pastEvent" && eventYear == $year && slug.current == $slug][0] {
+    _id,
+    title,
+    theme,
+    "slug": slug.current,
+    eventYear,
+    eventDate,
+    published,
+    tagline,
+    briefDescription,
+    overview,
+    coverGraphic,
+    logo,
+    campus-> {
+      name
+    },
+    location,
+    recapVideoUrl,
+    talksPlaylistUrl,
+    flickrUrl,
+    programUrl,
+    "talks": coalesce(talks[] {
+      _key,
+      title,
+      description,
+      videoUrl,
+      speaker-> {
+        _id,
+        name,
+        "slug": slug.current,
+        pronouns,
+        headline,
+        affiliation,
+        bio,
+        photo,
+        linkedin,
+        website
+      }
+    }, []),
+    "performers": coalesce(performers[]-> {
+      _id,
+      name,
+      description,
+      image,
+      websiteUrl,
+      kind
+    }, []),
+    "schedule": coalesce(schedule[] {
+      _key,
+      title,
+      "items": coalesce(items[] {
+        _key,
+        time,
+        itemType,
+        speaker-> {
+          _id,
+          name
+        },
+        performer-> {
+          _id,
+          name
+        },
+        label,
+        note
+      }, [])
+    }, []),
+    "gallery": coalesce(gallery, []),
+    "sponsors": coalesce(sponsors[]-> {
+      name,
+      logo,
+      description,
+      websiteLink
+    }, [])
+  }
 `
 
+// `{year, slug}` pairs for the `[year]/[slug]` route. Same guards as the
+// index list, so unpublished entries are rendered on demand, not prerendered.
+export const pastEventPaths = groq`
+  *[_type == "pastEvent" && defined(slug.current) && defined(eventYear) && published != false] {
+    "year": string(eventYear),
+    "slug": slug.current
+  }
+`
 
 export const teamPaths = groq`
   *[_type == "team" && slug.current != null].slug.current
