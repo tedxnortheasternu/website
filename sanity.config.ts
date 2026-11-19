@@ -23,8 +23,12 @@ import position from '@/sanity/schemas/documents/position'
 import sponsor from '@/sanity/schemas/documents/sponsor'
 import team from '@/sanity/schemas/documents/team'
 import duration from '@/sanity/schemas/objects/duration'
+import galleryImage from '@/sanity/schemas/objects/galleryImage'
 import milestone from '@/sanity/schemas/objects/milestone'
 import range from '@/sanity/schemas/objects/range'
+import scheduleItem from '@/sanity/schemas/objects/scheduleItem'
+import scheduleSession from '@/sanity/schemas/objects/scheduleSession'
+import talk from '@/sanity/schemas/objects/talk'
 import timeline from '@/sanity/schemas/objects/timeline'
 import home from '@/sanity/schemas/singletons/home'
 import settings from '@/sanity/schemas/singletons/settings'
@@ -78,6 +82,10 @@ export default defineConfig({
       milestone,
       range,
       timeline,
+      talk,
+      scheduleItem,
+      scheduleSession,
+      galleryImage,
     ],
   },
   plugins: [
