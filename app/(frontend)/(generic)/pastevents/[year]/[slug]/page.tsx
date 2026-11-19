@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 
 import { PastEventPage } from '@/components/pages/pastEvent/PastEventPage'
 import { urlForOpenGraphImage } from '@/sanity/lib/utils'
-import { generateStaticSlugs } from '@/sanity/loader/generateStaticSlugs'
+import { generatePastEventParams } from '@/sanity/loader/generateStaticSlugs'
 import { loadPastEvent } from '@/sanity/loader/loadQuery'
 const PastEventPagePreview = dynamic(
   () => import('@/components/pages/pastEvent/PastEventPreview'),
@@ -16,13 +16,14 @@ type Props = {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { year, slug } = params
+  const year = Number(params.year)
+  if (!Number.isInteger(year)) return {}
 
-  const { data: pastEvent } = await loadPastEvent(year + '/' + slug)
+  const { data: pastEvent } = await loadPastEvent(year, params.slug)
   const ogImage = urlForOpenGraphImage(pastEvent?.coverGraphic)
 
   return {
-    title: pastEvent?.name,
+    title: pastEvent?.theme,
     description: pastEvent?.briefDescription,
     openGraph: {
       images: ogImage ? [ogImage] : [],
@@ -31,25 +32,29 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export function generateStaticParams() {
-  return generateStaticSlugs('pastEvent')
+  return generatePastEventParams()
 }
 
 export default async function PastEventSlugRoute({ params }: Props) {
-  const { year, slug } = params
-  const initial = await loadPastEvent(year + '/' + slug)
+  const year = Number(params.year)
+  if (!Number.isInteger(year)) {
+    notFound()
+  }
+
+  const initial = await loadPastEvent(year, params.slug)
 
   if (draftMode().isEnabled) {
-    return <PastEventPagePreview params={params} initial={initial} />
+    return (
+      <PastEventPagePreview
+        params={{ year, slug: params.slug }}
+        initial={initial}
+      />
+    )
   }
 
   if (!initial.data) {
     notFound()
   }
 
-  return (
-    <PastEventPage
-      data={initial.data ? [{ event: initial.data }] : null}
-      slug={year + '/' + slug}
-    />
-  )
+  return <PastEventPage data={initial.data} />
 }

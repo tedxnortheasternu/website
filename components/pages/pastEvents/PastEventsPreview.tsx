@@ -2,20 +2,20 @@
 
 import { type QueryResponseInitial } from '@sanity/react-loader/rsc'
 
-import { pastEventsSlugQuery } from '@/sanity/lib/queries'
+import { pastEventsQuery } from '@/sanity/lib/queries'
 import { useQuery } from '@/sanity/loader/useQuery'
-import { PastEventsPayload, UpcomingEventPayload } from '@/types'
+import type { PastEventCardPayload } from '@/types'
 
 import PastEventsPage from './PastEventsPage'
 
 type Props = {
-  initial: QueryResponseInitial<UpcomingEventPayload[] | null>
+  initial: QueryResponseInitial<PastEventCardPayload[] | null>
 }
 
 export default function PastEventsPagePreview(props: Props) {
   const { initial } = props
-  const { data } = useQuery<UpcomingEventPayload[] | null>(
-    pastEventsSlugQuery,
+  const { data } = useQuery<PastEventCardPayload[] | null>(
+    pastEventsQuery,
     {},
     { initial },
   )

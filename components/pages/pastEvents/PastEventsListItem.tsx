@@ -2,17 +2,17 @@ import Link from 'next/link' // Ensure it's imported correctly
 import React from 'react'
 
 import ImageBox from '@/components/shared/ImageBox'
-import type { UpcomingEventPayload } from '@/types'
+import type { PastEventCardPayload } from '@/types'
 
 export interface PastEventsListItemProps {
-  event: UpcomingEventPayload
+  event: PastEventCardPayload
 }
 
-export function PastEventsListItem({ event }) {
-  const { name, slug, coverGraphic, briefDescription } = event.event
+export function PastEventsListItem({ event }: PastEventsListItemProps) {
+  const { theme: name, slug, eventYear, coverGraphic } = event
 
   return (
-    <Link href={`/pastevents/${slug}`}>
+    <Link href={`/pastevents/${eventYear}/${slug}`}>
       <div className="relative overflow-hidden border rounded-md cursor-pointer group">
         {/* Event Image */}
         {coverGraphic ? (

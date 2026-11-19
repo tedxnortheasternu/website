@@ -74,7 +74,91 @@ export interface UpcomingEventPayload {
   location: string
 }
 
-export type PastEventsPayload = UpcomingEventPayload[]
+// Past-event archive payloads. Hand-written to match the projections in
+// `sanity/lib/queries.ts` (there is no typegen in this repo).
+
+export interface SpeakerPayload {
+  _id: string
+  name: string
+  slug: string
+  pronouns?: string
+  headline?: string
+  affiliation?: string
+  bio?: string
+  photo: Image
+  linkedin?: string
+  website?: string
+}
+
+export interface TalkPayload {
+  _key: string
+  title: string
+  description?: string
+  videoUrl?: string
+  speaker: SpeakerPayload | null
+}
+
+export interface PerformerPayload {
+  _id: string
+  name: string
+  description?: string
+  image?: Image
+  websiteUrl?: string
+  kind?: 'Dance' | 'Music' | 'Spoken Word' | 'Other'
+}
+
+export interface ScheduleItemPayload {
+  _key: string
+  time?: string
+  itemType: 'talk' | 'performance' | 'break'
+  // Only `_id` and `name` are projected: the talk title comes from joining
+  // `speaker._id` against `PastEventPayload.talks`.
+  speaker?: Pick<SpeakerPayload, '_id' | 'name'> | null
+  performer?: Pick<PerformerPayload, '_id' | 'name'> | null
+  label?: string
+  note?: string
+}
+
+export interface ScheduleSessionPayload {
+  _key: string
+  title: string
+  items: ScheduleItemPayload[]
+}
+
+export interface GalleryImagePayload extends Image {
+  _key: string
+  caption?: string
+  credit?: string
+}
+
+export interface PastEventCardPayload {
+  _id: string
+  title: string
+  theme: string
+  slug: string
+  eventYear: number
+  eventDate: string
+  briefDescription?: string
+  coverGraphic: Image
+}
+
+export interface PastEventPayload extends PastEventCardPayload {
+  published?: boolean
+  tagline?: string
+  overview?: PortableTextBlock[]
+  logo?: Image
+  campus?: Campus | null
+  location?: string
+  recapVideoUrl?: string
+  talksPlaylistUrl?: string
+  flickrUrl?: string
+  programUrl?: string
+  talks: TalkPayload[]
+  performers: PerformerPayload[]
+  schedule: ScheduleSessionPayload[]
+  gallery: GalleryImagePayload[]
+  sponsors: SponsorPayload[]
+}
 
 export interface SponsorPayload {
   name: string

@@ -12,8 +12,8 @@ import {
   membersPageQuery as membersPageQuery,
   newsPageQuery,
   pagesBySlugQuery,
+  pastEventBySlugQuery,
   pastEventsQuery,
-  pastEventsSlugQuery,
   positionByIdQuery,
   settingsQuery,
   sponsorsQuery,
@@ -27,7 +27,8 @@ import {
   HomePagePayload,
   MembersPagePayload,
   PagePayload,
-  PastEventsPayload,
+  PastEventCardPayload,
+  PastEventPayload,
   PositionPayload,
   SettingsPayload,
   SponsorPayload,
@@ -115,11 +116,13 @@ export function loadPage(slug: string) {
   )
 }
 
+// Tags match what `app/api/revalidate/route.ts` sends: `<_type>` and
+// `<_type>:<slug>`.
 export function loadPastEventsPage() {
-  return loadQuery<UpcomingEventPayload[] | null>(
+  return loadQuery<PastEventCardPayload[] | null>(
     pastEventsQuery,
     {},
-    { next: { tags: [`pastEvents`] } },
+    { next: { tags: ['pastEvent'] } },
   )
 }
 
@@ -139,11 +142,23 @@ export function loadEvent(slug: string) {
   )
 }
 
-export function loadPastEvent(slug: string) {
-  return loadQuery<UpcomingEventPayload | null>(
-    pastEventsSlugQuery,
-    { slug },
-    { next: { tags: [`pastEvent:${slug}`] } },
+// Also tagged with the referenced types, so editing a speaker, performer, or
+// sponsor refreshes the archive pages that show them.
+export function loadPastEvent(year: number, slug: string) {
+  return loadQuery<PastEventPayload | null>(
+    pastEventBySlugQuery,
+    { year, slug },
+    {
+      next: {
+        tags: [
+          'pastEvent',
+          `pastEvent:${slug}`,
+          'speaker',
+          'performer',
+          'sponsor',
+        ],
+      },
+    },
   )
 }
 
