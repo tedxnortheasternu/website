@@ -21,7 +21,15 @@ export function urlForOpenGraphImage(image: Image | undefined) {
   return urlForImage(image)?.width(1200).height(627).fit('crop').url()
 }
 
-export function resolveHref(documentType?: string, slug?: string): string {
+export function pastEventHref(eventYear?: number | string, slug?: string) {
+  return eventYear && slug ? `/pastevents/${eventYear}/${slug}` : '/pastevents'
+}
+
+export function resolveHref(
+  documentType?: string,
+  slug?: string,
+  eventYear?: number | string,
+): string {
   switch (documentType) {
     case 'home':
       return '/'
@@ -33,8 +41,8 @@ export function resolveHref(documentType?: string, slug?: string): string {
       return slug ? `/apply/${slug}` : '/apply'
     case 'team':
       return slug ? `/teams/${slug}` : '/teams'
-    case 'pastevents':
-      return slug ? `/pastevents/${slug}` : '/pastevents'
+    case 'pastEvent':
+      return pastEventHref(eventYear, slug)
     default:
       console.warn('Invalid document type:', documentType)
       return '#'
