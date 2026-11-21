@@ -41,6 +41,10 @@ describe('resolveHref', () => {
       ['a year and slug', 2024, 'renaissance', '/pastevents/2024/renaissance'],
       ['a missing slug', 2024, undefined, '/pastevents'],
       ['a missing year', undefined, 'renaissance', '/pastevents'],
+      ['a string year', '2024', 'renaissance', '/pastevents/2024/renaissance'],
+      ['a NaN year', NaN, 'renaissance', '/pastevents'],
+      ['an empty slug', 2024, '', '/pastevents'],
+      ['a slug with odd characters', 2024, 'a b&c', '/pastevents/2024/a b&c'],
     ])('maps %s to %s', (_label, eventYear, slug, expected) => {
       expect(resolveHref('pastEvent', slug, eventYear)).toBe(expected)
     })
